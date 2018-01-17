@@ -45,7 +45,7 @@ There are two ways.
  If you find a bug, please report to us posting [issues](https://github.com/naver/protonow/issues) on GitHub.
  
  # License
- Licensed under the LGPL v2.1, see LICENSE for details.
- Copyright 2018 NAVER Corp. see COPYING for details.
- Third parties licenses, see NOTICE for details.
+ Licensed under the LGPL v2.1, see [LICENSE](https://github.com/naver/protonow/blob/master/LICENSE) for details.   
+ Copyright 2018 NAVER Corp. see [COPYING](https://github.com/naver/protonow/blob/master/COPYING) for details.  
+ Third parties licenses, see [NOTICE](https://github.com/naver/protonow/blob/master/NOTICE) for details.   
  
