@@ -1,0 +1,43 @@
+﻿<ctlBase:BaseWindow x:Class="Naver.Compass.Module.GridGuideSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource GridSetting_DialogTitle}" Height="320" Width="265"
+        xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+        xmlns:local="clr-namespace:Naver.Compass.Module"
+        x:Name="GridSetting"
+        WindowStartupLocation="CenterOwner"
+        Style="{StaticResource PopupWindow}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TabControl  Margin="0,11,0,0" >
+            <TabItem x:Name="Grid" Header="{DynamicResource GridSetting_Grid}" HorizontalAlignment="Center" IsSelected="{Binding IsGridSelected, Mode=OneWay}">
+                <TabItem.Content>
+                    <local:GridSettingView/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Guides" Header="{DynamicResource GridSetting_Guide}" HorizontalAlignment="Center" IsSelected="{Binding IsGuidesSelected, Mode=OneWay}">
+                <TabItem.Content>
+                    <local:GuidesSettingView/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="SnapObject" Header="{DynamicResource GridSetting_SnapObject}" HorizontalAlignment="Center" IsSelected="{Binding IsObjectSelected, Mode=OneWay}" Visibility="Collapsed">
+                <TabItem.Content>
+                    <local:SnapObjectSettingView/>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center"  Margin="0,10,0,16">
+            <Button Content="{DynamicResource Common_OK}" Width="90" 
+                    Command="{Binding OKCommand}" Height="26"
+                    CommandParameter="{Binding ElementName=GridSetting}"/>
+            <Button Content="{DynamicResource Common_Cancel}" Width="90" Margin="8,0,0,0"
+                    Command="{Binding CancelCommand}"  Height="26"
+                    CommandParameter="{Binding ElementName=GridSetting}"/>
+        </StackPanel>
+    </Grid>
+</ctlBase:BaseWindow>

@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Naver.Compass.WidgetLibrary.MasterWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             mc:Ignorable="d" UseLayoutRounding="True"
+             d:DesignHeight="100" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Common:Bool2VisibleConverter x:Key="Bool2Visible"/>
+        <Common:Bool2CollapseConverter x:Key="Bool2Collapse"/>
+        <Style x:Key="ContentHiddenStyle" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BorderHiddenStyle" TargetType="Border">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Opacity" Value="0.05"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Background" Value="Transparent "/>
+                    <Setter Property="Opacity" Value="1"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border IsHitTestVisible="False" Style="{StaticResource BorderHiddenStyle}">
+        <Border.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="../Themes/Generic.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Border.Resources>
+        <Grid Style="{StaticResource ContentHiddenStyle}">
+            <ScrollViewer x:Name="PreScrollView"  VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" >
+                <Grid x:Name="PreBorder" >
+                    <!--Items Control-->
+                    <ItemsControl x:Name="ExternCanvas"  ItemsSource="{Binding Items,Mode=OneWay}" Margin="{Binding CanvasMargin,Mode=OneWay}">
+                        <!--Preview Canvas-->
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate x:Name="PanelTmp">
+                                <Canvas x:Name="PreCanvas" IsItemsHost="True" Background="Transparent" >
+                                </Canvas>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="{x:Type ContentPresenter}">
+                                <Setter Property="Canvas.Top" Value="{Binding Top, Mode=OneWay}" />
+                                <Setter Property="Canvas.Left" Value="{Binding Left, Mode=OneWay}" />
+                                <Setter Property="Canvas.ZIndex" Value="{Binding ZOrder, Mode=OneWay}" />
+                                <Setter Property="Visibility" Value="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"/>
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+                    </ItemsControl>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>

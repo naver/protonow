@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30A4E2CE-AD91-4297-8DDE-B23D1FBD8460}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Naver.Compass.Module</RootNamespace>
+    <AssemblyName>Naver.Compass.Module.DiagramEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.UnityExtensions.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.166-beta\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.166-beta\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.166-beta\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RibbonControlsLibrary.4.0.0\lib\net40\RibbonControlsLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChildrenView\AdaptiveView\AdaptiveConverter.cs" />
+    <Compile Include="ChildrenView\AdaptiveView\AdaptiveModel.cs" />
+    <Compile Include="ChildrenView\AdaptiveView\AdaptiveNode.cs" />
+    <Compile Include="ChildrenView\AdaptiveView\SetAdaptiveView.xaml.cs">
+      <DependentUpon>SetAdaptiveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\AdaptiveView\SetAdaptiveViewModel.cs" />
+    <Compile Include="ChildrenView\HamburgerMenuEditor\MenuPageEditorViewModel.cs" />
+    <Compile Include="ChildrenView\HamburgerMenuEditor\MoveThumb.cs" />
+    <Compile Include="ChildrenView\HamburgerMenuEditor\ResizeThumb.cs" />
+    <Compile Include="ChildrenView\PopupWindow\DeviceConverter.cs" />
+    <Compile Include="ChildrenView\PopupWindow\SetDeviceWindow.xaml.cs">
+      <DependentUpon>SetDeviceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\PopupWindow\SetDeviceWindowModel.cs" />
+    <Compile Include="ChildrenView\PopupWindow\PlacePasteWindow.xaml.cs">
+      <DependentUpon>PlacePasteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\PopupWindow\FlickingStateManagerViewModel.cs" />
+    <Compile Include="ChildrenView\PopupWindow\FlickingStateManagerWindow.xaml.cs">
+      <DependentUpon>FlickingStateManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\PopupWindow\MasterNameWindow.xaml.cs">
+      <DependentUpon>MasterNameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\EditorGrid..cs" />
+    <Compile Include="ChildrenView\HamburgerMenuEditor\MenuPageEditor.xaml.cs">
+      <DependentUpon>MenuPageEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DesignerBaseCanvas.xaml.cs">
+      <DependentUpon>DesignerBaseCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\Grid\SettingModel.cs" />
+    <Compile Include="Pages\HamburgerEditorPanel.xaml.cs">
+      <DependentUpon>HamburgerEditorPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DynamicEditorPanel.xaml.cs">
+      <DependentUpon>DynamicEditorPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageChildrenUIElements\AdaptiveViewPanel.xaml.cs">
+      <DependentUpon>AdaptiveViewPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageChildrenUIElements\PageDevicePanel.xaml.cs">
+      <DependentUpon>PageDevicePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageViewModel\DynamicPage\DynamicChildNodViewModel.cs" />
+    <Compile Include="PageViewModel\DynamicPage\DynamicPageEditorViewModel.cs" />
+    <Compile Include="PageViewModel\ForbidAddingPageEditorViewModel.cs" />
+    <Compile Include="PageViewModel\HamburgerPage\HamburgerPageEditorViewModel.cs" />
+    <Compile Include="PageViewModel\MasterPage\MasterPageEditorViewModel.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.Hamburger.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.DomOperation.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.Master.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.WidgetMgr.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.Library.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.Initial.cs" />
+    <Compile Include="PageViewModel\ToastNotification\ToastPageEditorViewModel.cs" />
+    <Compile Include="PageViewModel\WidgetPageEditorViewModel.cs" />
+    <Compile Include="Undo\NotifyEventCommand.cs" />
+    <Compile Include="Undo\PlaceWidgetCommand.cs" />
+    <Compile Include="Undo\UnPlaceWidgetCommand.cs" />
+    <Compile Include="Undo\CreateDynamicPanelStateCommand.cs" />
+    <Compile Include="Undo\CreateGlobalGuideCommand.cs" />
+    <Compile Include="Undo\CreatePageGuideCommand.cs" />
+    <Compile Include="Undo\DeleteDynamicPanelStateCommand.cs" />
+    <Compile Include="Undo\DeletePageGuideCommand.cs" />
+    <Compile Include="Undo\DeleteGlobalGuideCommand.cs" />
+    <Compile Include="Undo\DeleteWidgetInGroupSubCommand.cs" />
+    <Compile Include="Undo\DeleteWidgetInGroupCommand.cs" />
+    <Compile Include="Undo\GuidePropertyChangeCommand.cs" />
+    <Compile Include="ChildrenView\PopupWindow\CreateGuidesViewModel.cs" />
+    <Compile Include="ChildrenView\PopupWindow\CreateGuidesWindow.xaml.cs">
+      <DependentUpon>CreateGuidesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\PopupWindow\GridGuideSettingViewModel.cs" />
+    <Compile Include="ChildrenView\Grid\GridSettingViewModel.cs" />
+    <Compile Include="ChildrenView\Grid\GuidesSettingViewModel.cs" />
+    <Compile Include="ChildrenView\Grid\SnapObjectSettingViewModel.cs" />
+    <Compile Include="ChildrenView\Grid\GridSettingView.xaml.cs">
+      <DependentUpon>GridSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\Grid\GuidesSettingView.xaml.cs">
+      <DependentUpon>GuidesSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\Grid\SnapObjectSettingView.xaml.cs">
+      <DependentUpon>SnapObjectSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\Guides\GuideConverter.cs" />
+    <Compile Include="ChildrenView\Guides\MousePositionAdorner.cs" />
+    <Compile Include="ChildrenView\Guides\GuideLineAdorner.cs" />
+    <Compile Include="ChildrenView\Guides\GuideLineDecorator.cs" />
+    <Compile Include="ChildrenView\Guides\GuideBox.xaml.cs">
+      <DependentUpon>GuideBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\Guides\GuideBoxViewModel.cs" />
+    <Compile Include="ChildrenView\Guides\GuideLineItem.cs" />
+    <Compile Include="ChildrenView\Guides\GuideStyleSelector.cs" />
+    <Compile Include="ChildrenView\Guides\MoveThumb.cs" />
+    <Compile Include="ChildrenView\Enums.cs" />
+    <Compile Include="ChildrenView\ImageEditor\ImageEditor.xaml.cs">
+      <DependentUpon>ImageEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\ImageEditor\ImageEditorViewModel.cs" />
+    <Compile Include="ChildrenView\ImageEditor\ImageEditorMoveThumb.cs" />
+    <Compile Include="ChildrenView\ImageEditor\ImageProcess.cs" />
+    <Compile Include="ChildrenView\ImageEditor\ResizeThumb.cs" />
+    <Compile Include="ChildrenView\ImageEditor\SliceLineVisibilityConverter.cs" />
+    <Compile Include="ChildrenView\ImageEditor\ViewRectConverter.cs" />
+    <Compile Include="CustomControl\ContextMenuItem.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.GridGuide.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.Group.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.ApdaptiveView.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.Command.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.ContextMenu.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.ImageEditor.cs" />
+    <Compile Include="RoutedCommandSink\RoutedCommandSink.cs" />
+    <Compile Include="Selector\WidgetItemStyleSelector.cs" />
+    <Compile Include="PageViewModel\WidgetFactory.cs" />
+    <Compile Include="Undo\CreateGroupCommand.cs" />
+    <Compile Include="Undo\CreateWidgetCommand.cs" />
+    <Compile Include="Undo\DeleteGroupCommand.cs" />
+    <Compile Include="Undo\DeleteWidgetCommand.cs" />
+    <Compile Include="Undo\DynamicPanelStatesChangeCommand.cs" />
+    <Compile Include="Undo\PasteGroupCommand.cs" />
+    <Compile Include="Undo\UngroupCommand.cs" />
+    <Compile Include="ChildrenView\PopupWindow\DeviceModel.cs" />
+    <Compile Include="ChildrenView\PopupWindow\DeviceNode.cs" />
+    <Compile Include="ChildrenView\PopupWindow\EditDeviceWindow.xaml.cs">
+      <DependentUpon>EditDeviceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\PopupWindow\EditDeviceWindowModel.cs" />
+    <Compile Include="ChildrenView\PopupWindow\GridGuideSetting.xaml.cs">
+      <DependentUpon>GridGuideSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\PopupWindow\ToolTipWindow.xaml.cs">
+      <DependentUpon>ToolTipWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChildrenView\PopupWindow\ToolTipWindowModel.cs" />
+    <Page Include="ChildrenView\AdaptiveView\SetAdaptiveView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChildrenView\PopupWindow\SetDeviceWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChildrenView\PopupWindow\PlacePasteWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChildrenView\PopupWindow\FlickingStateManagerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChildrenView\HamburgerMenuEditor\MenuPageEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChildrenView\PopupWindow\MasterNameWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DesignerBaseCanvas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChildrenView\Grid\GridSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChildrenView\Grid\GuidesSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChildrenView\Guides\GuideBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChildrenView\ImageEditor\ImageEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HamburgerEditorPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\DynamicEditorPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageChildrenUIElements\AdaptiveViewPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PageChildrenUIElements\PageDevicePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RulerEditorPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="CustomControl\EditorRuler.cs" />
+    <Compile Include="PageViewModel\PageEditorModel.cs" />
+    <Compile Include="PageViewModel\NormalPage\PageEditorViewModel.Main.cs" />
+    <Compile Include="Pages\RulerEditorPanel.xaml.cs">
+      <DependentUpon>RulerEditorPanel.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ChildrenView\Grid\SnapObjectSettingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Convertor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\EditorPageStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GuideStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChildrenView\PopupWindow\CreateGuidesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChildrenView\PopupWindow\EditDeviceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChildrenView\PopupWindow\GridGuideSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChildrenView\PopupWindow\ToolTipWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\CommonBase\Naver.Compass.CommonBase.csproj">
+      <Project>{d310a56d-c5d2-4c2a-92f3-86694d6c1b4d}</Project>
+      <Name>Naver.Compass.CommonBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Helper\Naver.Compass.Helper.csproj">
+      <Project>{07218fcb-a5d5-436f-b9f0-cbae956dcd52}</Project>
+      <Name>Naver.Compass.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Naver.Compass.ControlBase\Naver.Compass.ControlBase.csproj">
+      <Project>{be08f25e-3440-4059-9c7c-63685931206d}</Project>
+      <Name>Naver.Compass.ControlBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\ModuleBase\Naver.Compass.ModuleBase.csproj">
+      <Project>{11fdd0da-fead-462a-9c35-eacced997ede}</Project>
+      <Name>Naver.Compass.ModuleBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\CommonServiceProvider\Naver.Compass.CommonServiceProvider.csproj">
+      <Project>{22b367ab-2a43-40d7-891d-29bc9ebb5a0d}</Project>
+      <Name>Naver.Compass.CommonServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\CustomLibraryServiceProvider\Naver.Compass.CustomLibraryServiceProvider.csproj">
+      <Project>{0c9950e6-346c-4931-8fee-48e8c7740aa2}</Project>
+      <Name>Naver.Compass.CustomLibraryServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\DocumentServiceProvider\Naver.Compass.DocumentServiceProvider\Naver.Compass.DocumentServiceProvider.csproj">
+      <Project>{5460fb5f-fe6a-4970-9ec0-831d0c7ac7b6}</Project>
+      <Name>Naver.Compass.DocumentServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\DomServiceProvider\Naver.Compass.SelectionServiceProvider.csproj">
+      <Project>{25570e46-f889-43e5-874c-c0a579f9cbaf}</Project>
+      <Name>Naver.Compass.SelectionServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WidgetLibrary\FrameWidgets\Naver.Compass.FrameWidgets.csproj">
+      <Project>{e4c00d75-2795-4e06-8b8e-d939e7803027}</Project>
+      <Name>Naver.Compass.FrameWidgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WidgetLibrary\SystemWidgets\Naver.Compass.SystemWidgets.csproj">
+      <Project>{5a64d51f-822b-4788-b023-cb2010476ede}</Project>
+      <Name>Naver.Compass.SystemWidgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainToolBar\Naver.Compass.MainToolBar.csproj">
+      <Project>{38a4107e-2f78-4668-ab0c-7a7a72e67631}</Project>
+      <Name>Naver.Compass.MainToolBar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MasterPanel\Naver.Compass.MasterPanel.csproj">
+      <Project>{e5cd45a7-7e93-49e0-b10c-e54494979b4a}</Project>
+      <Name>Naver.Compass.MasterPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WidgetLibrary\Naver.Compass.WidgetGalleryPanel.csproj">
+      <Project>{8a94cfd1-fa58-43ce-9533-b4fe5b0b5db3}</Project>
+      <Name>Naver.Compass.WidgetGalleryPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WidgetPropertyPanel\Naver.Compass.WidgetPropertyPanel.csproj">
+      <Project>{d29b0d16-c6a3-4110-a0cd-a7c8fbcbdbb8}</Project>
+      <Name>Naver.Compass.WidgetPropertyPanel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\HideBottom.png" />
+    <Resource Include="Image\ShowBottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\hFunnel.png" />
+    <Resource Include="Image\vFunnel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\lock.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\icon-22-adoptive-off.png" />
+    <Resource Include="Image\icon-22-adoptive-on.png" />
+    <Resource Include="Image\icon-22-adoptive-swap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Format.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\edit-adaptiveview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\FlickingState.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\add.png" />
+    <Resource Include="Image\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\icon-13-pane-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\03_Fixed_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\toast01.png" />
+    <Resource Include="Image\toast02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\01_pcWeb_off.png" />
+    <Resource Include="Image\01_pcWeb_on.png" />
+    <Resource Include="Image\02_mobile_off.png" />
+    <Resource Include="Image\02_mobile_on.png" />
+    <Resource Include="Image\03_tablet_off.png" />
+    <Resource Include="Image\03_tablet_on.png" />
+    <Resource Include="Image\04_watch_off.png" />
+    <Resource Include="Image\04_watch_on.png" />
+    <Resource Include="Image\ico_landscape.png" />
+    <Resource Include="Image\ico_portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\icon-fitscreen.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naver.Compass.HtmlServiceProvider", "Naver.Compass.HtmlServiceProvider\Naver.Compass.HtmlServiceProvider.csproj", "{B1EC6A37-1E7F-4B31-9B19-7D8D63EB550E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHtmlService", "TestHtmlService\TestHtmlService.csproj", "{AAF0972E-9134-45A9-8204-0CFDFD2A20F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naver.Compass.DocumentServiceProvider", "..\DocumentServiceProvider\Naver.Compass.DocumentServiceProvider\Naver.Compass.DocumentServiceProvider.csproj", "{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1EC6A37-1E7F-4B31-9B19-7D8D63EB550E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1EC6A37-1E7F-4B31-9B19-7D8D63EB550E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1EC6A37-1E7F-4B31-9B19-7D8D63EB550E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1EC6A37-1E7F-4B31-9B19-7D8D63EB550E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF0972E-9134-45A9-8204-0CFDFD2A20F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF0972E-9134-45A9-8204-0CFDFD2A20F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF0972E-9134-45A9-8204-0CFDFD2A20F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF0972E-9134-45A9-8204-0CFDFD2A20F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

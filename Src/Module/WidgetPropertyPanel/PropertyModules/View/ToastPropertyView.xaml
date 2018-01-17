@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="Naver.Compass.Module.Property.ToastPropertyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:local="clr-namespace:Naver.Compass.Module"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <common:BoolReverseConverter x:Key="BoolReverseConverter"/>
+            <local:CloseSettingConverter x:Key="CloseSettingConverter"/>
+            <local:DisplayPositionConverter x:Key="DisplayPositionConverter"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Expander Grid.Row="1"  IsExpanded="True"  Style="{DynamicResource WidgetProStyle}">
+            <Expander.Header >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource widgets_Toast}"/>
+                    <TextBlock Text="{Binding HeaderString}"/>
+                </StackPanel>
+
+            </Expander.Header>
+            <Expander.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="14"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="14"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="14"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="14"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="8"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{DynamicResource WidgetProp_ToastCloseSettings}"/>
+                        <StackPanel Grid.Row="2" Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton x:Name="exposure" 
+                                            GroupName="ExposureTime"  
+                                            VerticalAlignment="Center"
+                                            IsChecked="{Binding CloseSetting,Converter={StaticResource CloseSettingConverter}, ConverterParameter=0}" 
+                                            />
+                                <cb:NumEnterTextbox 
+                                            Width="30"
+                                            MaxNum="10000"
+                                            MiniNum="0"
+                                            Margin="1,0,0,0"
+                                            IsEnabled="{Binding Path=IsChecked, ElementName=exposure}">
+                                    <cb:NumEnterTextbox.Text>
+                                        <Binding Path="ExposureTime"
+                                            Mode="TwoWay"
+                                            UpdateSourceTrigger="LostFocus" />
+                                    </cb:NumEnterTextbox.Text>
+                                </cb:NumEnterTextbox>
+                                <TextBlock  Text="s" Margin="4,0,6,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+
+                            <RadioButton GroupName="ExposureTime"  HorizontalAlignment="Left"  VerticalAlignment="Center"
+                                        IsChecked="{Binding  CloseSetting,Converter={StaticResource CloseSettingConverter},ConverterParameter=1}"
+                                    Width="auto"  Margin="0,10,0,0" Content ="{DynamicResource WidgetProp_ToastCloseSettingsButton}"/>
+                            <RadioButton GroupName="ExposureTime"  HorizontalAlignment="Left"  VerticalAlignment="Center"
+                                        IsChecked="{Binding  CloseSetting,Converter={StaticResource CloseSettingConverter}, ConverterParameter=2}"
+                                    Width="auto"  Margin="0,10,0,0" Content ="{DynamicResource WidgetProp_ToastCloseSettingsArea}"/>
+                        </StackPanel> 
+                    </Grid>
+
+                    <TextBlock Grid.Row="3" Text="{DynamicResource WidgetProp_ToastDisplayPosition}"/>
+                    <StackPanel Grid.Row="5" Orientation="Horizontal">
+                        <RadioButton GroupName="position" IsChecked="{Binding DisplayPosition,Converter={StaticResource DisplayPositionConverter}, ConverterParameter=0}" 
+                                            Content="{DynamicResource WidgetProp_ToastDisplayPositionUser}"/>
+                        <RadioButton GroupName="position"  IsChecked="{Binding DisplayPosition,Converter={StaticResource DisplayPositionConverter}, ConverterParameter=1}" 
+                                            Content="{DynamicResource WidgetProp_ToastDisplayPositionTop}" Margin="8,0,0,0"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="7"  Text ="{DynamicResource WidgetProp_TooltipTitle}"></TextBlock>
+                    <cb:EnterTextbox Grid.Row ="9" IsEnterKeyMoveFocus="False"  Text="{Binding Tooltip, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"  />
+
+                </Grid>
+            </Expander.Content>
+        </Expander>
+    </Grid>
+</UserControl>

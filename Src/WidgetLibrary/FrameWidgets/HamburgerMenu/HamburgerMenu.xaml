@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Naver.Compass.WidgetLibrary.HamburgerMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             mc:Ignorable="d" MinHeight="1" MinWidth="1">
+    <UserControl.Resources>
+        <Style x:Key="ContentHiddenStyle" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BorderHiddenStyle" TargetType="Border">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Opacity" Value="0.05"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Background" Value="Transparent "/>
+                    <Setter Property="Opacity" Value="1"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border IsHitTestVisible="false" Style="{StaticResource BorderHiddenStyle}">
+        <Grid IsHitTestVisible="false" Opacity="{Binding Opacity}" Style="{StaticResource ContentHiddenStyle}">
+            <!--background-->
+            <Border Visibility="{Binding BackgroundShow}" >
+                <Image Source="{svgc:SvgImage /Naver.Compass.WidgetLibrary.SystemWidgets;component/Media/17_Hamburger_Select.svg}" Stretch="Fill"/>
+            </Border>
+            <!--Image--> 
+            <Image IsHitTestVisible="False" Stretch="Fill" 
+                   Source="{Binding ImgSource, Mode=TwoWay}"
+                   VerticalAlignment="Top">
+            </Image>
+        </Grid>
+
+
+    </Border>
+</UserControl>

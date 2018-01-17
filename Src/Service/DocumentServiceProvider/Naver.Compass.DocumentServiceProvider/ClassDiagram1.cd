@@ -1,0 +1,1947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Naver.Compass.Service.Document.AdaptiveView" Collapsed="true">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAARiKxEBAAAIAQAEQABBkAJAAAAgAAIAAAgEA=</HashCode>
+      <FileName>AdaptiveViews\AdaptiveView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.AdaptiveViews" Collapsed="true">
+    <Position X="83" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAQAAAACAAQAAAAAAEAAAAAAAAAEAAQAAA=</HashCode>
+      <FileName>AdaptiveViews\AdaptiveViews.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.AdaptiveViewSet" Collapsed="true">
+    <Position X="15.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEgAAAAAQBAQQAAAAAEABAAAAiAKAABBQAA=</HashCode>
+      <FileName>AdaptiveViews\AdaptiveViewSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Annotation" Collapsed="true">
+    <Position X="78.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAQAAAAAQEAAAAAAgIAAQBAABA=</HashCode>
+      <FileName>Annotations\Annotation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.AnnotationField" Collapsed="true">
+    <Position X="96.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAQAAQQAAAQAAQAAAAAAAAAAwAAAAAAAAA=</HashCode>
+      <FileName>Annotations\AnnotationField.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.AnnotationFields" Collapsed="true">
+    <Position X="87.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAQCAAQAAAAAQAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Annotations\AnnotationFields.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.AnnotationFieldSet" Collapsed="true">
+    <Position X="125.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAkAEgAAQAAAACQAAAAAAAAAAAAAgAAAABAAAA=</HashCode>
+      <FileName>Annotations\AnnotationFieldSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.HashStreamManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="180" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAGgAAAAAAAIAIAAAAAAAAAAAAAAEQAAAQAA=</HashCode>
+      <FileName>Base\HashStreamManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.DebugMemoryStream" Collapsed="true">
+    <Position X="181.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\StreamFileObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StreamFileObject" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="183.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAACIAAAAAAACAAAAAAACAAAAAAAAAAgAAABQ=</HashCode>
+      <FileName>Base\StreamFileObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Win32Wrapper" Collapsed="true">
+    <Position X="188.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAACAAAEEQFhAAAAAAAgAAAAABAABAQAAA=</HashCode>
+      <FileName>Base\Win32Wrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Device" Collapsed="true">
+    <Position X="128" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAABCCwEAAAAAAQAMQAABAAAAAAAgAAIAAAgAA=</HashCode>
+      <FileName>Devices\Device.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Devices" Collapsed="true">
+    <Position X="92" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAQAAAACAAQAIAAAAAAAAgAAAAAAAAQAAA=</HashCode>
+      <FileName>Devices\Devices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.DeviceSet" Collapsed="true">
+    <Position X="130.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAEgAEAEAAAAQgAAAQAAAAAAAAgAAIAhAAAA=</HashCode>
+      <FileName>Devices\DeviceSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Document" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="185.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>HAAwRM8x5DAUKEU4SAJmGOZEABOtlACCGQIHWQSLGAQ=</HashCode>
+      <FileName>Document\Document.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.DocumentData" Collapsed="true">
+    <Position X="29" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAABAAAQAAoEIAQAMBAAAMCZCAAAwCAEABAEAA=</HashCode>
+      <FileName>Document\DocumentData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.DocumentService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="188.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAKAABGAAIAAAAAAEAAAAAAAGAAACAAEAQgCIAAA=</HashCode>
+      <FileName>Document\DocumentService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.ImagesData" Collapsed="true">
+    <Position X="33.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAEAAEAAAAAAAAAQIAQAAAAAAAAAIgAAAgBgAAA=</HashCode>
+      <FileName>Document\ImagesData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.LegacyDocumentManager" Collapsed="true">
+    <Position X="185.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAQgAAAUEACAAAAAAAAAIQBQAEAAwAAAAAAAAAAAwA=</HashCode>
+      <FileName>Document\LegacyDocumentManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.LibraryManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="187" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAACEAACACAAAgAAAAAAYABAEAAAAAAAAAAAQQAiAAA=</HashCode>
+      <FileName>Document\LibraryManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.VersionData" Collapsed="true">
+    <Position X="40.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQgAAAABAAAQAIAAAQEAAAAEgAAAACCoAAQABAAAA=</HashCode>
+      <FileName>Document\VersionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.CannotAddMasterException" Collapsed="true">
+    <Position X="180" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\CannotAddMasterException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.CannotAddPageException" Collapsed="true">
+    <Position X="181.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\CannotAddPageException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.CannotAddWidgetException" Collapsed="true">
+    <Position X="183.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\CannotAddWidgetException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.CannotDeletePageException" Collapsed="true">
+    <Position X="185.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\CannotDeletePageException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.CannotFindMasterPageException" Collapsed="true">
+    <Position X="187" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\CannotFindMasterPageException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.CannotLoadLibraryException" Collapsed="true">
+    <Position X="188.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\CannotLoadLibraryException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.CannotOpenPageException" Collapsed="true">
+    <Position X="180" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\CannotOpenPageException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.DocumentIsClosedException" Collapsed="true">
+    <Position X="187" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\DocumentIsClosedException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.HigherDocumentVersionException" Collapsed="true">
+    <Position X="181.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Exceptions\HigherDocumentVersionException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.PageIsClosedException" Collapsed="true">
+    <Position X="180" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\PageIsClosedException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.GeneratorConfiguration" Collapsed="true">
+    <Position X="22.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAQAAQAAABQAAQAAAAAAAAAAgAAAAAAEAA=</HashCode>
+      <FileName>Generators\GeneratorConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.GeneratorConfigurations" Collapsed="true">
+    <Position X="60.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAQAAAACAAQAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Generators\GeneratorConfigurations.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.GeneratorConfigurationSet" Collapsed="true">
+    <Position X="42.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAQEhAAAAAAEAQAiAAACAAACRAAgAAAABAAAA=</HashCode>
+      <FileName>Generators\GeneratorConfigurationSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Viewport" Collapsed="true">
+    <Position X="80.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAABACAAIAAAAAQAEQAABAAAAAAAgAAQAAAAAA=</HashCode>
+      <FileName>Generators\HtmlGeneratorConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.HtmlGeneratorConfiguration" Collapsed="true">
+    <Position X="22.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEBiAAAAEAAAAAAAQAAAAAAAQAAAAAgRQAgQAAAI=</HashCode>
+      <FileName>Generators\HtmlGeneratorConfiguration.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionAction" Collapsed="true">
+    <Position X="48.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAIAQAAAQAAAAFAAAAgAAEAAAAAA=</HashCode>
+      <FileName>Interactions\InteractionAction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionActionFactory" Collapsed="true">
+    <Position X="183.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interactions\InteractionActionFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionActions" Collapsed="true">
+    <Position X="85.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAACAAQAAAQAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Interactions\InteractionActions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionCase" Collapsed="true">
+    <Position X="112.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAQIAAAIAggAAiEAJAQCAQAAAAABACBAgACABAgAAA=</HashCode>
+      <FileName>Interactions\InteractionCase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionCases" Collapsed="true">
+    <Position X="89.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAACAAQAAAAgAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Interactions\InteractionCases.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionCloseAction" Collapsed="true">
+    <Position X="47" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Interactions\InteractionCloseAction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionEvent" Collapsed="true">
+    <Position X="132.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgQAAAAIQAAACAAIASAAQEIAAABCAAAgAAAUAAIAA=</HashCode>
+      <FileName>Interactions\InteractionEvent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionEvents" Collapsed="true">
+    <Position X="74" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAAAAAQCAA=</HashCode>
+      <FileName>Interactions\InteractionEvents.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.MoveActionTarget" Collapsed="true">
+    <Position X="177.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAIAAQAAEAAAIAQAAAAAAAABQAACgAAABAAYBA=</HashCode>
+      <FileName>Interactions\InteractionMoveAction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionMoveAction" Collapsed="true">
+    <Position X="49.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEQIAAACAAAAAAAACCEQAAAAYgIAAAAAAgACAAAAAgA=</HashCode>
+      <FileName>Interactions\InteractionMoveAction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionOpenAction" Collapsed="true">
+    <Position X="51.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAhAAAgAAAQAAAAAAAAAAAAIgAAoIAAAQA=</HashCode>
+      <FileName>Interactions\InteractionOpenAction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.ShowHideActionTarget" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAEAAAIAQAQAAAAAABQAACgAAAAAACBA=</HashCode>
+      <FileName>Interactions\InteractionShowHideAction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.InteractionShowHideAction" Collapsed="true">
+    <Position X="44.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEQIAAAAAAAAAAAACCEQAAAAAgIAAAAAAgACAAABAgA=</HashCode>
+      <FileName>Interactions\InteractionShowHideAction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Guide" Collapsed="true">
+    <Position X="17.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAIAQQAIAAAAIAQAAAAAAAABAAAAgAAAAAAYAA=</HashCode>
+      <FileName>Misc\Guide.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Guides" Collapsed="true">
+    <Position X="53.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAQAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Misc\Guides.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.CustomObjectPage" Collapsed="true">
+    <Position X="98.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAAAAAAAIAAAAAQAAAAADACAIAJAEAAQA=</HashCode>
+      <FileName>Pages\CustomObjectPage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.CustomObjectPageData" Collapsed="true">
+    <Position X="35.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAgAAoAAAACA=</HashCode>
+      <FileName>Pages\CustomObjectPageData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.DocumentPage" Collapsed="true">
+    <Position X="101" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAAAAAAGgAAAAAAAIAAAQAAAABAAAACAEAAACAAAA=</HashCode>
+      <FileName>Pages\DocumentPage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.EmbeddedPage" Collapsed="true">
+    <Position X="107.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAAAAAAAAAAAIQAABAAAADAIAAACAAQA=</HashCode>
+      <FileName>Pages\EmbeddedPage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.HamburgerMenuPage" Collapsed="true">
+    <Position X="105.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAACAAAAA=</HashCode>
+      <FileName>Pages\HamburgerMenuPage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.MasterPage" Collapsed="true">
+    <Position X="101" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAABAAAQQAAACQAAAAAAACgIQAAGAAYA=</HashCode>
+      <FileName>Pages\MasterPage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.MasterPages" Collapsed="true">
+    <Position X="67.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAABAACAAQAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\MasterPages.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Page" Collapsed="true">
+    <Position X="104.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAMcAACgAoABgUQKQjgY4UBApFCAACiIMGASRBVQ=</HashCode>
+      <FileName>Pages\Page.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.PageData" Collapsed="true">
+    <Position X="37" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAIECAAAAAIABAEIAQgIQQAQAABQAEAyAEAABAAAA=</HashCode>
+      <FileName>Pages\PageData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Pages" Collapsed="true">
+    <Position X="71.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAABAACAAQAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\Pages.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.PanelStatePage" Collapsed="true">
+    <Position X="107.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Pages\PanelStatePage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StandardPage" Collapsed="true">
+    <Position X="103.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAgAAACAAAAIAAAAAAQA=</HashCode>
+      <FileName>Pages\StandardPage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StandardPageData" Collapsed="true">
+    <Position X="38" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAQAAAAAgAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Pages\StandardPageData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.ToastPage" Collapsed="true">
+    <Position X="110" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ToastPage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Group" Collapsed="true">
+    <Position X="175.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAEkAAAKAIIAAAAAcCIAYQAAgAQAUAgAAAKhCACE=</HashCode>
+      <FileName>Regions\Group.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Groups" Collapsed="true">
+    <Position X="76.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAACAAQAAAQAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Regions\Groups.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Master" Collapsed="true">
+    <Position X="170.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQBACAkAAAAAAoJAAJIYgAQEAAAAAAgQCiCSGEACACA=</HashCode>
+      <FileName>Regions\Master.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Masters" Collapsed="true">
+    <Position X="69.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAACAAQAAAQAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Regions\Masters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.PageView" Collapsed="true">
+    <Position X="173" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>NAAAJEEAAAIAIKIgACAYFAY40AAgBQAEAgApCCQCADU=</HashCode>
+      <FileName>Regions\PageView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.PageViews" Collapsed="true">
+    <Position X="94.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAABAACAAQAAAQAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Regions\PageViews.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Region" Collapsed="true">
+    <Position X="155" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAIAEAAAgAAAAAAYAYAAQQAAAABAAAAgAAABACAAA=</HashCode>
+      <FileName>Regions\Region.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Regions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="181.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAAAAAAAAADAACAAABAQAAAAAAAAEAAAAAAAUAAA=</HashCode>
+      <FileName>Regions\Regions.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Serializer" Collapsed="true">
+    <Position X="31.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QFAQAMwkRJrAYiiCSocQsIEYQKlggR4WAgGAWCBQSPI=</HashCode>
+      <FileName>Serialize\Serializer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.DocumentSettings" Collapsed="true">
+    <Position X="20" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAQAAAAAAAAACAAAgAAAABAAAA=</HashCode>
+      <FileName>Settings\DocumentSettings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.LayoutSetting" Collapsed="true">
+    <Position X="26.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAEAAAQAAAAQQAAAAAAAAAABAAgAAAABAAAA=</HashCode>
+      <FileName>Settings\LayoutSetting.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.DefaultStyleNames" Collapsed="true">
+    <Position X="183.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAACCEADQAECBAAAgFCAAAACAAIAAYBQAAAAAAAI=</HashCode>
+      <FileName>Styles\DefaultStyleNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.GroupStyle" Collapsed="true">
+    <Position X="121.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Styles\GroupStyle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.MasterStyle" Collapsed="true">
+    <Position X="116.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAQAAEAAAAAAQAAAAAACQAAAACgQAAAAAYAE=</HashCode>
+      <FileName>Styles\MasterStyle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.MasterStyles" Collapsed="true">
+    <Position X="62.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAACAAYAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Styles\MasterStyles.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.PageViewStyle" Collapsed="true">
+    <Position X="123.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Styles\PageViewStyle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.RegionStyle" Collapsed="true">
+    <Position X="120.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMAAAAABBAgAEAAACAAAAEAIEAAAAAABAAAgAAAAYAE=</HashCode>
+      <FileName>Styles\RegionStyle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Style" Collapsed="true">
+    <Position X="119" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAACABABAYAQAAYQAIAAACAEAgAAQABQAgA=</HashCode>
+      <FileName>Styles\Style.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StyleBooleanProperty" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACgAAAggAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Styles\StyleBooleanProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StyleColorProperty" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAACAAAAAAAAAAAAAiAAAAABA=</HashCode>
+      <FileName>Styles\StyleColorProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StyleDoubleProperty" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAGAAAAAAAEAAAAAgAAAAABA=</HashCode>
+      <FileName>Styles\StyleDoubleProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StyleEnumProperty&lt;T&gt;" Collapsed="true">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABACAAAAAAAIAAAAAgAAAAABA=</HashCode>
+      <FileName>Styles\StyleEnumProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StyleIntegerProperty" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQCAAAAAAAAAAAAAgAAQgABA=</HashCode>
+      <FileName>Styles\StyleIntegerProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StyleProperty" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAAAAAAAAABAgAQAQCQAAAAgAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Styles\StyleProperty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StylePropertyNames" Collapsed="true">
+    <Position X="185.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>lCiQuJBIIOMsxkGKBrIVIM7Lr4aYBBlriPWA6wxAEzA=</HashCode>
+      <FileName>Styles\StylePropertyNames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.WidgetDefaultStyle" Collapsed="true">
+    <Position X="114.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAQAAAgAAAQAAQAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Styles\WidgetDefaultStyle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.WidgetDefaultStyles" Collapsed="true">
+    <Position X="56" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAhAACAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Styles\WidgetDefaultStyles.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.WidgetDefaultStyleSet" Collapsed="true">
+    <Position X="24.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAEgAAgAAAAAQABAAAAAAAAAAAgAAAABAAAA=</HashCode>
+      <FileName>Styles\WidgetDefaultStyleSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.WidgetStyle" Collapsed="true">
+    <Position X="119" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AcAIEJAADAAAESAAAJIQAkEwGACAAAIAQgQABAiAYAE=</HashCode>
+      <FileName>Styles\WidgetStyle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.WidgetStyles" Collapsed="true">
+    <Position X="65" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAABAACAAQAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Styles\WidgetStyles.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Button" Collapsed="true">
+    <Position X="141.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAEAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>Widgets\Button.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Checkbox" Collapsed="true">
+    <Position X="150.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAEAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>Widgets\Checkbox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Droplist" Collapsed="true">
+    <Position X="139.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAEAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>Widgets\Droplist.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.DynamicPanel" Collapsed="true">
+    <Position X="146" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkCAAAAACGBAABIACECQAAiAEUAEggQgAkQEDSAgAAQ=</HashCode>
+      <FileName>Widgets\DynamicPanel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.FlowShape" Collapsed="true">
+    <Position X="155" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAACAAAAAAAAAQAACAAAAEAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>Widgets\FlowShape.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.HamburgerMenu" Collapsed="true">
+    <Position X="148.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAQAAAIQAASEAIAEJgAgCiAAGBAAACA=</HashCode>
+      <FileName>Widgets\HamburgerMenu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.HamburgerMenuButton" Collapsed="true">
+    <Position X="161.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Widgets\HamburgerMenuButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.HotSpot" Collapsed="true">
+    <Position X="164" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAEAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>Widgets\HotSpot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Image" Collapsed="true">
+    <Position X="161.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAEQAACAAAAEAAAAAgAAMAAgAgA=</HashCode>
+      <FileName>Widgets\Image.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Line" Collapsed="true">
+    <Position X="134.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAIAAAAAAQAACAAAAEAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>Widgets\Line.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.ListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="188.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Widgets\ListBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.ListBase" Collapsed="true">
+    <Position X="138.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAACAAAAAAQAAAAAAAAAAAAQgAAAAIAAAA=</HashCode>
+      <FileName>Widgets\ListBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.ListBox" Collapsed="true">
+    <Position X="137" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAACAACAEAAAQAgAAAAAgAAA=</HashCode>
+      <FileName>Widgets\ListBox.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.PageEmbeddedWidget" Collapsed="true">
+    <Position X="146" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAQAAAAABCAgCAAAGAAAAAA=</HashCode>
+      <FileName>Widgets\PageEmbeddedWidget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.RadioButton" Collapsed="true">
+    <Position X="152.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAQAACAAAAEAAAAAgAAAAAgAQA=</HashCode>
+      <FileName>Widgets\RadioButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.SelectionButton" Collapsed="true">
+    <Position X="151.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAEAAAAAAQAACAAAAAAAAAAgBAAAIAAAA=</HashCode>
+      <FileName>Widgets\SelectionButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Shape" Collapsed="true">
+    <Position X="157.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAIAAAAAQAACAAAAkAAAAAgAACAAgAIA=</HashCode>
+      <FileName>Widgets\Shape.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.StreamWidget" Collapsed="true">
+    <Position X="160.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAIAIAAAAAIQAAAAAAAAAABAChACAwAAAgA=</HashCode>
+      <FileName>Widgets\StreamWidget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Svg" Collapsed="true">
+    <Position X="159.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAACAABAEAAAAAgAAAAAgAgA=</HashCode>
+      <FileName>Widgets\Svg.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.TextArea" Collapsed="true">
+    <Position X="166.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAEAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>Widgets\TextArea.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.TextBase" Collapsed="true">
+    <Position X="167.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAIABAAAABAAAAAAAAQAAAAAAAABgEAAgAYAAIAAAA=</HashCode>
+      <FileName>Widgets\TextBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.TextField" Collapsed="true">
+    <Position X="168.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAUAAAAQAACAAAAEAAAAAgAAAAAgAAA=</HashCode>
+      <FileName>Widgets\TextField.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Toast" Collapsed="true">
+    <Position X="143.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIBAAAAAAAAAAAAQAAGABAAEIAAgAgAAgAFgAAA=</HashCode>
+      <FileName>Widgets\Toast.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.TreeNode" Collapsed="true">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAAWAAQMAIkAIIAAgQAAYAAAICBAAAAoCAgAgQAAA=</HashCode>
+      <FileName>Widgets\TreeNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Widget" Collapsed="true">
+    <Position X="151.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CNDECAsAAABAAAJYAlIYoUQEAgAEBiEYCiACODICACA=</HashCode>
+      <FileName>Widgets\Widget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.WidgetFactory" Collapsed="true">
+    <Position X="187" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAQAAAE=</HashCode>
+      <FileName>Widgets\WidgetFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.Widgets" Collapsed="true">
+    <Position X="58.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQBAACAAQAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\Widgets.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.XmlDocumentObject" Collapsed="true">
+    <Position X="34.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Xml\XmlDocumentObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.XmlElementDictionary&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="65" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABAAAAAABBACAAABAQAAAAAAAAEAgAAAABQAAA=</HashCode>
+      <FileName>Xml\XmlElementDictionary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.XmlElementList&lt;T&gt;" Collapsed="true">
+    <Position X="88.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAEAAAAAAABAAAAAABARACAAAAAAESgAAAABQAAA=</HashCode>
+      <FileName>Xml\XmlElementList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Naver.Compass.Service.Document.XmlElementObject" Collapsed="true">
+    <Position X="93.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAKAAAIAgAACgAFAQAAAAAAAAAACgAlAAAggACBA=</HashCode>
+      <FileName>Xml\XmlElementObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Naver.Compass.Service.Document.StyleColor" Collapsed="true">
+    <Position X="180" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAABAEgAAAAAAEAAAAAAAAAEAAAAAAABE=</HashCode>
+      <FileName>Styles\StyleColor.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Naver.Compass.Service.Document.IAdaptiveView" Collapsed="true">
+    <Position X="51.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCChEBAAAAAAAEAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AdaptiveViews\IAdaptiveView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IAdaptiveViews" Collapsed="true">
+    <Position X="180" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAACAAAAAQAAAEAAAAAAAAAEAAQAAA=</HashCode>
+      <FileName>AdaptiveViews\IAdaptiveViews.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IAdaptiveViewSet" Collapsed="true">
+    <Position X="181.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAABAAQAAAAAEABAAAAgACAAABQAA=</HashCode>
+      <FileName>AdaptiveViews\IAdaptiveViewSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IAnnotatedObject" Collapsed="true">
+    <Position X="51.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Annotations\IAnnotatedObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IAnnotation" Collapsed="true">
+    <Position X="183.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAQBAABA=</HashCode>
+      <FileName>Annotations\IAnnotation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IAnnotationField" Collapsed="true">
+    <Position X="54" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Annotations\IAnnotationField.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IAnnotationFields" Collapsed="true">
+    <Position X="185.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQCAAAAAQAAQAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Annotations\IAnnotationFields.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IAnnotationFieldSet" Collapsed="true">
+    <Position X="187" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAkAAgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Annotations\IAnnotationFieldSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IHashStreamConsumer" Collapsed="true">
+    <Position X="57.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Base\IHashStreamConsumer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IHashStreamConsumerManager" Collapsed="true">
+    <Position X="180" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAEAAAAAAAAAAAAAIAQAAAAAAAAAIAAAAgBAAAA=</HashCode>
+      <FileName>Base\IHashStreamConsumerManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IHashStreamManager" Collapsed="true">
+    <Position X="181.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAIAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\IHashStreamManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IHostService" Collapsed="true">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Base\IHostService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.INamedObject" Collapsed="true">
+    <Position X="60.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\INamedObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IUniqueObject" Collapsed="true">
+    <Position X="48.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\IUniqueObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IDevice" Collapsed="true">
+    <Position X="72.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAgEAAAAAAAAMAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Devices\IDevice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IDevices" Collapsed="true">
+    <Position X="188.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAACAAAAIQAAAAAAAgAAAAAAAAQAAA=</HashCode>
+      <FileName>Devices\IDevices.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IDeviceSet" Collapsed="true">
+    <Position X="180" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAgAEAAAAAAAgAAAQAAAAAAAAAAAAAhAAAA=</HashCode>
+      <FileName>Devices\IDeviceSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IDocument" Collapsed="true">
+    <Position X="48.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQBEggBBAQCEEoCAIEEIBAAAMgkAACAQIDQAACEAA=</HashCode>
+      <FileName>Document\IDocument.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IDocumentService">
+    <Position X="5.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAIAAAAAAAAAAAAAAEAAACAAEAQACAAAA=</HashCode>
+      <FileName>Document\IDocumentService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ILibrary" Collapsed="true">
+    <Position X="45.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIIAAAAAAEAAAAAAAAAAAAAAAAAAAAAAWAAAAAQ=</HashCode>
+      <FileName>Document\ILibrary.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ILibraryManager" Collapsed="true">
+    <Position X="181.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACEAACAAAAAAAAAAAAIAAAEAAAAAAAAAAAQAAiAAA=</HashCode>
+      <FileName>Document\ILibraryManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IGeneratorConfiguration" Collapsed="true">
+    <Position X="70.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Generators\IGeneratorConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IGeneratorConfigurations" Collapsed="true">
+    <Position X="183.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAQEAA=</HashCode>
+      <FileName>Generators\IGeneratorConfigurations.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IGeneratorConfigurationSet" Collapsed="true">
+    <Position X="185.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\IGeneratorConfigurationSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IViewport" Collapsed="true">
+    <Position X="187" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAIAAAAAAAEQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\IHtmlGeneratorConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IHtmlGeneratorConfiguration" Collapsed="true">
+    <Position X="70.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAiAAAAEAAAAAAAAAAAAAAAAAAAAAAQQAAAAAAI=</HashCode>
+      <FileName>Generators\IHtmlGeneratorConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionAction" Collapsed="true">
+    <Position X="40.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interactions\IInteractionAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionActions" Collapsed="true">
+    <Position X="183.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAACAAAAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Interactions\IInteractionActions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionCase" Collapsed="true">
+    <Position X="51.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAQAAAAIAggAAiEABAACAAAAAAAAAABAAACABAgAAA=</HashCode>
+      <FileName>Interactions\IInteractionCase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionCases" Collapsed="true">
+    <Position X="185.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAgAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Interactions\IInteractionCases.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionCloseAction" Collapsed="true">
+    <Position X="42" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interactions\IInteractionCloseAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionCondition" Collapsed="true">
+    <Position X="78" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAgAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interactions\IInteractionCondition.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionConditions" Collapsed="true">
+    <Position X="187" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAACAAAAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Interactions\IInteractionConditions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionEvent" Collapsed="true">
+    <Position X="51.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgQAAAAAAAAAAAAAACAAAEIAAAAAAAAAAAAEAAIAA=</HashCode>
+      <FileName>Interactions\IInteractionEvent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionEvents" Collapsed="true">
+    <Position X="188.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAQCAA=</HashCode>
+      <FileName>Interactions\IInteractionEvents.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IMoveActionTarget" Collapsed="true">
+    <Position X="84.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAACAAAABAAYAA=</HashCode>
+      <FileName>Interactions\IInteractionMoveAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionMoveAction" Collapsed="true">
+    <Position X="44.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAACAAAAAAAACCEAAAAAYgAAAAAAAAACAAAAAgA=</HashCode>
+      <FileName>Interactions\IInteractionMoveAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionOpenAction" Collapsed="true">
+    <Position X="37.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAoAAAAQA=</HashCode>
+      <FileName>Interactions\IInteractionOpenAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IShowHideActionTarget" Collapsed="true">
+    <Position X="64.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAACAAAAAAACAA=</HashCode>
+      <FileName>Interactions\IInteractionShowHideAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractionShowHideAction" Collapsed="true">
+    <Position X="39.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAACCEAAAAAAgAAAAAAAAACAAABAgA=</HashCode>
+      <FileName>Interactions\IInteractionShowHideAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IInteractiveObject" Collapsed="true">
+    <Position X="30.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interactions\IInteractiveObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IGuide" Collapsed="true">
+    <Position X="69" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Misc\IGuide.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IGuides" Collapsed="true">
+    <Position X="188.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAgAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Misc\IGuides.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ICustomObject" Collapsed="true">
+    <Position X="82.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAIAAAAAAACAQAAAAAEACAAAAAIAGAAAA=</HashCode>
+      <FileName>Pages\ICustomObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ICustomObjectPage" Collapsed="true">
+    <Position X="34.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <FileName>Pages\ICustomObjectPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IDocumentPage" Collapsed="true">
+    <Position X="33.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\IDocumentPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IEmbeddedPage" Collapsed="true">
+    <Position X="63" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Pages\IEmbeddedPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IHamburgerMenuPage" Collapsed="true">
+    <Position X="65.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\IHamburgerMenuPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IMasterPage" Collapsed="true">
+    <Position X="36.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAACAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Pages\IMasterPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IMasterPages" Collapsed="true">
+    <Position X="185.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAQAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Pages\IMasterPages.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IPage" Collapsed="true">
+    <Position X="48.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAEAAAAgAIAAgEAAADAI4UAAgEAAAACAMCASAABQ=</HashCode>
+      <FileName>Pages\IPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IPages" Collapsed="true">
+    <Position X="180" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAQAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Pages\IPages.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IPanelStatePage" Collapsed="true">
+    <Position X="60.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\IPanelStatePage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IStandardPage" Collapsed="true">
+    <Position X="31.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\IStandardPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IToastPage" Collapsed="true">
+    <Position X="63" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\IToastPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IGroup" Collapsed="true">
+    <Position X="47.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAEAAAAAAIAAAAAAACAAQAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Regions\IGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IGroups" Collapsed="true">
+    <Position X="187" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAAAAEAAAAAAAQAAA=</HashCode>
+      <FileName>Regions\IGroups.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IMaster" Collapsed="true">
+    <Position X="50.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABACAAAAAAAAgAAAIAIAAAAAAAAAAgQAAAQAAAAAAA=</HashCode>
+      <FileName>Regions\IMaster.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IMasters" Collapsed="true">
+    <Position X="187" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAAAAACQAAA=</HashCode>
+      <FileName>Regions\IMasters.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IPageView" Collapsed="true">
+    <Position X="83.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAAJEAAAAAAIAIgACAAFAI40AAgAAAAAAAoCAQAABQ=</HashCode>
+      <FileName>Regions\IPageView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IPageViews" Collapsed="true">
+    <Position X="181.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Regions\IPageViews.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IRegion" Collapsed="true">
+    <Position X="48.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAgAAAAAAAAIAAAAAAAAAAAAAAAAABACAAA=</HashCode>
+      <FileName>Regions\IRegion.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IRegions" Collapsed="true">
+    <Position X="183.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAACAAAAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Regions\IRegions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IObjectContainer" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAYACAAAAAAAAAAAAAAAAAAAAAAAAQAEA=</HashCode>
+      <FileName>Serialize\IObjectContainer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ISerializableObject" Collapsed="true">
+    <Position X="87" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serialize\ISerializableObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ISerializeReader" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAQAAAAAAAAAAIAAAAAAIAAAAAAAAQAAA=</HashCode>
+      <FileName>Serialize\ISerializeReader.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ISerializeWriter" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQBAAAAAAAAAAAAAIQAAggAgAAAAAAAAAABA=</HashCode>
+      <FileName>Serialize\ISerializeWriter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IDocumentSettings" Collapsed="true">
+    <Position X="181.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Settings\IDocumentSettings.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ILayoutSetting" Collapsed="true">
+    <Position X="180" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Settings\ILayoutSetting.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IMasterStyle" Collapsed="true">
+    <Position X="2.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAEAAAAAAAAAAAAACAAAAAAAAAAAAAYAE=</HashCode>
+      <FileName>Styles\IMasterStyle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IMasterStyles" Collapsed="true">
+    <Position X="188.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAIAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Styles\IMasterStyles.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IRegionStyle" Collapsed="true">
+    <Position X="1.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAABAAAEAAAAAAAAEAAEAAAAAAAAAAAAAAAYAE=</HashCode>
+      <FileName>Styles\IRegionStyle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IStyle" Collapsed="true">
+    <Position X="77.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAIAAAAQAAAAAACAAAAAAAABQAAA=</HashCode>
+      <FileName>Styles\IStyle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IStyleProperty" Collapsed="true">
+    <Position X="75.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAgAQAQAAAAAAgAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Styles\IStyleProperty.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IViewStyle" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Styles\IViewStyle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IWidgetDefaultStyle" Collapsed="true">
+    <Position X="60.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Styles\IWidgetDefaultStyle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IWidgetDefaultStyles" Collapsed="true">
+    <Position X="188.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAACAAAAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Styles\IWidgetDefaultStyles.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IWidgetDefaultStyleSet" Collapsed="true">
+    <Position X="180" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAgAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Styles\IWidgetDefaultStyleSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IWidgetStyle" Collapsed="true">
+    <Position X="0.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIEJAABAAAESAAAJIAAkEwCACAAAIAQAAABAiAYAE=</HashCode>
+      <FileName>Styles\IWidgetStyle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IWidgetStyles" Collapsed="true">
+    <Position X="183.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Styles\IWidgetStyles.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IButton" Collapsed="true">
+    <Position X="63.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IButton.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ICheckbox" Collapsed="true">
+    <Position X="43" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\ICheckbox.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IDroplist" Collapsed="true">
+    <Position X="58.75" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IDroplist.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IDynamicPanel" Collapsed="true">
+    <Position X="34" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkCAAAAACEBAAAIAAEAAAAgAEEAAggAAAEQEAQAAAAA=</HashCode>
+      <FileName>Widgets\IDynamicPanel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IFlowShape" Collapsed="true">
+    <Position X="45.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IFlowShape.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IHamburgerMenu" Collapsed="true">
+    <Position X="36.25" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAACA=</HashCode>
+      <FileName>Widgets\IHamburgerMenu.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IHamburgerMenuButton" Collapsed="true">
+    <Position X="67.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IHamburgerMenuButton.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IHotSpot" Collapsed="true">
+    <Position X="49.75" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IHotSpot.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IImage" Collapsed="true">
+    <Position X="67.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Widgets\IImage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ILine" Collapsed="true">
+    <Position X="56.5" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\ILine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IListItem" Collapsed="true">
+    <Position X="183.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Widgets\IListBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IListBase" Collapsed="true">
+    <Position X="60" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IListBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IListBox" Collapsed="true">
+    <Position X="61" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IListBox.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IPageEmbeddedWidget" Collapsed="true">
+    <Position X="36.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IPageEmbeddedWidget.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IRadioButton" Collapsed="true">
+    <Position X="40.75" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Widgets\IRadioButton.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ISelectionButton" Collapsed="true">
+    <Position X="42" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Widgets\ISelectionButton.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IShape" Collapsed="true">
+    <Position X="47.5" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IShape.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IStreamWidget" Collapsed="true">
+    <Position X="57.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Widgets\IStreamWidget.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ISvg" Collapsed="true">
+    <Position X="56.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\ISvg.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ITextArea" Collapsed="true">
+    <Position X="52" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\ITextArea.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ITextBase" Collapsed="true">
+    <Position X="53.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAA=</HashCode>
+      <FileName>Widgets\ITextBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ITextField" Collapsed="true">
+    <Position X="54.25" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\ITextField.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IToast" Collapsed="true">
+    <Position X="38.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAA=</HashCode>
+      <FileName>Widgets\IToast.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.ITreeNode" Collapsed="true">
+    <Position X="185.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEYAASAAQIAIkAAAAAgQAAYAAAIABAAAAACAAAAQAAA=</HashCode>
+      <FileName>Widgets\ITreeNode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IWidget" Collapsed="true">
+    <Position X="48.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABACAAAAABAAABAABAAIAQAAAAAAAEQAgAAKAAAAAA=</HashCode>
+      <FileName>Widgets\IWidget.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Naver.Compass.Service.Document.IWidgets" Collapsed="true">
+    <Position X="181.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAACAAAAAQAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Widgets\IWidgets.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Naver.Compass.Service.Document.AdaptiveViewCondition" Collapsed="true">
+    <Position X="183.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAE=</HashCode>
+      <FileName>AdaptiveViews\IAdaptiveView.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.AnnotationFieldType" Collapsed="true">
+    <Position X="188.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Annotations\IAnnotationField.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.DocumentType" Collapsed="true">
+    <Position X="183.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Document\IDocument.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.GeneratorType" Collapsed="true">
+    <Position X="181.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\IGeneratorConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ExportType" Collapsed="true">
+    <Position X="188.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\IHtmlGeneratorConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ActionType" Collapsed="true">
+    <Position X="181.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAACAgAAAAAAAAAAAACAAAAAAAAEAAgA=</HashCode>
+      <FileName>Interactions\IInteractionAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.SatisfyType" Collapsed="true">
+    <Position X="187" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Interactions\IInteractionCase.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.EventType" Collapsed="true">
+    <Position X="187" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAABAABAAAACAAAAAAAAAAAAAAECBAA=</HashCode>
+      <FileName>Interactions\IInteractionEvent.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.MoveType" Collapsed="true">
+    <Position X="181.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interactions\IInteractionMoveAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.MoveAnimateType" Collapsed="true">
+    <Position X="180" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAgAAAAAAAAAAAAhAAAAAAAAAABAAAAAAEAAIA=</HashCode>
+      <FileName>Interactions\IInteractionMoveAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ActionOpenIn" Collapsed="true">
+    <Position X="180" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Interactions\IInteractionOpenAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.LinkType" Collapsed="true">
+    <Position X="188.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAA=</HashCode>
+      <FileName>Interactions\IInteractionOpenAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.VisibilityType" Collapsed="true">
+    <Position X="188.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAEABAAAAAAAAEAAAA=</HashCode>
+      <FileName>Interactions\IInteractionShowHideAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ShowHideAnimateType" Collapsed="true">
+    <Position X="180" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAABAAAAAAAAIAAAAAAAEEAABA=</HashCode>
+      <FileName>Interactions\IInteractionShowHideAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.Alignment" Collapsed="true">
+    <Position X="187" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACQAAEIAAA=</HashCode>
+      <FileName>Styles\IStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.LineStyle" Collapsed="true">
+    <Position X="187" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAAAAAIAAIAAAAACACAAAAAAoAAAAAAEAAAA=</HashCode>
+      <FileName>Styles\IStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ArrowStyle" Collapsed="true">
+    <Position X="180" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAQEAEgABAAhEEwAQIDCBAEAgBAAAABAAAAkAACA=</HashCode>
+      <FileName>Styles\IStyle.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ColorFillType" Collapsed="true">
+    <Position X="181.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Styles\StyleColor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.DynamicPanelViewMode" Collapsed="true">
+    <Position X="185.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQgAAAAAAA=</HashCode>
+      <FileName>Widgets\IDynamicPanel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.NavigationType" Collapsed="true">
+    <Position X="183.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAACAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Widgets\IDynamicPanel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.FlowShapeType" Collapsed="true">
+    <Position X="180" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAFAACAEABggABAAAAAAAIAAAkAgAAAQAAACGBAEA=</HashCode>
+      <FileName>Widgets\IFlowShape.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.HiddenOn" Collapsed="true">
+    <Position X="183.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>Widgets\IHamburgerMenu.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ImageType" Collapsed="true">
+    <Position X="185.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAEAAAIAAAAAgAAEAEAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Widgets\IImage.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.AlignButton" Collapsed="true">
+    <Position X="185.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAA=</HashCode>
+      <FileName>Widgets\ISelectionButton.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ShapeType" Collapsed="true">
+    <Position X="188.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAQKgkCAAEQBAARAAAUAAEQACQoggAgiSCAQAkQACA=</HashCode>
+      <FileName>Widgets\IShape.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.TextFieldType" Collapsed="true">
+    <Position X="181.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAAAAEAAAAAAAAAEAAAHCAIACAAgAQA=</HashCode>
+      <FileName>Widgets\ITextField.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ToastCloseSetting" Collapsed="true">
+    <Position X="183.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Widgets\IToast.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.ToastDisplayPosition" Collapsed="true">
+    <Position X="185.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IToast.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.TreeNodeType" Collapsed="true">
+    <Position X="187" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>Widgets\ITreeNode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.WidgetType" Collapsed="true">
+    <Position X="180" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AVAEgAAAAACAAAAAAAAAAAAACAgAABAAAAAgAgEJAAA=</HashCode>
+      <FileName>Widgets\IWidget.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Naver.Compass.Service.Document.Orientation" Collapsed="true">
+    <Position X="185.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Widgets\IWidget.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

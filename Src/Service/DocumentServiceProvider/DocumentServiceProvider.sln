@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Naver.Compass.DocumentServiceProvider", "Naver.Compass.DocumentServiceProvider\Naver.Compass.DocumentServiceProvider.csproj", "{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDocument", "TestDocument\TestDocument.csproj", "{871BE746-53B2-421A-916D-21293736AEA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentTest", "DocumentTest\DocumentTest.csproj", "{602B9A1B-5A50-4A43-A6A1-E6D78BFB5E58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLockDirectory", "TestLockDirectory\TestLockDirectory.csproj", "{440734E7-AB49-4C4D-806B-86A2F17CB2BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{871BE746-53B2-421A-916D-21293736AEA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{871BE746-53B2-421A-916D-21293736AEA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{871BE746-53B2-421A-916D-21293736AEA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{871BE746-53B2-421A-916D-21293736AEA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{602B9A1B-5A50-4A43-A6A1-E6D78BFB5E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{602B9A1B-5A50-4A43-A6A1-E6D78BFB5E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{602B9A1B-5A50-4A43-A6A1-E6D78BFB5E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{602B9A1B-5A50-4A43-A6A1-E6D78BFB5E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{440734E7-AB49-4C4D-806B-86A2F17CB2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{440734E7-AB49-4C4D-806B-86A2F17CB2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{440734E7-AB49-4C4D-806B-86A2F17CB2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{440734E7-AB49-4C4D-806B-86A2F17CB2BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,325 @@
+﻿<ctlBase:BaseWindow  x:Class="Naver.Compass.Module.AddMasterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+        xmlns:cw="clr-namespace:Naver.Compass.Module;assembly=Naver.Compass.Common.ControlBase"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+        WindowStartupLocation="CenterOwner"
+        Style="{StaticResource PopupWindow}"
+        x:Name="AddMaster"
+        Title="{StaticResource Master_AddToPages_Title}" 
+        Height="497" Width="335">
+    <ctlBase:BaseWindow.Resources>
+        <Common:BoolReverseConverter x:Key="BoolReverse"/>
+        <Style TargetType="Border">
+            <Setter Property="BorderBrush" Value="#BBBBBB"/>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="BorderBrush" Value="#D9D9D9"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="pageTreeItem"
+           TargetType="{x:Type TreeViewItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                        <ControlTemplate.Resources>
+                            <!-- 计算节点缩进的转换器 -->
+                            <cw:IndentConverter Indent="20"
+                                            MarginLeft="7"
+                                            x:Key="IndentConverter" />
+                        </ControlTemplate.Resources>
+                        <Grid Name="TreeViewItemPanel"
+                          Background="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Border x:Name="Border"
+                                CornerRadius="0"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="True"
+                                Height="20">
+                                <Grid Margin="{Binding Converter={StaticResource IndentConverter}, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox IsChecked="{Binding IsSelected}" 
+                                      Visibility="{Binding IsPageNode,Mode=OneWay}"/>
+                                    <ToggleButton x:Name="Expander" Grid.Column="1"
+                                              Style="{StaticResource ExpandCollapseToggleStyle}"
+                                              IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                                              ClickMode="Press"
+                                              HorizontalAlignment="Left"
+                                              Height="Auto"
+                                              Margin="6,0,2,0" />
+                                    <Grid x:Name="ItemBd"
+                                      Grid.Column="2"
+                                      SnapsToDevicePixels="true"
+                                      Background="Transparent">
+                                        <ContentPresenter x:Name="PART_Header"
+                                                      ContentSource="Header"
+                                                      HorizontalAlignment="Stretch"
+                                                      VerticalAlignment="Center"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                            <ItemsPresenter x:Name="ItemsHost"
+                                        Grid.Row="1" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsExpanded"
+                                 Value="False">
+                                <Setter TargetName="ItemsHost"
+                                    Property="Visibility"
+                                    Value="Collapsed" />
+                            </Trigger>
+                            <Trigger Property="HasItems"
+                                 Value="False">
+                                <Setter TargetName="Expander"
+                                    Property="Visibility"
+                                    Value="Collapsed" />
+                            </Trigger>
+                            <Trigger Property="IsSelected"
+                                 Value="True">
+                                <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedActiveBorderBrushKey}" />
+                                <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedActiveBackgroundBrushKey}" />
+                                <Setter Property="FontWeight"
+                                    Value="Bold" />
+                            </Trigger>
+                            <DataTrigger Binding="{Binding IsMultiSelected}"
+                                     Value="True">
+                                <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedActiveBorderBrushKey}" />
+                                <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedActiveBackgroundBrushKey}" />
+                                <Setter Property="FontWeight"
+                                    Value="Bold" />
+                            </DataTrigger>
+                            <Trigger Property="IsEnabled"
+                                 Value="False">
+                                <Setter TargetName="Expander"
+                                    Property="Opacity"
+                                    Value="0.3" />
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected"
+                                           Value="True" />
+                                    <Condition Property="Selector.IsSelectionActive"
+                                           Value="False" />
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedInactiveBorderBrushKey}" />
+                                <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedInactiveBackgroundBrushKey}" />
+                            </MultiTrigger>
+                            <Trigger SourceName="Border"
+                                 Property="IsMouseOver"
+                                 Value="True">
+                                <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource HoverBorderBrushKey}" />
+                                <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource HoverBackgroundBrushKey}" />
+                                <!--<Setter TargetName="menuBtn" Property="Visibility" Value="Visible"/>-->
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected"
+                                           Value="True" />
+                                    <Condition SourceName="Border"
+                                           Property="IsMouseOver"
+                                           Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedHoverBorderBrushKey}" />
+                                <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedHoverBackgroundBrushKey}" />
+                            </MultiTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition  Binding="{Binding IsMultiSelected}"
+                                            Value="True"/>
+                                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}"
+                                           Value="True" />
+                                </MultiDataTrigger.Conditions>
+                                <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedHoverBorderBrushKey}" />
+                                <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedHoverBackgroundBrushKey}" />
+                            </MultiDataTrigger>
+                            <Trigger Property="IsEnabled"
+                                 Value="False">
+                                <Setter Property="Foreground"
+                                    Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ctlBase:BaseWindow.Resources>
+    <Grid Margin="16,19,16,16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="17"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="16"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="AddMasterTo">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="12"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="8"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="12"/>
+                <RowDefinition Height="132"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{StaticResource Master_AddToPages_PageToAdd}"
+                       Foreground="Black"/>
+            <RadioButton Grid.Row="2" x:Name="allPage"
+                         Content="{StaticResource Master_AddToPages_PageToAdd_AllPage}"
+                         GroupName="AddType" 
+                         IsChecked="{Binding IsAllPage}"
+                         Foreground="#ff555555"/>
+
+            <RadioButton Grid.Row="4" x:Name="followPage"
+                         Content="{StaticResource Master_AddToPages_PageToAdd_SelectPage}"
+                         GroupName="AddType"                         
+                         Foreground="#ff555555"/>
+            <TreeView  x:Name="PageTree" Grid.Row="6" 
+                      ItemsSource="{Binding PageList}" IsEnabled="{Binding Path=IsChecked,ElementName=followPage}">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}"  BasedOn="{StaticResource pageTreeItem}">
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                    </Style>
+                </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                        <StackPanel Orientation="Horizontal" x:Name="itemPanel" >
+                            <Image Source="{Binding Path=NodeImage}" 
+                                   Width="16" Height="16"  
+                                   Margin="1,0,4,0" 
+                                   RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                                   RenderOptions.EdgeMode="Aliased"
+                                   Style="{StaticResource ImageEnabled}"/>
+                            <TextBlock Text="{Binding Name}"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </Grid>
+
+        <Grid Grid.Row="2" x:Name="Positions">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="13"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="8"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="12"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Foreground="Black" Text="{StaticResource Master_AddToPages_Location}"/>
+            <RadioButton Grid.Row="2"
+                         Content="{StaticResource Master_AddToPages_Location_LockToMaster}"
+                         GroupName="position" 
+                         IsChecked="{Binding IsLockLocation}" 
+                         Foreground="#ff555555"/>
+
+            <RadioButton Grid.Row="4"
+                         x:Name="SpecifyLocation"
+                         Content="{StaticResource Master_AddToPages_Location_Custom}"
+                         GroupName="position" 
+                         Foreground="#ff555555"/>
+            <Border Grid.Row="6" 
+                    BorderThickness="1" 
+                    VerticalAlignment="Center"
+                    Height="36"
+                    SnapsToDevicePixels="True"
+                    IsEnabled="{Binding Path=IsChecked,ElementName=SpecifyLocation}">
+                <Border.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="#555555"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#D9D9D9"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>                    
+                </Border.Resources>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Margin="8,0,0,0" 
+                               Text="{DynamicResource Master_AddToPages_Location_Custom_Left}"/>
+                    <ctlBase:NumEnterTextbox Width="40" Margin="7,0,4,0"
+                                             ToolTip="{DynamicResource TB_Tooltip_LocLeft}"
+                                             MaxNum="{StaticResource MaxEditorWidth}"
+                                             MiniNum="-10000">
+                        <ctlBase:NumEnterTextbox.Text>
+                            <Binding Path="Left"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="LostFocus" />
+                        </ctlBase:NumEnterTextbox.Text>
+                    </ctlBase:NumEnterTextbox>
+                    <TextBlock Text="px" />
+
+                    <TextBlock  Margin="18,0,0,0" 
+                                Text="{DynamicResource Master_AddToPages_Location_Custom_Top}" />
+                    <ctlBase:NumEnterTextbox Width="40" Margin="7,0,4,0"
+                                             ToolTip="{DynamicResource TB_Tooltip_LocTop}"
+                                             MaxNum="{StaticResource MaxEditorHeight}"
+                                             MiniNum="-10000">
+                        <ctlBase:NumEnterTextbox.Text>
+                            <Binding Path="Top"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="LostFocus" />
+                        </ctlBase:NumEnterTextbox.Text>
+                    </ctlBase:NumEnterTextbox>
+                    <TextBlock Text="px"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        
+        <CheckBox x:Name="ObjectOrder" 
+                  Grid.Row="4"
+                  Content="{StaticResource Master_AddToPages_SendToBack}"
+                  IsChecked="{Binding IsSendBack}"
+                  Foreground="#ff555555"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center" >
+            <Button Content="{DynamicResource Common_OK}" Width="90" 
+                    Command="{Binding OKCommand}" Height="26"
+                    CommandParameter="{Binding ElementName=AddMaster}"/>
+            <Button Content="{DynamicResource Common_Cancel}" Width="90" Margin="8,0,0,0"
+                    Command="{Binding CancelCommand}"  Height="26"
+                    CommandParameter="{Binding ElementName=AddMaster}"/>
+        </StackPanel>
+    </Grid>
+</ctlBase:BaseWindow >

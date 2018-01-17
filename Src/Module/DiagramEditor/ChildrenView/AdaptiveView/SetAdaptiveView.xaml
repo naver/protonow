@@ -1,0 +1,114 @@
+﻿<ctlBase:BaseWindow x:Class="Naver.Compass.Module.SetAdaptiveView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterOwner"
+        xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+        Title="{DynamicResource Publish_Window_L_Responsive}" Height="600" Width="335"
+        Style="{StaticResource PopupWindow}"   
+        x:Name="editDeviceWindow"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local ="clr-namespace:Naver.Compass.Module"
+        xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase" 
+        >
+    <ctlBase:BaseWindow.Resources>
+        <Style x:Key="ImageEnabled" TargetType="Image">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.4"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <local:ConditionConverter x:Key="conditionConverter"/>
+        <local:WidthSetConverter x:Key="widthConverter"/>
+        <local:HeightSetConverter x:Key="heightConverter"/>
+        <local:SpacingConverter x:Key="spacingConverter"/>
+        <local:ViewListConverter x:Key="viewListConverter"/>
+    </ctlBase:BaseWindow.Resources>
+    <Grid MouseDown="Grid_MouseDown" Margin="16,10,16,16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="0,6">
+            <StackPanel.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource ToolbarStyleButton}">
+                    <Setter Property="Width" Value="18"/>
+                    <Setter Property="Height" Value="18"/>
+                    <Setter Property="Margin" Value="2,1"/>
+                </Style>
+            </StackPanel.Resources>
+            <Button  Command="{Binding AddCommand}" ToolTip="{DynamicResource PageNote_Add }">
+                <Image Source="/Naver.Compass.Common.Helper;component/Resources/Image/icon-16-plus.png" Style="{StaticResource ImageEnabled}"/>
+            </Button>
+            <Button  Command="{Binding MoveUpCommand}" ToolTip="{DynamicResource PageNote_MoveUp}" Visibility="Collapsed">
+                <Image Source="/Naver.Compass.Common.Helper;component/Resources/Image/icon-16-arrow-up.png" Style="{StaticResource ImageEnabled}"/>
+            </Button>
+            <Button  Command="{Binding MoveDownCommand}" ToolTip="{DynamicResource PageNote_MoveDown}" Visibility="Collapsed">
+                <Image Source="/Naver.Compass.Common.Helper;component/Resources/Image/icon-16-arrow-down.png" Style="{StaticResource ImageEnabled}"/>
+            </Button>
+            <Button  Command="{Binding DeleteCommand}" ToolTip="{DynamicResource PageNote_Remove}">
+                <Image Source="/Naver.Compass.Common.Helper;component/Resources/Image/icon-16-cross.png" Style="{StaticResource ImageEnabled}"/>
+            </Button>
+        </StackPanel>
+        <ListBox x:Name="DeviceListBox" Grid.Row="1" ItemsSource="{Binding RootNode.Children, Converter={StaticResource viewListConverter}}" SelectedItem="{Binding SelectValue, Mode=TwoWay}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel >
+                        <Grid Height="20">
+                            <TextBlock Text="{Binding Description}" Height="14" Margin="4,0,0,0"  Padding="{Binding LeftSpacing, Converter={StaticResource spacingConverter}}"/>
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Row="3" IsEnabled="{Binding IsSettingEnabled}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="8"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="8"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="12"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{DynamicResource Responsive_List}" VerticalAlignment="Center"/>
+            <ComboBox x:Name="presetCombox" Height="22" Grid.Column="1" Text="test"
+                      ItemsSource="{Binding Presets}"  
+                      DisplayMemberPath="Name"
+                      SelectedValue="{Binding PresetSelValue, Mode=OneWay}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding PresetChangedCommand}"
+                                            CommandParameter="{Binding Path=SelectedValue, ElementName=presetCombox}" 
+                                           />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+            <TextBlock Text="{DynamicResource Responsive_Preset_Hint}" VerticalAlignment="Center" Grid.Column="1" Margin="4,0,0,0" IsHitTestVisible="False"/>
+            <TextBlock Text="{DynamicResource Responsive_Name}" Grid.Row="2" VerticalAlignment="Center"/>
+            <cb:EnterTextbox Text="{Binding SelectValue.Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="22" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock Text="{DynamicResource Responsive_Width}" Grid.Row="4" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal"  Grid.Row="4" Grid.Column="1">
+                <cb:EnterTextbox Text="{Binding SelectValue.Width,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource widthConverter}}" 
+                     Height="22" Width="195"/>
+                <TextBlock Text="{DynamicResource Responsive_Less}" Margin="8,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5"  >
+            <Button Content="{DynamicResource Common_OK}" Width="90"  IsDefault="True"
+                    Command="{Binding OKCommand}" Height="26"
+                    CommandParameter="{Binding ElementName=editDeviceWindow}"/>
+            <Button Content="{DynamicResource Common_Cancel}" Width="90" Margin="8,0,0,0"
+                    Command="{Binding CancelCommand}"  Height="26"
+                    CommandParameter="{Binding ElementName=editDeviceWindow}"/>
+        </StackPanel>
+    </Grid>
+</ctlBase:BaseWindow>

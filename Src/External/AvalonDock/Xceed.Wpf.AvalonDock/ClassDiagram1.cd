@@ -1,0 +1,2058 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="_XceedVersionInfo" Collapsed="true">
+    <Position X="29" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>AssemblyVersionInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_XceedVersionInfoCommon" Collapsed="true">
+    <Position X="30.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AssemblyVersionInfoCommon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Commands.RelayCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.AnchorablePaneControlOverlayArea" Collapsed="true">
+    <Position X="12.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\AnchorablePaneControlOverlayArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.AnchorablePaneDropTarget" Collapsed="true">
+    <Position X="0.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAAAAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\AnchorablePaneDropTarget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.AnchorablePaneTabPanel" Collapsed="true">
+    <Position X="34.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\AnchorablePaneTabPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.AnchorablePaneTitle" Collapsed="true">
+    <Position X="36" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAIAAAhAAAAAAEAAAQMBhEAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Controls\AnchorablePaneTitle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.AutoHideWindowManager" Collapsed="true">
+    <Position X="44.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAwAAAAACAAAAAABQAAAAAAQ=</HashCode>
+      <FileName>Controls\AutoHideWindowManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.BindingHelper" Collapsed="true">
+    <Position X="29" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\BindingHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.ContextMenuEx" Collapsed="true">
+    <Position X="36" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAA=</HashCode>
+      <FileName>Controls\ContextMenuEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DockingManagerDropTarget" Collapsed="true">
+    <Position X="3" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DockingManagerDropTarget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DockingManagerOverlayArea" Collapsed="true">
+    <Position X="15" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DockingManagerOverlayArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DocumentPaneControlOverlayArea" Collapsed="true">
+    <Position X="17.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controls\DocumentPaneControlOverlayArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DocumentPaneDropAsAnchorableTarget" Collapsed="true">
+    <Position X="5.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAIAAAAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DocumentPaneDropAsAnchorableTarget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DocumentPaneDropTarget" Collapsed="true">
+    <Position X="7.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAAAAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DocumentPaneDropTarget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DocumentPaneGroupDropTarget" Collapsed="true">
+    <Position X="9.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DocumentPaneGroupDropTarget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DocumentPaneTabPanel" Collapsed="true">
+    <Position X="43" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DocumentPaneTabPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DragService" Collapsed="true">
+    <Position X="30.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIAAACAAQACAAAAAAgQAAAAAAAAAAIgAAAAABAEA=</HashCode>
+      <FileName>Controls\DragService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DropArea&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAgAAQAAAAAAAAAAAAAAAAAAUEAAAAAAAA=</HashCode>
+      <FileName>Controls\DropArea.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DropDownButton" Collapsed="true">
+    <Position X="34.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAABAAAAAAgAAAAACIAAgAAAgIAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DropDownButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DropDownControlArea" Collapsed="true">
+    <Position X="36" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAIAAABAAAAAAAAAAAAAAQAAAAAgIAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DropDownControlArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DropTarget&lt;T&gt;" Collapsed="true">
+    <Position X="5.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAgAABQAIQAAAAAAAAAAAAgQAAAAUAAAAAAAAA=</HashCode>
+      <FileName>Controls\DropTarget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.DropTargetBase" Collapsed="true">
+    <Position X="5.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAIAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DropTargetBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.Extentions" Collapsed="true">
+    <Position X="41.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAABAAIAAAAAAAAAAAgAAAI=</HashCode>
+      <FileName>Controls\Extentions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.FocusElementManager" Collapsed="true">
+    <Position X="44.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAIABUABAAAACRAAAAAQEAAEAAAQAAAQAAIkAAAQA=</HashCode>
+      <FileName>Controls\FocusElementManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.FullWeakDictionary&lt;K, V&gt;" Collapsed="true">
+    <Position X="29" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAIAAEAkAACAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Controls\FullWeakDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAnchorableControl" Collapsed="true">
+    <Position X="37.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAIAAAgAAAAAAEQAAAEAgAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Controls\LayoutAnchorableControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAnchorableFloatingWindowControl" Collapsed="true">
+    <Position X="6.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABIAKUAAAAIAAMAgAAgAggAAAAgABBCAwAADAAgAA=</HashCode>
+      <FileName>Controls\LayoutAnchorableFloatingWindowControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAnchorableItem" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABIAGAEwAAJUCKAAACQAQAgBpEAABAAEACCEACgAAA=</HashCode>
+      <FileName>Controls\LayoutAnchorableItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAnchorablePaneControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAQIAAEAQAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Controls\LayoutAnchorablePaneControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAnchorablePaneGroupControl" Collapsed="true">
+    <Position X="15" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\LayoutAnchorablePaneGroupControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAnchorableTabItem" Collapsed="true">
+    <Position X="41.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAIACApAAAAAAFAAAAEAhEAAABAAAgAQAAABAA=</HashCode>
+      <FileName>Controls\LayoutAnchorableTabItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAnchorControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAMAAAAiAAAAgBIAIAAAAAAAAEAIAgABAAAAAA=</HashCode>
+      <FileName>Controls\LayoutAnchorControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAnchorGroupControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAgAEAAAAAAAACAAAAAgAAAAAAEA=</HashCode>
+      <FileName>Controls\LayoutAnchorGroupControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAnchorSideControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAgAABAAAUUQAgAEABEAEAUQiAAQAIgAAAAAAGA=</HashCode>
+      <FileName>Controls\LayoutAnchorSideControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutAutoHideWindowControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgEMACBAKVAAAKAEgBEBQAQJCYGAAAACAggUCRAEQA=</HashCode>
+      <FileName>Controls\LayoutAutoHideWindowControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutDocumentControl" Collapsed="true">
+    <Position X="32.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAIAAAgAAAAAAEAAAAEAgAAAABAAAgAAAAAAAA=</HashCode>
+      <FileName>Controls\LayoutDocumentControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutDocumentFloatingWindowControl" Collapsed="true">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAIAEAAgAAAAgAAAAAAAAACAgAAAAIAAA=</HashCode>
+      <FileName>Controls\LayoutDocumentFloatingWindowControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutDocumentItem" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEEgAAIAEAAAAAAAAIAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Controls\LayoutDocumentItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutDocumentPaneControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAACAgAAAQCAAAgAQIAAEAQQAABAAEAgAAAACAAA=</HashCode>
+      <FileName>Controls\LayoutDocumentPaneControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutDocumentPaneGroupControl" Collapsed="true">
+    <Position X="17.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\LayoutDocumentPaneGroupControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutDocumentTabItem" Collapsed="true">
+    <Position X="41.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAIAAAhAAAACAFAABAEQhEEAAAAIAgCAAAAAAA=</HashCode>
+      <FileName>Controls\LayoutDocumentTabItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutFloatingWindowControl" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAApBIAQIAAAdgAAAOgQEQkAABAQKAwAAAAAFAg=</HashCode>
+      <FileName>Controls\LayoutFloatingWindowControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutGridControl&lt;T&gt;" Collapsed="true">
+    <Position X="15" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAEApAAAaCAIEBAAgQAJIAAAAAgBQAAiAgIkAIABAA=</HashCode>
+      <FileName>Controls\LayoutGridControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutGridResizerControl" Collapsed="true">
+    <Position X="34.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAABAAAAAAAACAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\LayoutGridResizerControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutItem" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QwFgLQIAqQEBMMKNEGiXLViAAJ2Twh3AOLhBBUKwkgA=</HashCode>
+      <FileName>Controls\LayoutItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.LayoutPanelControl" Collapsed="true">
+    <Position X="12.75" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\LayoutPanelControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.MenuItemEx" Collapsed="true">
+    <Position X="44.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgBBAQAAAAAAAAAAAAAAAAAAABAAAAAEAAgAABBAA=</HashCode>
+      <FileName>Controls\MenuItemEx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.NavigatorWindow" Collapsed="true">
+    <Position X="34.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAgCAAAggAAIAQEQAAAAQIAAQoQAAACgAQACABYACA=</HashCode>
+      <FileName>Controls\NavigatorWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.OverlayArea" Collapsed="true">
+    <Position X="15" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controls\OverlayArea.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.OverlayWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SICESgAAIADQIAAAAAAAoCjAUAQAUCgaAQUBhBCAAAI=</HashCode>
+      <FileName>Controls\OverlayWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.OverlayWindowDropTarget" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAhAAQAAAAAAAAQAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Controls\OverlayWindowDropTarget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.ReentrantFlag" Collapsed="true">
+    <Position X="44.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\ReentrantFlag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.TransformExtensions" Collapsed="true">
+    <Position X="39.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACIAAIAAAAAAAAAAAAAAAFAAAAAAAAAAAQACACQ=</HashCode>
+      <FileName>Controls\TransformExtentions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.WeakDictionary&lt;K, V&gt;" Collapsed="true">
+    <Position X="29" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAIAAEAkAACAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Controls\WeakDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.WindowActivateEventArgs" Collapsed="true">
+    <Position X="36" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\WindowActivateEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.FocusChangeEventArgs" Collapsed="true">
+    <Position X="43" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\WindowHookHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Controls.WindowHookHandler" Collapsed="true">
+    <Position X="43" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAEAAAAAAIAAAAAAAAAAIAAAAAAABAAAgAAAAQ=</HashCode>
+      <FileName>Controls\WindowHookHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.IID" Collapsed="true">
+    <Position X="32.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEgAoAAAMAAAICABACAAAAEIAAAAEAQAAAIAQMRA=</HashCode>
+      <FileName>Controls\Shell\Standard\ComGuids.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.CLSID" Collapsed="true">
+    <Position X="34.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAABAKAAAAEAAAAAAAAAAAAAAJAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ComGuids.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.Assert" Collapsed="true">
+    <Position X="41.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAQAAAAAAAAgAgAQACohQAAEEgABIAQAAMAAAAAE=</HashCode>
+      <FileName>Controls\Shell\Standard\Debug.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.DoubleUtilities" Collapsed="true">
+    <Position X="44.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAEAAAAIAAABABAAAAAAQAAAAAAAAAQAAACA=</HashCode>
+      <FileName>Controls\Shell\Standard\DoubleUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.DpiHelper" Collapsed="true">
+    <Position X="29" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAACAAAAAACAIAAAAAAACAAAMAAAAQA=</HashCode>
+      <FileName>Controls\Shell\Standard\DpiHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.MessageWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAACBAAAQAAACAAAAABIIAABAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\MessageWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Standard.Win32Value" Collapsed="true">
+    <Position X="34.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAACEAAIAAAAAgAAAAAAAAAAAAAAAAAAAAAAICAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.SafeFindHandle" Collapsed="true">
+    <Position X="39.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.SafeDC" Collapsed="true">
+    <Position X="37.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAACAAAAAAAAAAAACAAAAAAgAACAAAgAIIAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.SafeHBITMAP" Collapsed="true">
+    <Position X="43" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.SafeGdiplusStartupToken" Collapsed="true">
+    <Position X="41.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.SafeConnectionPointCookie" Collapsed="true">
+    <Position X="36" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.NOTIFYICONDATA" Collapsed="true">
+    <Position X="36" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAEAEIAAAAgAAAgAIAAAAAIAhAAAAAAAAKACEAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.PROPVARIANT" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAICAAIgAAAWAAAAAACAAAAAABAAAAAABAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Standard.SHARDAPPIDINFO" Collapsed="true">
+    <Position X="44.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.SHARDAPPIDINFOIDLIST" Collapsed="true">
+    <Position X="29" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.SHARDAPPIDINFOLINK" Collapsed="true">
+    <Position X="30.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.MONITORINFO" Collapsed="true">
+    <Position X="30.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAACAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.RefPOINT" Collapsed="true">
+    <Position X="29" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.RefRECT" Collapsed="true">
+    <Position X="30.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAACAAAAAAAQAEAAAAAMAQgACACAAAAAgAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.StartupInput" Collapsed="true">
+    <Position X="32.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAACEAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.WIN32_FIND_DATAW" Collapsed="true">
+    <Position X="30.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABAAAAAAAAAACAAAIAAAAIAAQAAAAAAQAAQAQAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.WINDOWPLACEMENT" Collapsed="true">
+    <Position X="44.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAEAAAAAAAEAgAAAAAAAAAAAAAQAAAAAAAAQ=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.NativeMethods" Collapsed="true">
+    <Position X="32.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EaERZ1BILAfDbFCdHDIAIPBAUrTKhIMSbtwS6i5cX0Q=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.STR_GPS" Collapsed="true">
+    <Position X="34.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAACBAAAAAAAAAAAAAAAAAAAACACAE=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.ManagedIStream" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAEAAAGAACAAACQAMAAAgAAIAAAAAAAIAAAEQIBg=</HashCode>
+      <FileName>Controls\Shell\Standard\StreamHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Standard.Utility" Collapsed="true">
+    <Position X="43" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAACIIAwBAwCBADQBAkAA0QIABAQBDABFABAAykwE=</HashCode>
+      <FileName>Controls\Shell\Standard\Utilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Standard.Verify" Collapsed="true">
+    <Position X="44.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAABAAAAAAAAgAJAAACIhQAAAEgACIAAAAMgAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\Verify.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Windows.Shell.SystemCommands" Collapsed="true">
+    <Position X="36" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAAEACAAEAQAAAAAgAAAAEIAAAAAAAgAAAAAAAMAA=</HashCode>
+      <FileName>Controls\Shell\SystemCommands.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Windows.Shell.SystemParameters2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAgFFGBCEAgCg0AEAAyIAgEIggBAQMJWCUAAEApwCEA=</HashCode>
+      <FileName>Controls\Shell\SystemParameters2.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Microsoft.Windows.Shell.WindowChrome" Collapsed="true">
+    <Position X="37.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQBCgAAAABAICAESAgEABAAAAAAAAAABABBBBAAEICA=</HashCode>
+      <FileName>Controls\Shell\WindowChrome.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.Windows.Shell.WindowChromeWorker" Collapsed="true">
+    <Position X="39.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQANDpAAQ1FEkCIAQAQiAGYIiBBgWIQBgCQ4AAoCBEA=</HashCode>
+      <FileName>Controls\Shell\WindowChromeWorker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.ActivateCommandLayoutItemFromLayoutModelConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="32.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\ActivateCommandLayoutItemFromLayoutModelConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.AnchorSideToAngleConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\AnchorSideToAngleConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.AnchorSideToOrientationConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\AnchorSideToOrientationConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.AutoHideCommandLayoutItemFromLayoutModelConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\AutoHideCommandLayoutItemFromLayoutModelConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.BoolToVisibilityConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\BoolToVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.ImageVisibilityConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="34.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\ButtonImageVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.HideCommandLayoutItemFromLayoutModelConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="30.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\HideCommandLayoutItemFromLayoutModelConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.InverseBoolToVisibilityConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\InverseBoolToVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.LayoutDocumentPaneControSelectedItemConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\LayoutDocumentPaneControSelectedItemConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.LayoutDocumentPaneControSelectedItemMarginLeftConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\LayoutDocumentPaneControSelectedItemConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.LayoutDocumentPaneControSelectedItemMarginRightConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="39.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\LayoutDocumentPaneControSelectedItemConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.LayoutDocumentTypeHeaderHeightConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\LayoutDocumentPaneControSelectedItemConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.LayoutDocumentTypeHeaderButtonVisibleConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="43" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\LayoutDocumentPaneControSelectedItemConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.LayoutDocumentTypeHeaderNewButtonMaxWidthConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\LayoutDocumentPaneControSelectedItemConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.LayoutItemFromLayoutModelConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="36" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\LayoutItemFromLayoutModelConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.NullToDoNothingConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\NullToDoNothingConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Converters.UriSourceToBitmapImageConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\UriSourceToBitmapImageConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.DockingManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="37.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hxBh/zvXUf95VNt/GXxTnC49nb9wLjT6OA3QHK5ts0c=</HashCode>
+      <FileName>DockingManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.DocumentClosedEventArgs" Collapsed="true">
+    <Position X="39.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>DocumentClosedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.DocumentClosingEventArgs" Collapsed="true">
+    <Position X="41.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>DocumentClosingEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Extensions" Collapsed="true">
+    <Position X="37.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Extentions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.LayoutEventArgs" Collapsed="true">
+    <Position X="32.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LayoutEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.LoadLanguage" Collapsed="true">
+    <Position X="39.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoadLanguage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.MathHelper" Collapsed="true">
+    <Position X="43" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>MathHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Win32Helper" Collapsed="true">
+    <Position X="32.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ioBBhGAIDoBAQtCKqKgILUMEABDAqQAYWEQQRpW0MK4=</HashCode>
+      <FileName>Win32Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.WindowHelper" Collapsed="true">
+    <Position X="41.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAACAAAAAAAgAA=</HashCode>
+      <FileName>WindowHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.ChildrenTreeChangedEventArgs" Collapsed="true">
+    <Position X="32.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ChildrenTreeChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.Extensions" Collapsed="true">
+    <Position X="39.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAEAAgAAAAAAACAAAAAEAAAAEAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\Extentions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutAnchorable" Collapsed="true">
+    <Position X="24.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABQBgBAAAgAUABAkAhQEACCIAAkAAAAAAgEgAAxkAA=</HashCode>
+      <FileName>Layout\LayoutAnchorable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutAnchorableFloatingWindow" Collapsed="true">
+    <Position X="1.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAIAEAAAAEAAAAAgEEAAAAAIAQIACAAAAIAAQACA=</HashCode>
+      <FileName>Layout\LayoutAnchorableFloatingWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutAnchorablePane" Collapsed="true">
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAIBAAAAAAABCAAAhQAARCACAAIgQAIABAgAAogAA=</HashCode>
+      <FileName>Layout\LayoutAnchorablePane.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutAnchorablePaneGroup" Collapsed="true">
+    <Position X="10.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAQAAIBAAAEBgAAACAAAAAAQAAAAAgAAAAAA=</HashCode>
+      <FileName>Layout\LayoutAnchorablePaneGroup.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutAnchorGroup" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAABAAAAAAAhAAAACAAAAAAQAAAAAgAAACAA=</HashCode>
+      <FileName>Layout\LayoutAnchorGroup.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutAnchorSide" Collapsed="true">
+    <Position X="19.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAgAQACAAAAAAAgAA=</HashCode>
+      <FileName>Layout\LayoutAnchorSide.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutContent" Collapsed="true">
+    <Position X="25.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCABEBACIjBAFEQBEIKAwAiCNARgKiJEMSgApAioiCA=</HashCode>
+      <FileName>Layout\LayoutContent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutDocument" Collapsed="true">
+    <Position X="26.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgEAAEAAAAAAACIAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Layout\LayoutDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutDocumentFloatingWindow" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAgEEAAABAIAQAAAAAAAAAAAACA=</HashCode>
+      <FileName>Layout\LayoutDocumentFloatingWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutDocumentPane" Collapsed="true">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABAAAAAAABCAAEhABABCAAAAAAQAIAAAgAAAAAA=</HashCode>
+      <FileName>Layout\LayoutDocumentPane.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutDocumentPaneGroup" Collapsed="true">
+    <Position X="15.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAIAAAAAAAAAACAAAAAAQAAAAAgAAAAAA=</HashCode>
+      <FileName>Layout\LayoutDocumentPaneGroup.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutElement" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAAAAACAEAQACAAAAACQAARgAAAAAAwAAAAAAAAgAA=</HashCode>
+      <FileName>Layout\LayoutElement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutElementEventArgs" Collapsed="true">
+    <Position X="30.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\LayoutElementEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutFloatingWindow" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgEAAAAAAIAQAAAAAAAAAAAACA=</HashCode>
+      <FileName>Layout\LayoutFloatingWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutGroup&lt;T&gt;" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAFBAACgAEQAAAEBEACACAAJAQAQAAAEAoAAAgCA=</HashCode>
+      <FileName>Layout\LayoutGroup.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutGroupBase" Collapsed="true">
+    <Position X="13" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAACAAAAAAACgCAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\LayoutGroupBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutPanel" Collapsed="true">
+    <Position X="6.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAIAAAAAAAAAACAAAAAAQAAAAAgAAAAAA=</HashCode>
+      <FileName>Layout\LayoutPanel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutPositionableGroup&lt;T&gt;" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASBgQmAAAiAAAAEBAACggAAKEAAACBIAEQgEoAAAAAA=</HashCode>
+      <FileName>Layout\LayoutPositionableGroup.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.LayoutRoot" Collapsed="true">
+    <Position X="22" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAUAAqAQcogGgEEBQQAEA4AAAAKARAEAQAAEAAAEAHA=</HashCode>
+      <FileName>Layout\LayoutRoot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.Serialization.LayoutSerializationCallbackEventArgs" Collapsed="true">
+    <Position X="37.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Layout\Serialization\LayoutSerializationCallbackEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.Serialization.LayoutSerializer" Collapsed="true">
+    <Position X="15.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAgAAAAAAAQACAAAAhAAAAAAACAAAEAA=</HashCode>
+      <FileName>Layout\Serialization\LayoutSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Layout.Serialization.XmlLayoutSerializer" Collapsed="true">
+    <Position X="15.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\Serialization\XmlLayoutSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Properties.Resources" Collapsed="true">
+    <Position X="34.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCAABAUBCAAEgAIEAEBECKAhQAAAABAAAQAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Themes.GenericTheme" Collapsed="true">
+    <Position X="3.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Themes\GenericTheme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Xceed.Wpf.AvalonDock.Themes.Theme" Collapsed="true">
+    <Position X="3.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Themes\Theme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Standard.Win32Error" Collapsed="true">
+    <Position X="37.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FBEAgAAEBAAAEgACgCgAgAAIIEgAAJBAgAAAAAABAig=</HashCode>
+      <FileName>Controls\Shell\Standard\ErrorCodes.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.HRESULT" Collapsed="true">
+    <Position X="41.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AxIIKEsAQEABQAAEgsghAQAAAEBAAIAAQBAAACKQAqA=</HashCode>
+      <FileName>Controls\Shell\Standard\ErrorCodes.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.BLENDFUNCTION" Collapsed="true">
+    <Position X="32.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAABAAAAAAAAAAAAAAAAABAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.HIGHCONTRAST" Collapsed="true">
+    <Position X="39.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.RGBQUAD" Collapsed="true">
+    <Position X="41.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABIABABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.BITMAPINFOHEADER" Collapsed="true">
+    <Position X="30.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAQAAABAAIAgAAAAAAAQAAAAABAABEEAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.BITMAPINFO" Collapsed="true">
+    <Position X="29" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.CHANGEFILTERSTRUCT" Collapsed="true">
+    <Position X="34.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.CREATESTRUCT" Collapsed="true">
+    <Position X="36" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAIAQAAAAAAAAAEAAAAAAAAAEAAAAAAJgAAIAlAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.SHFILEOPSTRUCT" Collapsed="true">
+    <Position X="43" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAEAAAAAAAAAAEBgAAAAAAAAAAAAAQAAABgAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.TITLEBARINFO" Collapsed="true">
+    <Position X="32.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAEAAAAAAAAAAAAAAIAAAACABAAAAEAAEAAABAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.TITLEBARINFOEX" Collapsed="true">
+    <Position X="34.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAEAIAAAKAAACAQAAIAAAACABAAAAEAAEAAABAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.LOGFONT" Collapsed="true">
+    <Position X="44.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAIAAAAAAAAAQAAAAAgAAAAAAAAACAAgAIQpAAQ=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.MINMAXINFO" Collapsed="true">
+    <Position X="30.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQBAAAAAAACAAAIAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.NONCLIENTMETRICS" Collapsed="true">
+    <Position X="34.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQFAAAkAhCAAAAAAAAAAAQBAAAAAgBBhAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.WTA_OPTIONS" Collapsed="true">
+    <Position X="43" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.MARGINS" Collapsed="true">
+    <Position X="29" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAEIAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.POINT" Collapsed="true">
+    <Position X="37.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.RECT" Collapsed="true">
+    <Position X="39.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAACgAAggAAQAEAAAAAMAYgACACAAQAAgAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.SIZE" Collapsed="true">
+    <Position X="44.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.StartupOutput" Collapsed="true">
+    <Position X="29" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.WINDOWPOS" Collapsed="true">
+    <Position X="39.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAABgEAgAgAQ=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.WNDCLASSEX" Collapsed="true">
+    <Position X="41.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABEAEIAAAAAAAAQAAAAACAAEIAgQAAIAAAAAAAI=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.MOUSEINPUT" Collapsed="true">
+    <Position X="32.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAIAAAAAAAAAIAAAAAAAEAAAgAAAAAAAABAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.INPUT" Collapsed="true">
+    <Position X="43" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.UNSIGNED_RATIO" Collapsed="true">
+    <Position X="36" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.DWM_TIMING_INFO" Collapsed="true">
+    <Position X="37.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAABAAUQAQgACALhAAAISBggwAAZkAKEAAIAIIEICQA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.THUMBBUTTON" Collapsed="true">
+    <Position X="30.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAEAgAAAAAAAAAAAAAAABABAAgAEAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Standard.PKEY" Collapsed="true">
+    <Position X="36" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAABAEAAgAAAAAEAAAAgAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Xceed.Wpf.AvalonDock.Controls.IDropArea" Collapsed="true">
+    <Position X="34.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAA=</HashCode>
+      <FileName>Controls\DropArea.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Controls.IDropTarget" Collapsed="true">
+    <Position X="36" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAAABQAAAAAAAAAAAAAAAgAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Controls\IDropTarget.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Controls.IOverlayWindow" Collapsed="true">
+    <Position X="39.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQAAAAAABAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\IOverlayWindow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Controls.IOverlayWindowArea" Collapsed="true">
+    <Position X="41.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Controls\IOverlayWindowArea.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Controls.IOverlayWindowDropTarget" Collapsed="true">
+    <Position X="43" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAACAA=</HashCode>
+      <FileName>Controls\IOverlayWindowDropTarget.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Controls.IOverlayWindowHost" Collapsed="true">
+    <Position X="44.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAABAAAAAAAAAAAAACAACBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\IOverlayWindowHost.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IEnumIDList" Collapsed="true">
+    <Position X="37.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEBA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IEnumObjects" Collapsed="true">
+    <Position X="39.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEBA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IObjectArray" Collapsed="true">
+    <Position X="0.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IObjectCollection" Collapsed="true">
+    <Position X="0.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAAAAAAAAAAEAAAAAAABAIAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IPropertyStore" Collapsed="true">
+    <Position X="29" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAIAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IShellFolder" Collapsed="true">
+    <Position X="30.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAgAAAAAQABAAAAQAAEQCAIAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IShellItem" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAABAAAABAAAAAAAABAAAQAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IShellItemArray" Collapsed="true">
+    <Position X="32.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAAAAAAAAAAAAABAAAEJAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IShellItem2" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAIAAAAAAAAABAAAAFAAQEJAAAAAQAABBQCQAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IShellLinkW" Collapsed="true">
+    <Position X="34.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEIAEQCACAAIAAIAgCAIAAAgACIAAAAAAAAAAACAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.ITaskbarList" Collapsed="true">
+    <Position X="0.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAIAAAEAAAAAAgAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.ITaskbarList2" Collapsed="true">
+    <Position X="0.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAAAAAAAAAIAAAEAAAAAAgAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IApplicationDestinations" Collapsed="true">
+    <Position X="29" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IApplicationDocumentLists" Collapsed="true">
+    <Position X="30.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.ICustomDestinationList" Collapsed="true">
+    <Position X="32.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAgAAgAACIAAABAEAAAAAIAAAAAAAAAIA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IObjectWithAppUserModelId" Collapsed="true">
+    <Position X="36" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.IObjectWithProgId" Collapsed="true">
+    <Position X="37.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.ITaskbarList3" Collapsed="true">
+    <Position X="0.5" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UEAAAAAAAAIIAAMAAAAAQgAAAAAAIwQAACAEAAAIBIA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Standard.ITaskbarList4" Collapsed="true">
+    <Position X="0.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UEAAAAAAAAIIAAMAAAAAQgAAAAAAIwQAASAEAAAIBIA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutAnchorablePane" Collapsed="true">
+    <Position X="9" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutAnchorablePane.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutContainer" Collapsed="true">
+    <Position X="6.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAIAQAAAAAAAAAAAACA=</HashCode>
+      <FileName>Layout\ILayoutContainer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutContentSelector" Collapsed="true">
+    <Position X="41.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutContentSelector.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutControl" Collapsed="true">
+    <Position X="43" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutControl.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutDocumentPane" Collapsed="true">
+    <Position X="9" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutDocumentPane.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutElement" Collapsed="true">
+    <Position X="5.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAACAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutElementWithVisibility" Collapsed="true">
+    <Position X="11.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutElementWithVisibility.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutGroup" Collapsed="true">
+    <Position X="6.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAgAAQAAAAAAACAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutGroup.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutOrientableGroup" Collapsed="true">
+    <Position X="6.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutOrientableElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutPane" Collapsed="true">
+    <Position X="9.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutPane.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutPanelElement" Collapsed="true">
+    <Position X="8.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutPanelElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutPaneSerializable" Collapsed="true">
+    <Position X="44.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutPaneSerializable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutPositionableElement" Collapsed="true">
+    <Position X="3.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAEAEAAAAAgAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutPositionableElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutPositionableElementWithActualSize" Collapsed="true">
+    <Position X="29" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutPositionableElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutElementForFloatingWindow" Collapsed="true">
+    <Position X="12.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAACAAAEAgAIAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutPositionableElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutPreviousContainer" Collapsed="true">
+    <Position X="30.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutPreviousContainer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutRoot" Collapsed="true">
+    <Position X="32.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAgAAAIAEAEEAAAAAAAAAAACABAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Layout\ILayoutRoot.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Xceed.Wpf.AvalonDock.Layout.ILayoutUpdateStrategy" Collapsed="true">
+    <Position X="34.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAgAAAAAAAAAAAAAAAACAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ILayoutUpdateStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Xceed.Wpf.AvalonDock.Controls.DropAreaType" Collapsed="true">
+    <Position X="29" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAQACAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Controls\DropArea.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Xceed.Wpf.AvalonDock.Controls.DropTargetType" Collapsed="true">
+    <Position X="30.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAEQAABAggAECABIAAAAEiAAEACBQQAAA=</HashCode>
+      <FileName>Controls\DropTargetType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Xceed.Wpf.AvalonDock.Controls.OverlayWindowDropTargetType" Collapsed="true">
+    <Position X="41.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAQAAAAggAECABIAAAAAAAAEACBQQAAA=</HashCode>
+      <FileName>Controls\OverlayWindowDropTargetType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.Facility" Collapsed="true">
+    <Position X="41.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAAAAEAAAAAhAAAAAAAAAAAIAAAAQAABIAAAAAAgA=</HashCode>
+      <FileName>Controls\Shell\Standard\ErrorCodes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.HCF" Collapsed="true">
+    <Position X="34.25" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAAAAAAAAAAAAEAEAAAAAAAAAAEAAAAgQA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.BI" Collapsed="true">
+    <Position X="36" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.RGN" Collapsed="true">
+    <Position X="44.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAIAAAAAAAAAACgIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.CombineRgnResult" Collapsed="true">
+    <Position X="39.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.OLECMDEXECOPT" Collapsed="true">
+    <Position X="36" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAQAAAAAACg=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.OLECMDF" Collapsed="true">
+    <Position X="37.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAACAAAAAAAAEAgAAAAAAAgABAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.OLECMDID" Collapsed="true">
+    <Position X="39.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IKBUDgGCCLwACQICgAJHJgCcQBAchABEAAREKdAAEAE=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.READYSTATE" Collapsed="true">
+    <Position X="43" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAACAACAAAABAgA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.DOGIF" Collapsed="true">
+    <Position X="44.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAwAAAAAAAAAAAAAAAAAgEgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.DWM_SIT" Collapsed="true">
+    <Position X="32.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.ErrorModes" Collapsed="true">
+    <Position X="39.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAIAAAAQAAAgAgAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.HT" Collapsed="true">
+    <Position X="36" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgAIACBATAIAgAAABAgxAgQEAAABAQgAAAAAFAEAgA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.GCLP" Collapsed="true">
+    <Position X="29" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.GWL" Collapsed="true">
+    <Position X="32.5" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAgIAAAAAEAAAAAAAAAABAIAAAAAAIAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SM" Collapsed="true">
+    <Position X="44.75" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>OAAIIgEaxAQGUAUEkEstCYQjgCAEAoA1EyCEMTxCETA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SPI" Collapsed="true">
+    <Position X="29" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/MDHN+sMrFyVzhf/cEfL1+khuUkMutJu6Pvuh+0alOQ=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SPIF" Collapsed="true">
+    <Position X="30.75" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.STATE_SYSTEM" Collapsed="true">
+    <Position X="32.5" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAAgAkAgJA0CAACICAgAgIBgAAAAARwAAKoCAIAAI=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.StockObject" Collapsed="true">
+    <Position X="36" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGgAAAAAIgAAAAAAQAAAAAAAAAgAgAAASAAACCAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.CS" Collapsed="true">
+    <Position X="41.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAgAAAAAAjAAAQCAAAAQgQAAAAAgAAAAAAACA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.WS" Collapsed="true">
+    <Position X="36" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAyBiCAIAACAgEAECABABBwQABAICABACAAM=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.WM" Collapsed="true">
+    <Position X="34.25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>08EDgSdMcqRGiiICBKpCSWDuboqCIL1FUNwRAGUSB8w=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.WS_EX" Collapsed="true">
+    <Position X="37.75" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEgCAgAEAgAiIgAAAkBABAACASAABIAigAAAQAEABAE=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.DeviceCap" Collapsed="true">
+    <Position X="43" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAACAAAAAAMAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.FO" Collapsed="true">
+    <Position X="43" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.FOF" Collapsed="true">
+    <Position X="44.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAQAIAIAEAAAAyAAAACAAAIAAACAAAAEAAAAEA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.MF" Collapsed="true">
+    <Position X="41.25" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAAAAAAKAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.WINDOWTHEMEATTRIBUTETYPE" Collapsed="true">
+    <Position X="32.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.DWMFLIP3D" Collapsed="true">
+    <Position X="34.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.DWMNCRP" Collapsed="true">
+    <Position X="36" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.DWMWA" Collapsed="true">
+    <Position X="37.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAEAAAAAAAAEADAAEAAAQAAAAgAAAYAAAAAAgAAAAQ=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.WTNCA" Collapsed="true">
+    <Position X="39.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAACAAAAAAAAAAACAAEAEAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SWP" Collapsed="true">
+    <Position X="41.25" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAABgAAAAgAAABAAAFAAAAEABQACAIAAAAAAQA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SW" Collapsed="true">
+    <Position X="39.5" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACAAAAAAJAAAAAAABAAAIgKAAACDAAACAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SC" Collapsed="true">
+    <Position X="29" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAEAAUAAAAQAAIAAAAgAACAABiIAKAACKBAQAoA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.Status" Collapsed="true">
+    <Position X="34.25" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAoAAAoAAIAABADMAAAABEAAIAAgAAAIEBEAAEAgQ=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.MOUSEEVENTF" Collapsed="true">
+    <Position X="43" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.MSGFLT" Collapsed="true">
+    <Position X="44.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAAAAAAEA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.MSGFLTINFO" Collapsed="true">
+    <Position X="29" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAYAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.INPUT_TYPE" Collapsed="true">
+    <Position X="37.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.NIM" Collapsed="true">
+    <Position X="34.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAYAAAAAAAACAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SHARD" Collapsed="true">
+    <Position X="32.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAABAAAgAAABEAEAAAAAAAAAAABA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SLGP" Collapsed="true">
+    <Position X="43" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAkAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.NIF" Collapsed="true">
+    <Position X="30.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABAAAEAAAAACAAAAAAAAAAAAAAAAAAAAgAAJAhACAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.NIIF" Collapsed="true">
+    <Position X="32.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACABCAAAAAAAAQAAMAAAAAAAAAEAAAAABgAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.AC" Collapsed="true">
+    <Position X="29" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.ULW" Collapsed="true">
+    <Position X="30.75" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAEAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.WVR" Collapsed="true">
+    <Position X="41.25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAgAAgEAAAAACAAAAAAAAAAAAAACIAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SIATTRIBFLAGS" Collapsed="true">
+    <Position X="37.75" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.APPDOCLISTTYPE" Collapsed="true">
+    <Position X="34.25" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAE=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.STPF" Collapsed="true">
+    <Position X="37.75" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAQACIAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.TBPF" Collapsed="true">
+    <Position X="43" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABICAAAAAAAAAAAAAAAAAAAAAAAAACAQAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.THB" Collapsed="true">
+    <Position X="44.75" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAACAAAAEAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.THBF" Collapsed="true">
+    <Position X="29" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAAAAAgAECQAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.GPS" Collapsed="true">
+    <Position X="30.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAIAiBAAAAgAAAAAAgAAAAAAAACACAE=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.KDC" Collapsed="true">
+    <Position X="39.5" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SFGAO" Collapsed="true">
+    <Position X="30.75" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAEAgxgAQSAgAEkAAAEIQAIBmAEAAARSBgIAAQAQgg=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SHCONTF" Collapsed="true">
+    <Position X="34.25" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAEAAAgAAAAAAAAgIAAAQIAIAAUEAAAAAIAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SHGDN" Collapsed="true">
+    <Position X="36" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAIAAAAAAAAAAAAABAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SICHINT" Collapsed="true">
+    <Position X="39.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAEAAAAAAAAAAAAAAAAAAACABAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Standard.SIGDN" Collapsed="true">
+    <Position X="41.25" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EABgAAAAAAAAAAAAAAAAACAAAiAAAAACAAAgAIAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\ShellProvider.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Xceed.Wpf.AvalonDock.Layout.AnchorableShowStrategy" Collapsed="true">
+    <Position X="30.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
+      <FileName>Layout\AnchorableShowStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Xceed.Wpf.AvalonDock.Layout.AnchorSide" Collapsed="true">
+    <Position X="32.5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAEAAAA=</HashCode>
+      <FileName>Layout\AnchorSide.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Xceed.Wpf.AvalonDock.Layout.ChildrenTreeChange" Collapsed="true">
+    <Position X="37.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Layout\ChildrenTreeChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="Standard.WndProc" Collapsed="true">
+    <Position X="30.75" Y="22" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAACAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Standard.WndProcHook" Collapsed="true">
+    <Position X="32.5" Y="22" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAEAAAAACAAAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Standard.MessageHandler" Collapsed="true">
+    <Position X="29" Y="22" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAEAAAAAAABAAA=</HashCode>
+      <FileName>Controls\Shell\Standard\NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

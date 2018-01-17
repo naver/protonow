@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UpdateInfo>
+  <UpdatePackage PackageCode="8D57B0F1-736C-4D1C-B296-827CB817881B">
+    <!--Mandatory, Optional-->
+    <Type>Optional</Type>
+    <TargetVersion></TargetVersion>
+    <DownloadUrl></DownloadUrl>
+    <LocalPackageName></LocalPackageName>
+    <TargetTitle></TargetTitle>
+    <TargetDescription>
+      <en-US>
+        <![CDATA[
+
+
+        ]]>
+      </en-US>
+      <ko-KR>
+        <![CDATA[
+
+        ]]>
+      </ko-KR>
+      <zh-CN>
+        <![CDATA[
+
+
+        ]]>
+      </zh-CN>
+      <ja-JP>
+        <![CDATA[
+
+
+        ]]>
+      </ja-JP>
+    </TargetDescription>
+  </UpdatePackage>
+</UpdateInfo>

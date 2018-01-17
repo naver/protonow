@@ -1,0 +1,746 @@
+﻿<UserControl x:Class="Naver.Compass.Module.Styles.CommonStyle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cm="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+             xmlns:common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:data="clr-namespace:Naver.Compass.Module"
+             xmlns:tb="clr-namespace:MainToolBar;assembly=Naver.Compass.Module.MainToolBar"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="Selected_BG_COLOR"
+                         Color="#FF3399FF" />
+        <common:ColorDataConverter x:Key="ColorDataCvt" />
+        <common:BorderColorConverter x:Key="BorderColorDataCvt" />
+        <Style x:Key="toggleBtn"
+               TargetType="ToggleButton">
+            <Setter Property="Width"
+                    Value="24" />
+            <Setter Property="Height"
+                    Value="22" />
+            <Setter Property="Background"
+                    Value="Transparent" />
+        </Style>
+        <Style x:Key="toggleImage"
+               TargetType="Image">
+            <Setter Property="Width"
+                    Value="16" />
+            <Setter Property="Height"
+                    Value="16" />
+            <Setter Property="Stretch"
+                    Value="Uniform" />
+        </Style>
+        <Style TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="#D2D2D2" />
+            <Setter Property="Stretch"
+                    Value="Uniform" />
+            <Setter Property="StrokeThickness"
+                    Value="1" />
+        </Style>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="Foreground"
+                    Value="{StaticResource EnableTextColor}" />
+            <Style.Triggers>
+                <Trigger Property="IsEnabled"
+                         Value="false">
+                    <Setter Property="Foreground"
+                            Value="{StaticResource DiableTextColor}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Border"
+               x:Key="Seprater">
+            <Setter Property="Height"
+                    Value="1" />
+            <Setter Property="BorderThickness"
+                    Value="0,1,0,0" />
+            <Setter Property="BorderBrush"
+                    Value="Red" />
+        </Style>
+
+    </UserControl.Resources>
+    <Grid FocusManager.IsFocusScope="True">
+        <!--Focusable="True"
+                  MouseDown="OnFocused">-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="11" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="7" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="11" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--Position Expander-->
+        <Expander   Grid.Row="1"
+                    x:Name="LocationExpander"
+                    Visibility="Visible"
+                    IsExpanded="True"
+                    Style="{DynamicResource WidgetProStyle}">
+            <Expander.Header>
+                <TextBlock Text="{DynamicResource WidgetProp_StyleLocation}" />
+            </Expander.Header>
+            <Expander.Content>
+                <Border BorderBrush="Transparent"
+                        HorizontalAlignment="Left">
+                    <Grid  HorizontalAlignment="Left"
+                           Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="24" />
+                            <RowDefinition Height="24" />
+                            <RowDefinition Height="24" />
+                            <RowDefinition Height="24" />
+                            <RowDefinition Height="9" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="8" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock"
+                                   BasedOn="{StaticResource {x:Type TextBlock}}">
+                                <Setter Property="VerticalAlignment"
+                                        Value="Center" />
+                                <Setter Property="HorizontalAlignment"
+                                        Value="Left" />
+                                <Setter Property="Width"
+                                        Value="40" />
+                                <Setter Property="Margin"
+                                        Value="0,1,3,1" />
+                            </Style>
+                            <Style TargetType="cb:NumEnterTextbox"
+                                   BasedOn="{StaticResource {x:Type cb:NumEnterTextbox}}">
+                                <Setter Property="Width"
+                                        Value="45" />
+                                <Setter Property="Height"
+                                        Value="20" />
+                                <Setter Property="Margin"
+                                        Value="3,1,5,1" />
+                            </Style>
+                        </Grid.Resources>
+
+                        <StackPanel Grid.Row="1"
+                                    Grid.Column="0"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleLeft}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocLeft}"
+                                                MaxNum="{StaticResource MaxEditorWidth}"
+                                                MiniNum="-10000">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="Left"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1"
+                                    Grid.Column="2"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleTop}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocTop}"
+                                                MaxNum="{StaticResource MaxEditorHeight}"
+                                                MiniNum="-10000">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="Top"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2"
+                                    Grid.Column="0"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleWidth}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocWidth}"
+                                                MaxNum="{StaticResource MaxEditorWidth}"
+                                                MiniNum="1">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="Width"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2"
+                                    Grid.Column="2"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleHeight}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocHeight}"
+                                                MaxNum="{StaticResource MaxEditorHeight}"
+                                                MiniNum="1">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="Height"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3"
+                                    Grid.Column="0"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Left"
+                                    IsEnabled="{Binding CanRotatEdit}">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleRot}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource WP_Tooltip_Rot}"
+                                                MaxNum="359"
+                                                MiniNum="0"
+                                                Margin="3,0,5,2"
+                                                VerticalAlignment="Bottom">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="RotateAngle"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3"
+                                    Grid.Column="2"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Left"
+                                    IsEnabled="{Binding CanTextRotateEdit}">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleText}" />
+                            <cb:NumEnterTextbox  ToolTip="{DynamicResource WP_Tooltip_TextRot}"
+                                                 MaxNum="359"
+                                                 MiniNum="0">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="TextRotate"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                         <StackPanel Grid.Row="4"
+                                    Grid.Column="0"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Left"
+                                    IsEnabled="{Binding CanCornerRaius}">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleRadius}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource WidgetProp_StyleRadius}"
+                                                MaxNum="10000"
+                                                MiniNum="0"
+                                                Margin="3,0,5,2"
+                                                VerticalAlignment="Bottom">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="CornerRadius"
+                                             Mode="TwoWay"
+                                             UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>                       
+                        <StackPanel Orientation="Horizontal"
+                                    Grid.Row="6"
+                                    Grid.ColumnSpan="3">
+                            <CheckBox VerticalAlignment="Center"
+                                      HorizontalAlignment="Left"
+                                      IsThreeState="True"
+                                      IsChecked="{Binding IsHidden}"
+                                      FontSize="12"
+                                      Content="{DynamicResource WidgetProp_Hidden}" />
+                            <CheckBox Visibility="Visible"
+                                      IsEnabled="{Binding IsFixedEnabled}"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Left"
+                                      IsThreeState="True"
+                                      IsChecked="{Binding IsFixed}"
+                                      Content="{DynamicResource WidgetProp_FixedPosition}"
+                                      Margin="24,0,0,0"
+                                      FontSize="12" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Expander.Content>
+        </Expander>
+        <Line Grid.Row="3"
+              X1="0"
+              Y1="0"
+              X2="20"
+              Y2="0"></Line>
+
+        <!--Font Expander-->
+        <Expander Grid.Row="5"
+                  x:Name="FontExpander"
+                  IsEnabled="True"
+                  Visibility="Visible"
+                  IsExpanded="True"
+                  Style="{DynamicResource WidgetProStyle}">
+            <Expander.Header>
+                <TextBlock Text="{DynamicResource WidgetProp_Font}" />
+            </Expander.Header>
+            <Expander.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8" />
+                        <RowDefinition Height="22" />
+                        <RowDefinition Height="4" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="4" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="1">
+                        <!--<ribbon:RibbonComboBox    DataContext="{x:Static data:PropertyPageViewModel.FontFace}"
+                                                  ToolTip="{DynamicResource WP_Tooltip_FontFamily}"
+                                                  Height="22"
+                                                  IsEditable="True"
+                                                  IsReadOnly="False"
+                                                  SelectionBoxWidth="179">
+                            <ribbon:RibbonGallery    DataContext="{x:Static data:PropertyPageViewModel.FontFaceGallery}"
+                                                     MaxHeight="375"
+                                                     MaxColumnCount="1"
+                                                     Style="{DynamicResource FontFamilyGallery}">
+                            </ribbon:RibbonGallery>
+                        </ribbon:RibbonComboBox>-->
+                        <ComboBox Height="22"
+                                  Width="197"
+                                  DataContext="{x:Static data:PropertyPageViewModel.FontFace}"
+                                  IsEnabled="{Binding IsEnable}"
+                                  ToolTip="{DynamicResource TB_Tooltip_FontFamily}"
+                                  IsEditable="True"
+                                  IsReadOnly="False"
+                                  Style="{DynamicResource FontFamilyComboBox}"
+                                  ItemsSource="{Binding FontFamilies}"
+                                  SelectedItem="{Binding SelectedFamily,Mode=TwoWay}"
+                                  TextSearch.TextPath="Name" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="3">
+                        <ribbon:RibbonComboBox  IsEnabled="False"
+                                                Height="22"
+                                                SelectionBoxWidth="116"
+                                                ToolTip="{DynamicResource WP_Tooltip_FontStyle}"
+                                                Text="{x:Null}"
+                                                DataContext="{x:Static data:PropertyPageViewModel.FontSize}" />
+                        <ComboBox Height="22"
+                                  Width="58"
+                                  Margin="4,0,0,0"
+                                  IsEditable="True"
+                                  IsReadOnly="False"
+                                  DataContext="{x:Static data:PropertyPageViewModel.FontSize}"
+                                  ToolTip="{DynamicResource WP_Tooltip_FontSize}"
+                                  IsEnabled="{Binding IsEnable}"
+                                  ItemsSource="{Binding FontSizes}"
+                                  SelectedItem="{Binding SelectedSize, Mode=TwoWay}"
+                                  Style="{DynamicResource FontSizeComboBox}"
+                                  TextSearch.TextPath="Name"
+                                  Text="{Binding DisplaySize,Mode=OneWay}"
+                                  IsTextSearchEnabled="False"
+                                  KeyDown="ComboBox_KeyDown"/>
+                    </StackPanel>
+
+                    <Grid  Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="22" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="22" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="22" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="32" />
+                            <ColumnDefinition Width="8" />
+                            <ColumnDefinition Width="32" />
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+                        <ribbon:RibbonToggleButton Grid.Column="0"
+                                                   Command="common:FontCommands.Bold"
+                                                   IsChecked="{Binding IsBoldCheck,Mode=OneWay}"
+                                                   ToolTip="{DynamicResource WP_Tooltip_Bold}"
+                                                   SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-bold.png" />
+                        <ribbon:RibbonToggleButton Grid.Column="2"
+                                                   Command="common:FontCommands.Italic"
+                                                   IsChecked="{Binding IsItalicCheck,Mode=OneWay}"
+                                                   ToolTip="{DynamicResource WP_Tooltip_Italic}"
+                                                   SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-italic.png" />
+                        <ribbon:RibbonToggleButton Grid.Column="4"
+                                                   Command="common:FontCommands.Underline"
+                                                   IsChecked="{Binding IsUnderlineCheck,Mode=OneWay}"
+                                                   ToolTip="{DynamicResource WP_Tooltip_Underline}"
+                                                   SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-underline.png" />
+
+                        <ribbon:RibbonToggleButton  Grid.Column="6"
+                                                    Command="common:TextCommands.Strikethrough"
+                                                    ToolTip="{DynamicResource WP_Tooltip_Strikethrough}"
+                                                    IsChecked="{Binding IsStrikeThroughCheck,Mode=OneWay}"
+                                                    SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-strikeThrough.png" />
+
+
+
+                        <Grid Grid.Column="8">
+                            <ribbon:RibbonSplitButton   SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-txt-color.png"
+                                                        ToolTip="{DynamicResource WP_Tooltip_TextColor}"
+                                                        DataContext="{x:Static data:PropertyPageViewModel.FontColor}">
+                                <ribbon:RibbonMenuItem DataContext="{x:Static data:PropertyPageViewModel.FontColorGallery}"
+                                                      x:Name="FontColorGallery"
+                                                      Style="{StaticResource property_FontColorpick}"
+                                                      Tag="{x:Static data:PropertyPageViewModel.DataCollection}">
+                                </ribbon:RibbonMenuItem>
+                            </ribbon:RibbonSplitButton>
+                            <Rectangle Margin="3,15,13,4"
+                                       Fill="{Binding CommandParameter}"
+                                       DataContext="{x:Static data:PropertyPageViewModel.FontColor}" />
+                        </Grid>
+                    </Grid>
+
+                    <StackPanel Grid.Row="6"
+                                Orientation="Horizontal"
+                                Margin="0,4,0,0">
+                        <ribbon:RibbonButton ToolTip="{DynamicResource WP_Tooltip_IncreaseFontSize}"
+                                             Command="EditingCommands.IncreaseFontSize"
+                                             SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-ImSize.png" />
+
+                        <ribbon:RibbonButton Margin="4,0,0,0"
+                                             ToolTip="{DynamicResource WP_Tooltip_DecreaseFontSize}"
+                                             Command="EditingCommands.DecreaseFontSize"
+                                             SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-DeSize.png" />
+                        <ribbon:RibbonToggleButton Margin="4,0,0,0"
+                                             Command="common:FontCommands.Bullet"
+                                             IsChecked="{Binding IsBulletCheck,Mode=OneWay}"
+                                             ToolTip="{DynamicResource TB_Tooltip_BulletedList}"
+                                             SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-list.png" />
+
+                        <ribbon:RibbonToggleButton Margin="4,0,0,0" Visibility="Collapsed"
+                                             IsEnabled="False"
+                                             ToolTip="{DynamicResource TB_Tooltip_NumberedList}"
+                                             SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-Number.png" />
+
+
+
+                    </StackPanel>
+                </Grid>
+
+            </Expander.Content>
+        </Expander>
+        <Line Grid.Row="7"
+              X1="0"
+              Y1="0"
+              X2="20"
+              Y2="0"></Line>
+
+        <!--Border line Expander-->
+        <Expander Grid.Row="9"
+                  x:Name="ImageExpander"
+                  Visibility="Visible"
+                  IsExpanded="True"
+                  Style="{DynamicResource WidgetProStyle}">
+            <Expander.Header>
+                <TextBlock Text="{DynamicResource WidgetProp_FillLine}" />
+            </Expander.Header>
+            <Expander.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8" />
+                        <RowDefinition Height="22" />
+                        <RowDefinition Height="4" />
+                        <RowDefinition Height="22" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel  Grid.Row="1"
+                                 Orientation="Horizontal">
+                        <Grid>
+                            <ribbon:RibbonSplitButton SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-palette.png"
+                                                      ToolTip="{DynamicResource WP_Tooltip_FillColor}"
+                                                      DataContext="{x:Static data:PropertyPageViewModel.BackColor}">
+                                <ribbon:RibbonMenuItem Style="{StaticResource property_colorpick}"
+                                                      DataContext="{x:Static data:PropertyPageViewModel.BackColorGallery}"
+                                                      Tag="{x:Static data:PropertyPageViewModel.DataCollection}"
+                                                      x:Name="BackgroundColorGallery">
+                                </ribbon:RibbonMenuItem>
+                            </ribbon:RibbonSplitButton>
+                            <Rectangle Margin="3,16,13,3"
+                                       Fill="{Binding CommandParameter,Converter={StaticResource BorderColorDataCvt}}"
+                                       DataContext="{x:Static data:PropertyPageViewModel.BackColor}" />
+                        </Grid>
+                        <TextBlock Text="{DynamicResource WidgetProp_Opacity}"
+                                   VerticalAlignment="Center"
+                                   Margin="8,0,0,0" />
+                        <cb:NumEnterTextbox IsEnterKeyMoveFocus="False"
+                                            Height="22"
+                                            Width="45"
+                                            Margin="8,0,0,0"
+                                            MaxNum="100"
+                                            MiniNum="0">
+                            <cb:NumEnterTextbox.Text>
+                                <Binding Path="Opacity"
+                                         Mode="TwoWay"
+                                         UpdateSourceTrigger="LostFocus" />
+                            </cb:NumEnterTextbox.Text>
+                        </cb:NumEnterTextbox>
+                        <TextBlock Text="%"
+                                   VerticalAlignment="Center"
+                                   Margin="3,1,3,1" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                        <Grid>
+                            <ribbon:RibbonSplitButton  SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-stroke-color.png"
+                                                       ToolTip="{DynamicResource WP_Tooltip_LineColor}"
+                                                       DataContext="{x:Static data:PropertyPageViewModel.BorderLineColor}">
+                                <ribbon:RibbonMenuItem DataContext="{x:Static data:PropertyPageViewModel.BorderLineColorGallery}"
+                                                      x:Name="BorderlineGallery1"
+                                                      Tag="{x:Static data:PropertyPageViewModel.DataCollection}"
+                                                      Style="{StaticResource property_LineColorpick}">
+                                </ribbon:RibbonMenuItem>
+                            </ribbon:RibbonSplitButton>
+                            <Rectangle Margin="3,16,13,3"
+                                       Fill="{Binding CommandParameter,Converter={StaticResource BorderColorDataCvt}}"
+                                       DataContext="{x:Static data:PropertyPageViewModel.BorderLineColor}" />
+                        </Grid>
+                        <ribbon:RibbonSplitButton Margin="6,0,0,0"
+                                                  SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-line-width.png"
+                                                  ToolTip="{DynamicResource WP_Tooltip_LineWidth}"
+                                                  DataContext="{x:Static data:PropertyPageViewModel.BorderLineType}">
+                            <tb:CPSRibbonGallery  DataContext="{x:Static data:PropertyPageViewModel.BorderLineTypeGallery}"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                                <tb:CPSRibbonGallery.CategoryStyle>
+                                    <Style TargetType="{x:Type ribbon:RibbonGalleryCategory}"
+                                           BasedOn="{StaticResource {x:Type ribbon:RibbonGalleryCategory}}">
+                                        <Setter Property="MinColumnCount"
+                                                Value="1" />
+                                    </Style>
+                                </tb:CPSRibbonGallery.CategoryStyle>
+                                <tb:CPSRibbonGallery.GalleryItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Width="92"
+                                              Height="15">
+                                            <Border x:Name="LineBorder"
+                                                    Margin="-20,0,-20,0"
+                                                    Background="Transparent"
+                                                    BorderThickness="0"></Border>
+                                            <Image x:Name="ImageView"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Width="92"
+                                                   Height="15"
+                                                   Source="{Binding PngUri}" />
+                                            <TextBlock x:Name="TextView"
+                                                       Text="{DynamicResource Common_None}"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"
+                                                       Visibility="Collapsed" />
+                                        </Grid>
+                                        <DataTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver"
+                                                     Value="True">
+                                                <Setter Property="Background"
+                                                        TargetName="LineBorder"
+                                                        Value="#FFEBF1FF"></Setter>
+                                            </Trigger>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ribbon:RibbonGalleryItem}},Path=IsSelected}"
+                                                         Value="True">
+                                                <Setter Property="Background"
+                                                        TargetName="LineBorder"
+                                                        Value="{StaticResource Selected_BG_COLOR}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ShowText}"
+                                                         Value="True">
+                                                <Setter Property="Visibility"
+                                                        TargetName="TextView"
+                                                        Value="Visible" />
+                                                <Setter Property="Visibility"
+                                                        TargetName="ImageView"
+                                                        Value="Collapsed" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </tb:CPSRibbonGallery.GalleryItemTemplate>
+                            </tb:CPSRibbonGallery>
+                        </ribbon:RibbonSplitButton>
+
+                        <ribbon:RibbonSplitButton Margin="6,0,0,0"
+                                                  SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-stroke-style.png"
+                                                  ToolTip="{DynamicResource WP_Tooltip_LineStyle}"
+                                                  DataContext="{x:Static data:PropertyPageViewModel.BorderLinePattern}">
+                            <tb:CPSRibbonGallery  DataContext="{x:Static data:PropertyPageViewModel.BorderLinePatternGallery}"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                                <tb:CPSRibbonGallery.CategoryStyle>
+                                    <Style TargetType="{x:Type ribbon:RibbonGalleryCategory}"
+                                           BasedOn="{StaticResource {x:Type ribbon:RibbonGalleryCategory}}">
+                                        <Setter Property="MinColumnCount"
+                                                Value="1" />
+                                    </Style>
+                                </tb:CPSRibbonGallery.CategoryStyle>
+                                <tb:CPSRibbonGallery.GalleryItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Width="92"
+                                              Height="15">
+                                            <Border x:Name="LineBorder"
+                                                    Margin="-20,0,-20,0"
+                                                    Background="Transparent"
+                                                    BorderThickness="0"></Border>
+                                            <Image HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Width="92"
+                                                   Height="15"
+                                                   Source="{Binding PngUri}" />
+                                        </Grid>
+                                        <DataTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver"
+                                                     Value="True">
+                                                <Setter Property="Background"
+                                                        TargetName="LineBorder"
+                                                        Value="#FFEBF1FF"></Setter>
+                                            </Trigger>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ribbon:RibbonGalleryItem}},Path=IsSelected}"
+                                                         Value="True">
+                                                <Setter Property="Background"
+                                                        TargetName="LineBorder"
+                                                        Value="{StaticResource Selected_BG_COLOR}" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+
+                                </tb:CPSRibbonGallery.GalleryItemTemplate>
+                            </tb:CPSRibbonGallery>
+                        </ribbon:RibbonSplitButton>
+
+                        <!--<ribbon:RibbonSplitButton Margin="6,0,0,0" Visibility="Collapsed"  SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-line-width.png"
+                                                      ToolTip="{DynamicResource TB_Tooltip_ArrowStyle}"
+                                                      DataContext="{x:Static data:PropertyPageViewModel.LineArrowStyle}"
+                                                      >
+                                <tb:CPSRibbonGallery  DataContext="{x:Static data:PropertyPageViewModel.LineArrowStyleGallery}"
+                                                       ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                                    <tb:CPSRibbonGallery.CategoryStyle>
+                                        <Style TargetType="{x:Type ribbon:RibbonGalleryCategory}"
+                                               BasedOn="{StaticResource {x:Type ribbon:RibbonGalleryCategory}}">
+                                            <Setter Property="MinColumnCount"
+                                                    Value="1" />
+                                        </Style>
+                                    </tb:CPSRibbonGallery.CategoryStyle>
+                                    <tb:CPSRibbonGallery.GalleryItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="118"
+                                                  Height="15">
+                                                <Border x:Name="LineBorder"
+                                                        Margin="-20,0,-20,0"
+                                                        Background="Transparent"
+                                                        BorderThickness="0"></Border>
+                                                <Image x:Name="ImageView"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"
+                                                       Width="118"
+                                                       Height="15"
+                                                       Source="{Binding PngUri}" />
+                                            </Grid>
+                                            <DataTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver"
+                                                         Value="True">
+                                                    <Setter Property="Background"
+                                                            TargetName="LineBorder"
+                                                            Value="#FFEBF1FF"></Setter>
+                                                </Trigger>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ribbon:RibbonGalleryItem}},Path=IsSelected}"
+                                                             Value="True">
+                                                    <Setter Property="Background"
+                                                            TargetName="LineBorder"
+                                                            Value="{StaticResource TB_Selected_BG_COLOR}" />
+                                                </DataTrigger>
+                                            </DataTemplate.Triggers>
+                                        </DataTemplate>
+                                    </tb:CPSRibbonGallery.GalleryItemTemplate>
+                                </tb:CPSRibbonGallery>
+                            </ribbon:RibbonSplitButton>-->
+                    </StackPanel>
+                </Grid>
+            </Expander.Content>
+        </Expander>
+        <Line Grid.Row="11"
+              X1="0"
+              Y1="0"
+              X2="20"
+              Y2="0"></Line>
+        <!--Alignment Expander-->
+        <Expander Grid.Row="13"
+                  x:Name="AlignExpander"
+                  Visibility="Visible"
+                  IsExpanded="True"
+                  Style="{DynamicResource WidgetProStyle}">
+            <Expander.Header>
+                <TextBlock Text="{DynamicResource WidgetProp_Alignment}" />
+            </Expander.Header>
+            <Expander.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+                            <ribbon:RibbonRadioButton Margin="0,0,0,2"
+                                                      Command="cm:TextCommands.AlignTextLeft"
+                                                      ToolTip="{DynamicResource WP_Tooltip_AlignLeft}"
+                                                      IsChecked="{Binding IsTxtAlignLeft,Mode=OneWay}"
+                                                      SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-txt-left.png"
+                                                      CommandTarget="{Binding CmdTarget}" />
+
+                            <ribbon:RibbonRadioButton Margin="2,0,2,0"
+                                                      Command="cm:TextCommands.AlignTextCenter"
+                                                      ToolTip="{DynamicResource WP_Tooltip_AlignCenter}"
+                                                      IsChecked="{Binding IsTxtAlignCenter,Mode=OneWay}"
+                                                      SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-txt-center.png"
+                                                      CommandTarget="{Binding CmdTarget}" />
+
+                            <ribbon:RibbonRadioButton Margin="2,0,2,0"
+                                                      Command="cm:TextCommands.AlignTextRight"
+                                                      ToolTip="{DynamicResource WP_Tooltip_AlignRight}"
+                                                      IsChecked="{Binding IsTxtAlignRight,Mode=OneWay}"
+                                                      SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-txt-right.png"
+                                                      CommandTarget="{Binding CmdTarget}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ribbon:RibbonRadioButton Margin="2,0,2,0"
+                                                      Command="cm:TextCommands.AlignTextTop"
+                                                      ToolTip="{DynamicResource WP_Tooltip_AlignTop}"
+                                                      IsChecked="{Binding IsTxtAlignTop,Mode=OneWay}"
+                                                      SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-txt-top.png"
+                                                      CommandTarget="{Binding CmdTarget}" />
+
+                            <ribbon:RibbonRadioButton Margin="2,0,2,0"
+                                                      Command="cm:TextCommands.AlignTextMiddle"
+                                                      ToolTip="{DynamicResource WP_Tooltip_AlignMiddle}"
+                                                      IsChecked="{Binding IsTxtAlignMiddle,Mode=OneWay}"
+                                                      SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-txt-middle.png"
+                                                      CommandTarget="{Binding CmdTarget}" />
+
+                            <ribbon:RibbonRadioButton Margin="2,0,0,0"
+                                                      Command="cm:TextCommands.AlignTextBottom"
+                                                      ToolTip="{DynamicResource WP_Tooltip_AlignBottom}"
+                                                      IsChecked="{Binding IsTxtAlignBottom,Mode=OneWay}"
+                                                      SmallImageSource="/Naver.Compass.Module.MainToolBar;component/ICON/icon-22-txt-bottom.png"
+                                                      CommandTarget="{Binding CmdTarget}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Expander.Content>
+        </Expander>
+    </Grid>
+</UserControl>

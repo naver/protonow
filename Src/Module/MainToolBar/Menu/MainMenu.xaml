@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="MainToolBar.MainMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:self="clr-namespace:MainToolBar"
+             xmlns:cm="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d" 
+             >
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="MenuDictionary.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Menu HorizontalAlignment="Stretch" Height="{StaticResource Menu_Height}" BorderThickness="0"  VerticalAlignment="Top" Background="{StaticResource MeunBColor}">
+            <MenuItem Header="{DynamicResource Menu_File}"  >
+                <MenuItem Header="{DynamicResource Menu_File_New}" Command="{Binding NewDocmentCommand}" InputGestureText="Ctrl+N" Icon="{StaticResource Menu_New}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_Open}" Command="{Binding OpenDocmentCommand}" InputGestureText="Ctrl+O" Icon="{StaticResource Menu_Open}"></MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_OpenRecent}" ItemsSource="{Binding RecentFile}" ItemContainerStyle="{StaticResource ItemStyle}">
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_CleanRecent}" Command="{Binding ClearRecentCommand}"></MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_Save}" Command="{Binding SaveDocmentCommand}" InputGestureText="Ctrl+S" Icon="{StaticResource Menu_Save}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_SaveAs}" Command="{Binding SaveAsDocmentCommand}" InputGestureText="Ctrl+Shift+S"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_ExportToMyLibrary}" Command="{Binding ExportToMyLibraryCommand}" Visibility="{Binding LibraryVisibility, Mode=OneWay}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_HTML}" Command="{Binding HTMLExportCommand}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_AutoSave}" Command="{Binding AutoSaveCommand}" Visibility="{Binding DocumentVisibility}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_AutoSave_recovery_file}"
+                          Command="{Binding DocumentRecoveryCommand}" Visibility="{Binding DocumentVisibility}"></MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_Language}" Command="{Binding LanguageSettingCommand}" InputGestureText="Ctrl+L"  ></MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_Differ}" Command="{Binding VersioningCommand}"/>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_Close}" Command="{Binding CloseDocmentCommand}" InputGestureText="Ctrl+W" ></MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_Exit}" Command="{Binding CloseWindowCommand}" InputGestureText="Alt+F4"  ></MenuItem>
+
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu_Edit}" >
+                <MenuItem Header="{DynamicResource Menu_File_Undo}" Command="ApplicationCommands.Undo"   Icon="{StaticResource Undo}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_Redo}" Command="ApplicationCommands.Redo"  Icon="{StaticResource Redo}"></MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_Cut}"  Command="ApplicationCommands.Cut"  Icon="{StaticResource Cut}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_Copy}" Command="ApplicationCommands.Copy" Icon="{StaticResource Copy}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_Paste}" Command="ApplicationCommands.Paste"  Icon="{StaticResource Paste}"></MenuItem>
+                <!--<Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_Find}" IsEnabled="False"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_Replace}" IsEnabled="False"></MenuItem>-->
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_FormatPaint}" Command="{Binding FormatPaintCommand}" InputGestureText="Alt+C"  Icon="{StaticResource FormatPanit}" ></MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_File_SelectAll}" Command="ApplicationCommands.SelectAll" InputGestureText="Ctrl+A"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_File_Delete}" Command="EditingCommands.Delete" CommandParameter="{x:Null}"  InputGestureText="Delete"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu_View}" >
+                <MenuItem Header="{DynamicResource Menu_View_Toolbars}" Command="{Binding HideToolbarCommand}"  IsCheckable="True" IsChecked="{Binding IsShowToolbar, Mode=OneWay}">
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Menu_View_Panes}">
+                    <MenuItem Header="{DynamicResource Menu_View_Panes_Sitmap}" Command="{Binding CheckPanesCommand}" CommandParameter="Sitmap" 
+                              IsChecked="{Binding IsSitemapOpen}" IsCheckable="True"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_View_Panes_Widget}" Command="{Binding CheckPanesCommand}" CommandParameter="Widgets" 
+                              IsChecked="{Binding IsWidgetsOpen}" IsCheckable="True"></MenuItem>
+                    <MenuItem Header="{DynamicResource Master_Title}" Command="{Binding CheckPanesCommand}" CommandParameter="Masters" 
+                              IsChecked="{Binding IsMasterOpen}" IsCheckable="True"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_View_Panes_InteractionAndNote}"  Command="{Binding CheckPanesCommand}" CommandParameter="Interaction" 
+                              IsChecked="{Binding IsInteractionOpen}" IsCheckable="True"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_View_Panes_PropertyAndStyle}" Command="{Binding CheckPanesCommand}" CommandParameter="WidgetProperty" 
+                              IsChecked="{Binding IsWidgetPropOpen}" IsCheckable="True"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_View_Panes_PageProperty}" Command="{Binding CheckPanesCommand}" CommandParameter="PageProperty" 
+                              IsChecked="{Binding IsPagePropOpen}" IsCheckable="True" Visibility="{Binding DocumentVisibility}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Icon_Title}" Command="{Binding CheckPanesCommand}" CommandParameter="PageIcon" 
+                              IsChecked="{Binding IsPageIconOpen}" IsCheckable="True" Visibility="{Binding LibraryVisibility}"></MenuItem>
+                    <MenuItem Header="{DynamicResource ObjectListManager_Title}" Command="{Binding CheckPanesCommand}" CommandParameter="WidgetManager" 
+                              IsChecked="{Binding IsPageWidgetManagerOpen}" IsCheckable="True"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Menu_View_ResetView}" Command="{Binding ResetViewsCommand}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu_Arrange}" >
+                <MenuItem Header="{DynamicResource Menu_Arrange_Group}" Icon="{StaticResource Group}" InputGestureText="Ctrl+G" Command="cm:WidgetsCommands.GroupWidgets" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_Arrange_Ungroup}" Icon="{StaticResource Ungroup}" InputGestureText="Ctrl+Shift+G" Command="cm:WidgetsCommands.UngroupWidgets" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_Arrange_BringFront}" Icon="{StaticResource Bring_Front}" InputGestureText="Ctrl+Shift+]" Command="cm:WidgetsCommands.WidgetsBringFront" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_Arrange_SendBack}" Icon="{StaticResource Send_Back}" InputGestureText="Ctrl+Shift+[" Command="cm:WidgetsCommands.WidgetsBringBottom" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_Arrange_BringForward}" Icon="{StaticResource Bring_Forward}" InputGestureText="Ctrl+]" Command="cm:WidgetsCommands.WidgetsBringForward" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                <MenuItem Header="{DynamicResource Menu_Arrange_SendBackward}" Icon="{StaticResource Send_Backward}" InputGestureText="Ctrl+[" Command="cm:WidgetsCommands.WidgetsBringBackward" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_Arrange_Align}" Icon="{StaticResource Align}">
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Align_Left}" InputGestureText="Ctrl+Alt+L" Icon="{StaticResource Align_Left}" Command="cm:WidgetsCommands.WidgetsAlignLeft" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Align_Center}" InputGestureText="Ctrl+Alt+C" Icon="{StaticResource Align_Center}" Command="cm:WidgetsCommands.WidgetsAlignCenter" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Align_Right}" InputGestureText="Ctrl+Alt+R" Icon="{StaticResource Align_Right}" Command="cm:WidgetsCommands.WidgetsAlignRight" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Align_Top}" InputGestureText="Ctrl+Alt+T" Icon="{StaticResource Align_Top}" Command="cm:WidgetsCommands.WidgetsAlignTop" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Align_Middle}" InputGestureText="Ctrl+Alt+M"  Icon="{StaticResource Align_Middle}" Command="cm:WidgetsCommands.WidgetsAlignMiddle" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Align_Bottom}" InputGestureText="Ctrl+Alt+B" Icon="{StaticResource Align_Bottom}" Command="cm:WidgetsCommands.WidgetsAlignBottom" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Menu_Arrange_Distribute}" Icon="{StaticResource Distribute}">
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Distribute_Hor}" InputGestureText="Ctrl+Shift+H" Icon="{StaticResource Distribute_Hor}" Command="cm:WidgetsCommands.WidgetsDistributeHorizontally" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Distribute_Ver}" InputGestureText="Ctrl+Shift+U" Icon="{StaticResource Distribute_Ver}" Command="cm:WidgetsCommands.WidgetsDistributeVertically" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Menu_Arrange_Locking}" Icon="{StaticResource Lock_Main}">
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Locking_LockSize}" InputGestureText="Ctrl+K" Icon="{StaticResource Lock}" Command="cm:WidgetPropertyCommands.Lock" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Locking_UnLockSize}" InputGestureText="Ctrl+Shift+K" Icon="{StaticResource UnLock}" Command="cm:WidgetPropertyCommands.Unlock" CommandTarget="{Binding CmdTarget}"></MenuItem>
+                </MenuItem>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_Arrange_Grid}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseEnter">
+                            <i:InvokeCommandAction Command="{Binding OpenGridGuideCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ShowGrid}" IsCheckable="True" IsChecked="{Binding IsShowGridCheck, Mode=OneWay}" InputGestureText="Ctrl+'" Command="cm:GridGuideCommands.ShowGrid"  CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_SnapToGrid}" IsCheckable="True" IsChecked="{Binding IsSnapToGridCheck, Mode=OneWay}" InputGestureText="Ctrl+Alt+'"  Command="cm:GridGuideCommands.SnapToGrid"  CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_GridSet}"  Command="cm:GridGuideCommands.GridSetting"   CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <Separator Style="{DynamicResource MainSe}"/>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ShowGlobalGuid}" IsCheckable="True" IsChecked="{Binding IsShowGlobalGuide, Mode=OneWay}" InputGestureText="Ctrl+." Command="cm:GridGuideCommands.ShowGlobalGuides"  CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ShowPageGuide}" IsCheckable="True" IsChecked="{Binding IsShowPageGuide, Mode=OneWay}"  InputGestureText="Ctrl+," Command="cm:GridGuideCommands.ShowPageGuides"   CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_SnapToGuide}" IsCheckable="True" IsChecked="{Binding IsSnapToGuide, Mode=OneWay}" InputGestureText="Ctrl+Alt+," Command="cm:GridGuideCommands.SnapToGuides"  CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_LockGuide}" IsCheckable="True" IsChecked="{Binding IsLockGuides, Mode=OneWay}" InputGestureText="Ctrl+Alt+." Command="cm:GridGuideCommands.LockGuides"  CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_CreateGuide}"  Command="cm:GridGuideCommands.CreateGuides"  CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_DelteAllGuide}" Command="cm:GridGuideCommands.DeleteAllGuides"  CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid_GuideSet}" Command="cm:GridGuideCommands.GuideSetting"  CommandTarget="{Binding CmdTarget}"></MenuItem>
+                    <!--<Separator Style="{DynamicResource MainSe}"/>-->
+                    <!--<MenuItem Header="{DynamicResource Menu_Arrange_Grid_SnapToObject}" Command="cm:GridGuideCommands.SnapToObject"   CommandTarget="{Binding CmdTarget}"></MenuItem>-->
+                    <!--<MenuItem Header="{DynamicResource Menu_Arrange_Grid_ObjectSnapSet}" Command="cm:GridGuideCommands.ObjectSnapSetting"  CommandTarget="{Binding CmdTarget}"></MenuItem>-->
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu_Publish}"  >
+                <MenuItem Header="{DynamicResource Menu_Publish_Preview}" Icon="{StaticResource PreView_Small}">
+                    <MenuItem Header="{DynamicResource Menu_Publish_PreviewCureent}" IsCheckable="True" IsChecked="{Binding IsPreviewCurPage,Mode=OneWay}" InputGestureText="Shift+F5" Command="{Binding CheckPreviewCommand}" CommandParameter="false"/>
+                    <MenuItem Header="{DynamicResource Menu_Publish_PreviewFull}" IsCheckable="True" IsChecked="{Binding IsPreviewDefault,Mode=OneWay}" InputGestureText="F5"  Command="{Binding CheckPreviewCommand}" CommandParameter="true"/>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Menu_Publish_Share}" InputGestureText="F6" Icon="{StaticResource Publish_Small}" Command="{Binding PublishDocmentCommand}" ></MenuItem>
+                <MenuItem Header="{DynamicResource Publish_Window_L_Responsive}" Visibility="Collapsed" Icon="{StaticResource AdaptiveView_Setting}" Command="{Binding AdativeSettingCommand}"/>
+                <Separator Style="{DynamicResource MainSe}"/>
+                <MenuItem Header="{DynamicResource Menu_Publish_ExportToImage}" IsCheckable="True" IsChecked="{Binding IsExport2Image, Mode=TwoWay}" IsEnabled="{Binding IsExport2ImageEnabled, Mode=OneWay}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu_About}" >
+                <MenuItem Header="{DynamicResource Menu_About_AboutPN}" Command="{Binding AboutDSCommand}"/>
+                <MenuItem Header="{DynamicResource Menu_About_Splash}" Command="{Binding WelcomeScreenCommand}" Visibility="Collapsed"/>
+                <MenuItem Header="{DynamicResource Menu_About_Tips}" Command="{Binding TipsCommand}"/>
+                <MenuItem Header="{DynamicResource Menu_About_Update}" Command="{Binding CheckUpdateCommand}"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</UserControl>

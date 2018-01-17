@@ -1,0 +1,415 @@
+﻿<UserControl x:Class="Naver.Compass.Module.PageListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Commands;assembly=Microsoft.Practices.Prism"
+             xmlns:local="clr-namespace:Naver.Compass.Module"
+             xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:commonBase="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             x:Name="Pagelist" >
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <local:CustomConverter x:Key="previewConverter" />
+            <Style TargetType="Button"
+                   BasedOn="{StaticResource ToolbarStyleButton}">
+                <Setter Property="Width"
+                        Value="18" />
+                <Setter Property="Height"
+                        Value="18" />
+                <Setter Property="Margin"
+                        Value="2,1" />
+            </Style>
+            <Image x:Key="addPage"
+                   x:Shared="false"
+                   Source="Resources/Images/icon-16-add-page.png"
+                   Width="16"
+                   Height="16" />
+            <Image x:Key="addFolder"
+                   x:Shared="false"
+                   Source="Resources/Images/icon-16-add-folder.png"
+                   Width="16"
+                   Height="16" />
+            <Image x:Key="delete"
+                   x:Shared="false"
+                   Source="Resources/Images/icon-16-delete-page.png"
+                   Width="16"
+                   Height="16" />
+            <Image x:Key="indent"
+                   x:Shared="false"
+                   Source="Resources/Images/icon-16-indent.png"
+                   Width="16"
+                   Height="16" />
+            <Image x:Key="outdent"
+                   x:Shared="false"
+                   Source="Resources/Images/icon-16-outdent.png"
+                   Width="16"
+                   Height="16" />
+            <Image x:Key="moveup"
+                   x:Shared="false"
+                   Source="Resources/Images/icon-16-move-up.png"
+                   Width="16"
+                   Height="16" />
+            <Image x:Key="movedown"
+                   x:Shared="false"
+                   Source="Resources/Images/icon-16-move-down.png"
+                   Width="16"
+                   Height="16" />
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+    <Grid x:Name="PagesFrame"
+          MouseDown="PagesFrame_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="0,0,0,1"
+                BorderBrush="#D1D1D1"
+                Background="#F8F8F8F8">
+            <StackPanel Orientation="Horizontal"
+                        Margin="3,0,0,0">
+                <Button  Command="{Binding PageNewCommand}"
+                         ToolTip="{DynamicResource Sitemap_AddPage}">
+                    <Image>
+                        <Image.Style>
+                            <Style BasedOn="{StaticResource ImageEnabled}" TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="Resources/Images/icon-16-add-page.png"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding DataContext.IsStandardDocument, ElementName=Pagelist}" Value="false">
+                                        <Setter Property="Source" Value="Resources/Images/icon-16-add-object.png"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </Button>
+                <Button Command="{Binding FolderNewCommand}"
+                        ToolTip="{DynamicResource Sitemap_AddFolder}">
+                    <Image Source="Resources/Images/icon-16-add-folder.png"
+                           Style="{StaticResource ImageEnabled}" />
+                </Button>
+                <Button   Command="{Binding PageUpCommand}"
+                          CommandParameter="{Binding ElementName=PageTreeView}"
+                          ToolTip="{DynamicResource Sitemap_MoveUp}">
+                    <Image Source="Resources/Images/icon-16-move-up.png"
+                           Style="{StaticResource ImageEnabled}" />
+                </Button>
+                <Button  Command="{Binding PageDownCommand}"
+                         CommandParameter="{Binding ElementName=PageTreeView}"
+                         ToolTip="{DynamicResource Sitemap_MoveDown}">
+                    <Image Source="Resources/Images/icon-16-move-down.png"
+                           Style="{StaticResource ImageEnabled}" />
+                </Button>
+                <Button  Command="{Binding PageIndentCommand}"
+                         CommandParameter="{Binding ElementName=PageTreeView}"
+                         ToolTip="{DynamicResource Sitemap_Indent}">
+                    <Image Source="Resources/Images/icon-16-indent.png"
+                           Style="{StaticResource ImageEnabled}" />
+                </Button>
+                <Button   Command="{Binding PageOutdentCommand}"
+                          CommandParameter="{Binding ElementName=PageTreeView}"
+                          ToolTip="{DynamicResource Sitemap_Outdent}">
+                    <Image Source="Resources/Images/icon-16-outdent.png"
+                           Style="{StaticResource ImageEnabled}" />
+                </Button>
+                <Button   Command="{Binding PageDeleteCommand}"
+                          CommandParameter="{Binding ElementName=PageTreeView}"
+                          ToolTip="{DynamicResource Sitemap_Delete}">
+                    <Image Source="Resources/Images/icon-16-delete-page.png"
+                           Style="{StaticResource ImageEnabled}" />
+                </Button>
+                <Button   Command="{Binding PageSearchCommand}"
+                          ToolTip="{DynamicResource Sitemap_Search}">
+                    <Image Source="Resources/Images/icon-16-search-page.png"
+                           Style="{StaticResource ImageEnabled}" />
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <Grid Margin="2,2,2,5" Grid.Row="1" Visibility="{Binding SearchBoxVisibility}">
+            <AdornerDecorator>
+                <TextBox  Height="22"     
+                          Style="{StaticResource BorderTextbox}"
+                          BorderBrush="#FFd5d5d5"
+                          Padding="4,2,4,2"           
+                          Text="{Binding SearchPageName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <ctlBase:WatermarkService.Watermark>
+                        <TextBlock Margin="4,1,4,2"
+                                                   Text="{DynamicResource Libraries_Search}" />
+                    </ctlBase:WatermarkService.Watermark>
+                </TextBox>
+            </AdornerDecorator>
+            <Image HorizontalAlignment="Right" VerticalAlignment="Center"
+                       Margin="0,0,8,1"
+                       Width="15" Height="15"                        
+                       Visibility="{Binding DeleteSearchVisibility}"
+                       RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <i:InvokeCommandAction Command="{Binding DeleteSearchCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Resources/Images/Close_Normal.png" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Source" Value="Resources/Images/Close_Rollover_on.png"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </Grid>
+        
+        <TreeView Name="PageTreeView" 
+                  BorderThickness="0"
+                  ItemsSource="{Binding Path=RootNode.Children,Mode=TwoWay}"
+                  Grid.Row="2"
+                  commonBase:CommandSinkBinding.CommandSink="{Binding}"
+                  PreviewMouseRightButtonDown="TreeViewItem_PreviewMouseRightButtonDown"
+                  AllowDrop="True"
+                  MouseUp="treeView_MouseUp">
+            <TreeView.CommandBindings>
+                <commonBase:CommandSinkBinding Command="ApplicationCommands.Undo" />
+                <commonBase:CommandSinkBinding Command="ApplicationCommands.Redo" />
+            </TreeView.CommandBindings>
+
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}"
+                       BasedOn="{StaticResource {x:Type TreeViewItem}}">
+                    <Setter Property="IsExpanded"
+                            Value="{Binding IsExpanded, Mode=TwoWay, NotifyOnSourceUpdated=True}" />
+                    <Setter Property="IsSelected"
+                            Value="{Binding IsSelected, Mode=TwoWay}" />
+                    <Setter Property="Visibility"
+                            Value="{Binding Path=IsMatch, Mode=OneWay}" />
+                    <EventSetter Event="KeyDown"
+                                 Handler="TreeItem_KeyDown"></EventSetter>
+                    <EventSetter Event="TreeViewItem.DragOver"
+                                 Handler="treeView_DragOver" />
+                    <EventSetter Event="TreeViewItem.Drop"
+                                 Handler="treeView_Drop" />
+                    <EventSetter Event="TreeViewItem.DragLeave"
+                                 Handler="treeView_DragLeave" />
+                    <EventSetter Event="TreeViewItem.MouseMove"
+                                 Handler="treeView_MouseMove" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <TreeView.InputBindings>
+                <KeyBinding Key="N"
+                            Modifiers="Alt"
+                            Command="{Binding PageNewCommand}" />
+                <KeyBinding Key="N"
+                            Modifiers="Alt + Shift"
+                            Command="{Binding FolderNewCommand}" />
+                <KeyBinding Key="Up"
+                            Modifiers="Alt"
+                            Command="{Binding PageUpCommand}" />
+                <KeyBinding Key="Down"
+                            Modifiers="Alt"
+                            Command="{Binding PageDownCommand}" />
+                <KeyBinding Key="Right"
+                            Modifiers="Alt"
+                            Command="{Binding PageIndentCommand}" />
+                <KeyBinding Key="Left"
+                            Modifiers="Alt"
+                            Command="{Binding PageOutdentCommand}" />
+                <KeyBinding Key="Delete"
+                            Command="{Binding PageDeleteCommand}" />
+                <KeyBinding Key="Back"
+                            Command="{Binding PageDeleteCommand}" />
+            </TreeView.InputBindings>
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                    <Border HorizontalAlignment="Stretch"
+                            Background="Transparent"
+                            Tag="{Binding DataContext, ElementName=Pagelist}"
+                            x:Name="bd"
+                            ContextMenuOpening="bd_ContextMenuOpening">
+                        <StackPanel>
+                            <Border HorizontalAlignment="Left"
+                                    BorderBrush="{Binding DragIntoBorder}"
+                                    BorderThickness="1">
+                                <StackPanel Orientation="Horizontal"
+                                            x:Name="itemPanel">
+                                    <Image Source="{Binding Path=NodeImage}"
+                                           Width="16"
+                                           Height="16" />
+                                    <ctlBase:EditableTextBlock Text="{Binding Name, Mode=TwoWay, NotifyOnSourceUpdated=True}"
+                                                               IsInEditMode="{Binding IsNodeEditable, Mode=TwoWay}"
+                                                               IsSelected="{Binding IsEditboxFocus}"
+                                                               Width="auto">
+                                    </ctlBase:EditableTextBlock>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel> 
+                        <Border.Resources>
+                            <ContextMenu FontWeight="Normal" x:Key="standardMenu">
+                                <MenuItem Header="{DynamicResource Sitemap_Menu_Add}">
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_SlibeAfter}"
+                                              InputGestureText="Alt+N"
+                                              Command="{Binding PlacementTarget.Tag.InsertSiblingAfterCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_Folder}"
+                                              InputGestureText="Alt+Shift+N"
+                                              Icon="{StaticResource addFolder}"
+                                              Command="{Binding PlacementTarget.Tag.FolderNewCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_ChildPage}"
+                                              Command="{Binding PlacementTarget.Tag.AddChildCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_SlibeBefore}"
+                                              Command="{Binding PlacementTarget.Tag.InsertSiblingBeforeCommand , RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource Sitemap_Menu_Move}">
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_MoveUp}"
+                                              InputGestureText="Alt+↑"
+                                              Icon="{StaticResource moveup}"
+                                              Command="{Binding PlacementTarget.Tag.PageUpCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_MoveDown}"
+                                              InputGestureText="Alt+↓"
+                                              Icon="{StaticResource movedown}"
+                                              Command="{Binding PlacementTarget.Tag.PageDownCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_Indent}"
+                                              InputGestureText="Alt+→"
+                                              Icon="{StaticResource indent}"
+                                              Command="{Binding PlacementTarget.Tag.PageIndentCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_Outdent}"
+                                              InputGestureText="Alt+←"
+                                              Icon="{StaticResource outdent}"
+                                              Command="{Binding PlacementTarget.Tag.PageOutdentCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource Sitemap_Delete}"
+                                          Icon="{StaticResource delete}"
+                                          Command="{Binding PlacementTarget.Tag.PageDeleteCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                <MenuItem Header="{DynamicResource Sitemap_Menu_Rename}"
+                                          Command="{Binding PlacementTarget.Tag.EditNodeCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                <MenuItem Header="{DynamicResource Sitemap_Menu_Duplicate}">
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_Page}"
+                                              Visibility="{Binding PlacementTarget.Tag.IsPageNode, Mode=OneWay , RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"
+                                              Command="{Binding PlacementTarget.Tag.DuplicatePageCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_Folder}"
+                                              Visibility="{Binding PlacementTarget.Tag.IsFolderNode, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"
+                                              Command="{Binding PlacementTarget.Tag.DuplicateFolderCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_Branch}"
+                                              Command="{Binding PlacementTarget.Tag.DuplicateBranchCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                </MenuItem>
+                            </ContextMenu>
+                            <ContextMenu FontWeight="Normal" x:Key="libraryMenu">
+                                <MenuItem Header="{DynamicResource Sitemap_Menu_Add}">
+                                    <MenuItem Header="{DynamicResource Library_Sitemap_Menu_SlibeAfter}"
+                                              InputGestureText="Alt+N"
+                                              Command="{Binding PlacementTarget.Tag.InsertSiblingAfterCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Library_Sitemap_Menu_SlibeBefore}"
+                                              Command="{Binding PlacementTarget.Tag.InsertSiblingBeforeCommand , RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource Sitemap_Menu_Move}">
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_MoveUp}"
+                                              InputGestureText="Alt+↑"
+                                              Icon="{StaticResource moveup}"
+                                              Command="{Binding PlacementTarget.Tag.PageUpCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                    <MenuItem Header="{DynamicResource Sitemap_Menu_MoveDown}"
+                                              InputGestureText="Alt+↓"
+                                              Icon="{StaticResource movedown}"
+                                              Command="{Binding PlacementTarget.Tag.PageDownCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                </MenuItem>
+                                <MenuItem Header="{DynamicResource Sitemap_Delete}"
+                                          Icon="{StaticResource delete}"
+                                          Command="{Binding PlacementTarget.Tag.PageDeleteCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                <MenuItem Header="{DynamicResource Sitemap_Menu_Rename}"
+                                          Command="{Binding PlacementTarget.Tag.EditNodeCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />
+                                <MenuItem Header="{DynamicResource Sitemap_Menu_Duplicate}"
+                                          Command="{Binding PlacementTarget.Tag.DuplicatePageCommand, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}" />                  
+                            </ContextMenu>
+                        </Border.Resources>
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Setter Property="ContextMenu" Value="{StaticResource standardMenu}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding  DataContext.IsStandardDocument, ElementName=PageTreeView}" Value="false">
+                                        <Setter Property="ContextMenu" Value="{StaticResource libraryMenu}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>                               
+                            </Style>
+                        </Border.Style>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseEnter">
+                                <i:InvokeCommandAction Command="{Binding PagePreviewCommand}">
+                                    <i:InvokeCommandAction.CommandParameter>
+                                        <MultiBinding Converter='{StaticResource previewConverter}'>
+                                            <Binding ElementName="PagesFrame" />
+                                            <Binding ElementName="PreviewPopup" />
+                                            <Binding ElementName="itemPanel" />
+                                        </MultiBinding>
+                                    </i:InvokeCommandAction.CommandParameter>
+                                </i:InvokeCommandAction>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="MouseLeave">
+                                <i:InvokeCommandAction Command="{Binding EndPreviewCommand}"
+                                                       CommandParameter="{Binding ElementName=PreviewPopup}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PreviewMouseLeftButtonDown">
+                                <i:InvokeCommandAction Command="{Binding DataContext.OpenPageCommand, ElementName=PageTreeView}"
+                                                       CommandParameter="{Binding Path=DataContext,ElementName=itemPanel}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Border>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <i:InvokeCommandAction Command="{Binding DeselectNodeCommand}"
+                                           CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource  AncestorType={x:Type TreeView}}}" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MouseLeave">
+                    <i:InvokeCommandAction Command="{Binding LeavePageTreeCommand}" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="SelectedItemChanged">
+                    <commonBase:CustomCommandAction Command="{Binding DataContext.PageClickCommand, ElementName=PageTreeView}"
+                                                    CommandParameter="{Binding ElementName=PageTreeView}"
+                                                    PassEventArgs="True" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="SourceUpdated">
+                    <i:InvokeCommandAction Command="{Binding SourceUpdatedCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+        </TreeView>
+
+        <Popup Name="PreviewPopup"
+               AllowsTransparency="True"
+               PopupAnimation="Fade"
+               PlacementTarget="{Binding ElementName=PagesFrame}"
+               Placement="Right"
+               VerticalOffset="0">
+            <Border Background="Transparent">
+                <StackPanel>
+                    <Border x:Name="ShowPreView"
+                            Width="130"
+                            Height="130"
+                            Background="LightGray"
+                            BorderBrush="#9ED8F4"
+                            BorderThickness="2">
+                        <Grid Margin="7" Background="WhiteSmoke">
+                            <Canvas Margin="0" >
+                            <Canvas.Background>
+                                <VisualBrush Stretch="Uniform"
+                                             Visual="{Binding PreCanvas}">
+                                </VisualBrush>
+                            </Canvas.Background>
+                        </Canvas>
+                        </Grid>
+                        
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+
+    </Grid>
+</UserControl>

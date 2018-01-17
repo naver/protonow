@@ -1,0 +1,302 @@
+﻿<Canvas x:Class="Naver.Compass.Differ.DifferView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Naver.Compass.Differ"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"  
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             mc:Ignorable="d" >
+    <Canvas.Resources>
+        <Common:Bool2VisibleConverter x:Key="Bool2Visible"/>
+        <Common:Bool2CollapseConverter x:Key="Bool2Collapse"/>
+        <Common:Boolreverse2CollapseConverter x:Key="BoolReverse"/>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="Transparent" BorderThickness="0"></Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Canvas.Resources>
+    <Border Width="{Binding Path=Width,ElementName=differWindow}"  Height="16"
+                   Visibility="{Binding IsErrorMsgVisible, Converter={StaticResource Bool2Collapse}}" Background="#EE4863" >
+        <TextBlock Margin="5,2,0,0" Foreground="White" FontSize="11" Text="{Binding ErrorMessage}"/>
+    </Border>
+
+    <!--add icon 1-->
+    <Grid Canvas.Left="30" 
+          Canvas.Top="30" 
+          Width="102" 
+          Height="102" 
+          AllowDrop="True"
+          Visibility="{Binding IsP1Opened, Converter={StaticResource BoolReverse}}">
+        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding BrowseCommand}" CommandParameter="1"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <Image  Width="102" Height="102" 
+                IsHitTestVisible="False"
+                Source="../Resources/Images/add-file.png"  AllowDrop="True"/>
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Style.Triggers>
+                    <Trigger Property="Visibility" Value="Visible">
+                        <Trigger.EnterActions>
+                            <BeginStoryboard x:Name="BeginStoryboard1" >
+                                <Storyboard>
+                                    <DoubleAnimation From="20" To="30"  Duration="0:0:0.200" Storyboard.TargetProperty="(Canvas.Top)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Drop">
+                <Common:CustomCommandAction 
+                    Command="{Binding DropFileCommand}" 
+                    CommandParameter="1"
+                    PassEventArgs="True"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+    </Grid>
+
+
+    <!--add icon 2-->
+    <Grid  Canvas.Left="174" 
+           Canvas.Top="30"
+           Width="102" 
+           Height="102" 
+           AllowDrop="True"   
+           Visibility="{Binding IsP2Opened, Converter={StaticResource BoolReverse}}">
+        <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding BrowseCommand}" CommandParameter="2"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="Drop">
+                    <Common:CustomCommandAction 
+                        Command="{Binding DropFileCommand}" 
+                        CommandParameter="2"
+                        PassEventArgs="True"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+        </Button>
+        <Image Width="102" Height="102" 
+               IsHitTestVisible="False"
+               Source="../Resources/Images/add-file.png"   AllowDrop="True"/>
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Style.Triggers>
+                    <Trigger Property="Visibility" Value="Visible">
+                        <Trigger.EnterActions>
+                            <BeginStoryboard x:Name="BeginStoryboard1" >
+                                <Storyboard>
+                                    <DoubleAnimation From="20" To="30"  Duration="0:0:0.200" Storyboard.TargetProperty="(Canvas.Top)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>   
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Drop">
+                <Common:CustomCommandAction Command="{Binding DropFileCommand}" CommandParameter="2"
+                                                PassEventArgs="True"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>        
+    </Grid>
+    
+    <!--thumbnail image 1-->
+    <Border Canvas.Left="30" Canvas.Top="20" CornerRadius="3"  AllowDrop="True"
+            Height="102" Width="102"
+            Visibility="{Binding IsP1Opened, Converter={StaticResource Bool2Collapse}}"
+            BorderBrush="#CCCCCC" BorderThickness="1" Background="Transparent">
+        <Grid>
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding BrowseCommand}" CommandParameter="1"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Image  Width="{Binding ImageWidth1}" 
+                    Height="{Binding ImageHeight1}" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"                  
+                    Stretch="Fill"
+                    Source="{Binding P1Thumbnail}" IsHitTestVisible="False"/>
+            
+            <Image Source="../Resources/Images/btn-remove.png" Width="16" Height="16"
+                           IsHitTestVisible="True"
+                           VerticalAlignment="Top" HorizontalAlignment="Right"
+                           Visibility="{Binding IsP1Opened, Converter={StaticResource Bool2Collapse}}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonUp">
+                        <Common:CustomCommandAction Command="{Binding ClearDocument}" CommandParameter="1" PassEventArgs="True"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Image>
+        </Grid>
+
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Drop">
+                <Common:CustomCommandAction Command="{Binding DropFileCommand}" CommandParameter="1"
+                                            PassEventArgs="True"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <Border.Style>
+            <Style TargetType="Border">
+                <Style.Triggers>
+                    <Trigger Property="Visibility" Value="Visible">
+                        <Trigger.EnterActions>
+                            <BeginStoryboard x:Name="BeginStoryboard1" >
+                                <Storyboard>
+                                    <DoubleAnimation From="30" To="20"  Duration="0:0:0.200" Storyboard.TargetProperty="(Canvas.Top)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+    </Border>
+    <TextBlock Canvas.Left="20" Canvas.Top="130" 
+               Width="122" TextAlignment="Center" 
+               TextWrapping="Wrap"
+               Text="{Binding P1Name}"/>
+
+    <!--thumbnail image 2-->
+    <Border Canvas.Left="174" Canvas.Top="20" CornerRadius="3" AllowDrop="True"
+            Height="102" Width="102"
+            Visibility="{Binding IsP2Opened, Converter={StaticResource Bool2Collapse}}"
+            BorderBrush="#CCCCCC" BorderThickness="1" Background="Transparent">
+        <Grid>
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding BrowseCommand}" CommandParameter="2"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Image Width="{Binding ImageWidth2}" 
+                           Height="{Binding ImageHeight2}" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Stretch="Fill"                           
+                           Source="{Binding P2Thumbnail}" IsHitTestVisible="False"/>
+            <Image Source="../Resources/Images/btn-remove.png" Width="16" Height="16"
+                           IsHitTestVisible="True"
+                           VerticalAlignment="Top" HorizontalAlignment="Right"
+                           Visibility="{Binding IsP2Opened, Converter={StaticResource Bool2Collapse}}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonUp">
+                        <Common:CustomCommandAction Command="{Binding ClearDocument}" CommandParameter="2" PassEventArgs="True"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Image>
+        </Grid>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Drop">
+                <Common:CustomCommandAction Command="{Binding DropFileCommand}" CommandParameter="2"
+                                            PassEventArgs="True"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <Border.Style>
+            <Style TargetType="Border">
+                <Style.Triggers>
+                    <Trigger Property="Visibility" Value="Visible">
+                        <Trigger.EnterActions>
+                            <BeginStoryboard x:Name="BeginStoryboard1" >
+                                <Storyboard>
+                                    <DoubleAnimation From="30" To="20"  Duration="0:0:0.200" Storyboard.TargetProperty="(Canvas.Top)"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+    </Border>
+    <TextBlock Canvas.Left="164" Canvas.Top="130" 
+               Width="122" TextAlignment="Center" 
+               TextWrapping="Wrap"
+               Text="{Binding P2Name}"/>
+
+    <Border Canvas.Left="0" Canvas.Top="162" Width="{Binding ElementName=differWindow, Path=Width}" BorderThickness="0,1,0,0" BorderBrush="#E6E6E6"/>
+
+    <Image Canvas.Left="95" Canvas.Top="173" Width="60" Height="22" 
+                   IsEnabled="{Binding IsPublishEnabled}">
+        <Image.Style>
+            <Style TargetType="Image">
+                <Setter Property="Source" Value="../Resources/Images/btn-export-normal.png"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <Setter Property="Source" Value="../Resources/Images/btn-export-over.png"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Source" Value=" ../Resources/Images/btn-export-disabled.png"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Image.Style>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonUp">
+                <i:InvokeCommandAction Command="{Binding ExportCommand}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+    </Image>
+
+    <TextBlock Canvas.Left="95" IsHitTestVisible="False" 
+               Canvas.Top="177"
+               Width="60"
+               TextAlignment="Center"
+               Text="{StaticResource Differ_Export}" 
+               Foreground="White" FontWeight="Bold"/>
+
+    <Image Canvas.Left="155" Canvas.Top="173" Width="60" Height="22"
+                   IsEnabled="{Binding IsPublishEnabled}">
+        <Image.Style>
+            <Style TargetType="Image">
+                <Setter Property="Source" Value="../Resources/Images/btn-publish-normal.png"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <Setter Property="Source" Value="../Resources/Images/btn-publish-over.png"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="false">
+                        <Setter Property="Source" Value=" ../Resources/Images/btn-publish-disabled.png"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Image.Style>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonUp">
+                <i:InvokeCommandAction Command="{Binding PublishCommand}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+    </Image>
+    <TextBlock Canvas.Left="155" Canvas.Top="177" 
+               Width="60"
+               TextAlignment="Center"                
+               Text="{StaticResource Differ_Publish}" IsHitTestVisible="False" Foreground="White" FontWeight="Bold"/>
+
+    <ProgressBar BorderThickness="0" 
+                         Foreground="#477BEF"  
+                         Background="#B8B8B8"  
+                         Canvas.Top="203"
+                         Width="318"
+                         Height="4"
+                         Visibility="{Binding BusyIndicator.IsShow, Converter={StaticResource Bool2Visible}}" 
+                         Value="{Binding BusyIndicator.Progress}"  
+                         Style ="{StaticResource CPSProgressStyle}" />
+</Canvas>

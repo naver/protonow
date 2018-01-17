@@ -1,0 +1,22 @@
+﻿<local:BaseEditControl x:Class="Naver.Compass.WidgetLibrary.SmallEditText"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Naver.Compass.WidgetLibrary"
+            x:Name="mine"
+             TextOptions.TextFormattingMode="Display"
+             TextOptions.TextRenderingMode="ClearType">
+
+    <local:BaseEditControl.Resources>
+
+        <Style TargetType="{x:Type local:SmallEditText}">
+            <Setter Property="local:FocusExtension.IsFocused" Value="{Binding CanEdit}"/>
+            <Setter Property="TextRotate" Value ="{Binding TextRotate,Mode=OneWay}" />
+            <Style.Triggers>
+                <Trigger Property="IsInEditMode" Value="True">
+                    <Setter Property="TextRotate" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </local:BaseEditControl.Resources>
+</local:BaseEditControl>

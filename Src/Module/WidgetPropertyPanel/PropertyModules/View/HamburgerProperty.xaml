@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Naver.Compass.Module.Property.HamburgerProperty"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <common:DisableAttributeConverter x:Key="LeftToRight" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Expander Grid.Row="1"  IsExpanded="True"  Style="{DynamicResource WidgetProStyle}">
+            <Expander.Header >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource WidgetProp_DrawerMenuTitle}"/>
+                    <TextBlock Text="{Binding HeaderString}"/>
+                </StackPanel>
+
+            </Expander.Header>
+            <Expander.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="12"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Margin="2,0,0,0"  Grid.Row="1"  Text ="{DynamicResource WidgetProp_Hamburger_HideSetting}"></TextBlock>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton Grid.Column ="0"  HorizontalAlignment="Left"  IsChecked="{Binding IsLeft,Mode=TwoWay}"  Margin="10,0,0,0" Content="{DynamicResource WidgetProp_StyleLeft}"/>
+                        <RadioButton Grid.Column ="1"  HorizontalAlignment="Left"  IsChecked="{Binding IsLeft,Mode=TwoWay,Converter={StaticResource LeftToRight}}" Width="auto"  Margin="10,0,0,0" Content ="{DynamicResource WidgetProp_StyleRight}"/>
+                    </Grid>
+
+                    <Button  Grid.Row="5" Width="150" Content="{DynamicResource WidgetProp_Import}"  Height="22" FontSize="11"
+                                 Command="common:WidgetPropertyCommands.ImportImage"
+                                 CommandTarget="{Binding CmdTarget}"
+                                 CommandParameter="1"
+                                 HorizontalAlignment="Left">
+                    </Button>
+
+                    <Border Grid.Row="7" Width="150" Background="LightSkyBlue" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left">
+                        <Image IsHitTestVisible="False" Stretch="Fill" Height="90"
+                                   VerticalAlignment=" Stretch" HorizontalAlignment="Stretch" Source="{Binding ImgSource}">
+                        </Image>
+                    </Border>
+
+                    <TextBlock Grid.Row="9"  Text ="{DynamicResource WidgetProp_TooltipTitle}"></TextBlock>
+                    <cb:EnterTextbox Grid.Row ="11" IsEnterKeyMoveFocus="False"  Text="{Binding Tooltip, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"  />
+
+                </Grid>
+            </Expander.Content>
+        </Expander>
+    </Grid>
+</UserControl>

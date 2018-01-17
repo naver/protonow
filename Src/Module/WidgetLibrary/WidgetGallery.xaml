@@ -1,0 +1,531 @@
+﻿<UserControl x:Class="Naver.Compass.Module.WidgetGallery"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+             xmlns:win="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:CommonBase="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:local ="clr-namespace:Naver.Compass.Module"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
+             xmlns:s="clr-namespace:Naver.Compass.Module"
+             SnapsToDevicePixels="True"
+             FocusManager.IsFocusScope="True"
+             UseLayoutRounding="True"
+             d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/ToolboxItem.xaml" />
+                <ResourceDictionary Source="Resources/Toolbox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <CommonBase:Bool2CollapseConverter x:Key="Bool2CollapseConverter"/>
+            <CommonBase:Boolreverse2CollapseConverter x:Key="Boolreverse2CollapseConverter"/>
+            <Style x:Key="GroupBoxExpander"
+                   TargetType="{x:Type Expander}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Expander}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition x:Name="ContentRow"
+                                                   Height="0" />
+                                </Grid.RowDefinitions>
+                                <Border  x:Name="Border"
+                                         Grid.Row="0"
+                                         BorderThickness="0"
+                                         Height="20"
+                                         Background="{TemplateBinding Background}"
+                                         Margin="0">                                    
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="8" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="4" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <ToggleButton  Grid.Column="1"
+                                                       IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                       VerticalAlignment="Center"
+                                                       OverridesDefaultStyle="True"
+                                                       Template="{StaticResource ExpanderToggleButton}"
+                                                       Background="{StaticResource NormalBrush}" />
+                                        <ContentPresenter Grid.Column="3"
+                                                          ContentSource="Header"
+                                                          RecognizesAccessKey="True"
+                                                          VerticalAlignment="Center" />
+                                        <!--<ToggleButton Grid.Column="3"
+                                                      Grid.ColumnSpan="3"
+                                                      IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                                      VerticalAlignment="Stretch"
+                                                      HorizontalAlignment="Stretch"
+                                                      OverridesDefaultStyle="True"
+                                                      Template="{StaticResource ExpanderHiddenToggleButton}"
+                                                      Background="{StaticResource NormalBrush}" />-->
+                                    </Grid>
+                                </Border>
+                                <Border x:Name="Content"
+                                        Grid.Row="1"
+                                        BorderThickness="0">
+                                    <ContentPresenter />
+                                </Border>
+                                <Line  x:Name="BottomLine"
+                                       Grid.Row="1"
+                                       X1="0"
+                                       Y1="0"
+                                       X2="50"
+                                       Y2="0"
+                                       Margin="0,-1,0,0"
+                                       StrokeThickness="1"
+                                       Stroke="#D1D1D1"
+                                       Stretch="Fill"
+                                       VerticalAlignment="Bottom" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsExpanded"
+                                         Value="True">
+                                    <Setter TargetName="ContentRow"
+                                            Property="Height"
+                                            Value="Auto" />
+                                    <!--<Setter TargetName="BottomLine" Property="Visibility" Value="Collapsed"/>-->
+                                </Trigger>
+                                <Trigger Property="IsExpanded"
+                                         Value="False">
+                                    <Setter TargetName="Content"
+                                            Property="Visibility"
+                                            Value="Collapsed" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <DataTemplate x:Key="WidgetLibraryTabContentTemplate">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <ItemsControl ItemsSource="{Binding WidgetExpands}">
+                            <ItemsControl.Resources>
+                                <Style TargetType="Image">
+                                    <Setter Property="Width"
+                                            Value="30" />
+                                    <Setter Property="Height"
+                                            Value="30" />
+                                    <Setter Property="Stretch"
+                                            Value="Uniform" />
+                                    <Setter Property="Margin"
+                                            Value="0,19,0,6" />
+                                    <!--8+11-->
+                                </Style>
+                                <Style TargetType="TextBlock"
+                                       BasedOn="{StaticResource {x:Type TextBlock}}">
+                                    <Setter Property="HorizontalAlignment"
+                                            Value="Center" />
+                                    <Setter Property="Margin"
+                                            Value="0,0,0,60" />
+                                    <Setter Property="FontSize"
+                                            Value="11" />
+                                    <Setter Property="TextAlignment"
+                                            Value="Center" />
+                                    <Setter Property="TextWrapping"
+                                            Value="Wrap" />
+                                    <Setter Property="MaxWidth"
+                                            Value="80" />
+                                </Style>
+
+                                <Style x:Key="expanderHeader"
+                                       TargetType="TextBlock">
+                                    <Setter Property="FontFamily"
+                                            Value="{DynamicResource Common_Font}" />
+                                    <Setter Property="HorizontalAlignment"
+                                            Value="Left" />
+                                    <Setter Property="FontSize"
+                                            Value="11" />
+                                    <Setter Property="RenderOptions.EdgeMode"
+                                            Value="Aliased" />
+                                    <Setter Property="TextOptions.TextFormattingMode"
+                                            Value="Display" />
+                                    <Setter Property="TextOptions.TextRenderingMode"
+                                            Value="ClearType" />
+                                </Style>
+                            </ItemsControl.Resources>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Expander Background="#F8F8F8"
+                                              Header="{Binding Header}"
+                                              Content="{Binding}"
+                                              IsExpanded="{Binding IsExpand, Mode=TwoWay}"
+                                              Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Expander.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding}"
+                                                           Style="{StaticResource expanderHeader}" />
+                                            </DataTemplate>
+                                        </Expander.HeaderTemplate>
+                                        <Expander.ContentTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+
+                                                    <s:Toolbox ItemsSource="{Binding WidgetModels}"
+                                                               Panel.ZIndex="2" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </Expander.ContentTemplate>
+                                    </Expander>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                    <Grid Margin="0,30,0,0"
+                          VerticalAlignment="Top"
+                          Visibility="{Binding IsEmptyHintVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <win:InlineTextBlock Content="{Binding InlineContent}"
+                                             Margin="20"
+                                             Width="240"
+                                             TextWrapping="Wrap"
+                                             LineHeight="18"
+                                             TextAlignment="Center" />
+                    </Grid>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="MyLibraryTabContentTemplate">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Background="#fff8f8f8" 
+                                Visibility="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TabControl}}, Path=DataContext.DocTypeVisibility }">
+                        <StackPanel HorizontalAlignment="Right"
+                                    Orientation="Horizontal"
+                                    Margin="0,4,8,0">
+                            <TextBlock Text="{DynamicResource Libraries_Manage_My_Library}" />
+                            <StackPanel Width="16"
+                                        Height="16"
+                                        VerticalAlignment="Center"
+                                        Margin="12,0,0,0">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseDown">
+                                        <!--<CommonBase:SetterAction Property="ContextMenu.IsOpen"
+                                                                 SetterElement="{Binding ElementName=MainContextMenu}">
+                                            <CommonBase:SetterAction.Value>
+                                                <system:Boolean>True</system:Boolean>
+                                            </CommonBase:SetterAction.Value>
+                                        </CommonBase:SetterAction>-->
+                                        <CommonBase:CustomCommandAction Command="{Binding ContextMenuOpenCommand}"
+                                                                        CommandParameter="{Binding ElementName=MainContextMenu}" />
+
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <StackPanel.Background>
+                                    <ImageBrush ImageSource="Resources/Images/appbar.settings.png" />
+                                </StackPanel.Background>
+                                <StackPanel.ContextMenu>
+                                    <ContextMenu x:Name="MainContextMenu">
+                                        <!--<MenuItem Header="Download Libraries"
+                                                  IsEnabled="False" />
+                                        <Separator Style="{DynamicResource MainSe}" />
+                                        <MenuItem Header="Import to Library" />
+                                        <MenuItem Header="Create Library"
+                                                  IsEnabled="False" />-->
+                                    </ContextMenu>
+                                </StackPanel.ContextMenu>
+                            </StackPanel>
+                        </StackPanel>
+                        <Grid Background="#d1d1d1"
+                              Opacity=".4"
+                              Height="1"
+                              Margin="0,6,0,0" />
+                    </StackPanel>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                  Grid.Row="1">
+                        <ItemsControl ItemsSource="{Binding WidgetExpands}">
+                            <ItemsControl.Resources>
+                                <Style TargetType="Image">
+                                    <Setter Property="Width"
+                                            Value="30" />
+                                    <Setter Property="Height"
+                                            Value="30" />
+                                    <Setter Property="Stretch"
+                                            Value="Uniform" />
+                                    <Setter Property="Margin"
+                                            Value="0,19,0,6" />
+                                    <!--8+11-->
+                                </Style>
+                                <Style TargetType="TextBlock"
+                                       BasedOn="{StaticResource {x:Type TextBlock}}">
+                                    <Setter Property="HorizontalAlignment"
+                                            Value="Center" />
+                                    <Setter Property="Margin"
+                                            Value="0,0,0,60" />
+                                    <Setter Property="FontSize"
+                                            Value="11" />
+                                    <Setter Property="TextAlignment"
+                                            Value="Center" />
+                                    <Setter Property="TextWrapping"
+                                            Value="Wrap" />
+                                    <Setter Property="MaxWidth"
+                                            Value="80" />
+                                </Style>
+
+                                <Style x:Key="expanderHeader"
+                                       TargetType="TextBlock">
+                                    <Setter Property="FontFamily"
+                                            Value="{DynamicResource Common_Font}" />
+                                    <Setter Property="HorizontalAlignment"
+                                            Value="Left" />
+                                    <Setter Property="FontSize"
+                                            Value="11" />
+                                    <Setter Property="RenderOptions.EdgeMode"
+                                            Value="Aliased" />
+                                    <Setter Property="TextOptions.TextFormattingMode"
+                                            Value="Display" />
+                                    <Setter Property="TextOptions.TextRenderingMode"
+                                            Value="ClearType" />
+                                </Style>
+                            </ItemsControl.Resources>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Expander x:Name="expander"
+                                              Background="#F8F8F8"
+                                              Header="{Binding}"
+                                              Content="{Binding}"
+                                              IsExpanded="{Binding IsExpand, Mode=TwoWay}"
+                                              Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibilityConverter}}"
+                                              Style="{StaticResource GroupBoxExpander}">
+                                        <Expander.HeaderTemplate>
+                                            <DataTemplate>
+                                                <Grid Background="Transparent">
+
+                                                    <i:Interaction.Triggers>
+                                                        <i:EventTrigger EventName="MouseEnter">
+                                                            <i:InvokeCommandAction Command="{Binding ShowSettingCommand}"/>
+                                                        </i:EventTrigger>
+                                                        <i:EventTrigger EventName="MouseLeave">
+                                                            <i:InvokeCommandAction Command="{Binding HideSettingCommand}" />
+                                                        </i:EventTrigger>
+                                                    </i:Interaction.Triggers>
+                                                
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Text="{Binding Header}"
+                                                               Style="{StaticResource expanderHeader}"
+                                                               VerticalAlignment="Center" />
+                                                    <StackPanel Width="16"
+                                                                Height="16"
+                                                                VerticalAlignment="Center"
+                                                                Margin="12,0,8,0"
+                                                                Grid.Column="1"
+                                                                x:Name="ExpandMenu"
+                                                                Opacity="{Binding Path=DataContext.SettingOpacity, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Expander}}}"
+                                                                Visibility="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TabControl}}, Path=DataContext.DocTypeVisibility }">
+                                                        <StackPanel.Background>
+                                                            <ImageBrush ImageSource="Resources/Images/appbar.settings.png" />
+                                                        </StackPanel.Background>
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="MouseDown">
+                                                                <CommonBase:CustomCommandAction Command="{Binding ContextMenuOpenCommand}"
+                                                                                                CommandParameter="{Binding ElementName=ExpandContextMenu}"
+                                                                                                PassEventArgs="True" />
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <StackPanel.ContextMenu>
+                                                            <ContextMenu x:Name="ExpandContextMenu" />
+                                                        </StackPanel.ContextMenu>                                                       
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </Expander.HeaderTemplate>
+                                        <Expander.ContentTemplate>
+                                            <DataTemplate>
+                                                <Grid Background="Transparent">
+                                                    <i:Interaction.Triggers>
+                                                        <i:EventTrigger EventName="MouseEnter">
+                                                            <i:InvokeCommandAction Command="{Binding ShowSettingCommand}"/>
+                                                        </i:EventTrigger>
+                                                        <i:EventTrigger EventName="MouseLeave">
+                                                            <i:InvokeCommandAction Command="{Binding HideSettingCommand}" />
+                                                        </i:EventTrigger>
+                                                    </i:Interaction.Triggers>
+                                                    <s:Toolbox ItemsSource="{Binding WidgetModels}"
+                                                               Panel.ZIndex="2" >                                                        
+                                                    </s:Toolbox>                                                   
+                                                </Grid>
+                                            </DataTemplate>
+                                        </Expander.ContentTemplate>
+                                    </Expander>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                    <Grid Margin="0,30,0,0"
+                          Grid.RowSpan="2"
+                          VerticalAlignment="Top"
+                          Visibility="{Binding IsEmptyHintVisible, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <win:InlineTextBlock Content="{Binding InlineContent}"
+                                             Margin="20"
+                                             Width="240"
+                                             TextWrapping="Wrap"
+                                             LineHeight="18"
+                                             TextAlignment="Center" />
+                    </Grid>
+                    
+                </Grid>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="ExternelBorder" Background="White">
+        <Grid.RowDefinitions >
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <ContentControl x:Name="SearchBox">
+            <ContentControl.Style>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ContentControl">
+                                <Grid Background="{StaticResource UnSeletedLibiarytabBackground}">
+                                    <AdornerDecorator>
+                                        <TextBox Margin="2,2,2,1"
+                                         x:Name="Searchbox"
+                                         Style="{StaticResource BorderTextbox}"
+                                         Height="22" 
+                                         BorderBrush="#FFd5d5d5"
+                                         Padding="4,2,4,2"
+                                         Foreground="#ff333333">
+                                            <win:WatermarkService.Watermark>
+                                                <TextBlock Margin="4,0,4,2"
+                                                   Text="{DynamicResource Libraries_Search}" />
+                                            </win:WatermarkService.Watermark>
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="TextChanged">
+                                                    <CommonBase:CustomCommandAction Command="{Binding WidgetSearchChangedCommand}"
+                                                                            PassEventArgs="True" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                        </TextBox>
+                                    </AdornerDecorator>
+                                    <!--<TextBlock Text="Search"
+                                       Foreground="#9a9a9a"
+                                       Margin="12,0,0,5"
+                                       VerticalAlignment="Center" />-->
+
+                                    <Button x:Name="DocumentCloseButton"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Right"
+                                    Visibility="Visible"
+                                    Grid.Column="1"
+                                    Width="15"
+                                    Height="15"
+                                    Margin="15,0,8,0"
+                                    Focusable="False"
+                                    Padding="0">
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}">
+                                                <Setter Property="Background"
+                                                Value="Transparent" />
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border Background="{TemplateBinding Background}">
+                                                                <ContentPresenter HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center" />
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Button.Style>
+                                        <Image x:Name="PART_ImgPinClose"
+                                               Stretch="None"
+                                               Source="Resources/Images/icon-13-pane-close.png" />
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Click">
+                                                <CommonBase:SetterAction Property="TextBox.Text"
+                                                                 Value=""
+                                                                 SetterElement="{Binding ElementName=Searchbox}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Button>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver"
+                                             SourceName="DocumentCloseButton"
+                                             Value="True">
+                                        <Setter Property="Source"
+                                                TargetName="PART_ImgPinClose"
+                                                Value="Resources/Images/Close_Rollover_on.png" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ContentControl.Style>
+        </ContentControl>
+
+        <TabControl Grid.Row="1"
+                    Style="{DynamicResource LibraryTabControl}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <CommonBase:CustomCommandAction Command="{Binding TabIndexChangedCommand}"
+                                                    PassEventArgs="True" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>  
+            <TabItem Header="{DynamicResource Libraries_UI}"
+                     IsSelected="True"
+                     Style="{DynamicResource LibraryTabItem}"
+                     DataContext="{Binding UIWidgetLibraryTab}"
+                     Content="{Binding}"
+                     ContentTemplate="{StaticResource WidgetLibraryTabContentTemplate}" />
+            <TabItem Header="{DynamicResource Libraries_Icon}"
+                     Style="{DynamicResource LibraryTabItem}"
+                     DataContext="{Binding ICONWidgetLibraryTab}"
+                     Content="{Binding}"
+                     ContentTemplate="{StaticResource WidgetLibraryTabContentTemplate}" />
+            <TabItem Header="{DynamicResource Libraries_MY}"
+                     Style="{DynamicResource LibraryTabItem}"
+                     DataContext="{Binding MyWidgetLibraryTab}"
+                     Content="{Binding}"
+                     ContentTemplate="{StaticResource MyLibraryTabContentTemplate}" />
+        </TabControl>
+
+        <!--Use a new TabControl to show search resule-->
+        <TabControl x:Name="SearchResult" Grid.Row="1" Style="{StaticResource NoHeaderTabControl}" >
+            <TabItem IsSelected="True"
+                     Style="{DynamicResource LibraryTabItem}"
+                     DataContext="{Binding SearchResultTab}"
+                     Content="{Binding}"
+                     ContentTemplate="{StaticResource WidgetLibraryTabContentTemplate}" />
+        </TabControl>
+      
+        <Border Grid.Row="2" Height="45"
+                Background="#f3f5f8" 
+                BorderBrush="#e1e4e9" BorderThickness="1"                
+                Visibility="{Binding DocTypeVisibility}">
+            <Grid Background="Transparent">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="76"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" TextWrapping="Wrap" Margin="10,0,10,0"
+                           Text="{DynamicResource Libraries_DownloadArea_Banner}"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <Image Grid.Column="1" 
+                       Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                       Source="/Naver.Compass.Module.WidgetLibrary;component/Resources/Images/icon_download.png"></Image>
+                <Button Grid.ColumnSpan="3" Opacity="0.001" Cursor="Hand" Click="libDownload_Click"></Button>
+            </Grid>
+        </Border>
+    </Grid>
+
+</UserControl>

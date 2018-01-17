@@ -1,0 +1,167 @@
+﻿<win:BaseWindow x:Class="Naver.Compass.Module.PublishModel.PrePublish"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:win="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:com="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:Local="clr-namespace:Naver.Compass.Module.PublishModel"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"  
+             Style="{StaticResource PopupWindow}"
+             Title="{DynamicResource Publish_Window_Title}"
+             x:Name="PrePublishWin"
+             SizeToContent="Height" WindowStartupLocation="CenterOwner"  FontFamily="NanumGothic" Width="434" UseLayoutRounding="True" SnapsToDevicePixels="True"  Background="White">
+    
+    <Grid >
+        <Grid.Resources>
+            <Local:ViewPortName x:Key="ViewPortNameConverter"/>
+            <com:BoolReverseConverter x:Key="BoolReverseCvt"/>
+            <com:Bool2CollapseConverter x:Key="BoolCollapseCvt"/>
+            <com:Boolreverse2CollapseConverter x:Key="BoolReverseCollapseCvt"/>
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="24"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="14" /><!--16-2-->
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="29"/><!--32-3-->
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="29"/><!--32-3-->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="8"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="26"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="15"/><!--16-1-->
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="9"/><!--10-1-->
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="13"/> <!--16-3-->
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock  Grid.Row="0" FontWeight="Medium"   Text="{DynamicResource Publish_Window_L_ShareURL}"/>
+                <RadioButton  Grid.Row="2"  IsChecked="{Binding IsOverProject,Mode=TwoWay,Converter={StaticResource BoolReverseCvt}}"  Content="{DynamicResource Publish_Window_C_CreateNew}" />
+                <StackPanel Orientation="Horizontal" Grid.Row="4" UseLayoutRounding="True">
+                    <RadioButton   IsEnabled="{Binding IsEnableOverProject}"  IsChecked="{Binding IsOverProject,Mode=TwoWay}" Content="{StaticResource Publish_Window_L_RelaceProject}" />
+                    <Border Margin="8,0,0,0" Height="12"  BorderBrush="#bbbbbb" BorderThickness="1,0,0,0" Visibility="{Binding IsOverProject,Converter={StaticResource BoolCollapseCvt}}"/>
+                    <win:LinkLabel Padding="0" FontSize="11"  Margin="9,0,0,0" Content="{Binding WebShortUrl}"   Url="{Binding WebShortUrl}"  Foreground="#4a7eec"  HoverForeground="#FF4AB0EB"   LinkLabelBehavior="HoverUnderline"  Visibility="{Binding IsOverProject,Converter={StaticResource BoolCollapseCvt}}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Orientation="Horizontal">
+                    <TextBlock Foreground="#FF7f7f7f" Text="{DynamicResource Publish_Window_TipUpload1}"/>
+                    <TextBlock Margin="6,0,0,0" Foreground="#FFea6447" Text="{DynamicResource Publish_Window_TipUpload2}"/>
+                </StackPanel>
+                <TextBlock Margin="10,7,0,0" Padding="0"  Grid.Row="7" Foreground="#7f7f7f"  Visibility="{Binding IsOverProject,Converter={StaticResource BoolCollapseCvt}}"  Text="{Binding UploadDate}"/>
+            </Grid>
+
+            <Grid Grid.Row ="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="15"/> <!--16-1-->
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock  Grid.Row="0" FontWeight="Medium"  Text="{DynamicResource Publish_Window_AccessSetting}"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <RadioButton  IsChecked="{Binding IsUseAccess,Converter={StaticResource BoolReverseCvt},Mode=TwoWay}"  Content="{DynamicResource Publish_Window_DisableAccess}" />
+                    <RadioButton  Margin="32,0,0,0" IsChecked="{Binding IsUseAccess,Mode=TwoWay}"  Content="{DynamicResource Publish_Window_UseAccess}" />
+                </StackPanel>
+                <Grid Grid.Row="3" Visibility="{Binding IsUseAccess,Converter={StaticResource BoolCollapseCvt}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15"/><!--16-1-->
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <PasswordBox x:Name="passwordBox" Grid.Row="1"   Height="21"  Width ="190"  Foreground="#666666"  
+                                 BorderBrush="#FFBBBBBB" Background="White"  BorderThickness="1" 
+                                 Local:PasswordHelper.Attach="True"
+                                 Local:PasswordHelper.Password= "{Binding Path=ProjectPassword, Mode=TwoWay}" 
+                                 HorizontalAlignment="Left"                                 
+                                 Visibility="{Binding IsChecked,ElementName=Confirm,Converter={StaticResource BoolReverseCollapseCvt}}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Loaded">
+                                <i:InvokeCommandAction Command="{Binding LoadPasswordCommand}" />
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="PasswordChanged">
+                                <i:InvokeCommandAction Command="{Binding PassWordChangedCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </PasswordBox>
+                    <TextBox x:Name="passworTextBox" Grid.Row="1"   
+                             Height="21"  Width ="190" FontWeight="thin" 
+                             Visibility="{Binding IsChecked,ElementName=Confirm,Converter={StaticResource BoolCollapseCvt}}"  
+                             Text="{Binding Path=ProjectPassword, Mode=TwoWay}"  Foreground="#666666" 
+                             BorderBrush="#FFBBBBBB" Background="White"  
+                             BorderThickness="1" HorizontalAlignment="Left">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="TextChanged">
+                                <i:InvokeCommandAction Command="{Binding PassWordChangedCommand}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </TextBox>
+                    <CheckBox x:Name="Confirm" Grid.Row="1" Margin="198,0,0,0" Padding="7,0,0,0"  Foreground="#FF4f4f4f"  Content="{DynamicResource Publish_Window_CheckPassword}"></CheckBox>
+                    <StackPanel Margin="0,8,0,0"  Orientation="Horizontal" Grid.Row="2">
+                        <TextBlock Text="* " Foreground="#666666" Margin="0,0,2,0"/>
+                        <TextBlock Foreground="#ea6447"   Visibility="{Binding IsErrorPassword,Converter={StaticResource BoolCollapseCvt}}"  Text="{DynamicResource Publish_Window_ErrorPassword}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="0,7,0,0">
+                        <TextBlock Text="*" Foreground="#666666" Margin="0,0,2,0"/>
+                        <TextBlock Foreground="#666666"   Text="{DynamicResource Publish_Window_PasswordRule}"/>
+                    </StackPanel> 
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="5" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="13"/><!--14-1-->
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontWeight="Medium" Text="{StaticResource Publish_Window_L_ViewPort}" ></TextBlock>
+                <ComboBox  Grid.Row="2" Foreground="#666666" IsEnabled="{Binding IsEnableResolution,Mode=OneTime}"  ItemsSource="{Binding ListData,Mode=OneTime}" SelectedIndex="{Binding iSelectDevice,Mode=OneWay}"  SelectedItem="{Binding SelectDevice,Mode=OneWayToSource}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Margin="2,2,0,2">
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource ViewPortNameConverter}">
+                                        <Binding Path="Name"/>
+                                        <Binding Path="Width" />
+                                        <Binding Path="Height"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+
+                </ComboBox>
+            </Grid>
+
+            <TextBlock Grid.Row="7" Foreground="#ea6447" FontSize="11" Text="{StaticResource Publish_FileSave}"/>
+
+            <Grid Grid.Row="8" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="1*"/>
+                    <ColumnDefinition Width ="110"/>
+                    <ColumnDefinition Width ="8"/>
+                    <ColumnDefinition Width ="110"/>
+                    <ColumnDefinition Width ="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="{StaticResource Publish_Window_B_Publish}"
+                        Command="{Binding PublishCommand}" CommandParameter="{Binding ElementName=PrePublishWin}"  
+                        IsEnabled="{Binding IsEnableUpload,Mode=OneWay}"  Grid.Column="1" />
+                <Button Content="{StaticResource Common_Cancel}"  Command="{Binding CancelComman}" CommandParameter="{Binding ElementName=PrePublishWin}" Grid.Column="3"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</win:BaseWindow>

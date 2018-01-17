@@ -1,0 +1,68 @@
+﻿<win:BaseWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:win="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+    x:Class="Naver.Compass.Module.PublishModel.SvnProcess"
+    xmlns:common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+    Style="{StaticResource PopupWindow}"
+    x:Name="SvnProcessWindow"
+    Title="{DynamicResource Publish_Window_Title}" Width="402"  SizeToContent="Height"  WindowStartupLocation="CenterOwner">
+    <Grid UseLayoutRounding="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="7"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="20"/><!--Copy button-->
+            <RowDefinition Height="auto"/> <!--QR image-->
+            <RowDefinition Height="25"/><!--errormessage-->
+            <RowDefinition Height="26"/><!--close button-->
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="16"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Foreground="#676767"  Grid.Row="1" Grid.Column="1" Margin="-4,0,0,0"  HorizontalAlignment="Left"  HorizontalContentAlignment="Left"  Content="{StaticResource Publish_Window_Label}"/>
+
+        <Label Foreground="#676767" Grid.Row="3" Grid.Column="1" Margin="-4,0,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Left"  Content="{Binding BusyIndicator.Content}"/>
+
+        <ProgressBar   Grid.Row="5" Grid.Column="1" BorderThickness="0" Foreground="#4A7EEC"  Background="#F0F0F0"  Value="{Binding BusyIndicator.Progress}" Style ="{StaticResource CPSProgressStyle}" />
+        
+        <Grid Grid.Row="7" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Padding="0"  Foreground="#666666" Margin="0,0,0,0"  Content="{DynamicResource Publish_Window_Label2}" VerticalAlignment="Center" />
+            <win:LinkLabel x:Name="LinkName"  Padding="0"  Content="{Binding sShortUrl}"   Url="{Binding sUrl}" Foreground ="#FF4A7EEE"  HoverForeground="#FF4AB0EB"  HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Column="1" LinkLabelBehavior="HoverUnderline" />
+            <Button Grid.Column="3" Height="20"   Command="{Binding CopyCommand}" Visibility="{Binding IsCopyVisibility}" Padding="4,0"  Foreground="#666666" BorderThickness="1" BorderBrush="#FFBDBDBD"  Content="{StaticResource Process_window_CopyURL}"/>
+        </Grid>
+
+        <Grid Grid.Row="8" Grid.Column="1" Margin="0,20,0,0" UseLayoutRounding ="True"  Visibility="{Binding IsCopyVisibility,Mode=OneWay}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Padding="0" Text="{StaticResource Process_window_QRCode}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#666666" />
+                <Border  Grid.Column="1" Width="196" Height="196" BorderBrush="#FFBABABA" BorderThickness="1">
+                <Image Margin="10" MaxHeight="174" MaxWidth="174"  Source="{Binding QRSource,Mode=OneWay}" HorizontalAlignment="Center" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                </Border>
+        </Grid>
+
+        <Grid Grid.Row="9" Grid.Column="1">
+            <TextBlock Text="{Binding sErrorMessage}" Foreground="Red" />
+        </Grid>
+
+        <Button Grid.Row="10" Foreground="#666666" Grid.Column="1" Width="168" Command="{Binding CloseCommand}" CommandParameter="{Binding ElementName=SvnProcessWindow}" IsEnabled="{Binding IsCloseEnable}"  Content="{StaticResource Common_Close}"/>
+    </Grid>
+
+
+</win:BaseWindow>

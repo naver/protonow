@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="Naver.Compass.WidgetLibrary.DynamicPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             mc:Ignorable="d" UseLayoutRounding="True"
+             d:DesignHeight="150" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Common:Bool2VisibleConverter x:Key="Bool2Visible"/>
+        <Common:Bool2CollapseConverter x:Key="Bool2Collapse"/>
+        <Style x:Key="ContentHiddenStyle" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BorderHiddenStyle" TargetType="Border">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Opacity" Value="0.05"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Background" Value="Transparent "/>
+                    <Setter Property="Opacity" Value="1"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border IsHitTestVisible="False" Style="{StaticResource BorderHiddenStyle}">     
+        <Border.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="../Themes/Generic.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>   
+        </Border.Resources>
+        <Grid Style="{StaticResource ContentHiddenStyle}" Opacity="{Binding Opacity}">
+            <ScrollViewer x:Name="PreScrollView"  VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" >
+                <Grid x:Name="PreBorder" >
+
+
+                    <!--Botton -->
+                    <Border IsHitTestVisible="False"  Background="#4A7EEC" Opacity="0.13"  Visibility="Collapsed">
+                    </Border>
+
+                    <!-- show views and widgets in views.-->
+                    <ItemsControl ItemsSource="{Binding ViewItems}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate x:Name="PanelTmp">
+                                <StackPanel x:Name="PreCanvas" Orientation="Horizontal" IsItemsHost="True" Background="Transparent" >
+                                </StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="{Binding PanelMargin}"  Width="{Binding PanelWidth, Mode=OneWay}" Background="Transparent" BorderBrush="Transparent">
+                                    <Grid>
+                                        <ItemsControl x:Name="ExternCanvas"  ItemsSource="{Binding Items,IsAsync=True,Mode=OneWay}" >
+                                        <!--Preview Canvas-->
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate x:Name="PanelTmp">
+                                                <Canvas x:Name="PreCanvas" IsItemsHost="True" Background="Transparent" Width="{Binding PanelWidth, Mode=OneWay}">
+                                                </Canvas>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+
+                                        <ItemsControl.ItemContainerStyle>
+                                            <Style TargetType="{x:Type ContentPresenter}">
+                                                <Setter Property="Canvas.Top" Value="{Binding Top}" />
+                                                <Setter Property="Canvas.Left" Value="{Binding Left}" />
+                                                <Setter Property="Canvas.ZIndex" Value="{Binding ZOrder}" />
+                                                <Setter Property="Visibility" 
+                                        Value="{Binding IsShowInPageView2Adaptive,Converter={StaticResource Bool2Collapse}}"/>
+                                            </Style>
+                                        </ItemsControl.ItemContainerStyle>
+                                    </ItemsControl>
+                                        <Border Background="#4A7EEC" Opacity="0.13"  />
+                                    </Grid>
+                                </ScrollViewer>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <!--Middle-->
+
+                    <!--show navigation icons -->
+                    <Border IsHitTestVisible="False" Background="Transparent" VerticalAlignment="Bottom" Visibility="{Binding NavigationVisibility}">
+                        <StackPanel Orientation="Horizontal" Background="Transparent" Margin="0,0,0,6"
+                                                HorizontalAlignment="Center" VerticalAlignment="Bottom">
+
+                            <Image Source="/Naver.Compass.WidgetLibrary.FrameWidgets;component/Resource/left.png" 
+                                               Width="20" Height="20" Margin="0,0,10,0"
+                                               Visibility="{Binding IsShowArrow,Converter={StaticResource Bool2Visible}}">
+                            </Image>
+                            <ItemsControl ItemsSource="{Binding NavigationChildren}" MinWidth="40">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal" IsItemsHost="True" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <RadioButton Content="{Binding ShowNumber,Mode=OneWay}" 
+                                                                 TabIndex="{Binding ShowType,Mode=OneWay}"
+                                                                 IsChecked="{Binding IsChecked,Mode=OneWay}"
+                                                                 Style="{StaticResource CirRadioButtonTyle}" 
+                                                                 Margin="0,0,5,0" GroupName="DynamicCircleGroup">
+                                        </RadioButton>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <Image Source="/Naver.Compass.WidgetLibrary.FrameWidgets;component/Resource/right.png" 
+                                               Width="20" Height="20" Margin="5,0,0,0"
+                                               Visibility="{Binding IsShowArrow,Converter={StaticResource Bool2Visible}}">                                
+                            </Image>
+                        </StackPanel>
+                    </Border> 
+                    </Grid>
+            </ScrollViewer>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" 
+                          Visibility="{Binding DoubleClickVisibility}">
+                <Border Background="#4a7eec" CornerRadius="20" MinHeight="31">
+                    <TextBlock Text="{DynamicResource widgets_Toast_Guide_Msg}" 
+                               VerticalAlignment="Center"
+                               TextWrapping="Wrap"
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               Margin="15,5"
+                               FontSize="13"/>
+                </Border>
+                
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,61 @@
+{
+    "nav": {
+        "qrcode" : "QR Code",
+        "prev": "上一页",
+        "next": "下一页",
+        "nopage" : "没有页面注释。"
+    },
+    "common" : {
+        "sitemap" : "导航",
+        "pagenote" : "页面注释",
+        "multiview" : "Multi Views",
+        "unselect" : "解除选定",
+        "real_resolution" : "设备分辨率",
+        "resolution" : "设备分辨率",
+        "pixelratio" : "Pixel Ratio",
+        "page_widget_note" : "页面/控件注释 ",
+        "page" : "页面",
+        "widget_note" : "控件注释",
+        "interaction_area" : "交互区域",
+        "url_copy" : "复制链接",
+        "full_screen" : "全屏",
+        "exit_full_screen" : "退出全屏",
+        "download" : "Downloads",
+        "protected_document" : "加密的文档",
+        "pc_view_ok" : "确定"
+    },
+    "msg" : {
+        "no_widget_notes" : "没有控件注释。",
+        "url_copy_msg" : "请将复制好的URL粘贴(Ctrl+V)在您需要的位置。",
+        "protected_document_msg" : "该文档已加密。请输入密码后查看。",
+        "protected_document_err" : "密码错误。请重输。",
+        "pc_view_404" : "无法找到相关页面。相关页面可能已被删除或名称发生变更或暂时无法使用。请确认输入的地址是否正确。"
+    },
+    "widgetType" : {
+        "widget_context" : "",
+        "widget_context_Image" : "图像",
+        "widget_context_HotSpot" : "链接",
+        "widget_context_Shape" : "Shape",
+        "widget_context_Line" : "线",
+        "widget_context_ListBox" : "列表框",
+        "widget_context_DropList" : "下拉列表",
+        "widget_context_Button" : "按钮" ,
+        "widget_context_RadioButton" : "单选按钮",
+        "widget_context_Checkbox" : "复选框",
+        "widget_context_TextField" : "文本框",
+        "widget_context_TextArea" : "文本区",
+        "widget_context_HamburgerMenu" : "Drawer Menu",
+        "widget_context_Toast" : "提醒消息",
+        "widget_context_Flicking" : "Swipe Views",
+        "widget_context_SVG" : "Icon"
+    },
+    "shapeType" : {
+        "shape_context" : "Shape",
+        "shape_context_Paragraph" : "文本",
+        "shape_context_Diamond" : "菱形",
+        "shape_context_Triangle" : "三角形",
+        "shape_context_Ellipse" : "圆",
+        "shape_context_Rectangle" : "四边形",
+        "shape_context_RoundedRectangle" : "圆角矩形"
+    }
+}

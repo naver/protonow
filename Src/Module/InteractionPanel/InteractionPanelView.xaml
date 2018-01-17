@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Naver.Compass.Module.InteractionPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:Naver.Compass.Module"
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             FocusManager.IsFocusScope="True"
+             >
+    <ScrollViewer Background="Transparent"
+                        HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" >
+        <StackPanel Orientation="Vertical">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                    <Setter Property="Foreground" Value="{StaticResource EnableTextColor}"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled"  Value="false">
+                            <Setter Property="Foreground"  Value="{StaticResource DiableTextColor}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            <Grid Margin="16,10,16,11" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" IsEnabled="{Binding CanEdit}">
+
+                    <TextBlock Text="{Binding Type}" />
+                    <TextBlock Text="{DynamicResource WidgetProp_StyleName}"  Margin="4,0,0,8"/>
+                </StackPanel>
+                
+                <cb:EnterTextbox Height="20" Grid.Row="1" Text="{Binding Name,Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+            </Grid>
+
+            <TabControl x:Name="InteractionNote">
+                <TabItem Header="{DynamicResource Interaction_Inte}" HorizontalAlignment="Center" IsSelected="True" >
+                    <!--<local:InteractionView/>-->
+                    <local:InteractionTab/>
+                </TabItem>
+                <TabItem Header="{DynamicResource Interaction_Note}" HorizontalAlignment="Center" >
+                    <local:NotesView/>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

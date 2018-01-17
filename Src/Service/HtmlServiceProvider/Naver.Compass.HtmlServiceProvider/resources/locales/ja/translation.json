@@ -1,0 +1,61 @@
+{
+    "nav": {
+        "qrcode" : "QRコード",
+        "prev": "前のページ",
+        "next": "次のページ",
+        "nopage" : "ページ説明がありません。"
+    },
+    "common" : {
+        "sitemap" : "サイトマップ",
+        "pagenote" : "ページ説明",
+        "multiview" : "マルチビュー",
+        "unselect" : "選択解除",
+        "real_resolution" : "デバイス解像度",
+        "resolution" : "解像度",
+        "pixelratio" : "Pixel Ratio",
+        "page_widget_note" : "ページ/オブジェクトノート",
+        "page" : "ページ",
+        "widget_note" : "オブジェクトノート",
+        "interaction_area" : "インタラクションエリア",
+        "url_copy" : "URLコピー",
+        "full_screen" : "全画面",
+        "exit_full_screen" : "全画面表示の終了",
+        "download" : "Downloads",
+        "protected_document" : "保護された文書",
+        "pc_view_ok" : "OK"
+    },
+    "msg" : {
+        "no_widget_notes" : "オブジェクトノートがありません。",
+        "url_copy_msg" : "URLをコピーして好きなところに貼り付け（Ctrl + V）してください。",
+        "protected_document_msg" : "この文書は、パスワードで保護されています。文書を閲覧するにはパスワードを入力してください。",
+        "protected_document_err" : "パスワードが正しくありません。もう一度入力しください。",
+        "pc_view_404" : "お探しのページが見つかりませんでした。お探しのページは削除されたか、名前が変更されたか、一時的に利用できない可能性があります。入力されたアドレスが正しいかもう一度ご確認ください。"
+    },
+    "widgetType" : {
+        "widget_context" : "",
+        "widget_context_Image" : "画像",
+        "widget_context_HotSpot" : "リンク",
+        "widget_context_Shape" : "Shape",
+        "widget_context_Line" : "線",
+        "widget_context_ListBox" : "リストボックス",
+        "widget_context_DropList" : "ドロップダウン",
+        "widget_context_Button" : "ボタン" ,
+        "widget_context_RadioButton" : "ラジオボタン",
+        "widget_context_Checkbox" : "チェックボックス",
+        "widget_context_TextField" : "テキストフィールド",
+        "widget_context_TextArea" : "テキストエリア",
+        "widget_context_HamburgerMenu" : "ドロワーメニュー",
+        "widget_context_Toast" : "T通知メッセージ",
+        "widget_context_Flicking" : "スワイプビュー",
+        "widget_context_SVG" : "Icon"
+    },
+    "shapeType" : {
+        "shape_context" : "Shape",
+        "shape_context_Paragraph" : "文字",
+        "shape_context_Diamond" : "菱形",
+        "shape_context_Triangle" : "三角形",
+        "shape_context_Ellipse" : "円",
+        "shape_context_Rectangle" : "四角",
+        "shape_context_RoundedRectangle" : "角丸四角形"
+    }
+}

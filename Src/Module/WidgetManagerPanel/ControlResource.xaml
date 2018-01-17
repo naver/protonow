@@ -1,0 +1,111 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                     xmlns:local ="clr-namespace:Naver.Compass.Module"
+                     xmlns:win="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+>
+
+    <!--<Image x:Key="Hide_pnd" Source="Resources/show.png"></Image>-->
+    <local:CenterToolTipConverter x:Key="CenterToolTipConverter" />
+    <Style TargetType="Button" BasedOn="{StaticResource ToolbarStyleButton}">
+        <Setter Property="Width"
+                        Value="18" />
+        <Setter Property="Height"
+                        Value="18" />
+        <Setter Property="Margin"
+                        Value="2,1" />
+    </Style>
+
+    <Style x:Key="ImageEnabled1" TargetType="Image">
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.4"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <local:LibraryItemMarginConverter x:Key="LibraryItemMarginConverter" />
+    <local:HasChildreenVisibilityConverter x:Key="HasChildreenVisibilityConverter" />
+    <local:InfoMarkVisibilityConverter x:Key="InfoMarkVisibilityConverter" />
+    <local:LibraryItemCollapseConverter x:Key="LibraryItemCollapseConverter" />
+    <local:InforTooltipConverter x:Key="TooltipConverter" />
+    <local:RootTypeConverter x:Key="RootTypeConverter" />
+
+    <DataTemplate x:Key="ListLibraryItemTemplate" >
+        <Border x:Name="ItemBD"  BorderBrush="#e8e8e8" Background="Transparent"  BorderThickness="0,0,0,1" Height="27">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="33"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="28"/>
+                    <ColumnDefinition Width="25"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="#e8e8e8"  BorderThickness="0,0,1,0"  Grid.Column="0">
+                    <Image Width="16" Height="11"  Name="showImage" Visibility ="{Binding DisplayHeadIconFlag,Converter={StaticResource HasChildreenVisibilityConverter}}"  Source="Resources/Visible.png" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseLeftButtonUp">
+                                <i:InvokeCommandAction Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}}, Path=DataContext.WidgetSwitchDisplayCommand}" 
+                                                       CommandParameter="{Binding WidgetID,Mode=OneWay}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Image>
+                </Border>
+
+                <StackPanel x:Name="listItemPanel" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"  Margin="{Binding Converter={StaticResource LibraryItemMarginConverter}}">
+                    <ToggleButton x:Name="expandCollapseButton" Margin="0,0,6,0"  IsChecked="{Binding IsExpanded, Mode=TwoWay}" 
+                                  Visibility="{Binding HasChildren, Converter={StaticResource HasChildreenVisibilityConverter}}"
+                                  Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}}, Path=DataContext.ToggleExpandCollapseCommand}"
+                                  CommandParameter="{Binding WidgetID}"
+                                  HorizontalAlignment="Right"
+                                  Style="{StaticResource ExpandCollapseToggleStyle}"/>
+
+                    <TextBlock Name="Name" Padding="0"  Text="{Binding WidgetName}" VerticalAlignment="Center"/>
+                    <TextBlock Name="Type" Padding="0"  Text="{Binding WidgetTypeName}" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <Image Source="Resources/Interactive.png" Grid.Column="2" Width="20" Height="20" Margin="0,0,8,0" HorizontalAlignment="Left" Visibility ="{Binding InteractiveFlag, Converter={StaticResource HasChildreenVisibilityConverter}}"/>
+                
+                <Image Name="InfoImage"  Source="Resources/info.png" Grid.Column="3" Width="20" Height="20" Margin="0,0,4,0" HorizontalAlignment="Right" Visibility ="{Binding InfoMark, Converter={StaticResource HasChildreenVisibilityConverter}}">
+                        <Image.ToolTip >
+                        <ToolTip HorizontalAlignment="Left"  Style="{DynamicResource InforTip}">
+                                <ToolTip.Content>
+                                    <MultiBinding Converter="{StaticResource TooltipConverter}">
+                                        <Binding Path="LostFlag" />
+                                        <Binding Path="PlaceFlag" />
+                                    </MultiBinding>
+                                </ToolTip.Content>
+                            </ToolTip>
+                        </Image.ToolTip>
+                    </Image>
+
+            </Grid>
+        </Border>
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=HideFlag}" Value="true">
+                <Setter Property="Source" TargetName="showImage" Value="Resources/disable.png"></Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=OptionFlag}" Value="false">
+                <Setter Property="Opacity" TargetName="showImage" Value="0.5"></Setter>
+            </DataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Path=PlaceFlag}"  Value="True" />
+                    <Condition Binding="{Binding Path= LostFlag}"  Value="false" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Foreground" TargetName="Name"  Value="#dc4545" />
+                <Setter Property="Foreground" TargetName="Type"  Value="#dc4545" />
+            </MultiDataTrigger>
+
+            <DataTrigger Binding="{Binding EnableDropFlag}" Value="true">
+                <Setter Property="BorderBrush" TargetName="ItemBD"  Value="#009DD9" />
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding Path=LostFlag}" Value="true">
+                <Setter Property="Foreground" TargetName="Name" Value="#d4d4d4"></Setter>
+                <Setter Property="Foreground" TargetName="Type" Value="#d4d4d4"></Setter>
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+</ResourceDictionary>

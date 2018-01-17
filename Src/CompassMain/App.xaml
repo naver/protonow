@@ -1,0 +1,41 @@
+﻿<Application x:Class="Naver.Compass.Main.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Naver.Compass.Common.Helper;component/Resources/StringResource.en-US.xaml" />
+                <ResourceDictionary Source="/Naver.Compass.Common.Helper;component/Resources/StringResource.zh-CN.xaml" />
+                <ResourceDictionary Source="/Naver.Compass.Common.Helper;component/Resources/StringResource.ko-KR.xaml" />
+                <ResourceDictionary Source="/Naver.Compass.Common.Helper;component/Resources/StringResource.ja-JP.xaml"/>
+                <!--<ResourceDictionary Source="pack://application:,,,/Naver.Compass.PageListPanel;component/Resources/TreeView.xaml"/>-->
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/Style/BasicResource.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/Style/RadioButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/TreeView/TreeView.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/TabControl.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/ToggleButton.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/ExpanderStyle.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/ScrollViewerStyle.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/ContextMenuStyle.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Module.MainToolBar;component/Resource/Shared.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Module.MainToolBar;component/Menu/MenuDictionary.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/BaseWindow/BaseWindow.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/Style/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Module.MainToolBar;component/Toolbar/ToggleButton.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Module.MainToolBar;component/Toolbar/Combox.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Module.MainToolBar;component/Toolbar/SplitButton.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Module.MainToolBar;component/Toolbar/RadioButton.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Module.MainToolBar;component/Resource/RibbonSource.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Module.MainToolBar;component/Resource/Shared.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/Style/ComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/PasswordBox.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/PregressBar/PregressBar.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/LabelLink/LabelLinkStyle.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/CheckBox/NormalCheckBox.xaml"/>
+                <ResourceDictionary Source="/Naver.Compass.Common.ControlBase;component/CPSTextblock.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

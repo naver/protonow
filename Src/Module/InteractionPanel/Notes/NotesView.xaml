@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Naver.Compass.Module.NotesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase" 
+             >
+
+        <Grid MinHeight="116">
+        <cb:EnterTextbox  Margin="16,6,16,6" IsSkipEnterKey="True"  IsEnabled="{Binding IsNotesEnabled}"
+                Text="{Binding WidgetNote, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" 
+                VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"
+                AcceptsReturn="True"  Style="{DynamicResource TextBoxStyle}"/>
+    </Grid>
+</UserControl>

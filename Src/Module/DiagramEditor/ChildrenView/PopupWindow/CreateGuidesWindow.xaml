@@ -1,0 +1,128 @@
+﻿<ctlBase:BaseWindow  x:Class="Naver.Compass.Module.CreateGuidesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:Naver.Compass.Module"
+        Title="{StaticResource Menu_Arrange_Grid_CreateGuide_WindowTitle}" Height="300" Width="360"
+        x:Name="CreateGuide"
+        WindowStartupLocation="CenterOwner"
+        Style="{StaticResource PopupWindow}"   >
+    <ctlBase:BaseWindow.Resources>
+        <local:Int2StringConverter x:Key="int2StringConverter"/>
+    </ctlBase:BaseWindow.Resources>
+    <Grid Margin="16,16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="12"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Presets}"/>
+            <ComboBox x:Name="presetCombox" Margin="10,0,0,0" Width="160" Height="18" >
+                <ComboBoxItem Content="{StaticResource Menu_Arrange_Grid_CreateGuide_Presets_960px12columns}"/>
+                <ComboBoxItem Content="{StaticResource Menu_Arrange_Grid_CreateGuide_Presets_960px16columns}"/>
+                <ComboBoxItem Content="{StaticResource Menu_Arrange_Grid_CreateGuide_Presets_1200px12columns}"/>
+                <ComboBoxItem Content="{StaticResource Menu_Arrange_Grid_CreateGuide_Presets_1200px16columns}"/>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding PresetChangedCommand}"
+                                            CommandParameter="{Binding Path=SelectedIndex, ElementName=presetCombox}" 
+                                           />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="1" Padding="8,8" BorderBrush="#B9B9B9">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="18"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Columns_Number}" Grid.Column="0" Grid.Row="1"/>
+                    <ctlBase:EnterTextbox Grid.Column="1" Grid.Row="1" Text="{Binding ColumnsCount, Mode=TwoWay, Converter={StaticResource int2StringConverter}}"/>
+                    <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Columns_ColumnWidth}" Grid.Column="0" Grid.Row="3"/>
+                    <ctlBase:EnterTextbox Grid.Column="1" Grid.Row="3" Text="{Binding ColumnWidth, Mode=TwoWay, Converter={StaticResource int2StringConverter}}"/>
+                    <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Columns_GutterWidth}" Grid.Column="0" Grid.Row="5"/>
+                    <ctlBase:EnterTextbox Grid.Column="1" Grid.Row="5" Text="{Binding GutterWidth, Mode=TwoWay, Converter={StaticResource int2StringConverter}}"/>
+                    <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Columns_Margin}" Grid.Column="0" Grid.Row="7"/>
+                    <ctlBase:EnterTextbox Grid.Column="1" Grid.Row="7" Text="{Binding ColumnMargin, Mode=TwoWay, Converter={StaticResource int2StringConverter}}"/>
+                </Grid>
+            </Border>
+            <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Columns}" 
+                       TextAlignment="Center" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" 
+                       Width="50" 
+                       Margin="10,-6,0,0" 
+                       Background="White" 
+                       Height="14"/>
+            <Border BorderThickness="1" Padding="8" BorderBrush="#B9B9B9" Grid.Column="2" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="18"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Rows_Number}" Grid.Column="0" Grid.Row="1"/>
+                    <ctlBase:EnterTextbox Grid.Column="1" Grid.Row="1" Text="{Binding RowsCount, Mode=TwoWay, Converter={StaticResource int2StringConverter}}"/>
+                    <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Rows_RowHeight}" Grid.Column="0" Grid.Row="3"/>
+                    <ctlBase:EnterTextbox Grid.Column="1" Grid.Row="3" Text="{Binding RowHeight,Mode=TwoWay, Converter={StaticResource int2StringConverter}}"/>
+                    <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Rows_GutterHeight}" Grid.Column="0" Grid.Row="5"/>
+                    <ctlBase:EnterTextbox Grid.Column="1" Grid.Row="5" Text="{Binding GutterHeight, Mode=TwoWay, Converter={StaticResource int2StringConverter}}"/>
+                    <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Rows_Margin}" Grid.Column="0" Grid.Row="7"/>
+                    <ctlBase:EnterTextbox Grid.Column="1" Grid.Row="7" Text="{Binding RowMargin, Mode=TwoWay, Converter={StaticResource int2StringConverter}}"/>
+                </Grid>
+            </Border>
+            <TextBlock Text="{StaticResource Menu_Arrange_Grid_CreateGuide_Rows}" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top"
+                       TextAlignment="Center"
+                       Width="50"
+                       Margin="6,-6,0,0" 
+                       Background="White"
+                       Height="14" 
+                       Grid.Column="2"
+                       Grid.ColumnSpan="2"/>
+        </Grid>
+        <CheckBox Content="{StaticResource Menu_Arrange_Grid_CreateGuide_GlobalGuides}" Grid.Row="4" IsChecked="{Binding IsGlobalChecked, Mode=TwoWay}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center" >
+            <Button Content="{DynamicResource Common_OK}" Width="90" 
+                    Command="{Binding OKCommand}" Height="26"
+                    CommandParameter="{Binding ElementName=CreateGuide}"/>
+            <Button Content="{DynamicResource Common_Cancel}" Width="90" Margin="8,0,0,0"
+                    Command="{Binding CancelCommand}"  Height="26"
+                    CommandParameter="{Binding ElementName=CreateGuide}"/>
+        </StackPanel>
+    </Grid>
+</ctlBase:BaseWindow>

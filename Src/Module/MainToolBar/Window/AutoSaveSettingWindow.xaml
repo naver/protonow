@@ -1,0 +1,187 @@
+﻿<ctlBase:BaseWindow x:Class="Naver.Compass.Module.AutoSaveSettingWindow"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+                    Title="{DynamicResource Menu_File_AutoSave_title}"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    Height="260"
+                    Width="460"
+                    WindowStartupLocation="CenterOwner"
+                    Style="{StaticResource PopupWindow}">
+    <ctlBase:BaseWindow.Resources>
+
+        <Style TargetType="{x:Type ctlBase:NumEnterTextbox}">
+            <Setter Property="KeyboardNavigation.TabNavigation"
+                    Value="None" />
+            <Setter Property="FocusVisualStyle"
+                    Value="{x:Null}" />
+            <Setter Property="AllowDrop"
+                    Value="true" />
+            <Setter Property="BorderBrush"
+                    Value="{StaticResource CommonBorderBrush}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ctlBase:NumEnterTextbox}">
+                        <Border x:Name="border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="False"
+                                          VerticalAlignment="Center"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled"
+                                     Value="False">
+                                <Setter Property="Opacity"
+                                        TargetName="border"
+                                        Value="0.56" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="#FF7EB4EA" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="#FF569DE5" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type ctlBase:EnterTextbox}">
+            <Setter Property="KeyboardNavigation.TabNavigation"
+                    Value="None" />
+            <Setter Property="FocusVisualStyle"
+                    Value="{x:Null}" />
+            <Setter Property="AllowDrop"
+                    Value="true" />
+            <Setter Property="BorderBrush"
+                    Value="{StaticResource CommonBorderBrush}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ctlBase:EnterTextbox}">
+                        <Border x:Name="border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="False"
+                                          VerticalAlignment="Center"
+                                          Margin="4,0,0,0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled"
+                                     Value="False">
+                                <Setter Property="Opacity"
+                                        TargetName="border"
+                                        Value="0.56" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="#FF7EB4EA" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="#FF569DE5" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </ctlBase:BaseWindow.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Margin="16,16,0,0"
+                    Height="21">
+            <CheckBox IsChecked="{Binding IsAutoSaveEnable,Mode=TwoWay,FallbackValue=True}"
+                      Padding="0,0,0,0" />
+            <TextBlock FontSize="12"
+                       Foreground="#ff666666"
+                       Text="{DynamicResource Menu_File_AutoSave_every}"
+                       Margin="8,0,0,0"
+                       VerticalAlignment="Center">
+            </TextBlock>
+            <ctlBase:NumEnterTextbox Height="21"
+                                     Width="35"
+                                     Text="{Binding AutoSaveTick,Mode=TwoWay,FallbackValue=10}"
+                                     TextAlignment="Center"
+                                     Margin="10,0,0,0"
+                                     VerticalAlignment="Center" 
+                                     MaxNum="1000"
+                                     MiniNum="1"
+                                     DataObject.Pasting="textBox1_Pasting"
+                                     PreviewKeyDown="textBox1_PreviewKeyDown"
+                                     InputMethod.IsInputMethodEnabled="False"
+                                     PreviewTextInput="textBox1_PreviewTextInput" />
+            <TextBlock FontSize="12"
+                       Foreground="#ff666666"
+                       Text="{DynamicResource Menu_File_AutoSave_minutes}"
+                       Margin="6,0,0,0"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Margin="34,10,0,0">
+            <CheckBox IsChecked="{Binding IsKeepLastAutoSaved,Mode=TwoWay,FallbackValue=True}"
+                      Padding="0,0,0,0" />
+            <TextBlock FontSize="12"
+                       Foreground="#ff666666"
+                       Text="{DynamicResource Menu_File_AutoSave_withoutsaving}"
+                       Margin="8,0,0,0"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+        <TextBlock FontSize="12"
+                   Foreground="#ff666666"
+                   Text="{DynamicResource Menu_File_AutoSave_location}"
+                   Margin="16,32,0,0"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center" />
+        <StackPanel Orientation="Horizontal"
+                    Margin="16,12,0,0">
+            <ctlBase:EnterTextbox Height="27"
+                                  Width="420"
+                                  IsSkipEnterKey="True"
+                                  VerticalAlignment="Center"
+                                  IsReadOnly="True"
+                                  Text="{Binding AutoSaveFileLocation, FallbackValue=C:\\Users\\User Name\\protoNow, Mode=TwoWay}" />
+            <Button Content="{DynamicResource Menu_File_AutoSave_browse}"
+                    Width="77"
+                    Margin="9,0,0,0"
+                    Command="{Binding ChangeFolderCommand}" 
+                    Visibility="Collapsed"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,24,0,0">
+            <Button Content="{DynamicResource Common_OK}"
+                    Width="111"
+                    Height="27"
+                    Command="{Binding ChangeAutosaveCommand}"
+                    CommandParameter="1" />
+            <Button Content="{DynamicResource Common_Cancel}"
+                    Width="111"
+                    Margin="9,0,0,0"
+                    Height="27"
+                    Command="{Binding ChangeAutosaveCommand}"
+                    CommandParameter="0" />
+        </StackPanel>
+    </StackPanel>
+</ctlBase:BaseWindow>

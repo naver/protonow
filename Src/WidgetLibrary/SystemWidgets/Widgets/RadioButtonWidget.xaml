@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Naver.Compass.WidgetLibrary.RadioButtonWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Local="clr-namespace:Naver.Compass.WidgetLibrary"
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="120" MinHeight="1" MinWidth="16"
+             Height="{Binding ActualHeight, ElementName=AdaptiveContianer}"
+             >
+    <UserControl.Resources>
+        <Common:DisableAttributeConverter x:Key="Disable2Enable" />
+        <Common:AlignDataConverter x:Key="AlignCvt"/>
+        <Style x:Key="ContentHiddenStyle" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BorderHiddenStyle" TargetType="Border">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Opacity" Value="0.05"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Background" Value="Transparent "/>
+                    <Setter Property="Opacity" Value="1"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="ButtonAlignLeftStyle" TargetType="RadioButton">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsBtnAlignLeft}" Value="False">
+                    <Setter Property="Grid.Column" Value="2"/>
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="ButtonAlignRightStyle" TargetType="RadioButton">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsBtnAlignLeft}" Value="True">
+                    <Setter Property="Grid.Column" Value="2"/>
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Border x:Name="AdaptiveBorder"  IsHitTestVisible="{Binding CanEdit}" SizeChanged="Border_SizeChanged"
+            Style="{StaticResource BorderHiddenStyle}">
+        <Grid x:Name="AdaptiveContianer" Style="{StaticResource ContentHiddenStyle}" VerticalAlignment="Top" >
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <RadioButton  x:Name="targetRadio" Grid.Column="0" Grid.Row="0" Style="{StaticResource ButtonAlignLeftStyle}" 
+                          Height="16" Margin="0,2,2,0"
+                         VerticalAlignment="{Binding vTextVerAligen,Converter={StaticResource AlignCvt},Mode=OneWay}"
+                         IsChecked="{Binding IsShowSelect, Mode=TwoWay}"
+                         GroupName="{Binding RadioGroup, Mode=OneWay}"
+                          IsEnabled="{Binding IsDisabled, Mode=OneWay,Converter={StaticResource Disable2Enable}}">
+            </RadioButton>
+            <Local:SimpleEditText Grid.Column="1" Grid.Row="0" Margin="0,2,0,0"  VerticalAlignment="Top" VerticalContentAlignment="Top"
+                               EnableLabel="{Binding IsDisabled, Mode=OneWay,Converter={StaticResource Disable2Enable}}">
+
+            </Local:SimpleEditText>
+            <!--<TextBox Grid.Column="1" Grid.Row="0" Text="11111111111222222222222333333333" TextWrapping="Wrap" 
+                     Background="LightSalmon" VerticalAlignment="Top" Margin="4,0,4,0">                
+            </TextBox>-->
+            <RadioButton Grid.Column="2" Grid.Row="0" Style="{StaticResource ButtonAlignRightStyle}" 
+                         Height="16" Margin="2,2,0,0"
+                         VerticalAlignment="{Binding vTextVerAligen,Converter={StaticResource AlignCvt},Mode=OneWay}"
+                         IsChecked="{Binding IsChecked, ElementName=targetRadio, Mode=TwoWay}"  
+                         GroupName="{Binding RadioID, Mode=OneWay}"
+                         IsEnabled="{Binding IsDisabled, Mode=OneWay,Converter={StaticResource Disable2Enable}}">
+            </RadioButton>
+            <!--<Rectangle StrokeThickness="{Binding vBorderLinethinck,Mode=TwoWay}" IsHitTestVisible="False">
+            </Rectangle>-->
+
+        </Grid>
+    </Border>
+</UserControl>

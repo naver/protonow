@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D29B0D16-C6A3-4110-A0CD-A7C8FBCBDBB8}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Naver.Compass.Module</RootNamespace>
+    <AssemblyName>Naver.Compass.Module.WidgetPropertyPanel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.UnityExtensions.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RibbonControlsLibrary.4.0.0\lib\net40\RibbonControlsLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Converters.cs" />
+    <Compile Include="Common\DataDefine.cs" />
+    <Compile Include="PropertyModules\ViewModel\CheckBoxPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\ButtonPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\FlickPannelPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\HamburgerPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\MasterPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\SVGPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\TextFieldPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\TextAreaPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\RadioButtonPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\ListBasePropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\DropListPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\GroupPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\ImagePropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\ListBoxPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\LinkPropertyViewModel .cs" />
+    <Compile Include="PropertyModules\ViewModel\PropertyViewModelBase.cs" />
+    <Compile Include="PropertyModules\ViewModel\ShapePropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\TextPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\ViewModel\ToastPropertyViewModel.cs" />
+    <Compile Include="PropertyModules\View\ButtonPropertyView.xaml.cs">
+      <DependentUpon>ButtonPropertyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\FlickingPannelProperty.xaml.cs">
+      <DependentUpon>FlickingPannelProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\HamburgerProperty.xaml.cs">
+      <DependentUpon>HamburgerProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\MasterProperty.xaml.cs">
+      <DependentUpon>MasterProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\SVGProperty.xaml.cs">
+      <DependentUpon>SVGProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\TextFieldPropertyView.xaml.cs">
+      <DependentUpon>TextFieldPropertyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\TextAreaPropertyView.xaml.cs">
+      <DependentUpon>TextAreaPropertyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\RadioButtonPropertyView.xaml.cs">
+      <DependentUpon>RadioButtonPropertyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\CheckBoxPropertyView.xaml.cs">
+      <DependentUpon>CheckBoxPropertyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\GroupProperty.xaml.cs">
+      <DependentUpon>GroupProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\ImageProperty.xaml.cs">
+      <DependentUpon>ImageProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\LinkProperty.xaml.cs">
+      <DependentUpon>LinkProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\ListProperty.xaml.cs">
+      <DependentUpon>ListProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\ShapeProperty.xaml.cs">
+      <DependentUpon>ShapeProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\TextProperty.xaml.cs">
+      <DependentUpon>TextProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyModules\View\ToastPropertyView.xaml.cs">
+      <DependentUpon>ToastPropertyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StyleModule\ViewModel\HamburgerStyleViewModel.cs" />
+    <Compile Include="StyleModule\ViewModel\StylePageViewModel.cs" />
+    <Compile Include="StyleModule\View\CommonStyle.xaml.cs">
+      <DependentUpon>CommonStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StyleModule\View\HamburgerStyle.xaml.cs">
+      <DependentUpon>HamburgerStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\TabPropertyPage.xaml.cs">
+      <DependentUpon>TabPropertyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\TabStylePage.xaml.cs">
+      <DependentUpon>TabStylePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PropertyPageModel.cs" />
+    <Compile Include="ViewModel\PropertyPageViewModel.cs" />
+    <Compile Include="ViewModel\PropertyPageViewModel.Font.cs" />
+    <Compile Include="ViewModel\PropertyPageViewModel.Property.cs" />
+    <Compile Include="WidgetPropertyPage.xaml.cs">
+      <DependentUpon>WidgetPropertyPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="PropertyModules\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyModules\View\BaseStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyModules\View\ButtonPropertyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyModules\View\FlickingPannelProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyModules\View\HamburgerProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyModules\View\MasterProperty.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyModules\View\SVGProperty.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyModules\View\TextFieldPropertyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyModules\View\TextAreaPropertyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyModules\View\RadioButtonPropertyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyModules\View\CheckBoxPropertyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyModules\View\GroupProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyModules\View\ImageProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyModules\View\LinkProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyModules\View\ListProperty.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyModules\View\ShapeProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyModules\View\TextProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertyModules\View\ToastPropertyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StyleModule\View\CommonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleModule\View\HamburgerStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabPages\TabPropertyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabPages\TabStylePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WidgetPropertyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\CommonBase\Naver.Compass.CommonBase.csproj">
+      <Project>{d310a56d-c5d2-4c2a-92f3-86694d6c1b4d}</Project>
+      <Name>Naver.Compass.CommonBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Helper\Naver.Compass.Helper.csproj">
+      <Project>{07218fcb-a5d5-436f-b9f0-cbae956dcd52}</Project>
+      <Name>Naver.Compass.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Naver.Compass.ControlBase\Naver.Compass.ControlBase.csproj">
+      <Project>{be08f25e-3440-4059-9c7c-63685931206d}</Project>
+      <Name>Naver.Compass.ControlBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\ModuleBase\Naver.Compass.ModuleBase.csproj">
+      <Project>{11fdd0da-fead-462a-9c35-eacced997ede}</Project>
+      <Name>Naver.Compass.ModuleBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\DocumentServiceProvider\Naver.Compass.DocumentServiceProvider\Naver.Compass.DocumentServiceProvider.csproj">
+      <Project>{5460fb5f-fe6a-4970-9ec0-831d0c7ac7b6}</Project>
+      <Name>Naver.Compass.DocumentServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\DomServiceProvider\Naver.Compass.SelectionServiceProvider.csproj">
+      <Project>{25570e46-f889-43e5-874c-c0a579f9cbaf}</Project>
+      <Name>Naver.Compass.SelectionServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WidgetLibrary\FrameWidgets\Naver.Compass.FrameWidgets.csproj">
+      <Project>{e4c00d75-2795-4e06-8b8e-d939e7803027}</Project>
+      <Name>Naver.Compass.FrameWidgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WidgetLibrary\SystemWidgets\Naver.Compass.SystemWidgets.csproj">
+      <Project>{5a64d51f-822b-4788-b023-cb2010476ede}</Project>
+      <Name>Naver.Compass.SystemWidgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainToolBar\Naver.Compass.MainToolBar.csproj">
+      <Project>{38a4107e-2f78-4668-ab0c-7a7a72e67631}</Project>
+      <Name>Naver.Compass.MainToolBar</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BorderLineStyle1.png" />
+    <Resource Include="Images\BorderLineStyle2.png" />
+    <Resource Include="Images\BorderLinestyle3.png" />
+    <Resource Include="Images\BorderLineStyle4.png" />
+    <Resource Include="Images\BorderLineStyle5.png" />
+    <Resource Include="Images\LineStyleDot.png" />
+    <Resource Include="Images\LineStyleDot2.png" />
+    <Resource Include="Images\LineStyleDouble.png" />
+    <Resource Include="Images\LineStyleSolid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Crop.png" />
+    <Resource Include="Images\slice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Arrow.png" />
+    <Resource Include="Images\ArrowNone.png" />
+    <Resource Include="Images\None.png" />
+    <Resource Include="Images\NoneArrow.png" />
+    <Resource Include="Images\NoneOpenarrow.png" />
+    <Resource Include="Images\NoneStealtharrow.png" />
+    <Resource Include="Images\Opearrow.png" />
+    <Resource Include="Images\OpenarrowNone.png" />
+    <Resource Include="Images\StealthArrow.png" />
+    <Resource Include="Images\StealtharrowNone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\05_Info_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\06_Info_Text_Box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\01_Full.gif" />
+    <Resource Include="Images\02_Card.gif" />
+    <Resource Include="Images\03_Preview.gif" />
+    <Resource Include="Images\04_Scroll.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

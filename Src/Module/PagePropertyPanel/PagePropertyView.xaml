@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="Naver.Compass.Module.PagePropertyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d" 
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase" 
+             xmlns:local="clr-namespace:Naver.Compass.Module"
+             >
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="btnTextBlock" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#3D92E6"/>
+                <Setter Property="FontSize" Value="11"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver"  Value="true">
+                        <Setter Property="Opacity" Value="0.8"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <local:DefaultFieldConverter x:Key="defaultFieldConverter"/>
+        </Grid.Resources>
+        <!--<Border BorderBrush="#B9B9B9" BorderThickness="0,1,0,0"  Margin="0,12,0,0"/>-->
+
+        <Grid Margin="16,8" IsEnabled="{Binding PageNoteEanbled}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
+                <ComboBox x:Name="comNote" Width="154" Height="19"  Margin="0,4,8,8"  
+                          ItemsSource="{Binding NotesList}" 
+                          SelectedValue="{Binding SelectedValue, Mode=TwoWay}" 
+                          SelectedValuePath="NoteName"
+                          FocusManager.IsFocusScope="True">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding NoteName}"/>
+                            <!--<TextBlock Text="{Binding NoteName , Converter={StaticResource defaultFieldConverter}}"/>-->
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+ 
+                <!--<TextBlock Text="{StaticResource PageNote_CustomizeNote}" Margin="5,8" Style="{StaticResource btnTextBlock}" VerticalAlignment="Center">
+                                    <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseLeftButtonUp">
+                                        <i:InvokeCommandAction Command="{Binding OpenPageNoteFieldCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                </TextBlock>-->
+                <Button Command="{Binding OpenPageNoteFieldCommand}" Content="{DynamicResource PageNote_CustomizeNote}" Width="120" Margin="0,4,0,8"
+                        FocusManager.IsFocusScope="True"/>
+            </StackPanel>
+            <cb:EnterTextbox  Grid.Row="1"  IsSkipEnterKey="True"
+                                      Text="{Binding NoteTexts, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" 
+                                      VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"
+                                      AcceptsReturn="True" Style="{DynamicResource TextBoxStyle}"
+                              FocusManager.IsFocusScope="True"/>
+
+            <!--<local:BindableRichTextBox Grid.Row="1" Margin="2" VerticalScrollBarVisibility="Auto" 
+                                                       BindableDocument="{Binding FlowDocument,Mode=TwoWay}"/>-->
+        </Grid>
+        
+        <!--<TabControl x:Name="pageTab"  IsEnabled="{Binding PageNoteEanbled}" >
+            <TabItem Header="{StaticResource PageNote_Title}" HorizontalAlignment="Center" >
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
+                            <ComboBox x:Name="cmbNote" Width="100" Height="19"  Margin="10,3"  ItemsSource="{Binding NotesList}" SelectedValue="{Binding SelectedValue,Mode=TwoWay}" SelectedValuePath="NoteName"  DisplayMemberPath="NoteName"/>
+                            <TextBlock Text="{StaticResource PageNote_CustomizeNote}" Margin="5,3" Style="{StaticResource btnTextBlock}" VerticalAlignment="Center">
+                                    <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseLeftButtonUp">
+                                        <i:InvokeCommandAction Command="{Binding OpenPageNoteFieldCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBlock>
+                        </StackPanel>
+                        <TextBox  Grid.Row="1"  Margin="2" 
+                                      Text="{Binding NoteTexts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                      VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"
+                                      AcceptsReturn="True"/>
+
+                        --><!--<local:BindableRichTextBox Grid.Row="1" Margin="2" VerticalScrollBarVisibility="Auto" 
+                                                       BindableDocument="{Binding FlowDocument,Mode=TwoWay}"/>--><!--
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Header="{StaticResource PageInteraction_Title}" HorizontalAlignment="Center">
+            </TabItem>
+            <TabItem Header="{StaticResource PageStyle_Title}" HorizontalAlignment="Center">
+            </TabItem>
+        </TabControl>-->
+
+    </Grid>
+    
+</UserControl>

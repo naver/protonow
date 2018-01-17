@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1EC6A37-1E7F-4B31-9B19-7D8D63EB550E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Naver.Compass.Service.Html</RootNamespace>
+    <AssemblyName>Naver.Compass.Service.HtmlServiceProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HtmlHashStreamManager.cs" />
+    <Compile Include="HtmlServiceProvider.cs" />
+    <Compile Include="IHtmlHashStreamManager.cs" />
+    <Compile Include="IHtmlServiceProvider.cs" />
+    <Compile Include="JsDocument\JsAdaptiveView.cs" />
+    <Compile Include="JsDocument\JsDifferInfo.cs" />
+    <Compile Include="JsDocument\JsFileObject.cs" />
+    <Compile Include="JsWidgets\JsHamburgerMenuButton.cs" />
+    <Compile Include="JsWidgets\JsLine.cs" />
+    <Compile Include="JsWidgets\JsMaster.cs" />
+    <Compile Include="JsWidgets\JsMasterStyle.cs" />
+    <Compile Include="JsWidgets\JsStreamWidget.cs" />
+    <Compile Include="JsWidgets\JsRichTextWidget.cs" />
+    <Compile Include="JsWidgets\JsSimpleTextWidget.cs" />
+    <Compile Include="JsWidgets\JsDynamicPanel.cs" />
+    <Compile Include="JsWidgets\JsGroup.cs" />
+    <Compile Include="JsWidgets\JsGroupStyle.cs" />
+    <Compile Include="JsWidgets\JsHamburgerMenu.cs" />
+    <Compile Include="JsWidgets\JsImage.cs" />
+    <Compile Include="JsWidgets\JsListBase.cs" />
+    <Compile Include="JsWidgets\JsSelectionButton.cs" />
+    <Compile Include="JsWidgets\JsShape.cs" />
+    <Compile Include="JsWidgets\JsSvg.cs" />
+    <Compile Include="JsWidgets\JsTextBase.cs" />
+    <Compile Include="JsWidgets\JsToast.cs" />
+    <Compile Include="JsDocument\JsViewport.cs" />
+    <Compile Include="JsDocument\JsDocument.cs" />
+    <Compile Include="JsWidgets\JsEvents.cs" />
+    <Compile Include="JsHelper.cs" />
+    <Compile Include="JsDocument\JsPage.cs" />
+    <Compile Include="JsDocument\JsPageNotes.cs" />
+    <Compile Include="JsDocument\JsSitemap.cs" />
+    <Compile Include="JsWidgets\JsWidget.cs" />
+    <Compile Include="JsWidgets\JsWidgetFactory.cs" />
+    <Compile Include="JsWidgets\JsWidgetNotes.cs" />
+    <Compile Include="JsWidgets\JsWidgetStyle.cs" />
+    <Compile Include="MD5Hash\MD5HashManager.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Pages\SerialPage.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Styles\SerialMasterStyle.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Styles\SerialWidgetStyle.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialRadioButton.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Master\SerialMaster.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialToast.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialHamburgerMenu.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialDynamicPanel.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialSVG.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialCheckbox.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialListBox.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialDropList.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialTextArea.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialTextField.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialHotSpot.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialLine.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialImage.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialButton.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialShape.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Master\SerialMasterBase.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialWidgetEventBase.cs" />
+    <Compile Include="MD5Hash\SerializeObject\Widgets\SerialWidgetBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\CommonBase\Naver.Compass.CommonBase.csproj">
+      <Project>{d310a56d-c5d2-4c2a-92f3-86694d6c1b4d}</Project>
+      <Name>Naver.Compass.CommonBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DocumentServiceProvider\Naver.Compass.DocumentServiceProvider\Naver.Compass.DocumentServiceProvider.csproj">
+      <Project>{5460fb5f-fe6a-4970-9ec0-831d0c7ac7b6}</Project>
+      <Name>Naver.Compass.DocumentServiceProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\js\page.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\js\frame.min.js" />
+    <EmbeddedResource Include="resources\js\vendor.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\viewer.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\m_viewer.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\locales\zh\translation.json" />
+    <EmbeddedResource Include="resources\locales\en\translation.json" />
+    <EmbeddedResource Include="resources\locales\ko\translation.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\locales\ja\translation.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\css\libs.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\css\map\protoNow_frame_mobile.css.map" />
+    <EmbeddedResource Include="resources\css\map\protoNow_frame_pc.css.map" />
+    <EmbeddedResource Include="resources\css\map\protoNow_page.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\css\protoNow_frame_mobile.min.css" />
+    <EmbeddedResource Include="resources\css\protoNow_frame_pc.min.css" />
+    <EmbeddedResource Include="resources\css\protoNow_page.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\js\protoNowStarter.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\images\ajax-loader.gif" />
+    <EmbeddedResource Include="resources\images\blank.png" />
+    <EmbeddedResource Include="resources\images\favicon_16.ico" />
+    <EmbeddedResource Include="resources\images\favicon_24.ico" />
+    <EmbeddedResource Include="resources\images\favicon_protoNow_w114.png" />
+    <EmbeddedResource Include="resources\images\favicon_protoNow_w57.png" />
+    <EmbeddedResource Include="resources\images\folder.png" />
+    <EmbeddedResource Include="resources\images\ico_pageNode.svg" />
+    <EmbeddedResource Include="resources\images\logo_mobileViewer.svg" />
+    <EmbeddedResource Include="resources\images\logo_protoNow.png" />
+    <EmbeddedResource Include="resources\images\minus.gif" />
+    <EmbeddedResource Include="resources\images\plus.gif" />
+    <EmbeddedResource Include="resources\images\sp_mobile_device.png" />
+    <EmbeddedResource Include="resources\images\sp_protoNow.png" />
+    <EmbeddedResource Include="resources\images\transparent.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\images\logo_protoNow_x2.png" />
+    <EmbeddedResource Include="resources\images\sp_protoNow_x2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Res\01_Image_Select.svg" />
+    <EmbeddedResource Include="Res\17_Hamburger_Select.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\images\ico_unfd.gif" />
+    <EmbeddedResource Include="resources\images\ico_unfd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\images\m\sp_protoNow_m.png" />
+    <EmbeddedResource Include="resources\images\widget\btn_close_widget.png" />
+    <EmbeddedResource Include="resources\images\widget\flickPage.png" />
+    <EmbeddedResource Include="resources\images\widget\flickPage_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\images\btm_bnr.png" />
+    <EmbeddedResource Include="resources\images\sp_mobile_device2.png" />
+    <EmbeddedResource Include="resources\images\sp_protonow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\images\watch_hlb.png" />
+    <EmbeddedResource Include="resources\images\watch_hlm.png" />
+    <EmbeddedResource Include="resources\images\watch_hlt.png" />
+    <EmbeddedResource Include="resources\images\watch_hrb.png" />
+    <EmbeddedResource Include="resources\images\watch_hrm.png" />
+    <EmbeddedResource Include="resources\images\watch_hrt.png" />
+    <EmbeddedResource Include="resources\images\watch_vbl.png" />
+    <EmbeddedResource Include="resources\images\watch_vbm.png" />
+    <EmbeddedResource Include="resources\images\watch_vbr.png" />
+    <EmbeddedResource Include="resources\images\watch_vtl.png" />
+    <EmbeddedResource Include="resources\images\watch_vtm.png" />
+    <EmbeddedResource Include="resources\images\watch_vtr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\differ\css\index.css" />
+    <EmbeddedResource Include="resources\differ\css\viewer.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\differ\index.html" />
+    <EmbeddedResource Include="resources\differ\js\index.js" />
+    <EmbeddedResource Include="resources\differ\js\viewer.js" />
+    <EmbeddedResource Include="resources\differ\viewer.html" />
+    <EmbeddedResource Include="resources\images\diff\btn-diff-active.png" />
+    <EmbeddedResource Include="resources\images\diff\btn-diff-normal.png" />
+    <EmbeddedResource Include="resources\images\diff\bullet-both-s-c.png" />
+    <EmbeddedResource Include="resources\images\diff\bullet-both-s-w.png" />
+    <EmbeddedResource Include="resources\images\diff\bullet-circle-l.png" />
+    <EmbeddedResource Include="resources\images\diff\bullet-circle-s.png" />
+    <EmbeddedResource Include="resources\images\diff\bullet-triangle-l.png" />
+    <EmbeddedResource Include="resources\images\diff\bullet-triangle-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\images\diff\bullet-circle-s-w.png" />
+    <EmbeddedResource Include="resources\images\diff\bullet-triangle-s-w.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

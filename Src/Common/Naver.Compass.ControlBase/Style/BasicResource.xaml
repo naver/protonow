@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <SolidColorBrush x:Key="CommonBorderBrush" Color="#BBBBBB"/>
+    
+    <SolidColorBrush x:Key="ButtonHoverBorder" Color="#639AFF"/>
+    <SolidColorBrush x:Key="ButtonHover" Color="#EAF2FF"/>
+    <SolidColorBrush x:Key="ButtonPressedBorder" Color="#6499FF"/>
+    <SolidColorBrush x:Key="ButtonPressed" Color="#CCDFFF"/>
+
+    <!--Used for text color in widget property and interaction-->
+    <SolidColorBrush x:Key="EnableTextColor" Color="#555555"/>
+    <SolidColorBrush x:Key="DiableTextColor" Color="#a4a4a4"/>
+
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE" />
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FFF" />
+    <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="#DDD" />
+
+    <!--For Disabling toolbar image-->
+    <Style x:Key="ImageEnabled" TargetType="{x:Type Image}">
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.4"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="{DynamicResource Common_Font}"/>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled"  Value="false">
+                <Setter Property="Foreground" Value="{DynamicResource DiableTextColor}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type TextElement}">
+        <Setter Property="FontFamily" Value="{DynamicResource Common_Font}"/>
+    </Style>
+
+    <sys:Double x:Key="MaxEditorWidth">25000</sys:Double>
+    <sys:Double x:Key="MaxEditorWidthCanvas">25086</sys:Double>
+    <sys:Double x:Key="MaxEditorHeight">25000</sys:Double>
+
+</ResourceDictionary>

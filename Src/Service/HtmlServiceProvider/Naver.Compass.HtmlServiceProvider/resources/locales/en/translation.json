@@ -1,0 +1,61 @@
+{
+    "nav": {
+        "qrcode" : "QR Code",
+        "prev": "Previous Page",
+        "next": "Next Page",
+        "nopage" : "No page note."
+    },
+    "common" : {
+        "sitemap" : "Sitemap",
+        "pagenote" : "Page Note",
+        "multiview" : "Multi Views",
+        "unselect" : "Unselect",
+        "real_resolution" : "Real Resolution",
+        "resolution" : "Resolution",
+        "pixelratio" : "Pixel Ratio",
+        "page_widget_note" : "Page/Object Notes",
+        "page" : "Page",
+        "widget_note" : "Object notes",
+        "interaction_area" : "Interaction Area",
+        "url_copy" : "Copy URL",
+        "full_screen" : "Full Screen",
+        "exit_full_screen" : "Exit Full Screen",
+        "download" : "Downloads",
+        "protected_document" : "Protected Document",
+        "pc_view_ok" : "OK"
+    },
+    "msg" : {
+        "no_widget_notes" : "No widget notes.",
+        "url_copy_msg" : "Copy and paste(Ctrl+V) the URL link anywhere you want.",
+        "protected_document_msg" : "Password protected document. Enter password to open the document.",
+        "protected_document_err" : "Invalid password. Please re-enter your password.",
+        "pc_view_404" : "The requested page cannot be found. It has probably been removed, changed or temporarily unavailable. Please check the page URL and try again."
+    },
+    "widgetType" : {
+        "widget_context" : "",
+        "widget_context_Image" : "Image",
+        "widget_context_HotSpot" : "Link",
+        "widget_context_Shape" : "Shape",
+        "widget_context_Line" : "Line",
+        "widget_context_ListBox" : "List Box",
+        "widget_context_DropList" : "Droplist",
+        "widget_context_Button" : "Button" ,
+        "widget_context_RadioButton" : "Radio Button",
+        "widget_context_Checkbox" : "Check Box",
+        "widget_context_TextField" : "Text Field",
+        "widget_context_TextArea" : "Text Area",
+        "widget_context_HamburgerMenu" : "Drawer Menu",
+        "widget_context_Toast" : "Toast Notification",
+        "widget_context_Flicking" : "Swipe Views",
+        "widget_context_SVG" : "Icon"
+    },
+    "shapeType" : {
+        "shape_context" : "Shape",
+        "shape_context_Paragraph" : "Text",
+        "shape_context_Diamond" : "Diamond",
+        "shape_context_Triangle" : "Triangle",
+        "shape_context_Ellipse" : "Circle",
+        "shape_context_Rectangle" : "Rectangle",
+        "shape_context_RoundedRectangle" : "Rounded Rectangle"
+    }
+}

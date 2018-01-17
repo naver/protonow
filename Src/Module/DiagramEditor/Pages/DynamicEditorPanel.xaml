@@ -1,0 +1,477 @@
+﻿<UserControl x:Class="Naver.Compass.Module.DynamicEditorPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:Naver.Compass.Module"
+             xmlns:common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:s="clr-namespace:Naver.Compass.WidgetLibrary;assembly=Naver.Compass.WidgetLibrary.SystemWidgets"
+             xmlns:helper="clr-namespace:Naver.Compass.Common.Helper;assembly=Naver.Compass.Common.Helper"
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             x:Name="DiagramEditor"
+             d:DesignHeight="400" d:DesignWidth="600">
+    <DockPanel LastChildFill="True">
+        <DockPanel.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="../Themes/Convertor.xaml"/>
+                    <ResourceDictionary Source="../Themes/GuideStyle.xaml"/>
+                    <ResourceDictionary Source="../Themes/EditorPageStyle.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </DockPanel.Resources>
+        <Border Height="35" DockPanel.Dock="Top" BorderThickness="0,0,0,1" BorderBrush="LightGray"  HorizontalAlignment="Stretch" FocusManager.IsFocusScope="True">
+            <StackPanel Orientation="Horizontal"
+                        Background="Transparent"  Margin="26,0,0,0"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                <Button Margin="0,0,4,0" Command="{Binding Return2ParentPageCommand}" Height="22" Width="22" Padding="-1">
+                      <Image Source="/Naver.Compass.Module.DiagramEditor;component/Image/up.png" Stretch="UniformToFill" Height="22" Width="22" ></Image> 
+                </Button> 
+                
+                <ItemsControl ItemsSource="{Binding DynamicChildren}" MinWidth="60">
+                    <ItemsControl.Resources>
+                        <Style TargetType="Button" BasedOn="{StaticResource ToolbarStyleButton}">
+                            <Setter Property="Width" Value="18"/>
+                            <Setter Property="Height" Value="18"/>
+                            <Setter Property="Margin" Value="2,1"/>
+                        </Style>
+                        <Style x:Key="ImageEnabled" TargetType="Image">
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Opacity" Value="0.4"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ItemsControl.Resources>
+                    
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <RadioButton Tag="{Binding Name}"
+                                         IsChecked="{Binding IsChecked,Mode=TwoWay}"
+                                         Style="{StaticResource RecRadioButtonTyle}"
+                                         Margin="4,0,4,0" Width="112" Height="22" GroupName="DynamicGroup">
+                                <Button Width="13" Height="13"
+                                        Command="{Binding ElementName=DiagramEditor,Path=DataContext.RemoveChildPageCommand}"
+                                                           CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"
+                                        Visibility="{Binding CanDelete,Converter={StaticResource Bool2Collapse}}">
+                                    <Image Source="/Naver.Compass.Module.DiagramEditor;component/Image/icon-13-pane-close.png"  Style="{StaticResource ImageEnabled}"/>                                    
+                                </Button>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Checked">
+                                        <i:InvokeCommandAction Command="{Binding ElementName=DiagramEditor,Path=DataContext.ChangeActivedPageCommand}"
+                                                           CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </RadioButton>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <Button  Margin="4,0,0,0" Command="{Binding CreateChildPageCommand}" Width="22" Height="22" Padding="-1">
+                    <Image Source="/Naver.Compass.Module.DiagramEditor;component/Image/add.png" Stretch="UniformToFill" Height="22" Width="22"></Image>                 
+                </Button>
+            </StackPanel>
+        </Border>
+        
+        <!--Adaptive View and Device -->
+        <Border DockPanel.Dock="Bottom">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <local:AdaptiveViewPanel />
+                <local:PageDevicePanel  Grid.Row="1"/>
+            </Grid>
+        </Border>
+        <Grid x:Name="EditorBox"
+              local:CommandSinkBinding.CommandSink="{Binding}"
+              Background="White">
+
+            <!--Command Binding-->
+            <Grid.CommandBindings>
+                <local:CommandSinkBinding Command="ApplicationCommands.Copy" />
+                <local:CommandSinkBinding Command="ApplicationCommands.Paste" />
+                <local:CommandSinkBinding Command="ApplicationCommands.Cut" />
+                <local:CommandSinkBinding Command="ApplicationCommands.Undo" />
+                <local:CommandSinkBinding Command="ApplicationCommands.Redo" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.GroupWidgets" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.UngroupWidgets" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.DuplicateWidgets" />
+                
+                <local:CommandSinkBinding Command="EditingCommands.Delete" />
+                <local:CommandSinkBinding Command="ApplicationCommands.SelectAll" />
+                <local:CommandSinkBinding Command="common:TextCommands.AlignTextLeft" />
+                <local:CommandSinkBinding Command="common:TextCommands.AlignTextRight" />
+                <local:CommandSinkBinding Command="common:TextCommands.AlignTextCenter" />
+                <local:CommandSinkBinding Command="EditingCommands.AlignJustify" />
+                <local:CommandSinkBinding Command="common:TextCommands.AlignTextTop" />
+                <local:CommandSinkBinding Command="common:TextCommands.AlignTextBottom" />
+                <local:CommandSinkBinding Command="common:TextCommands.AlignTextMiddle" />
+                <local:CommandSinkBinding Command="common:FontCommands.Family" />
+                <local:CommandSinkBinding Command="common:FontCommands.Size" />
+                <local:CommandSinkBinding Command="EditingCommands.IncreaseFontSize" />
+                <local:CommandSinkBinding Command="EditingCommands.DecreaseFontSize" />
+                <local:CommandSinkBinding Command="common:TextCommands.UpDownCaseHotKey" />
+                <local:CommandSinkBinding Command="common:FontCommands.Bold" />
+                <local:CommandSinkBinding Command="common:FontCommands.Underline" />
+                <local:CommandSinkBinding Command="common:FontCommands.Bullet" />
+                <local:CommandSinkBinding Command="common:TextCommands.Strikethrough" />
+                <local:CommandSinkBinding Command="common:FontCommands.Color" />
+                <local:CommandSinkBinding Command="common:FontCommands.Italic" />
+                <local:CommandSinkBinding Command="common:BorderCommands.BorderLineColor" />
+                <local:CommandSinkBinding Command="common:BorderCommands.BorderLinePattern" />
+                <local:CommandSinkBinding Command="common:BorderCommands.BorderLineThinck" />
+                <local:CommandSinkBinding Command="common:BorderCommands.BackGround" />
+                <local:CommandSinkBinding Command="common:BorderCommands.LineArrowStyle" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsBringFront" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsBringForward" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsBringBackward" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsBringBottom" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsAlignLeft" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsAlignRight" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsAlignCenter" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsAlignTop" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsAlignMiddle" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsAlignBottom" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsDistributeHorizontally" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsDistributeVertically" />
+
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsIncreaseWidth" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsIncreaseHeight" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsDecreaseWidth" />
+                <local:CommandSinkBinding Command="common:WidgetsCommands.WidgetsDecreaseHeight" />
+
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Left" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Top" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Width" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Height" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Name" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Rotate" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.TextRotate" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.CornerRadius" />                
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Opacity" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Hide" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.IsFixed" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Tooltip" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.ImportImage" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Slice" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Crop" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Enable" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.ShowSelect" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.ButtonAlign" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.RadioGroup" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.HideBorder" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.ReadOnly" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.HintText" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.MaxLength" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.TextFieldType" />
+
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.MenuPageLeft" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.MenuPageTop" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.MenuPageWidth" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.MenuPageHeight" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.MenuPageHide" />
+
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.AllLeft" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.AllTop" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Lock" />
+                <local:CommandSinkBinding Command="common:WidgetPropertyCommands.Unlock" />
+
+                <local:CommandSinkBinding Command="common:GridGuideCommands.ShowGrid" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.SnapToGrid" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.GridSetting" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.ShowGlobalGuides" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.ShowPageGuides" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.SnapToGuides" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.LockGuides" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.CreateGuides" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.DeleteAllGuides" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.GuideSetting" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.SnapToObject" />
+                <local:CommandSinkBinding Command="common:GridGuideCommands.ObjectSnapSetting" />
+                <local:CommandSinkBinding Command="common:AppCommands.DefaultStyle" />
+                <!--<CommandBinding Command="ApplicationCommands.Copy" 
+                            Executed="MyCustomRoutedCommandExecuted" 
+                            CanExecute="MyCustomRoutedCommandCanExecute"/>-->
+            </Grid.CommandBindings>
+
+            <!--Editor Content-->
+            <DockPanel Height="Auto" Background="White">
+                <!--Horizion ruler-->
+                <Border x:Name="hBorder" DockPanel.Dock="Top" Margin="17,0,0,0" Background="Transparent" MouseMove="HRuler_MouseMove" MouseLeave="HRuler_MouseLeave">
+                    <Grid>
+                        <local:Ruler x:Name="hruler" Width="Auto" Unit="DiP" Marks="Down" Zoom="{Binding EditorScale}" AutoSize="True" ClipToBounds="True" />
+                        <Border x:Name="ruler_hMousePos" BorderBrush="Red" BorderThickness="1,0,0,0" />
+                        <Image x:Name="ruler_hGuideLine" HorizontalAlignment="Left" Source="/Naver.Compass.Module.DiagramEditor;component/Image/hFunnel.png" Width="13" Height="16" Visibility="Collapsed" />
+                    </Grid>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                            <i:InvokeCommandAction Command="{Binding DataContext.AddVertGuideLineCommand, ElementName=guideBox}">
+                                <i:InvokeCommandAction.CommandParameter>
+                                    <MultiBinding Converter='{StaticResource multiBindingConverter}'>
+                                        <Binding ElementName="hruler" />
+                                        <Binding ElementName="DiagramEditor"
+                                                 Path="DataContext" />
+                                    </MultiBinding>
+                                </i:InvokeCommandAction.CommandParameter>
+                            </i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Border>
+                <!--vertical ruler-->
+                <Border x:Name="vBorder" Background="Transparent" MouseMove="VRuler_MouseMove" MouseLeave="VRuler_MouseLeave">
+                    <Grid>
+                        <local:Ruler Margin="0,0,0,0" x:Name="vruler" Width="Auto" Unit="DiP" 
+                                     Marks="Up" AutoSize="True" RenderTransformOrigin="0,0" Zoom="{Binding EditorScale}" ClipToBounds="True">
+                            <local:Ruler.LayoutTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="90" />
+                                </TransformGroup>
+                            </local:Ruler.LayoutTransform>
+                        </local:Ruler>
+                        <Border x:Name="ruler_vMousePos" BorderBrush="Red" BorderThickness="0,1,0,0" />
+                        <Image x:Name="ruler_vGuideLine" VerticalAlignment="Top" Source="/Naver.Compass.Module.DiagramEditor;component/Image/vFunnel.png" Width="16" Height="13" Visibility="Collapsed" />
+                    </Grid>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                            <i:InvokeCommandAction Command="{Binding DataContext.AddHoriGuideLineCommand, ElementName=guideBox}">
+                                <i:InvokeCommandAction.CommandParameter>
+                                    <MultiBinding Converter='{StaticResource multiBindingConverter}'>
+                                        <Binding ElementName="vruler" />
+                                        <Binding ElementName="DiagramEditor" Path="DataContext" />
+                                    </MultiBinding>
+                                </i:InvokeCommandAction.CommandParameter>
+                            </i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Border>
+                <Grid>
+                    <!-- Background color -->
+                    <!--<Border Visibility="{Binding DeviceVisibility}"
+                            Height="{StaticResource MaxEditorHeight}" 
+                            Width="{StaticResource MaxEditorWidthCanvas}" 
+                            Background="#F4F4F4"/>-->
+                    
+                    <!--White background for device box-->
+                    <!--<ScrollViewer>
+                        <Rectangle x:Name="DeviceBG"
+                               Visibility="{Binding DeviceVisibility}"
+                               Fill="White"
+                               Stroke="#FF4A4A"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Left"
+                               IsHitTestVisible="False"
+                               Width="{Binding DeviceBoxWidth, Converter={StaticResource widthConverter}}"
+                               Height="{Binding DeviceBoxHeight, Converter={StaticResource heightConverter}}">
+                        </Rectangle>
+                    </ScrollViewer>-->
+
+                    <local:EditorGrid x:Name="grid" Width="Auto" DockPanel.Dock="Top" Marks="Down" ClipToBounds="True"
+                                      Visibility="{Binding IsGridVisible, Converter={StaticResource Bool2Collapse}}"                                      
+                                      Zoom="{Binding EditorScale}"  TriggerRender="{Binding IsTriggerRender}">
+                    </local:EditorGrid>
+                    
+                    <!--Editor Area-->
+                    <cb:CPSScrollViewer Name="DesignerScrollViewer" Style="{StaticResource ScrollViewStyle}"
+                                  Background="Transparent"
+                                  HorizontalScrollBarVisibility="Auto"
+                                  DragOver="DesignerScrollViewer_DragOver"
+                                  VerticalScrollBarVisibility="Auto"
+                                  ScrollChanged="OnScrollChanged"
+                                  MouseMove="Scroll_MouseMove"
+                                  PreviewMouseMove="DesignerScrollViewer_PreviewMouseMove">      
+                        <i:Interaction.Behaviors>
+                            <common:UIElementEventCommandsBehavior PreviewKeyDownCommand="{Binding Path=ArrowKeyDownCommand}" />
+                            <common:UIElementEventCommandsBehavior PreviewKeyUpCommand="{Binding Path=ArrowKeyUpCommand}" />
+                        </i:Interaction.Behaviors>
+                        <Grid Focusable="True">
+
+                            <!--Device Box UI-->
+                            <Grid IsHitTestVisible="False"
+                                  Visibility="{Binding DeviceVisibility}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Rectangle Grid.Column="0"
+                                           Stroke="#FF4A4A"
+                                           StrokeThickness="1"
+                                           StrokeDashArray="4,3" 
+                                           RenderOptions.EdgeMode="Aliased"
+                                           VerticalAlignment="Top"
+                                           HorizontalAlignment="Left"
+                                           IsHitTestVisible="False"
+                                           Width="{Binding DeviceBoxWidth, Converter={StaticResource widthConverter}}"
+                                           Height="{Binding DeviceBoxHeight, Converter={StaticResource heightConverter}}">
+                                </Rectangle>
+                                <Border Grid.Column="1"
+                                        Background="#FF4A4A"
+                                        Height="21"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        IsHitTestVisible="False"
+                                        Margin="0">
+                                    <TextBlock Text="{Binding DeviceBoxName}"
+                                               TextAlignment="Center"
+                                               Margin="10,0,10,0"
+                                               Foreground="White"
+                                               IsHitTestVisible="False"
+                                               FontSize="11" 
+                                               VerticalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+
+                            <!--Guide Box UI-->
+                            <Grid>
+                                <local:GuideBox x:Name="guideBox"
+                                                IsSelected="{Binding DataContext.IsSelected,ElementName=DiagramEditor}"
+                                                Width="auto"
+                                                Height="auto"
+                                                GuideType="Local"
+                                                Visibility="{Binding DataContext.IsPageGuideVisible, ElementName=DiagramEditor, Converter={StaticResource Bool2Collapse}}"
+                                                Scale="{Binding DataContext.EditorScale, ElementName=DiagramEditor}" />
+                                <local:GuideBox x:Name="GlobalGuideBox"
+                                                IsSelected="{Binding DataContext.IsSelected,ElementName=DiagramEditor}"
+                                                Width="auto"
+                                                Height="auto"
+                                                GuideType="Global"
+                                                Visibility="{Binding DataContext.IsGlobalGuideVisible, ElementName=DiagramEditor, Converter={StaticResource Bool2Collapse}}"
+                                                Scale="{Binding DataContext.EditorScale, ElementName=DiagramEditor}" />
+                            </Grid>
+
+
+
+                            <Grid x:Name="ExternCanvasBorder" >
+                                <Grid.RenderTransform>
+                                    <ScaleTransform ScaleX="{Binding EditorScale, Mode=TwoWay}" ScaleY="{Binding EditorScale,Mode=TwoWay}"/>
+                                </Grid.RenderTransform>
+                                <!--Editor Canvas UI-->
+                                <ItemsControl x:Name="ExternCanvas" ItemsSource="{Binding Items}" HorizontalAlignment="Left"
+                                              Style="{StaticResource EditorItemsStyle}">
+                                    <!--Design Canvas-->
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <!--With:25086 =  (canvas)25000 + (width of "user setting")86-->
+                                            <local:DesignerBaseCanvas 
+                                                x:Name="EditCanvas" Height="{StaticResource MaxEditorHeight}" Width="{StaticResource MaxEditorWidthCanvas}"
+                                                MouseMove="DesignerBaseCanvas_MouseMove"
+                                                MouseWheel="EditCanvas_MouseWheel"
+                                                Cursor="{Binding CanvasCursor,Mode=OneWay}"  Focusable="True">
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="ContextMenuOpening">
+                                                        <i:InvokeCommandAction Command="{Binding SetContextMenuCommand}" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </local:DesignerBaseCanvas>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                            </Grid>
+
+                            <!--Front-->
+                            <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
+                                <Rectangle Stroke="#4B7DEB"  StrokeThickness="1" StrokeDashArray="4,3" RenderOptions.EdgeMode="Aliased"/>
+                                <Border IsHitTestVisible="False" Background="Transparent" 
+                                        BorderBrush="Transparent" BorderThickness="1" 
+                                        Width="{Binding FlickingWidth}"
+                                        Height="{Binding FlickingHeight}">
+                                    <StackPanel Orientation="Horizontal" Background="Transparent" Margin="0,0,0,6"
+                                                HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                                                Visibility="{Binding NavigationVisibility}">
+
+                                        <Image Source="/Naver.Compass.WidgetLibrary.FrameWidgets;component/Resource/left.png" 
+                                               Width="20" Height="20" Margin="0,0,10,0"
+                                               Visibility="{Binding IsShowArrow,Converter={StaticResource Bool2Visible}}">                                            
+                                        </Image>
+                                        <ItemsControl ItemsSource="{Binding DynamicChildren}" MinWidth="40">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel Orientation="Horizontal" IsItemsHost="True" />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <RadioButton Content="{Binding ShowNumber,Mode=OneWay}" 
+                                                                 TabIndex="{Binding ShowType,Mode=OneWay}"
+                                                                 IsChecked="{Binding IsChecked,Mode=OneWay}"
+                                                                 Style="{StaticResource CirRadioButtonTyle}" 
+                                                                 Margin="0,0,5,0" GroupName="DynamicCircleGroup">
+                                                    </RadioButton>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                        <Image Source="/Naver.Compass.WidgetLibrary.FrameWidgets;component/Resource/right.png" 
+                                               Width="20" Height="20" Margin="5,0,0,0"
+                                               Visibility="{Binding IsShowArrow,Converter={StaticResource Bool2Visible}}">                                            
+                                        </Image>
+
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+
+                            <!--Adaptive Box UI-->
+                            <Grid IsHitTestVisible="False">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Border Margin="1,0,0,0" Grid.Column="0" BorderThickness="0,0,1,0" Width="{Binding AdaptiveWidth, Converter={StaticResource widthConverter}}"
+                                        Background="Transparent" BorderBrush="#FFCC00"></Border>
+                            </Grid>
+
+                            <!--Image Editor UI-->
+                            <local:ImageEditor Visibility="{Binding DataContext.IsImageEditorVisible, ElementName=DiagramEditor, Converter={StaticResource Bool2Collapse}}"
+                                               Scale="{Binding DataContext.EditorScale,ElementName=DiagramEditor}"
+                                               IsVisible="{Binding DataContext.IsImageEditorVisible ,ElementName=DiagramEditor}"
+                                               NotifyFocus="{Binding DataContext.NotifyFocus,ElementName=DiagramEditor}">
+                                <local:ImageEditor.ViewRectangle>
+                                    <MultiBinding Converter="{StaticResource ViewRectConverter}">
+                                        <Binding Path="ContentHorizontalOffset"
+                                                 ElementName="DesignerScrollViewer" />
+                                        <Binding Path="ContentVerticalOffset"
+                                                 ElementName="DesignerScrollViewer" />
+                                        <Binding Path="ActualWidth"
+                                                 ElementName="DesignerScrollViewer" />
+                                        <Binding Path="ActualHeight"
+                                                 ElementName="DesignerScrollViewer" />
+                                    </MultiBinding>
+                                </local:ImageEditor.ViewRectangle>
+                            </local:ImageEditor>
+
+
+                            <!--Border when mouse over object in intereaction -->
+                            <Grid VerticalAlignment="Top" HorizontalAlignment="Left" UseLayoutRounding="True">
+                                <Grid.LayoutTransform>
+                                    <ScaleTransform ScaleX="{Binding DataContext.EditorScale, ElementName=DiagramEditor}" ScaleY="{Binding DataContext.EditorScale, ElementName=DiagramEditor}"/>
+                                </Grid.LayoutTransform>
+                                <Grid Margin="{Binding DataContext.InteractionObjectPosition,ElementName=DiagramEditor}"
+                                      Width="{Binding DataContext.InteractionObjectWidth, ElementName=DiagramEditor}"
+                                      Height="{Binding DataContext.InteractionObjectHeight,ElementName=DiagramEditor}">
+                                    <Rectangle Stroke="#e1ac1b"  StrokeThickness="1" StrokeDashArray="5,4" />
+                                    <Border IsHitTestVisible="False" Background="#ebd03c" Opacity="0.2" BorderBrush="Transparent" BorderThickness="1"/>
+                                    <Grid.RenderTransform>
+                                        <RotateTransform CenterX="{Binding DataContext.InteractionObjectCenterX, ElementName=DiagramEditor}" 
+                                                         CenterY="{Binding DataContext.InteractionObjectCenterY, ElementName=DiagramEditor}"  
+                                                         Angle="{Binding DataContext.InteractionObjectRotateAngle, ElementName=DiagramEditor}"/>
+                                    </Grid.RenderTransform>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </cb:CPSScrollViewer>
+                    <Border x:Name="editor_hGuideLine" BorderThickness="1,0,0,0" BorderBrush="Green" Visibility="Collapsed" />
+                    <Border x:Name="editor_vGuideLine" BorderThickness="0,1,0,0" BorderBrush="Green" Visibility="Collapsed" />
+
+                </Grid>
+            </DockPanel>
+
+            <Border Height="16" Width="16" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White">
+            </Border>
+        </Grid>
+    </DockPanel>
+</UserControl>

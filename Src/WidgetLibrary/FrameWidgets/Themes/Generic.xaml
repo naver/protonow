@@ -1,0 +1,195 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:Naver.Compass.WidgetLibrary;assembly=Naver.Compass.WidgetLibrary.SystemWidgets"
+    xmlns:local="clr-namespace:Naver.Compass.WidgetLibrary">
+
+
+    <!--Target UI widget Data-Template for Previewing-->
+    <DataTemplate DataType="{x:Type s:ButtonWidgetPreViewModel}">
+        <Border Tag="{Binding Name}"  >
+            <s:ButtonWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >                
+            </s:ButtonWidget>
+        </Border>        
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type s:CircleWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:CircleWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}">
+            </s:CircleWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:DiamondWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:DiamondWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:DiamondWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:ImageWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5" Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:ImageWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:ImageWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:SVGWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5" Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:SVGWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:SVGWidget>
+        </Border>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type s:RoundedRecWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:RoundedRecWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:RoundedRecWidget>
+        </Border>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type s:RectangleWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:RectangleWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:RectangleWidget>
+        </Border>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type s:HotSpotWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:HotSpotWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:HotSpotWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:LabelWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:LabelWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:LabelWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:TriangleWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:TriangleWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:TriangleWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:HLineWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:HorizontalLineWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:HorizontalLineWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:VLineWidgetPreViewModel}">
+        <Border Tag="{Binding Name}" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <RotateTransform Angle="{Binding RotateAngle}"  />
+            </Border.RenderTransform>
+            <s:VerticalLineWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:VerticalLineWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:ListboxWidgetPreViewModel}">
+        <Border Tag="{Binding Name}"  >
+            <s:ListboxWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:ListboxWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:DroplistWidgetPreViewModel}">
+        <Border Tag="{Binding Name}"  >
+            <s:DroplistWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:DroplistWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:RadioButtonWidgetPreViewModel}">
+        <Border Tag="{Binding Name}"  >
+            <s:RadioButtonWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:RadioButtonWidget>
+        </Border>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type s:CheckBoxWidgetPreViewModel}">
+        <Border Tag="{Binding Name}"  >
+            <s:CheckBoxWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:CheckBoxWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:TextAreaWidgetPreViewModel}">
+        <Border Tag="{Binding Name}"  >
+            <s:TextAreaWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:TextAreaWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type s:TextFieldWidgetPreViewModel}">
+        <Border Tag="{Binding Name}"  >
+            <s:TextFieldWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </s:TextFieldWidget>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type local:HamburgerMenutPreViewModel}">
+        <Border Tag="{Binding Name}"  >
+            <local:HamburgerMenu Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </local:HamburgerMenu>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type local:DynamicPanelPreViewModel}">
+        <Border Tag="{Binding Name}"  >
+            <local:DynamicPanel Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+            </local:DynamicPanel>
+        </Border>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type local:ToastPreViewModel}">
+        <Border Tag="{Binding Name}">
+            <local:Toast Width="{Binding ItemWidth}" Height="{Binding ItemHeight}">
+            </local:Toast>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type local:MasterWidgetPreViewModel}">
+        <Border Tag="{Binding Name}">
+            <local:MasterWidget Width="{Binding ItemWidth}" Height="{Binding ItemHeight}">
+            </local:MasterWidget>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

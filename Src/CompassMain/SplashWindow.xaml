@@ -1,0 +1,23 @@
+﻿<Window x:Class="Naver.Compass.Main.SplashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SplashWindow" Height="307" Width="525"
+        Background="Transparent"
+        AllowsTransparency="True"
+        SizeToContent="WidthAndHeight"
+        ShowInTaskbar="False"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+    <Grid x:Name="splash">
+        <Image Source="Images/splashScreen-blank.png" Height="307" Width="525"/>
+        <TextBlock Text="{StaticResource protoNow_rightsInfo}" Margin="0,195,0,0" HorizontalAlignment="Center" FontFamily="Arial" FontSize="12" Foreground="#90FFFFFF" />
+        <TextBlock Text="Loading protoNow..." Margin="0,225,0,0" HorizontalAlignment="Center" FontFamily="Arial" FontSize="12" Foreground="#90FFFFFF" />
+        <!--Height="333" Width="526"-->
+        <ProgressBar Name="proBar" Margin="-1,276,0,0" 
+                     Height="3" Width="505"
+                     Minimum="0" Maximum="1"
+                     Background="White"
+                     Foreground="#6aef50"
+                     Style ="{StaticResource CPSProgressStyle}"/>
+    </Grid>
+</Window>

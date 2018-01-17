@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="DockingLayout.NoPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d" 
+             x:Name="view"
+             AllowDrop="True"
+             >
+    <ScrollViewer  VerticalScrollBarVisibility="Auto">
+        <Canvas>
+            <Border Drop="Canvas_Drop" 
+                    Width="{Binding ActualWidth, ElementName=view}"
+                    Height="{Binding ActualHeight,ElementName=view}"
+                    BorderBrush="#b1b1b1" 
+                    BorderThickness="0" 
+                    Background="#ebebeb"/>
+        </Canvas>
+    </ScrollViewer>
+</UserControl>

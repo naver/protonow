@@ -1,0 +1,487 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
+             xmlns:s="clr-namespace:Naver.Compass.WidgetLibrary;assembly=Naver.Compass.WidgetLibrary.SystemWidgets"
+             xmlns:pl="clr-namespace:Naver.Compass.Module;assembly=Naver.Compass.PageListPanel"
+             xmlns:widgetgalery="clr-namespace:Naver.Compass.Module;assembly=Naver.Compass.Module.WidgetLibrary"
+             xmlns:RuleEditor="clr-namespace:Naver.Compass.Module;assembly=Naver.Compass.Module.DiagramEditor"
+             xmlns:pageProp="clr-namespace:Naver.Compass.Module;assembly=Naver.Compass.Module.PagePropertyPanel"
+             xmlns:widgetProp="clr-namespace:Naver.Compass.Module;assembly=Naver.Compass.Module.WidgetPropertyPanel"
+             xmlns:widgetManager="clr-namespace:Naver.Compass.Module;assembly=Naver.Compass.Module.WidgetManagerPanel"
+             xmlns:interaction="clr-namespace:Naver.Compass.Module;assembly=Naver.Compass.Module.InteractionPanel"
+             xmlns:master="clr-namespace:Naver.Compass.Module;assembly=Naver.Compass.Module.MasterPanel"
+             xmlns:local="clr-namespace:DockingLayout"
+             xmlns:Converter="clr-namespace:Naver.Compass.Module.Converter"
+             x:Class="DockingLayout.DockingLayoutView">
+    <UserControl.Resources>
+        <Converter:ExtendLayoutViewStatusConverter x:Key="ExtendLayoutViewStatusConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <avalonDock:DockingManager x:Name="dockingManager"
+                                   Grid.Row="0"
+                                   DocumentsSource="{Binding EditPages}"
+                                   Theme="{Binding DockThemes}"
+                                   GridSplitterHeight="3"
+                                   GridSplitterWidth="3"
+                                   BorderThickness="0"
+                                   CanRelocateWindow="False">
+            <avalonDock:DockingManager.DocumentHeaderTemplateSelector>
+                <local:EditorHeaderTemplateSelector>
+                    <local:EditorHeaderTemplateSelector.PageEditorHeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <StackPanel>
+                                    <Image VerticalAlignment="Center" Visibility="{Binding DataContext.DocumentVisibility, RelativeSource={RelativeSource AncestorType=UserControl} }">
+                                        <Image.Style>
+                                            <Style TargetType="{x:Type Image}">
+                                                <Setter Property="Source"
+                                                Value="Images/Doc_Normal.png" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSelected}"
+                                                            Value="True">
+                                                        <Setter Property="Source"
+                                                        Value="Images/Doc_ON.png" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+                                    <Image VerticalAlignment="Center" Visibility="{Binding DataContext.LibraryVisibility, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                                        <Image.Style>
+                                            <Style TargetType="{x:Type Image}">
+                                                <Setter Property="Source"
+                                                Value="Images/icon_library_dimmed.png" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsSelected}"
+                                                            Value="True">
+                                                        <Setter Property="Source"
+                                                        Value="Images/icon_library_select-tab.png" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Image.Style>
+                                    </Image>
+                                </StackPanel>
+                                <TextBlock Text="{Binding Title}"
+                                            TextTrimming="CharacterEllipsis"
+                                            VerticalAlignment="Center"
+                                            FontFamily="{StaticResource Common_Font}"
+                                            Margin="8,0,0,0" />
+                            </StackPanel>
+                            
+                        </DataTemplate>
+                    </local:EditorHeaderTemplateSelector.PageEditorHeaderTemplate>
+                    <local:EditorHeaderTemplateSelector.NoPageHeaderTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="{Binding Title}"
+                                           TextTrimming="CharacterEllipsis"
+                                           VerticalAlignment="Center"
+                                           FontFamily="{DynamicResource Common_Font}" />
+                            </Grid>
+                        </DataTemplate>
+                    </local:EditorHeaderTemplateSelector.NoPageHeaderTemplate>
+                    <local:EditorHeaderTemplateSelector.MasterPageHeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
+                                            Margin="10,0,0,0">
+                                <TextBlock Text="{Binding Title}"
+                                               TextTrimming="CharacterEllipsis"
+                                               VerticalAlignment="Center"
+                                               FontFamily="{DynamicResource Common_Font}"
+                                               Margin="8,0,0,0" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </local:EditorHeaderTemplateSelector.MasterPageHeaderTemplate>
+                    <local:EditorHeaderTemplateSelector.DynamicPageHeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="10,0,0,0">
+                                <Image VerticalAlignment="Center">
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Setter Property="Source"
+                                                    Value="Images/Function_Area_Normal.png" />
+                                            <Style.Triggers>
+                                                <DataTrigger Value="1">
+                                                    <DataTrigger.Binding>
+                                                        <MultiBinding Converter="{StaticResource ExtendLayoutViewStatusConverter}">
+                                                            <Binding Path="" />
+                                                            <Binding Path="ActiveContent"
+                                                                     ElementName="dockingManager" />
+                                                        </MultiBinding>
+                                                    </DataTrigger.Binding>
+                                                    <Setter Property="Source"
+                                                            Value="Images/Function_Area_ON2.png" />
+                                                </DataTrigger>
+                                                <DataTrigger Value="2">
+                                                    <DataTrigger.Binding>
+                                                        <MultiBinding Converter="{StaticResource ExtendLayoutViewStatusConverter}">
+                                                            <Binding Path="" />
+                                                            <Binding Path="ActiveContent"
+                                                                     ElementName="dockingManager"/>
+                                                        </MultiBinding>
+                                                    </DataTrigger.Binding>
+                                                    <Setter Property="Source"
+                                                            Value="Images/Function_Area_ON_belong.png" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <TextBlock Text="{Binding Title}"
+                                           TextTrimming="CharacterEllipsis"
+                                           VerticalAlignment="Center"
+                                           FontFamily="{DynamicResource Common_Font}"
+                                           Margin="8,0,0,0" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </local:EditorHeaderTemplateSelector.DynamicPageHeaderTemplate>
+                    <local:EditorHeaderTemplateSelector.HamburgerPageHeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="10,0,0,0">
+                                <Image VerticalAlignment="Center">
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Setter Property="Source"
+                                                    Value="Images/Function_Area_Normal.png" />
+                                            <Style.Triggers>
+                                                <DataTrigger Value="1">
+                                                    <DataTrigger.Binding>
+                                                        <MultiBinding Converter="{StaticResource ExtendLayoutViewStatusConverter}">
+                                                            <Binding Path="" />
+                                                            <Binding Path="ActiveContent"
+                                                                     ElementName="dockingManager" />
+                                                        </MultiBinding>
+                                                    </DataTrigger.Binding>
+                                                    <Setter Property="Source"
+                                                            Value="Images/Function_Area_ON2.png" />
+                                                </DataTrigger>
+                                                <DataTrigger Value="2">
+                                                    <DataTrigger.Binding>
+                                                        <MultiBinding Converter="{StaticResource ExtendLayoutViewStatusConverter}">
+                                                            <Binding Path="" />
+                                                            <Binding Path="ActiveContent"
+                                                                     ElementName="dockingManager" />
+                                                        </MultiBinding>
+                                                    </DataTrigger.Binding>
+                                                    <Setter Property="Source"
+                                                            Value="Images/Function_Area_ON_belong.png" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <TextBlock Text="{Binding Title}"
+                                           TextTrimming="CharacterEllipsis"
+                                           VerticalAlignment="Center"
+                                           FontFamily="{DynamicResource Common_Font}"
+                                           Margin="8,0,0,0" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </local:EditorHeaderTemplateSelector.HamburgerPageHeaderTemplate>
+                </local:EditorHeaderTemplateSelector>
+            </avalonDock:DockingManager.DocumentHeaderTemplateSelector>
+            <!--Page Editor Date Template-->
+            <avalonDock:DockingManager.LayoutItemTemplateSelector>
+                <local:EditorPannelTemplateSelector>
+                    <local:EditorPannelTemplateSelector.PageEditorTemplate>
+                        <DataTemplate>
+                            <RuleEditor:RulerEditorPanel viewX="{Binding DisplayX, Mode=OneWayToSource}"
+                                                         viewY="{Binding DisplayY, Mode=OneWayToSource}"
+                                                         viewWidth="{Binding DisplayWidth, Mode=OneWayToSource}"
+                                                         viewHeight="{Binding DisplayHeight, Mode=OneWayToSource}" />
+                        </DataTemplate>
+                    </local:EditorPannelTemplateSelector.PageEditorTemplate>
+
+                    <local:EditorPannelTemplateSelector.DynamicPageEditorTemplate>
+                        <DataTemplate>
+                            <RuleEditor:DynamicEditorPanel viewX="{Binding DisplayX, Mode=OneWayToSource}"
+                                                           viewY="{Binding DisplayY, Mode=OneWayToSource}"
+                                                           viewWidth="{Binding DisplayWidth, Mode=OneWayToSource}"
+                                                           viewHeight="{Binding DisplayHeight, Mode=OneWayToSource}" />
+                        </DataTemplate>
+                    </local:EditorPannelTemplateSelector.DynamicPageEditorTemplate>
+
+                    <local:EditorPannelTemplateSelector.HamburgerPageEditorTemplate>
+                        <DataTemplate>
+                            <RuleEditor:HamburgerEditorPanel viewX="{Binding DisplayX, Mode=OneWayToSource}"
+                                                             viewY="{Binding DisplayY, Mode=OneWayToSource}"
+                                                             viewWidth="{Binding DisplayWidth, Mode=OneWayToSource}"
+                                                             viewHeight="{Binding DisplayHeight, Mode=OneWayToSource}" />
+                        </DataTemplate>
+                    </local:EditorPannelTemplateSelector.HamburgerPageEditorTemplate>
+
+                    <local:EditorPannelTemplateSelector.NoPageViewTemplate>
+                        <DataTemplate>
+                            <local:NoPageView />
+                        </DataTemplate>
+                    </local:EditorPannelTemplateSelector.NoPageViewTemplate>
+                </local:EditorPannelTemplateSelector>
+            </avalonDock:DockingManager.LayoutItemTemplateSelector>
+
+            <!--Page Editor Pannel Style-->
+            <avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+                <local:EditorPannelStyleSelector>
+
+                    <local:EditorPannelStyleSelector.PageEditorStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutDocumentItem}">
+                            <Setter Property="Title"
+                                    Value="{Binding Model.Title}" />
+                            <!--<Setter Property="IconSource" Value="{Binding Model.IconSource}"/>-->
+                            <Setter Property="CloseCommand"
+                                    Value="{Binding Model.CloseCommand}" />
+                            <Setter Property="ContentId"
+                                    Value="{Binding Model.ContentId}" />
+                            <Setter Property="IsSelected"
+                                    Value="{Binding Model.IsSelected, Mode=TwoWay}" />
+                            <Setter Property="IsActive"
+                                    Value="{Binding Model.IsActive, Mode=TwoWay}" />
+                            <Setter Property="AllowDrop"
+                                    Value="True" />
+                            <Setter Property="ActivateCommand"
+                                    Value="{Binding Model.ActiveCommand}" />
+                        </Style>
+                    </local:EditorPannelStyleSelector.PageEditorStyle>
+
+                    <local:EditorPannelStyleSelector.DynamicPageEditorStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutDocumentItem}">
+                            <Setter Property="Title"
+                                    Value="{Binding Model.Title}" />
+                            <!--<Setter Property="IconSource" Value="{Binding Model.IconSource}"/>-->
+                            <Setter Property="CloseCommand"
+                                    Value="{Binding Model.CloseCommand}" />
+                            <Setter Property="ContentId"
+                                    Value="{Binding Model.ContentId}" />
+                            <Setter Property="IsSelected"
+                                    Value="{Binding Model.IsSelected, Mode=TwoWay}" />
+                            <Setter Property="IsActive"
+                                    Value="{Binding Model.IsActive, Mode=TwoWay}" />
+                            <Setter Property="AllowDrop"
+                                    Value="True" />
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="Green" />
+                            <Setter Property="TextElement.Foreground"
+                                    Value="Green" />
+                            <Setter Property="CanClose"
+                                    Value="True" />
+                            <Setter Property="ActivateCommand"
+                                    Value="{Binding Model.ActiveCommand}" />
+                        </Style>
+                    </local:EditorPannelStyleSelector.DynamicPageEditorStyle>
+
+                    <local:EditorPannelStyleSelector.HamburgerPageEditorStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutDocumentItem}">
+                            <Setter Property="Title"
+                                    Value="{Binding Model.Title}" />
+                            <!--<Setter Property="IconSource" Value="{Binding Model.IconSource}"/>-->
+                            <Setter Property="CloseCommand"
+                                    Value="{Binding Model.CloseCommand}" />
+                            <Setter Property="ContentId"
+                                    Value="{Binding Model.ContentId}" />
+                            <Setter Property="IsSelected"
+                                    Value="{Binding Model.IsSelected, Mode=TwoWay}" />
+                            <Setter Property="IsActive"
+                                    Value="{Binding Model.IsActive, Mode=TwoWay}" />
+                            <Setter Property="AllowDrop"
+                                    Value="True" />
+                            <Setter Property="TextBlock.Foreground"
+                                    Value="Green" />
+                            <Setter Property="TextElement.Foreground"
+                                    Value="Green" />
+                            <Setter Property="CanClose"
+                                    Value="True" />
+                            <Setter Property="ActivateCommand"
+                                    Value="{Binding Model.ActiveCommand}" />
+                        </Style>
+                    </local:EditorPannelStyleSelector.HamburgerPageEditorStyle>
+
+                    <local:EditorPannelStyleSelector.NoPageViewStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutDocumentItem}">
+                            <Setter Property="IsActive"
+                                    Value="{Binding Model.IsActive, Mode=TwoWay}" />
+                            <!--<Setter Property="Visibility" Value="{Binding Model.Visibility,Mode=TwoWay}"/>-->
+                            <Setter Property="CanClose"
+                                    Value="False" />
+                        </Style>
+                    </local:EditorPannelStyleSelector.NoPageViewStyle>
+                </local:EditorPannelStyleSelector>
+            </avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+
+            <!--Actually UI layout-->
+            <avalonDock:LayoutRoot>
+                <avalonDock:LayoutPanel Orientation="Horizontal">
+                    <avalonDock:LayoutAnchorablePaneGroup DockWidth="285"
+                                                          x:Name="cccc"
+                                                          Orientation="Vertical"
+                                                          GarbageCollectible="False">
+                        <avalonDock:LayoutAnchorablePane DockHeight="2*"
+                                                         Name="Sitmap"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="200"
+                                                         FloatingTop="200"
+                                                         FloatingWidth="285"
+                                                         FloatingHeight="500">
+                            <avalonDock:LayoutAnchorable ContentId="Sitmap"
+                                                         CanAutoHide="False"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="200"
+                                                         FloatingTop="200"
+                                                         Title="{StaticResource Sitemap_Title}"
+                                                         DockSide="Left">
+                                <pl:PageListView />
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
+                        <avalonDock:LayoutAnchorablePane DockHeight="3*"
+                                                         Name="Widgets"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="200"
+                                                         FloatingTop="300"
+                                                         FloatingWidth="285"
+                                                         FloatingHeight="500">
+                            <avalonDock:LayoutAnchorable ContentId="Widgets"
+                                                         CanAutoHide="False"
+                                                         FloatingLeft="200"
+                                                         FloatingTop="300"
+                                                         Title="{StaticResource widgets_Title}"
+                                                         DockSide="Left">
+                                <widgetgalery:WidgetGallery />
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
+                        <avalonDock:LayoutAnchorablePane DockHeight="2*"
+                                                         Name="Masters"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="200"
+                                                         FloatingTop="500"
+                                                         FloatingWidth="285"
+                                                         FloatingHeight="500">
+                            <avalonDock:LayoutAnchorable ContentId="Masters"
+                                                         CanAutoHide="False"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="200"
+                                                         FloatingTop="500"
+                                                         Title="{StaticResource Master_Title}"
+                                                         DockSide="Left">
+                                <master:MasterView/>
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
+                    </avalonDock:LayoutAnchorablePaneGroup>
+                    <avalonDock:LayoutPanel Orientation="Vertical">
+                        <avalonDock:LayoutDocumentPaneGroup>
+                            <avalonDock:LayoutDocumentPane />
+                        </avalonDock:LayoutDocumentPaneGroup>
+                        <avalonDock:LayoutAnchorablePaneGroup DockHeight="125"
+                                                              Orientation="Horizontal"
+                                                              GarbageCollectible="False">
+                            <avalonDock:LayoutAnchorablePane DockWidth="4*"
+                                                         Name="PageProperty"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="500"
+                                                         FloatingTop="600"
+                                                         FloatingWidth="800"
+                                                         FloatingHeight="125">
+                                <avalonDock:LayoutAnchorable ContentId="PageProperty"
+                                                         Title="{StaticResource PageProp_Title}"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="500"
+                                                         FloatingTop="600"
+                                                         CanAutoHide="False"
+                                                         DockSide="Bottom">
+                                    <pageProp:PagePropertyView />
+                                </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutAnchorablePane>
+
+                        </avalonDock:LayoutAnchorablePaneGroup>
+                        <avalonDock:LayoutAnchorablePaneGroup DockHeight="102"
+                                                              Orientation="Horizontal"
+                                                              GarbageCollectible="False">
+                            <avalonDock:LayoutAnchorablePane DockWidth="1*"
+                                                             DockHeight="102"
+                                                         Name="PageIcon"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="250"
+                                                         FloatingTop="600"
+                                                         FloatingWidth="350"
+                                                         FloatingHeight="125"
+                                                          >
+                                <avalonDock:LayoutAnchorable ContentId="PageIcon"
+                                                         Title="Icon"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="250"
+                                                         FloatingTop="600"
+                                                         CanAutoHide="False"
+                                                         DockSide="Bottom"
+                                                         IsVisible="False">
+                                    <pageProp:PageIconView />
+                                </avalonDock:LayoutAnchorable>
+                            </avalonDock:LayoutAnchorablePane>                         
+
+                        </avalonDock:LayoutAnchorablePaneGroup>
+                    </avalonDock:LayoutPanel>
+
+                    <avalonDock:LayoutAnchorablePaneGroup DockWidth="230"
+                                                          Orientation="Vertical"
+                                                          GarbageCollectible="False">
+                        <avalonDock:LayoutAnchorablePane Name="Interaction"
+                                                         DockHeight="1*"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="1200"
+                                                         FloatingTop="200"
+                                                         FloatingWidth="230"
+                                                         FloatingHeight="500">
+                            <avalonDock:LayoutAnchorable ContentId="Interaction"
+                                                         Title="{StaticResource Interaction_Title}"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="1200"
+                                                         FloatingTop="200"
+                                                         CanAutoHide="False"
+                                                         DockSide="Right">
+                                <interaction:InteractionPanelView />
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
+
+                        <avalonDock:LayoutAnchorablePane DockHeight="1*"
+                                                         Name="WidgetProperty"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="1200"
+                                                         FloatingTop="300"
+                                                         FloatingWidth="230"
+                                                         FloatingHeight="500">
+                            <avalonDock:LayoutAnchorable ContentId="WidgetProperty"
+                                                         Title="{StaticResource WidgetProp_Title}"
+                                                         FloatingLeft="1200"
+                                                         FloatingTop="300"
+                                                         CanAutoHide="False"
+                                                         DockSide="Right">
+                                <widgetProp:WidgetPropertyPage />
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
+
+                       <avalonDock:LayoutAnchorablePane DockHeight="1*"
+                                                         Name="WidgetManager"
+                                                         GarbageCollectible="False"
+                                                         FloatingLeft="1200"
+                                                         FloatingTop="300"
+                                                         FloatingWidth="230"
+                                                         FloatingHeight="500">
+                            <avalonDock:LayoutAnchorable ContentId="WidgetManager"
+                                                         Title="WidgetManagetPanel"
+                                                         FloatingLeft="1200"
+                                                         FloatingTop="300"
+                                                         CanAutoHide="False"
+                                                         DockSide="Right">
+                                <widgetManager:WidgetManagerView />
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
+                        <!--<avalonDock:LayoutAnchorablePane>
+                            <avalonDock:LayoutAnchorable ContentId="WidgetManager" Title="{StaticResource WidgetManager_Title}" Hiding="LayoutAnchorable_Hiding">
+                            <TextBox/>
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>-->
+                    </avalonDock:LayoutAnchorablePaneGroup>
+                </avalonDock:LayoutPanel>
+            </avalonDock:LayoutRoot>
+        </avalonDock:DockingManager>
+    </Grid>
+</UserControl>

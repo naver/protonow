@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="Naver.Compass.Module.PreviewModule.PreviewWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:Naver.Compass.Module.PreviewModule"
+             mc:Ignorable="d" 
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             d:DesignHeight="120" d:DesignWidth="120">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Common:Bool2CollapseConverter x:Key="Bool2Collapse"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid  Visibility="Hidden">
+        <ScrollViewer x:Name="PreScrollView"  VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" Height="120" Width="120">
+            <!--<Canvas Width="120" Height="200">-->
+            <Grid  Background="Red" >
+                <!--<Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>-->
+                <ItemsControl x:Name="ExternCanvas"  ItemsSource="{Binding Items,IsAsync=True}" Visibility="{Binding NailIconShowRevert}">
+                    <!--Preview Canvas-->
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate x:Name="PanelTmp">
+                            <loc:PreviewPageCanvas x:Name="PreCanvas" IsItemsHost="True" 
+                                                   Loaded="PreCanvas_Loaded"                                                   
+                                                   Background="WhiteSmoke">
+                               
+                            </loc:PreviewPageCanvas>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>                    
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Setter Property="Canvas.Top" Value="{Binding Top}" />
+                            <Setter Property="Canvas.Left" Value="{Binding Left}" />
+                            <Setter Property="Canvas.ZIndex" Value="{Binding ZOrder}" />
+                            <Setter Property="Visibility" Value="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"/>
+
+                            <!--<Setter Property="RenderTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="{Binding RotateAngle}"  />
+                                </Setter.Value>
+                            </Setter>-->
+                            <!--<Setter Property="ContentTemplate">                               
+                                    <DataTemplate>
+                                        <Border>
+                                            <ContentPresenter Content="{TemplateBinding Content}">
+                                                <ContentPresenter.RenderTransform>
+                                                    <RotateTransform Angle="{Binding RotateAngle}"  />
+                                                </ContentPresenter.RenderTransform>
+                                            </ContentPresenter>
+                                        </Border>
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>-->
+                        </Style>                        
+                    </ItemsControl.ItemContainerStyle>   
+                </ItemsControl>
+
+                <!--<loc:PreviewPageCanvas x:Name="PreBorder" 
+                                       Visibility="{Binding NailIconShow}"                                             
+                                       Background="WhiteSmoke">
+
+                    <Image Source="{Binding NailImgSource, Mode=OneWay,IsAsync=True}" 
+                           Canvas.Left="0" Canvas.Top="0"
+                           Stretch="Uniform">
+                    </Image>
+                </loc:PreviewPageCanvas>-->
+                <Grid x:Name="PreBorder" 
+                      Visibility="{Binding NailIconShow}"      
+                      Background="Transparent">
+                   
+                    <!--<Rectangle 
+                        Fill="LightBlue" 
+                        Height="{Binding ElementName=PreIconImage,Path=ActualHeight}"
+                        Width="{Binding ElementName=PreIconImage,Path=ActualWidth}">                    
+                    </Rectangle>-->
+                    <Image Source="{Binding NailImgSource, Mode=OneWay,IsAsync=True}" x:Name="PreIconImage" 
+                           Margin="0" Stretch="Uniform">                        
+                    </Image>           
+                </Grid>
+
+            </Grid>
+        </ScrollViewer> 
+    </Grid>
+</UserControl>
+    

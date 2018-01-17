@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Naver.Compass.Module.TabStylePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cm="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+             xmlns:common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:data="clr-namespace:Naver.Compass.Module"
+             xmlns:tb="clr-namespace:MainToolBar;assembly=Naver.Compass.Module.MainToolBar"
+             xmlns:styles="clr-namespace:Naver.Compass.Module.Styles"
+             mc:Ignorable="d"
+             d:DesignHeight="500"
+             d:DesignWidth="260"
+            >
+    <UserControl.Resources>
+        <common:Bool2CollapseConverter x:Key="Bool2Collapse"/>
+    </UserControl.Resources>
+    <ScrollViewer Name="DesignerScrollViewer"
+                  Background="Transparent"
+                  HorizontalScrollBarVisibility="Hidden"
+                  VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="16" />
+            </Grid.ColumnDefinitions>
+            <styles:CommonStyle Grid.Column="1"  IsEnabled="{Binding CanEdit}"
+                                Visibility="{Binding DataContext.IsCommonWidget, ElementName=DesignerScrollViewer, Mode=OneWay, Converter={StaticResource Bool2Collapse}}"/>
+            <styles:HamburgerStyle Grid.Column="1"   IsEnabled="{Binding CanEdit}"
+                                Visibility="{Binding DataContext.IsHamburgerWidget, ElementName=DesignerScrollViewer, Mode=OneWay, Converter={StaticResource Bool2Collapse}}"/>
+        </Grid>
+    </ScrollViewer>
+
+</UserControl>

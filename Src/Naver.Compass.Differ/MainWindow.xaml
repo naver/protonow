@@ -1,0 +1,107 @@
+﻿<cb:MainBase  x:Class="Naver.Compass.Differ.MainWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+         xmlns:preview="clr-namespace:Naver.Compass.Module.PreviewModule;assembly=Naver.Compass.Module.PreviewModule"
+         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"  
+         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+         xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+         xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase" 
+         xmlns:publish ="clr-namespace:Naver.Compass.Module.PublishModel;assembly=Naver.Compass.Module.PublishModel"
+         xmlns:local="clr-namespace:Naver.Compass.Differ"
+         mc:Ignorable="d"
+         x:Name="differWindow"
+         WindowStartupLocation="CenterScreen"
+         WindowStyle="None"
+         ResizeMode="NoResize"
+         UseLayoutRounding="True"
+         Background="#F7F7F7"
+         Title="{StaticResource Menu_File_Differ}"
+         Style="{StaticResource DifferWindow}"
+         Icon="Resources/Images/Compass.ico"
+         Width="318"
+         Height="250">
+    <cb:MainBase.Resources>
+        <DataTemplate DataType="{x:Type local:DifferViewModel}">
+            <local:DifferView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type publish:PrePublishViewModel}">
+            <local:PublishSetView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type publish:ProcessViewModel}">
+            <local:UploadResultView/>
+        </DataTemplate>
+    </cb:MainBase.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Common:Bool2CollapseConverter x:Key="Bool2Collapse"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <preview:PreviewWindow Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right" Height="220"  Width="140"  Visibility=" Visible"/>
+
+        <Border x:Name="titleBar" 
+                Background="#477BEF" 
+                MouseDown="titleBar_MouseDown" >
+            <Canvas>
+                <Image Canvas.Left="10" Canvas.Top="12" IsEnabled="{Binding IsOpenEnabled}" Width="68" Height="22">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="Resources/Images/btn-open-normal.png"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Source" Value="Resources/Images/btn-open-over.png"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter Property="Source" Value="Resources/Images/btn-open-disabled.png"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                            <i:InvokeCommandAction Command="{Binding OpenCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Image>
+
+                <Image Canvas.Right="10" Canvas.Top="10" >
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Source" Value="Resources/Images/btn-close.png"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Source" Value="Resources/Images/btn-close-over.png"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                            <i:InvokeCommandAction Command="{Binding CloseCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Image>
+            </Canvas>
+        </Border>
+        
+        <Border Grid.Row="1" BorderBrush="#D3D3D3" BorderThickness="1,0,1,1"/>
+
+        <ContentControl Grid.Row="1" Content="{Binding Current}"/>
+
+        <ProgressBar Grid.Row="1" BorderThickness="0" 
+                     Foreground="#477BEF"  
+                     Background="#B8B8B8"  
+                     Width="318"
+                     VerticalAlignment="Bottom"
+                     Height="4"
+                     Visibility="{Binding BusyIndicator.IsShow, Converter={StaticResource Bool2Collapse}}" 
+                     Value="{Binding BusyIndicator.Progress}" 
+                     Style ="{StaticResource CPSProgressStyle}" />
+    </Grid>
+</cb:MainBase>

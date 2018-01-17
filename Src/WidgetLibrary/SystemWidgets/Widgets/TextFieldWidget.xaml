@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="Naver.Compass.WidgetLibrary.TextFieldWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Local="clr-namespace:Naver.Compass.WidgetLibrary"
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="65" d:DesignWidth="200" MinHeight="10" MinWidth="10">
+    <UserControl.Resources>
+        <Common:DisableAttributeConverter x:Key="Disable2Enable"/>
+        <Style x:Key="ContentHiddenStyle" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BorderHiddenStyle" TargetType="Border">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Opacity" Value="0.05"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Background" Value="Transparent "/>
+                    <Setter Property="Opacity" Value="1"/>
+                </DataTrigger>
+                <!--<DataTrigger Binding="{Binding IsHideBorder}" Value="True">
+                    <Setter Property="BorderThickness" Value="0"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHideBorder}" Value="False">
+                    <Setter Property="BorderThickness" Value="0.5"/>
+                </DataTrigger>-->
+                <DataTrigger Binding="{Binding IsHideBorder}" Value="True">
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHideBorder}" Value="False">
+                    <Setter Property="BorderBrush" Value="#BBBBBB"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="HintStyle" TargetType="TextBlock">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value ="{Binding vFontSize,Mode=TwoWay}" />
+            <Setter Property="Foreground" Value ="Gray" />
+            <Setter Property="Text" Value ="{Binding HintText,Mode=OneWay}" />
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding CanEdit}" Value="False"/>
+                        <Condition Binding="{Binding vTextContent}" Value="{x:Null}"/>
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Visibility" Value="Visible"/>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="PasswordStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value ="{Binding vFontSize,Mode=TwoWay}" />
+            <Setter Property="Text" Value ="{Binding Password,Mode=OneWay}" />
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding CanEdit}" Value="False"/>
+                        <Condition Binding="{Binding TextFieldType}" Value="Password"/>
+                        <Condition Binding="{Binding IsPasswordEmpty}" Value="False"/>                        
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Visibility" Value="Visible"/>
+                </MultiDataTrigger>
+                
+                
+            </Style.Triggers>
+        </Style>        
+    </UserControl.Resources>
+    <Border IsHitTestVisible="{Binding CanEdit}" Style="{StaticResource BorderHiddenStyle}" BorderThickness="1" Padding="0,0,1,1">
+        <Grid Style="{StaticResource ContentHiddenStyle}" Opacity="{Binding Opacity}">
+            <Grid.Resources>
+                <Common:ColorDataConverter x:Key="ColorDataCvt"/>         
+            </Grid.Resources>
+
+            <Local:SimpleEditText AcceptsReturn="False" TextWrapping="NoWrap"
+                               EnableLabel="{Binding IsDisabled, Mode=OneWay,Converter={StaticResource Disable2Enable}}"
+                               LabelMaxLen="{Binding MaxTextLength, Mode=OneWay}"
+                               Background="{Binding vBackgroundColor, Converter={StaticResource ColorDataCvt},Mode=OneWay}">
+            </Local:SimpleEditText >
+            <TextBlock Style="{StaticResource HintStyle}" Padding="2,0,0,0" VerticalAlignment="Center">                
+            </TextBlock>
+            <TextBlock Style="{StaticResource PasswordStyle}" Padding="2,0,0,0" 
+                       VerticalAlignment="Center" 
+                       IsEnabled="{Binding IsDisabled, Mode=OneWay,Converter={StaticResource Disable2Enable}}"
+                       Background="{Binding vBackgroundColor, Converter={StaticResource ColorDataCvt},Mode=OneWay}">
+                
+            </TextBlock>
+        </Grid>
+    </Border>
+</UserControl>
+

@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38A4107E-2F78-4668-AB0C-7A7A72E67631}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Naver.Compass.Module</RootNamespace>
+    <AssemblyName>Naver.Compass.Module.MainToolBar</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.UnityExtensions.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RibbonControlsLibrary.4.0.0\lib\net40\RibbonControlsLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\AutoSaveService.cs" />
+    <Compile Include="Model\NamedFontFamily.cs" />
+    <Compile Include="Model\RecoveryFile.cs" />
+    <Compile Include="Toolbar\CPSRibbonGallery.cs" />
+    <Compile Include="ViewModel\RecentMenuItemData.cs" />
+    <Compile Include="ViewModel\SplitColorButton.cs" />
+    <Compile Include="Window\AutoSaveSettingViewModel.cs" />
+    <Compile Include="Window\AutoSaveSettingWindow.xaml.cs">
+      <DependentUpon>AutoSaveSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\CheckUpdateViewModel.cs" />
+    <Compile Include="Window\CheckUpdateWindow.xaml.cs">
+      <DependentUpon>CheckUpdateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonData.cs" />
+    <Compile Include="Common\DelegateCommand.cs" />
+    <Compile Include="GenerateHTML.xaml.cs">
+      <DependentUpon>GenerateHTML.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateHTMLViewModel.cs" />
+    <Compile Include="Menu\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainToolBarModule.cs" />
+    <Compile Include="Model\RibbonModel.cs" />
+    <Compile Include="ViewModel\ApplicationMenuData.cs" />
+    <Compile Include="ViewModel\ApplicationMenuItemData.cs" />
+    <Compile Include="ViewModel\ApplicationSplitMenuItemData.cs" />
+    <Compile Include="ViewModel\ButtonData.cs" />
+    <Compile Include="ViewModel\ComboBoxData.cs" />
+    <Compile Include="ViewModel\ContextualTabGroupData.cs" />
+    <Compile Include="ViewModel\ControlData.cs" />
+    <Compile Include="ViewModel\RibbonViewModel.BindingData.cs" />
+    <Compile Include="ViewModel\RibbonViewModel.BindingData.Static.cs" />
+    <Compile Include="ViewModel\RibbonViewModel.Location.cs" />
+    <Compile Include="ViewModel\GalleryCategoryData.cs" />
+    <Compile Include="ViewModel\GalleryData.cs" />
+    <Compile Include="ViewModel\GalleryItemData.cs" />
+    <Compile Include="ViewModel\GroupData.cs" />
+    <Compile Include="ViewModel\MenuButtonData.cs" />
+    <Compile Include="ViewModel\MenuItemData.cs" />
+    <Compile Include="ViewModel\RadioButtonData.cs" />
+    <Compile Include="ViewModel\RecentDocumentData.cs" />
+    <Compile Include="ViewModel\RibbonData.cs" />
+    <Compile Include="ViewModel\RibbonViewModel.cs" />
+    <Compile Include="ViewModel\RibbonViewModel.Menu.cs" />
+    <Compile Include="ViewModel\SeparatorData.cs" />
+    <Compile Include="ViewModel\SplitButtonData.cs" />
+    <Compile Include="ViewModel\SplitMenuItemData.cs" />
+    <Compile Include="ViewModel\TabData.cs" />
+    <Compile Include="ViewModel\ToggleButtonData.cs" />
+    <Compile Include="ViewModel\ViewModelData.cs" />
+    <Compile Include="Window\DocumentRecoveryViewModel.cs" />
+    <Compile Include="Window\DocumentRecoveryWindow.xaml.cs">
+      <DependentUpon>DocumentRecoveryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\LanguageSettingViewModel.cs" />
+    <Compile Include="Window\LanguageSettingWindow.xaml.cs">
+      <DependentUpon>LanguageSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Window\AutoSaveSettingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window\CheckUpdateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GenerateHTML.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\MenuDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\RibbonSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RibbonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="RibbonView.xaml.cs">
+      <DependentUpon>RibbonView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resource\Shared.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Toolbar\Combox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Toolbar\LargeButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Toolbar\RadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Toolbar\SplitButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Toolbar\ToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Toolbar\ToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\DocumentRecoveryWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window\LanguageSettingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\CommonBase\Naver.Compass.CommonBase.csproj">
+      <Project>{d310a56d-c5d2-4c2a-92f3-86694d6c1b4d}</Project>
+      <Name>Naver.Compass.CommonBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Helper\Naver.Compass.Helper.csproj">
+      <Project>{07218fcb-a5d5-436f-b9f0-cbae956dcd52}</Project>
+      <Name>Naver.Compass.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Naver.Compass.ControlBase\Naver.Compass.ControlBase.csproj">
+      <Project>{be08f25e-3440-4059-9c7c-63685931206d}</Project>
+      <Name>Naver.Compass.ControlBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\ModuleBase\Naver.Compass.ModuleBase.csproj">
+      <Project>{11fdd0da-fead-462a-9c35-eacced997ede}</Project>
+      <Name>Naver.Compass.ModuleBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\CommonServiceProvider\Naver.Compass.CommonServiceProvider.csproj">
+      <Project>{22b367ab-2a43-40d7-891d-29bc9ebb5a0d}</Project>
+      <Name>Naver.Compass.CommonServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\DocumentServiceProvider\Naver.Compass.DocumentServiceProvider\Naver.Compass.DocumentServiceProvider.csproj">
+      <Project>{5460fb5f-fe6a-4970-9ec0-831d0c7ac7b6}</Project>
+      <Name>Naver.Compass.DocumentServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\DomServiceProvider\Naver.Compass.SelectionServiceProvider.csproj">
+      <Project>{25570e46-f889-43e5-874c-c0a579f9cbaf}</Project>
+      <Name>Naver.Compass.SelectionServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\UpdateServiceProvider\Naver.Compass.UpdateServiceProvider.csproj">
+      <Project>{a5609509-e1a8-4240-b99b-62b5014566d9}</Project>
+      <Name>Naver.Compass.UpdateServiceProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\Arrow\Line_Arrow_22_icon.png" />
+    <Resource Include="Images\BorderLineStyle1.png" />
+    <Resource Include="Images\BorderLineStyle2.png" />
+    <Resource Include="Images\BorderLinestyle3.png" />
+    <Resource Include="Images\BorderLineStyle4.png" />
+    <Resource Include="Images\BorderLineStyle5.png" />
+    <Resource Include="Images\BorderLineStyle_16X16.png" />
+    <Resource Include="Images\BorerLinePattern.png" />
+    <Resource Include="Images\LineStyleDot.png" />
+    <Resource Include="Images\LineStyleDot2.png" />
+    <Resource Include="Images\LineStyleDouble.png" />
+    <Resource Include="Images\LineStyleSolid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AlignBottom_16x16.png" />
+    <Resource Include="Images\AlignCenter_16x16.png" />
+    <Resource Include="Images\AlignHoriz.png" />
+    <Resource Include="Images\AlignLeft_16x16.png" />
+    <Resource Include="Images\AlignMiddle_16x16.png" />
+    <Resource Include="Images\AlignRight_16x16.png" />
+    <Resource Include="Images\AlignTextCenter_16x16.png" />
+    <Resource Include="Images\AlignTextJustify_16x16.png" />
+    <Resource Include="Images\AlignTextLeft_16x16.png" />
+    <Resource Include="Images\AlignTextRight_16x16.png" />
+    <Resource Include="Images\AlignTop_16x16.png" />
+    <Resource Include="Images\AlignVerti.png" />
+    <Resource Include="Images\Bold_16x16.png" />
+    <Resource Include="Images\BringBackward.png" />
+    <Resource Include="Images\BringBottom.png" />
+    <Resource Include="Images\BringForward.png" />
+    <Resource Include="Images\BringTop.png" />
+    <Resource Include="Images\Bulleabc_76X76.png" />
+    <Resource Include="Images\Bulleiii_76X76.png" />
+    <Resource Include="Images\Bullet123_76X76.png" />
+    <Resource Include="Images\BulletABC_76X76.png" />
+    <Resource Include="Images\BulletCircle_76X76.png" />
+    <Resource Include="Images\BulletIII_76X76.png" />
+    <Resource Include="Images\BulletNone_76X76.png" />
+    <Resource Include="Images\Bullets_16x16.png" />
+    <Resource Include="Images\ChooseColor_16x16.png" />
+    <Resource Include="Images\ColorPalette.png" />
+    <Resource Include="Images\Color_16x16.png" />
+    <Resource Include="Images\Copy_16x16.png" />
+    <Resource Include="Images\Cut_16x16.png" />
+    <Resource Include="Images\Delete_16X16.png" />
+    <Resource Include="Images\EditRedo_16x16.png" />
+    <Resource Include="Images\EditUndo_16x16.png" />
+    <Resource Include="Images\Find_16x16.png" />
+    <Resource Include="Images\Find_32x32.png" />
+    <Resource Include="Images\FontColor_16x16.png" />
+    <Resource Include="Images\Font_16x16.png" />
+    <Resource Include="Images\Font_32x32.png" />
+    <Resource Include="Images\GoTo_16x16.png" />
+    <Resource Include="Images\Group.png" />
+    <Resource Include="Images\Help_16x16.png" />
+    <Resource Include="Images\Highlight_16x16.png" />
+    <Resource Include="Images\Italic_16x16.png" />
+    <Resource Include="Images\LargeIcon.png" />
+    <Resource Include="Images\LineColor_16x16.png" />
+    <Resource Include="Images\ParagraphSpacing_16x16.png" />
+    <Resource Include="Images\Paragraph_16x16.png" />
+    <Resource Include="Images\Paragraph_32x32.png" />
+    <Resource Include="Images\Paste_16x16.png" />
+    <Resource Include="Images\Paste_32x32.png" />
+    <Resource Include="Images\Printer_48x48.png" />
+    <Resource Include="Images\Print_16x16.png" />
+    <Resource Include="Images\Save_16x16.png" />
+    <Resource Include="Images\SelectionPane_16x16.png" />
+    <Resource Include="Images\Select_16x16.png" />
+    <Resource Include="Images\SmallIcon.png" />
+    <Resource Include="Images\ThemeAero.png" />
+    <Resource Include="Images\ThemeDark.png" />
+    <Resource Include="Images\ThemeGeneric.png" />
+    <Resource Include="Images\ThemeLight.png" />
+    <Resource Include="Images\ThemeMetro.png" />
+    <Resource Include="Images\ThemeVS2010.png" />
+    <Resource Include="Images\Underline_16X16.png" />
+    <Resource Include="Images\Ungroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\StrikeThrough.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Replace_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Border.png" />
+    <Resource Include="Images\ChangeShape.png" />
+    <Resource Include="Images\Gradient.png" />
+    <Resource Include="Images\Paint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Default.png" />
+    <Resource Include="Images\SaveCurrent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Open_16x16.png" />
+    <Resource Include="Images\PrintPreview_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\New_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Close_16x16.png" />
+    <Resource Include="Images\Options_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\New_32x32.png" />
+    <Resource Include="Images\Open_32x32.png" />
+    <Resource Include="Images\PrintPreview_32x32.png" />
+    <Resource Include="Images\Print_32x32.png" />
+    <Resource Include="Images\SaveAs_32x32.png" />
+    <Resource Include="Images\Save_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Close_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Language.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TextAlignBottom.png" />
+    <Resource Include="Images\TextAlignTop.png" />
+    <Resource Include="Images\TxtAlignMiddle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\HTML.png" />
+    <Resource Include="Images\ProjectSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\icno-bringToFront.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\icon-22-new-doc.png" />
+    <Resource Include="ICON\icon-22-open.png" />
+    <Resource Include="ICON\icon-22-preview.png" />
+    <Resource Include="ICON\icon-22-save.png" />
+    <Resource Include="ICON\icon-22-share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\bullet-arrow-down.png" />
+    <Resource Include="ICON\icon-22-align-bottom.png" />
+    <Resource Include="ICON\icon-22-align-center.png" />
+    <Resource Include="ICON\icon-22-align-left.png" />
+    <Resource Include="ICON\icon-22-align-middle.png" />
+    <Resource Include="ICON\icon-22-align-right.png" />
+    <Resource Include="ICON\icon-22-align-top.png" />
+    <Resource Include="ICON\icon-22-bold.png" />
+    <Resource Include="ICON\icon-22-bring-foward.png" />
+    <Resource Include="ICON\icon-22-bring-front.png" />
+    <Resource Include="ICON\icon-22-copy.png" />
+    <Resource Include="ICON\icon-22-crop.png" />
+    <Resource Include="ICON\icon-22-cut.png" />
+    <Resource Include="ICON\icon-22-distibute-horizontally.png" />
+    <Resource Include="ICON\icon-22-distibute-vertically.png" />
+    <Resource Include="ICON\icon-22-group.png" />
+    <Resource Include="ICON\icon-22-italic.png" />
+    <Resource Include="ICON\icon-22-line-width.png" />
+    <Resource Include="ICON\icon-22-link.png" />
+    <Resource Include="ICON\icon-22-list.png" />
+    <Resource Include="ICON\icon-22-lock.png" />
+    <Resource Include="ICON\icon-22-palette.png" />
+    <Resource Include="ICON\icon-22-paste.png" />
+    <Resource Include="ICON\icon-22-redo.png" />
+    <Resource Include="ICON\icon-22-sclice.png" />
+    <Resource Include="ICON\icon-22-send-back.png" />
+    <Resource Include="ICON\icon-22-send-backward.png" />
+    <Resource Include="ICON\icon-22-stroke-color.png" />
+    <Resource Include="ICON\icon-22-stroke-style.png" />
+    <Resource Include="ICON\icon-22-txt-bottom.png" />
+    <Resource Include="ICON\icon-22-txt-center.png" />
+    <Resource Include="ICON\icon-22-txt-color.png" />
+    <Resource Include="ICON\icon-22-txt-left.png" />
+    <Resource Include="ICON\icon-22-txt-middle.png" />
+    <Resource Include="ICON\icon-22-txt-right.png" />
+    <Resource Include="ICON\icon-22-txt-top.png" />
+    <Resource Include="ICON\icon-22-underline.png" />
+    <Resource Include="ICON\icon-22-undo.png" />
+    <Resource Include="ICON\icon-22-ungroup.png" />
+    <Resource Include="ICON\icon-22-unlock.png" />
+    <Resource Include="ICON\icon-bringToFront.png" />
+    <Resource Include="ICON\icon-large-new-doc.png" />
+    <Resource Include="ICON\icon-large-open.png" />
+    <Resource Include="ICON\icon-large-preview.png" />
+    <Resource Include="ICON\icon-large-save.png" />
+    <Resource Include="ICON\icon-large-share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\icon-large-new-doc_d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\Oepntype.png" />
+    <Resource Include="ICON\Postscript.png" />
+    <Resource Include="ICON\TrueType.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\bug_btn_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\icon-22-formatpaiter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\Arrow\Arrow.png" />
+    <Resource Include="ICON\Arrow\ArrowNone.png" />
+    <Resource Include="ICON\Arrow\None.png" />
+    <Resource Include="ICON\Arrow\NoneArrow.png" />
+    <Resource Include="ICON\Arrow\NoneOpenarrow.png" />
+    <Resource Include="ICON\Arrow\NoneStealtharrow.png" />
+    <Resource Include="ICON\Arrow\Opearrow.png" />
+    <Resource Include="ICON\Arrow\OpenarrowNone.png" />
+    <Resource Include="ICON\Arrow\StealthArrow.png" />
+    <Resource Include="ICON\Arrow\StealtharrowNone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\edit-adaptiveview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\icon-22-DeSize.png" />
+    <Resource Include="ICON\icon-22-ImSize.png" />
+    <Resource Include="ICON\icon-22-Number.png" />
+    <Resource Include="ICON\icon-22-strikeThrough.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\icon-22-letters-space.png" />
+    <Resource Include="ICON\icon-22-Line-space.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pn_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ICON\ico_master.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

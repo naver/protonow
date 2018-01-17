@@ -1,0 +1,306 @@
+﻿<UserControl x:Class="Naver.Compass.Module.Styles.HamburgerStyle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cm="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:ribbon="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+             xmlns:common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             xmlns:data="clr-namespace:Naver.Compass.Module"
+             xmlns:tb="clr-namespace:MainToolBar;assembly=Naver.Compass.Module.MainToolBar"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             >
+    <UserControl.Resources>
+        <Style TargetType="Line">
+            <Setter Property="Stroke"
+                    Value="#D2D2D2" />
+            <Setter Property="Stretch"
+                    Value="Uniform" />
+            <Setter Property="StrokeThickness"
+                    Value="1" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <!--Focusable="True"
+                  MouseDown="OnFocused">-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--Position Expander-->
+        <Expander   Grid.Row="1"
+                            x:Name="LocationExpander"
+                            Visibility="Visible"
+                            IsExpanded="True"
+                            Style="{DynamicResource WidgetProStyle}">
+            <Expander.Header>
+                <TextBlock Text="{DynamicResource WidgetProp_StyleButtonLocation}" />
+            </Expander.Header>
+            <Expander.Content>
+                <Border BorderBrush="Transparent"
+                                HorizontalAlignment="Left"
+                                >
+                    <Grid  HorizontalAlignment="Left"
+                                   Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="24" />
+                            <RowDefinition Height="24" />
+
+                            <RowDefinition Height="9" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="8" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock"
+                                           BasedOn="{StaticResource {x:Type TextBlock}}">
+                                <Setter Property="VerticalAlignment"
+                                                Value="Center" />
+                                <Setter Property="HorizontalAlignment"
+                                                Value="Left" />
+                                <Setter Property="Width"
+                                                Value="40" />
+                                <Setter Property="Margin"
+                                                Value="0,1,3,1" />
+                            </Style>
+                            <Style TargetType="cb:NumEnterTextbox"
+                                           BasedOn="{StaticResource {x:Type cb:NumEnterTextbox}}">
+                                <Setter Property="Width"
+                                                Value="45" />
+                                <Setter Property="Height"
+                                                Value="20" />
+                                <Setter Property="Margin"
+                                                Value="3,1,5,1" />
+                            </Style>
+                        </Grid.Resources>
+
+                        <StackPanel Grid.Row="1"
+                                            Grid.Column="0"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleLeft}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocLeft}"
+                                                        MaxNum="{StaticResource MaxEditorWidth}"
+                                                        MiniNum="0">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="Left"
+                                                     Mode="TwoWay"
+                                                     UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1"
+                                            Grid.Column="2"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleTop}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocTop}"
+                                                        MaxNum="{StaticResource MaxEditorHeight}"
+                                                        MiniNum="0">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="Top"
+                                                     Mode="TwoWay"
+                                                     UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2"
+                                            Grid.Column="0"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleWidth}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocWidth}"
+                                                        MaxNum="{StaticResource MaxEditorWidth}"
+                                                        MiniNum="1">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="Width"
+                                                     Mode="TwoWay"
+                                                     UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2"
+                                            Grid.Column="2"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleHeight}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocHeight}"
+                                                        MaxNum="{StaticResource MaxEditorHeight}"
+                                                        MiniNum="1">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="Height"
+                                                     Mode="TwoWay"
+                                                     UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="3" >
+                            <CheckBox  
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   IsThreeState="True"
+                                   IsChecked="{Binding IsHidden}"
+                                   FontSize="12"
+                                   Content="{DynamicResource WidgetProp_Hidden}" />
+                            <CheckBox Visibility="Visible"
+                                    IsEnabled="{Binding IsFixedEnabled}"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    IsThreeState="True"
+                                    IsChecked="{Binding IsFixed}"
+                                    Content="{DynamicResource WidgetProp_FixedPosition}"  
+                                    Margin="24,0,0,0" 
+                                    FontSize="12"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Expander.Content>
+        </Expander>
+        <Line Grid.Row="3"
+                      X1="0"
+                      Y1="0"
+                      X2="20"
+                      Y2="0"></Line>
+
+        <!--Font Expander-->
+        <Expander   Grid.Row="5"
+                            x:Name="MenuLocationExpander"
+                            Visibility="Visible"
+                            IsExpanded="True"
+                            Style="{DynamicResource WidgetProStyle}">
+            <Expander.Header>
+                <TextBlock Text="{DynamicResource WidgetProp_StyleMenuLocation}" />
+            </Expander.Header>
+            <Expander.Content>
+                <Border BorderBrush="Transparent"
+                                HorizontalAlignment="Left"
+                                >
+                    <Grid  HorizontalAlignment="Left"
+                                   Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="6" />
+                            <RowDefinition Height="24" />
+                            <RowDefinition Height="24" />
+                            <RowDefinition Height="24" />
+                            <RowDefinition Height="9" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="8" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock"
+                                           BasedOn="{StaticResource {x:Type TextBlock}}">
+                                <Setter Property="VerticalAlignment"
+                                                Value="Center" />
+                                <Setter Property="HorizontalAlignment"
+                                                Value="Left" />
+                                <Setter Property="Width"
+                                                Value="40" />
+                                <Setter Property="Margin"
+                                                Value="0,1,3,1" />
+                            </Style>
+                            <Style TargetType="cb:NumEnterTextbox"
+                                           BasedOn="{StaticResource {x:Type cb:NumEnterTextbox}}">
+                                <Setter Property="Width"
+                                                Value="45" />
+                                <Setter Property="Height"
+                                                Value="20" />
+                                <Setter Property="Margin"
+                                                Value="3,1,5,1" />
+                            </Style>
+                        </Grid.Resources>
+
+                        <StackPanel Grid.Row="1"
+                                            Grid.Column="0"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleLeft}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocLeft}"
+                                                        MaxNum="{StaticResource MaxEditorWidth}"
+                                                        MiniNum="0">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="MenuPageLeft"
+                                                     Mode="TwoWay"
+                                                     UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1"
+                                            Grid.Column="2"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleTop}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocTop}"
+                                                        MaxNum="{StaticResource MaxEditorHeight}"
+                                                        MiniNum="0">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="MenuPageTop"
+                                                     Mode="TwoWay"
+                                                     UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2"
+                                            Grid.Column="0"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleWidth}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocWidth}"
+                                                        MaxNum="{StaticResource MaxEditorWidth}"
+                                                        MiniNum="1">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="MenuPageWidth"
+                                                     Mode="TwoWay"
+                                                     UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2"
+                                            Grid.Column="2"
+                                            Orientation="Horizontal"
+                                            HorizontalAlignment="Left">
+                            <TextBlock Text="{DynamicResource WidgetProp_StyleHeight}" />
+                            <cb:NumEnterTextbox ToolTip="{DynamicResource TB_Tooltip_LocHeight}"
+                                                        MaxNum="{StaticResource MaxEditorHeight}"
+                                                        MiniNum="1">
+                                <cb:NumEnterTextbox.Text>
+                                    <Binding Path="MenuPageHeight"
+                                                     Mode="TwoWay"
+                                                     UpdateSourceTrigger="LostFocus" />
+                                </cb:NumEnterTextbox.Text>
+                            </cb:NumEnterTextbox>
+                        </StackPanel>
+
+                        <CheckBox  Grid.Row="3"
+                                           Grid.Column="0"
+                                           Grid.ColumnSpan="2"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           IsThreeState="True"
+                                           IsChecked="{Binding IsMenuPageHidden}"
+                                           FontSize="12"
+                                           Content="{DynamicResource WidgetProp_Hidden}" />
+                    </Grid>
+                </Border>
+            </Expander.Content>
+        </Expander>
+
+    </Grid>
+</UserControl>

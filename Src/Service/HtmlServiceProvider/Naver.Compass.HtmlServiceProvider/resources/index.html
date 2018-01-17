@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>protoNow Viewer</title>
+<link type="image/x-icon" rel="shortcut icon" href="resources/images/favicon_16.ico">
+<link type="text/css" rel="Stylesheet" href="resources/css/libs.min.css">
+<link type="text/css" rel="stylesheet" href="resources/css/protoNow_frame_pc.min.css">
+<script type="text/javascript" src="data/document_data.js"></script>
+<script type="text/javascript" src="resources/js/vendor.min.js"></script>
+<script type="text/javascript" src="resources/js/protoNowStarter.min.js"></script>
+<script type="text/javascript" src="resources/js/frame.min.js"></script>
+</head>
+<body id="protoNowViewer" class="pc" style="display:none;">
+<div id="viewerFrameContainer" class="wrap">
+    <!-- Left Panel -->
+    <div id="leftPanelContainer" class="left_panel_container">
+        <div class="panel_wrap">
+            <!-- Sitemap Tree -->
+            <div id="sitemapPanel" class="panel_area">
+                <div class="panel_title">
+                    <strong data-i18n="common.sitemap;">사이트 맵</strong>
+                    <button type="button" id="siteMapControlButton" class="btn_fold">
+                        <span class="blind">사이트맵 열기/닫기</span>
+                    </button>
+                </div>
+                <div id="sitemapTreePanel" class="panel_content sitemap_panel"></div>
+            </div>
+
+            <!-- Multi Views -->
+            <div id="multiViewsPanel" class="panel_area">
+                <div id="multiViewsTitle" class="panel_title">
+                    <strong data-i18n="common.multiview;">멀티뷰</strong>
+                    <button type="button" id="multiViewsControlButton" class="btn_fold">
+                        <span class="blind">멀티뷰 열기/닫기</span>
+                    </button>
+                    <button type="button" id="deselectAllItems" class="btn_deselect_all_items" data-i18n="common.unselect;">선택 해제</button>
+                </div>
+                <div id="multiViewList" class="panel_content devices_list_container">
+                    <ul class="devices_list"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="download_banner" class="btn_bnr_area">
+            <a href="http://dev.naver.com/projects/prtnow/" class="bnr devcafe" target="_blank">
+                <span class="blind">Download</span>
+            </a>
+            <a href="http://protonow.navercorp.com/" class="bnr homepage" target="_blank">
+                <span class="blind">Homepage</span>
+            </a>
+            <a href="https://www.facebook.com/protoNow" class="bnr facebook" target="_blnak">
+                <span class="blind">Facebook</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div id="rightPanelContainer" class="right_panel_container">
+        <div id="viewerContentContainer" class="viewer_content_container">
+            <!-- Top Menu Bar -->
+            <div id="topMenuBar" class="top_menu_bar">
+                <button type="button" id="leftPanelControlButton" class="btn_panel_ctrl btn_left">
+                    <span class="ico"></span>
+                    <span class="blind">사이트맵/멀티뷰 메뉴 보이기/감추기</span>
+                </button>
+                <button type="button" id="asidePanelControlButton" class="btn_panel_ctrl btn_right">
+                    <span class="ico"></span>
+                    <span class="blind">페이지/오브젝트 노트 보이기/감추기</span>
+                </button>
+
+                <div class="top_control_menu_area">
+                    <a id="highlightInteractiveButton" class="btn_top_menu" data-i18n="[title]common.interaction_area;">
+                        <i class="ico ico_interaction"></i>
+                        <span class="blind" data-i18n="common.interaction_area;">인터렉티브 오브젝트</span>
+                    </a>
+                    <a id="qrCodeButton" class="btn_top_menu" data-i18n="[title]nav.qrcode;">
+                        <i class="ico ico_qrcode"></i>
+                        <span class="blind" data-i18n="nav.qrcode;">QR 코드</span>
+                    </a>
+                    <a id="fullScreenButton" class="btn_top_menu" data-i18n="[title]common.full_screen;">
+                        <i class="ico ico_full_screen"></i>
+                        <span class="blind" data-i18n="common.full_screen;">전체 화면</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contents Panel -->
+            <div id="contentsPanel" class="content_panel">
+                <!-- Viewer Page Contents -->
+                <div id="viewerPageContainer" class="content">
+                    <!-- Page Multi Views Mode -->
+                    <div id="viewerPageMultiViews" class="viewerPage_multiViews_area"></div>
+
+                    <!-- Page Single Views Mode -->
+                    <div class="viewerPage_singleViews_area">
+                        <iframe id="viewerPageIframe" src="" scrolling="yes" frameborder="0" width="100%" height="100%"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aside Panel -->
+        <div id="notesPanel" class="aside_panel_container">
+            <div class="panel_wrap">
+                <!-- Page Note -->
+                <div id="pageNotePanel" class="note_panel panel_area">
+                    <div class="panel_title">
+                        <strong data-i18n="common.pagenote;">페이지 노트</strong>
+                        <button type="button" id="pageNoteControlButton" class="btn_fold">
+                            <span class="ico"></span>
+                            <span class="blind">페이지 노트 열기/닫기</span>
+                        </button>
+                    </div>
+                    <div class="panel_content">
+                        <p id="pageNotes" class="page_note_content"></p>
+                    </div>
+                </div>
+                <!-- Widget Note -->
+                <div id="widgetNotesPanel" class="note_panel panel_area">
+                    <div class="panel_title">
+                        <strong data-i18n="common.widget_note;">오브젝트 노트</strong>
+                        <button type="button" id="widgetNotesControlButton" class="btn_fold">
+                            <span class="ico"></span>
+                            <span class="blind">오브젝트 노트 열기/닫기</span>
+                        </button>
+                    </div>
+                    <div class="panel_content">
+                        <ul id="WidgetNotes" class="list_widget_note"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Navigation Area -->
+<div class="page_nav_area">
+    <a id="btnPrevPage" class="btn_nav btn_prev_page">
+        <span id="icoPrevPage" class="ico" data-i18n="nav.prev;">이전 페이지</span>
+    </a>
+    <div class="page_num">
+        <span class="blind">현재 페이지 </span> <span id="currentPageNo" class="current_page"></span>
+        <span class="bar">/</span>
+        <span class="blind">총 페이지 </span> <span id="totalPageNo" class="total_page"></span>
+        <a id="foldPageList" data-state="" role="button" class="btn_fd_sitemap">
+            <span class="ico"></span>
+            <span class="blind">전체 페이지 목록 열기</span>
+        </a>
+    </div>
+    <a id="btnNextPage" class="btn_nav btn_next_page">
+        <span id="icoNextPage" class="ico" data-i18n="nav.next;">다음 페이지</span>
+    </a>
+    <a id="exitFullScreenButton" class="btn_exit_fullscreen" href="#" role="button">
+        <span class="ico"></span>
+        <span data-i18n="common.exit_full_screen;">전체화면 해제</span>
+    </a>
+
+    <!-- Page List Layer -->
+    <div id="PageListLayer" class="ly_sitemap_area" style="display:none">
+    </div>
+</div>
+
+<!-- QRcode Layer -->
+<div id="QRcodeLayer" class="ly_QRcode" style="display:none">
+    <img id="QRImage" class="img_QRcode" width="203" height="203" alt="QR Code">
+    <input type="text" id="shortUrlText" value="" class="input_copy_url" readonly>
+    <p id="shortUrlNoti" class="noti" data-i18n="msg.url_copy_msg;">Copy and paste(Ctrl+V) the URL link anywhere you want.</p>
+    <button type="button" class="btn_close">닫기</button>
+</div>
+<div class="dimmd" style="display:none"></div>
+</body>
+</html>

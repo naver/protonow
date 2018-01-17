@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A64D51F-822B-4788-B023-CB2010476EDE}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Naver.Compass.WidgetLibrary</RootNamespace>
+    <AssemblyName>Naver.Compass.WidgetLibrary.SystemWidgets</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External\Blend\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.UnityExtensions.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adorners\PreveiwMoveAdorner.cs" />
+    <Compile Include="AttachedProperty\FocusExtension.cs" />
+    <Compile Include="CustomControl\MasterChrome.cs" />
+    <Compile Include="CustomControl\RoundSlider.cs" />
+    <Compile Include="CustomControl\RounedRotatChrome.cs" />
+    <Compile Include="Model\SVGModel.cs" />
+    <Compile Include="PreViewModel\ButtonWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\CheckBoxWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\CircleWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\DiamondWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\DroplistWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\HLineWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\HotSpotWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\RoundedRecWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\SVGWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\ImageWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\LabelWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\ListboxWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\RadioButtonWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\RectangleWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\TextAreaWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\TextFieldWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\TriangleWidgetPreViewModel.cs" />
+    <Compile Include="PreViewModel\VLineWidgetPreViewModel.cs" />
+    <Compile Include="CustomControl\HorResizeChrome.cs" />
+    <Compile Include="CustomControl\LineWidget.cs" />
+    <Compile Include="CustomControl\HLineChrome.cs" />
+    <Compile Include="CustomControl\VLineChrome.cs" />
+    <Compile Include="CustomControl\ResizeChrome.cs" />
+    <Compile Include="Model\ButtonModel.cs" />
+    <Compile Include="Model\TextFieldModel.cs" />
+    <Compile Include="Model\TextAreaModel.cs" />
+    <Compile Include="Model\RadioButtonModel.cs" />
+    <Compile Include="Undo\EditListCommand.cs" />
+    <Compile Include="Undo\RefreshDynamicPanelCommand.cs" />
+    <Compile Include="UserControl\SimpleEditText.xaml.cs">
+      <DependentUpon>SimpleEditText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SmallEditText.xaml.cs">
+      <DependentUpon>SmallEditText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CheckBoxWidgetViewModel.cs" />
+    <Compile Include="ViewModel\RoundedRecWidgetViewModel.cs" />
+    <Compile Include="ViewModel\SVGWidgetViewModel.cs" />
+    <Compile Include="ViewModel\TextFieldWidgetViewModel.cs" />
+    <Compile Include="ViewModel\TextAreaWidgetViewModel.cs" />
+    <Compile Include="ViewModel\RadioButtonWidgetViewModel.cs" />
+    <Compile Include="ViewModel\ListBaseWidgetViewModel.cs" />
+    <Compile Include="Widgets\CheckBoxWidget.xaml.cs">
+      <DependentUpon>CheckBoxWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\RoundedRecWidget.xaml.cs">
+      <DependentUpon>RoundedRecWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\SVGWidget.xaml.cs">
+      <DependentUpon>SVGWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\TextAreaWidget.xaml.cs">
+      <DependentUpon>TextAreaWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\TextFieldWidget.xaml.cs">
+      <DependentUpon>TextFieldWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\RadioButtonWidget.xaml.cs">
+      <DependentUpon>RadioButtonWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\AddManyViewModel.cs" />
+    <Compile Include="Window\AddManyWindow.xaml.cs">
+      <DependentUpon>AddManyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\EditListConverter.cs" />
+    <Compile Include="Window\EditListWindow.xaml.cs">
+      <DependentUpon>EditListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ImageModel.cs" />
+    <Compile Include="Model\CheckBoxModel.cs" />
+    <Compile Include="Undo\ClearImageCommand.cs" />
+    <Compile Include="Undo\UpdateGroupCommand.cs" />
+    <Compile Include="Undo\ImportImageCommand.cs" />
+    <Compile Include="UserControl\BaseEditControl.cs" />
+    <Compile Include="UserControl\PreviewVisualMoveControl.xaml.cs">
+      <DependentUpon>PreviewVisualMoveControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ButtonWidgetViewModel.cs" />
+    <Compile Include="ViewModel\CircleWidgetViewModel.cs" />
+    <Compile Include="ViewModel\DroplistWidgetViewModel.cs" />
+    <Compile Include="ViewModel\ListboxWidgetViewModel.cs" />
+    <Compile Include="ViewModel\TriangleWidgetViewModel.cs" />
+    <Compile Include="ViewModel\VLineWidgetViewModel.cs" />
+    <Compile Include="ViewModel\HLineWidgetViewModel.cs" />
+    <Compile Include="ViewModel\HotSpotWidgetViewModel.cs" />
+    <Compile Include="ViewModel\LabelWidgetViewModel.cs" />
+    <Compile Include="ViewModel\DiamondWidgetViewModel.cs" />
+    <Compile Include="ViewModel\GroupViewModel.cs" />
+    <Compile Include="ViewModel\ImageWidgetViewModel.cs" />
+    <Compile Include="ViewModel\RectangleWidgetViewModel.cs" />
+    <Compile Include="WidgetBaseItem.cs" />
+    <Compile Include="Widgets\ButtonWidget.xaml.cs">
+      <DependentUpon>ButtonWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\CircleWidget.xaml.cs">
+      <DependentUpon>CircleWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\DiamondWidget.xaml.cs">
+      <DependentUpon>DiamondWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\DroplistWidget.xaml.cs">
+      <DependentUpon>DroplistWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\HorizontalLineWidget.xaml.cs">
+      <DependentUpon>HorizontalLineWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\HotSpotWidget.xaml.cs">
+      <DependentUpon>HotSpotWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\ImageWidget.xaml.cs">
+      <DependentUpon>ImageWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\LabelWidget.xaml.cs">
+      <DependentUpon>LabelWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\ListboxWidget.xaml.cs">
+      <DependentUpon>ListboxWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\RectangleWidget.xaml.cs">
+      <DependentUpon>RectangleWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\TriangleWidget.xaml.cs">
+      <DependentUpon>TriangleWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Widgets\VerticalLineWidget.xaml.cs">
+      <DependentUpon>VerticalLineWidget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\EditListViewModel.cs" />
+    <Compile Include="Window\NodeViewModel.cs" />
+    <Page Include="UserControl\SimpleEditText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\SmallEditText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\CheckBoxWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Widgets\RoundedRecWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\SVGWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Widgets\TextAreaWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Widgets\TextFieldWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Widgets\RadioButtonWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window\AddManyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\EditListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adorners\ResizeRotateAdorner.cs" />
+    <Compile Include="Adorners\RubberbandAdorner.cs" />
+    <Compile Include="Adorners\SizeAdorner.cs" />
+    <Compile Include="CustomControl\DesignerCanvas.cs" />
+    <Compile Include="CustomControl\SizeInfoChrome.cs" />
+    <Compile Include="CustomControl\DesignerItemDecorator.cs" />
+    <Compile Include="Thumb\MoveThumb.cs" />
+    <Compile Include="CustomControl\ResizeRotateChrome.cs" />
+    <Compile Include="Thumb\ResizeThumb.cs" />
+    <Compile Include="Thumb\RotateThumb.cs" />
+    <Compile Include="Themes\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserControl\PreviewVisualMoveControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\ButtonWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\CircleWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\DiamondWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\DroplistWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\HorizontalLineWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\HotSpotWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\ImageWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\LabelWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\ListboxWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\RectangleWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\TriangleWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Widgets\VerticalLineWidget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rotate.cur" />
+    <Resource Include="Media\Img_Icon_Big_300x300.png" />
+    <Resource Include="Media\hamburger_doc_icon.png" />
+    <Resource Include="Media\01_Image_Select.svg" />
+    <Resource Include="Media\17_Hamburger_Select.svg" />
+    <Resource Include="Media\ico_master_select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\CommonBase\Naver.Compass.CommonBase.csproj">
+      <Project>{d310a56d-c5d2-4c2a-92f3-86694d6c1b4d}</Project>
+      <Name>Naver.Compass.CommonBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Helper\Naver.Compass.Helper.csproj">
+      <Project>{07218fcb-a5d5-436f-b9f0-cbae956dcd52}</Project>
+      <Name>Naver.Compass.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Naver.Compass.ControlBase\Naver.Compass.ControlBase.csproj">
+      <Project>{be08f25e-3440-4059-9c7c-63685931206d}</Project>
+      <Name>Naver.Compass.ControlBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External\SharpVector\SharpVectorConverters\SharpVectors.Converters.csproj">
+      <Project>{e8056611-e49c-4bc3-a682-a629d5cec11c}</Project>
+      <Name>SharpVectors.Converters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External\SharpVector\SharpVectorCore\SharpVectors.Core.csproj">
+      <Project>{d6bb65fc-240e-4241-b2ed-a7fb3f13e978}</Project>
+      <Name>SharpVectors.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External\SharpVector\SharpVectorCss\SharpVectors.Css.csproj">
+      <Project>{351b0a6e-2f6b-497a-844b-dcb5a502fb0d}</Project>
+      <Name>SharpVectors.Css</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External\SharpVector\SharpVectorDom\SharpVectors.Dom.csproj">
+      <Project>{fe34cbc0-d23c-4a95-ba64-83a031814010}</Project>
+      <Name>SharpVectors.Dom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External\SharpVector\SharpVectorModel\SharpVectors.Model.csproj">
+      <Project>{5d336f48-3fb9-4382-b4b9-06974c764007}</Project>
+      <Name>SharpVectors.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External\SharpVector\SharpVectorRenderingWpf\SharpVectors.Rendering.Wpf.csproj">
+      <Project>{a2576ce0-e492-490f-97e9-c0e7abafaf27}</Project>
+      <Name>SharpVectors.Rendering.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\ModuleBase\Naver.Compass.ModuleBase.csproj">
+      <Project>{11fdd0da-fead-462a-9c35-eacced997ede}</Project>
+      <Name>Naver.Compass.ModuleBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\DocumentServiceProvider\Naver.Compass.DocumentServiceProvider\Naver.Compass.DocumentServiceProvider.csproj">
+      <Project>{5460fb5f-fe6a-4970-9ec0-831d0c7ac7b6}</Project>
+      <Name>Naver.Compass.DocumentServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service\DomServiceProvider\Naver.Compass.SelectionServiceProvider.csproj">
+      <Project>{25570e46-f889-43e5-874c-c0a579f9cbaf}</Project>
+      <Name>Naver.Compass.SelectionServiceProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

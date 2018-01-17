@@ -1,0 +1,122 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    >
+
+    <!-- Font Family-->
+    <!--<sys:String x:Key="Font_Family" >Nanum Gothic</sys:String>-->
+    <FontFamily x:Key ="Font_Family">Nanum Gothic</FontFamily> 
+    <!-- Menu and top level menu-->
+    <SolidColorBrush x:Key="MeunBColor" Color="#FFFFFFFF" />
+    
+    
+    <sys:Double x:Key="Menu_Height" >27</sys:Double>
+    <sys:Double x:Key="Menu_Corner_Round" >0</sys:Double>
+    <sys:Double x:Key="Menu_TopLevel_Height" >23</sys:Double>
+    <sys:Double x:Key="Menu_TopLevel_Width" >50</sys:Double>
+    <sys:Double x:Key="Menu_TopLevel_Gap" >4</sys:Double>
+    <sys:Double x:Key="Menu_TopLevel_Margin_Top" >2</sys:Double>
+    <sys:Double x:Key="Menu_TopLevel_Margin_Bottom" >2</sys:Double>
+    <sys:Double x:Key="Menu_TopLevel_Font_Size" >12</sys:Double>
+    <sys:String x:Key="Menu_TopLevel_Vertial">Middle</sys:String>
+
+    <SolidColorBrush x:Key="MenuFontColcor" Color="#FF555555"/>
+
+    <!--TopLevel Menu Over-->
+    
+    <SolidColorBrush x:Key="Meun_Over_BColor" Color="#FFEBF3FE" />
+    <SolidColorBrush x:Key="Meun_Over_lineColor" Color="#FF6599FF" />
+
+    <SolidColorBrush x:Key="Meun_Press_BColor" Color="#FFCDDFFF" />
+    <SolidColorBrush x:Key="Meun_Press_lineColor" Color="#FF699eff" />
+
+    <sys:Double x:Key="Menu_TopLevel_Over_Height" >23</sys:Double>
+    <sys:Double x:Key="Menu_TopLevel_Over_Width" >50</sys:Double>
+    
+    <!--MenuItem submenu-->
+    <sys:Double x:Key="Submenu_Width" >285</sys:Double>
+    
+    <!--MenuItem single Item-->
+    <sys:Double x:Key="Menuitem_FontSize" >12</sys:Double>
+    <sys:Double x:Key="Menuitem_Height" >22</sys:Double>
+    <sys:Double x:Key="Arrow_Right_Margin" >16</sys:Double>
+    <SolidColorBrush x:Key="Menuitem_HL_Color"  Color="#FFE0EDFE" />
+    <SolidColorBrush x:Key="Menu_Check_File_Color"  Color="#FFEAF2FD" />
+    <SolidColorBrush x:Key="Menu_Check_Border_Color"  Color="#FF80ADFE" />
+    <SolidColorBrush x:Key="Menu_Check_Check_Color"  Color="#FF696A6C" />
+
+    <!--MenuItem Borderline-->
+    <sys:Double x:Key="Menuitem_BL_Width" >1</sys:Double>
+    <SolidColorBrush x:Key="Menuitem_BL_Color"  Color="#FFAAAAAA" />
+
+    <!--MenuItem Shadow-->
+    <sys:Double x:Key="Menuitem_SD_Width" >2</sys:Double>
+    <SolidColorBrush x:Key="Menuitem_SD_Color"  Color="#FFD0D0D0" />
+
+    <!--MenuItem Icon column-->
+    <sys:Double x:Key="Menuitem_Icon_Column_Width" >28</sys:Double>
+    <SolidColorBrush x:Key="Menuitem_Icon_Column_BG"  Color="#FFF3F3F3" />
+    <SolidColorBrush x:Key="Menuitem_Icon_Right_BL_Color"  Color="#EEEFEF" />
+    <sys:Double x:Key="Menuitem_Icon_Width" >22</sys:Double>
+    <sys:Double x:Key="Menuitem_Icon_Height" >22</sys:Double>
+
+    <!--MenuItem Seprate-->
+    <sys:Double x:Key="Seprate_Top_Bottom_Margin" >7</sys:Double>
+    <SolidColorBrush x:Key="Seprate_Color"  Color="#FFDBDCDE" />
+
+    <!-- toolbar-Color.-->
+
+    <SolidColorBrush x:Key="TB_BL_COLOR" Color="#FFCACACA" />
+    <SolidColorBrush x:Key="TB_BOTTOM_BL_COLOR" Color="#FF9e9e9e" />
+    
+    <SolidColorBrush x:Key="TB_OVER_BG_COLOR" Color="#FFEBF3FE" />
+    <SolidColorBrush x:Key="TB_OVER_BL_COLOR" Color="#FF6599FF" />
+
+    <SolidColorBrush x:Key="TB_PRESS_BG_COLOR" Color="#FFCDDFFF" />
+    <SolidColorBrush x:Key="TB_PRESS_BL_COLOR" Color="#FF699eff" />
+    
+    <SolidColorBrush x:Key="TB_ARROW_BG_COLOR" Color="#FF717171" />
+
+    <SolidColorBrush x:Key="TB_Selected_BG_COLOR" Color="#FF3399FF" />
+
+    <!--Image define-->
+    <Image x:Key="Menu_New" Source="../ICON/icon-22-new-doc.png"></Image>
+    <Image x:Key="Menu_Open" Source="../ICON/icon-22-open.png"></Image>
+    <Image x:Key="Menu_Save" Source="../ICON/icon-22-save.png"></Image>
+    <Image x:Key="Redo" Source="../ICON/icon-22-redo.png"></Image>
+    <Image x:Key="Undo" Source="../ICON/icon-22-undo.png"></Image>
+
+    <Image x:Key="Cut" Source="../ICON/icon-22-cut.png"></Image>
+    <Image x:Key="Copy" Source="../ICON/icon-22-copy.png"></Image>
+    <Image x:Key="Paste" Source="../ICON/icon-22-paste.png"></Image>
+    <Image x:Key="FormatPanit" Source="../ICON/icon-22-formatpaiter.png"></Image>
+
+    <Image x:Key="Group" Source="../ICON/icon-22-group.png"></Image>
+    <Image x:Key="Ungroup" Source="../ICON/icon-22-ungroup.png"></Image>
+
+    <Image x:Key="Bring_Front" Source="../ICON/icon-22-bring-front.png"></Image>
+    <Image x:Key="Send_Back" Source="../ICON/icon-22-send-back.png"></Image>
+    <Image x:Key="Bring_Forward" Source="../ICON/icon-22-bring-foward.png"></Image>
+    <Image x:Key="Send_Backward" Source="../ICON/icon-22-send-backward.png"></Image>
+
+    <Image x:Key="Align" Source="../ICON/icon-22-align-left.png"></Image>
+    <Image x:Key="Align_Left" Source="../ICON/icon-22-align-left.png"></Image>
+    <Image x:Key="Align_Center" Source="../ICON/icon-22-align-center.png"></Image>
+    <Image x:Key="Align_Right" Source="../ICON/icon-22-align-right.png"></Image>
+    <Image x:Key="Align_Top" Source="../ICON/icon-22-align-top.png"></Image>
+    <Image x:Key="Align_Middle" Source="../ICON/icon-22-align-middle.png"></Image>
+    <Image x:Key="Align_Bottom" Source="../ICON/icon-22-align-bottom.png"></Image>
+    <Image x:Key="Distribute" Source="../ICON/icon-22-distibute-horizontally.png"></Image>
+    <Image x:Key="Distribute_Hor" Source="../ICON/icon-22-distibute-horizontally.png"></Image>
+    <Image x:Key="Distribute_Ver" Source="../ICON/icon-22-distibute-vertically.png"></Image>
+    <Image x:Key="Lock_Main" Source="../ICON/icon-22-lock.png"></Image>
+    <Image x:Key="Lock" Source="../ICON/icon-22-lock.png"></Image>
+    <Image x:Key="UnLock" Source="../ICON/icon-22-unlock.png"></Image>
+
+    <Image x:Key="PreView_Small" Source="../ICON/icon-22-preview.png"></Image>
+    <Image x:Key="Publish_Small" Source="../ICON/icon-22-share.png"></Image>
+    <Image x:Key="AdaptiveView_Setting" Source="../ICON/edit-adaptiveview.png"/>
+    <Image x:Key="ConvertMaster" Source="../ICON/ico_master.png"></Image>
+
+
+</ResourceDictionary>

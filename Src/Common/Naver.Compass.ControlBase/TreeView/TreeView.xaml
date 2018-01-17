@@ -1,0 +1,456 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:cw="clr-namespace:Naver.Compass.Module"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <!-- TreeView -->
+    <Style TargetType="{x:Type TreeView}">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource CommonBorderBrush}" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+                Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+                Value="Auto" />
+        <Setter Property="ScrollViewer.PanningMode"
+                Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled"
+                Value="False" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TreeView}">
+                    <Border x:Name="Bd"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="true">
+                        <ScrollViewer x:Name="_tv_scrollviewer_"
+                                      Background="{TemplateBinding Background}"
+                                      CanContentScroll="false"
+                                      Focusable="false"
+                                      HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+                                      Padding="{TemplateBinding Padding}"
+                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                      VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled"
+                                 Value="false">
+                            <Setter Property="BorderBrush"
+                                    Value="#D9D9D9" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!-- 悬停状态的画刷 -->
+    <!--<SolidColorBrush x:Key="HoverBackgroundBrushKey" Color="#E5F3FB" />-->
+    <SolidColorBrush x:Key="HoverBackgroundBrushKey"
+                     Color="Transparent" />
+    <SolidColorBrush x:Key="HoverBorderBrushKey"
+                     Color="#70C0E7" />
+
+    <!-- 选中(激活)状态的画刷 -->
+    <SolidColorBrush x:Key="SelectedActiveBackgroundBrushKey"
+                     Color="#E1EEFF" />
+    <SolidColorBrush x:Key="SelectedActiveBorderBrushKey"
+                     Color="#26A0DA" />
+
+
+    <!-- 选中(悬停)状态的画刷 -->
+    <!--<SolidColorBrush x:Key="SelectedHoverBackgroundBrushKey" Color="#D1E8FF" />-->
+    <SolidColorBrush x:Key="SelectedHoverBackgroundBrushKey"
+                     Color="#E1EEFF" />
+    <SolidColorBrush x:Key="SelectedHoverBorderBrushKey"
+                     Color="#66A7E8" />
+
+    <!-- 选中(失效)状态的画刷 -->
+    <!--<SolidColorBrush x:Key="SelectedInactiveBackgroundBrushKey" Color="#F7F7F7" />-->
+    <SolidColorBrush x:Key="SelectedInactiveBackgroundBrushKey"
+                     Color="#E1EEFF" />
+    <SolidColorBrush x:Key="SelectedInactiveBorderBrushKey"
+                     Color="#DEDEDE" />
+
+    <!-- TreeViewItem 的展开箭头 -->
+    <PathGeometry x:Key="TreeArrow"
+                  Figures="M0,0 L0,5 L5,0 z" />
+    <Style x:Key="ExpandCollapseToggleStyle"
+           TargetType="{x:Type ToggleButton}">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Width"
+                Value="7" />
+        <Setter Property="Height"
+                Value="16" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Background="Transparent"
+                            Width="7"
+                            Height="16"
+                            Padding="0,5,0,0">
+                        <Path x:Name="ExpandPath"
+                              Fill="#646464"
+                              Stroke="#646464"
+                              Data="{StaticResource TreeArrow}">
+                            <Path.RenderTransform>
+                                <RotateTransform Angle="135"
+                                                 CenterX="2.5"
+                                                 CenterY="2.5" />
+                            </Path.RenderTransform>
+                        </Path>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="ExpandPath"
+                                    Property="Stroke"
+                                    Value="#1BBBFA" />
+                            <Setter TargetName="ExpandPath"
+                                    Property="Fill"
+                                    Value="#1BBBFA" />
+                        </Trigger>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="ExpandPath"
+                                    Property="RenderTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="225"
+                                                     CenterX="2.5"
+                                                     CenterY="2.5" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="ExpandPath"
+                                    Property="Stroke"
+                                    Value="#646464" />
+                            <Setter TargetName="ExpandPath"
+                                    Property="Fill"
+                                    Value="#646464" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsChecked"
+                                           Value="True" />
+                                <Condition Property="IsMouseOver"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ExpandPath"
+                                    Property="Stroke"
+                                    Value="#1BBBFA" />
+                            <Setter TargetName="ExpandPath"
+                                    Property="Fill"
+                                    Value="#82DFFB" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- TreeViewItem 样式 -->
+    <Style x:Key="{x:Type TreeViewItem}"
+           TargetType="{x:Type TreeViewItem}">
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="FontWeight"
+                Value="Normal" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                    <ControlTemplate.Resources>
+                        <!-- 计算节点缩进的转换器 -->
+                        <cw:IndentConverter Indent="12"
+                                            MarginLeft="5"
+                                            x:Key="IndentConverter" />
+                    </ControlTemplate.Resources>
+                    <Grid Name="TreeViewItemPanel"
+                          Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="Border"
+                                CornerRadius="0"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="True"
+                                Height="20">
+                            <Grid Margin="{Binding Converter={StaticResource IndentConverter}, RelativeSource={RelativeSource TemplatedParent}}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition MinWidth="12"
+                                                      Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton x:Name="Expander"
+                                              Style="{StaticResource ExpandCollapseToggleStyle}"
+                                              IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                                              ClickMode="Press"
+                                              Width="Auto"
+                                              HorizontalAlignment="Left"
+                                              Height="Auto"
+                                              Margin="6,0,2,0" />
+                                <Grid x:Name="ItemBd"
+                                      Grid.Column="1"
+                                      SnapsToDevicePixels="true"
+                                      Background="Transparent">
+                                    <ContentPresenter x:Name="PART_Header"
+                                                      ContentSource="Header"
+                                                      HorizontalAlignment="Stretch"
+                                                      VerticalAlignment="Center"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <ItemsPresenter x:Name="ItemsHost"
+                                        Grid.Row="1" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded"
+                                 Value="False">
+                            <Setter TargetName="ItemsHost"
+                                    Property="Visibility"
+                                    Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="HasItems"
+                                 Value="False">
+                            <Setter TargetName="Expander"
+                                    Property="Visibility"
+                                    Value="Hidden" />
+                        </Trigger>
+                        <Trigger Property="IsSelected"
+                                 Value="True">
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedActiveBorderBrushKey}" />
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedActiveBackgroundBrushKey}" />
+                            <Setter Property="FontWeight"
+                                    Value="Bold" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding IsMultiSelected}"
+                                     Value="True">
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedActiveBorderBrushKey}" />
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedActiveBackgroundBrushKey}" />
+                            <Setter Property="FontWeight"
+                                    Value="Bold" />
+                        </DataTrigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter TargetName="Expander"
+                                    Property="Opacity"
+                                    Value="0.3" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected"
+                                           Value="True" />
+                                <Condition Property="Selector.IsSelectionActive"
+                                           Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedInactiveBorderBrushKey}" />
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedInactiveBackgroundBrushKey}" />
+                        </MultiTrigger>
+                        <Trigger SourceName="Border"
+                                 Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource HoverBorderBrushKey}" />
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource HoverBackgroundBrushKey}" />
+                            <!--<Setter TargetName="menuBtn" Property="Visibility" Value="Visible"/>-->
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected"
+                                           Value="True" />
+                                <Condition SourceName="Border"
+                                           Property="IsMouseOver"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedHoverBorderBrushKey}" />
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedHoverBackgroundBrushKey}" />
+                        </MultiTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition  Binding="{Binding IsMultiSelected}"
+                                            Value="True"/>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}"
+                                           Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedHoverBorderBrushKey}" />
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedHoverBackgroundBrushKey}" />
+                        </MultiDataTrigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!-- TreeViewItem 样式 -->
+    <Style x:Key="MasterTreeViewItem"
+           TargetType="{x:Type TreeViewItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                    <Grid Name="TreeViewItemPanel"
+                          Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="Border"
+                                CornerRadius="0"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="True"
+                                Height="{TemplateBinding Height}">
+                                <Grid x:Name="ItemBd"
+                                      Grid.Column="1"
+                                      SnapsToDevicePixels="true"
+                                      Background="Transparent">
+                                    <ContentPresenter x:Name="PART_Header"
+                                                      ContentSource="Header"
+                                                      HorizontalAlignment="Stretch"
+                                                      VerticalAlignment="Center"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Grid>
+                        </Border>
+                        <ItemsPresenter x:Name="ItemsHost"
+                                        Grid.Row="1" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected"
+                                 Value="True">                            
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedActiveBackgroundBrushKey}" />
+                            <Setter Property="FontWeight"
+                                    Value="Bold" />
+                        </Trigger>                                    
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected"
+                                           Value="True" />
+                                <Condition Property="Selector.IsSelectionActive"
+                                           Value="False" />
+                            </MultiTrigger.Conditions>                            
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedInactiveBackgroundBrushKey}" />
+                        </MultiTrigger>
+                        <Trigger SourceName="Border"
+                                 Property="IsMouseOver"
+                                 Value="True">                            
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource HoverBackgroundBrushKey}" />
+                            <!--<Setter TargetName="menuBtn" Property="Visibility" Value="Visible"/>-->
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions> 
+                                <Condition Property="IsSelected"
+                                           Value="True" />
+                                <Condition SourceName="Border"
+                                           Property="IsMouseOver"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>                           
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedHoverBackgroundBrushKey}" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--ListBox 样式-->
+    <Style TargetType="{x:Type ListBox}">
+        <Setter Property="Padding"
+                Value="-1" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource CommonBorderBrush}" />
+    </Style>
+    <Style x:Key="{x:Type ListBoxItem}"
+           TargetType="{x:Type ListBoxItem}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="true" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border x:Name="Border"
+                            SnapsToDevicePixels="true"
+                            BorderThickness="0">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected"
+                                 Value="true">
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource SelectedActiveBackgroundBrushKey}" />
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource SelectedActiveBorderBrushKey}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="false">
+                            <Setter Property="Foreground"
+                                    Value="{StaticResource DisabledForegroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,71 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Naver.Compass.Common"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+             x:Class="Naver.Compass.Common.GradientEditor"
+             mc:Ignorable="d"
+             d:DesignHeight="40"
+             d:DesignWidth="300">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="GradientThumbTemplate"
+                         TargetType="{x:Type local:GradientThumb}">
+            <Grid Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ed:RegularPolygon Height="6"
+                                   InnerRadius="1"
+                                   PointCount="3"
+                                   Stretch="Fill"
+                                   Width="9"
+                                   Margin="-4.5,0,0,0"
+                                   Fill="#FFEDEDED"
+                                   Stroke="#FF666666"
+                                   StrokeThickness="0.3" 
+                                   x:Name="selectedHint"/>
+                <Rectangle Grid.Row="1"
+                           Fill="#FFF4F4F5"
+                           HorizontalAlignment="Left"
+                           Height="6"
+                           Stroke="#FF666666"
+                           VerticalAlignment="Top"
+                           Width="9"
+                           Margin="-4.5,0,0,0"
+                           StrokeThickness="0.3" 
+                           x:Name="colorHint"/>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="11" />
+        </Grid.RowDefinitions>
+        <Border x:Name="GradientBorder"
+                BorderBrush="#FFCACACA"
+                BorderThickness="1">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="1,0.5"
+                                     MappingMode="RelativeToBoundingBox"
+                                     StartPoint="0,0.5">
+                    <GradientStop Color="White"
+                                  Offset="0" />
+                    <GradientStop Color="Black"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Canvas x:Name="canvas"
+                Grid.Row="1"
+                Background="Transparent"
+                MouseDown="CanvasMouseDown">
+            <local:GradientThumb Canvas.Left="0"
+                                 Template="{DynamicResource GradientThumbTemplate}" />
+            <local:GradientThumb Canvas.Left="{Binding ActualWidth, ElementName=canvas, Mode=OneWay}"
+                                 Template="{DynamicResource GradientThumbTemplate}" />
+        </Canvas>
+    </Grid>
+</UserControl>

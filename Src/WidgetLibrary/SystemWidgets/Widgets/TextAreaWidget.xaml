@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="Naver.Compass.WidgetLibrary.TextAreaWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Local="clr-namespace:Naver.Compass.WidgetLibrary"
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200" MinHeight="1" MinWidth="1">
+    <UserControl.Resources>
+        <Common:DisableAttributeConverter x:Key="Disable2Enable"/>
+        <Style x:Key="ContentHiddenStyle" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BorderHiddenStyle" TargetType="Border">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Opacity" Value="0.05"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Background" Value="Transparent "/>
+                    <Setter Property="Opacity" Value="1"/>
+                </DataTrigger>
+                <!--<DataTrigger Binding="{Binding IsHideBorder}" Value="True">
+                    <Setter Property="BorderThickness" Value="0"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHideBorder}" Value="False">
+                    <Setter Property="BorderThickness" Value="0.5"/>
+                </DataTrigger>-->
+                <DataTrigger Binding="{Binding IsHideBorder}" Value="True">
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHideBorder}" Value="False">
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="HintStyle" TargetType="TextBlock">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value ="{Binding vFontSize,Mode=TwoWay}" />
+            <Setter Property="Foreground" Value ="Gray" />
+            <Setter Property="Text" Value ="{Binding HintText,Mode=OneWay}" />
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <!--<DataTrigger Binding="{Binding CanEdit}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding CanEdit}" Value="True">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>-->
+                <!--<DataTrigger Binding="{Binding vTextContent}" Value="{x:Null}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>-->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding CanEdit}" Value="False"/>
+                        <Condition Binding="{Binding vTextContent}" Value="{x:Null}"/>
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Visibility" Value="Visible"/>
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>        
+    </UserControl.Resources>
+    <Border IsHitTestVisible="{Binding CanEdit}" Style="{StaticResource BorderHiddenStyle}" BorderThickness="0.5" Padding="0,0,0.5,0.5">
+        <Grid Style="{StaticResource ContentHiddenStyle}" Opacity="{Binding Opacity}">
+            <Grid.Resources>
+                <Common:ColorDataConverter x:Key="ColorDataCvt"/>
+                <!--<Common:StrokeDashArrayDataConverter  x:Key="StrokeDashArrayDataCvt"/>
+                <Style TargetType="{x:Type Rectangle}">
+                    <Setter Property="Fill" Value ="{Binding vBackgroundColor, Converter={StaticResource ColorDataCvt},Mode=TwoWay}" />
+                    <Setter Property="Stroke" Value ="{Binding vBorderLineColor, Converter={StaticResource ColorDataCvt},Mode=TwoWay}" />
+                    <Setter Property="StrokeDashArray" Value ="{Binding vBorderlineStyle, Converter={StaticResource StrokeDashArrayDataCvt},Mode=TwoWay}" />
+                </Style>-->
+            </Grid.Resources>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Local:SimpleEditText Grid.Column="0" AcceptsReturn="False" 
+                               EnableLabel="{Binding IsDisabled, Mode=OneWay,Converter={StaticResource Disable2Enable}}"
+                               Background="{Binding vBackgroundColor, Converter={StaticResource ColorDataCvt},Mode=TwoWay}">
+            </Local:SimpleEditText >
+            <TextBlock Style="{StaticResource HintStyle}" Padding="2,0,0,0"></TextBlock>
+            <ScrollBar Grid.Column="1" Maximum="0" BorderThickness="0.5" BorderBrush="Gray"></ScrollBar>
+        </Grid>
+    </Border>
+</UserControl>

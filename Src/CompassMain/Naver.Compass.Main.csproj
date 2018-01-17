@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0EF64DB-48C8-4D33-91C7-C0D1FC87FF02}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Naver.Compass.Main</RootNamespace>
+    <AssemblyName>protoNow</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>.\Images\Compass.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\SharpZipLib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\Blend\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.MEFExtensions.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.UnityExtensions.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.166-beta\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.166-beta\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.166.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.166-beta\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\External\lib\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\RibbonControlsLibrary.4.0.0\lib\net40\RibbonControlsLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="SplashWindow.xaml.cs">
+      <DependentUpon>SplashWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\WelcomeScreen.xaml.cs">
+      <DependentUpon>WelcomeScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\WelcomeScreenViewModel.cs" />
+    <Page Include="MainIntegrationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainIntegrationViewModel.cs" />
+    <Compile Include="MainIntegrationWindow.xaml.cs">
+      <DependentUpon>MainIntegrationWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SplashWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\WelcomeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CommonBase\Naver.Compass.CommonBase.csproj">
+      <Project>{d310a56d-c5d2-4c2a-92f3-86694d6c1b4d}</Project>
+      <Name>Naver.Compass.CommonBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Helper\Naver.Compass.Helper.csproj">
+      <Project>{07218fcb-a5d5-436f-b9f0-cbae956dcd52}</Project>
+      <Name>Naver.Compass.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Naver.Compass.ControlBase\Naver.Compass.ControlBase.csproj">
+      <Project>{be08f25e-3440-4059-9c7c-63685931206d}</Project>
+      <Name>Naver.Compass.ControlBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\AvalonDock\Xceed.Wpf.AvalonDock.Themes.Aero\Xceed.Wpf.AvalonDock.Themes.Aero.csproj">
+      <Project>{ba72cce0-a9fb-4995-b496-7fec5c87b85b}</Project>
+      <Name>Xceed.Wpf.AvalonDock.Themes.Aero</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\AvalonDock\Xceed.Wpf.AvalonDock\Xceed.Wpf.AvalonDock.csproj">
+      <Project>{db81988f-e0f2-45a0-a1fd-8c37f3d35244}</Project>
+      <Name>Xceed.Wpf.AvalonDock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\SharpVector\SharpVectorConverters\SharpVectors.Converters.csproj">
+      <Project>{e8056611-e49c-4bc3-a682-a629d5cec11c}</Project>
+      <Name>SharpVectors.Converters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\SharpVector\SharpVectorCore\SharpVectors.Core.csproj">
+      <Project>{d6bb65fc-240e-4241-b2ed-a7fb3f13e978}</Project>
+      <Name>SharpVectors.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\SharpVector\SharpVectorCss\SharpVectors.Css.csproj">
+      <Project>{351b0a6e-2f6b-497a-844b-dcb5a502fb0d}</Project>
+      <Name>SharpVectors.Css</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\SharpVector\SharpVectorDom\SharpVectors.Dom.csproj">
+      <Project>{fe34cbc0-d23c-4a95-ba64-83a031814010}</Project>
+      <Name>SharpVectors.Dom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\SharpVector\SharpVectorModel\SharpVectors.Model.csproj">
+      <Project>{5d336f48-3fb9-4382-b4b9-06974c764007}</Project>
+      <Name>SharpVectors.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\SharpVector\SharpVectorRenderingWpf\SharpVectors.Rendering.Wpf.csproj">
+      <Project>{a2576ce0-e492-490f-97e9-c0e7abafaf27}</Project>
+      <Name>SharpVectors.Rendering.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\External\SharpVector\SharpVectorRuntime\SharpVectors.Runtime.csproj">
+      <Project>{2cd52982-a1c2-4a14-9d69-d64719357216}</Project>
+      <Name>SharpVectors.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\ModuleBase\Naver.Compass.ModuleBase.csproj">
+      <Project>{11fdd0da-fead-462a-9c35-eacced997ede}</Project>
+      <Name>Naver.Compass.ModuleBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\PrismWrapper\Naver.Compass.PrismWrapper.csproj">
+      <Project>{15500622-6629-4100-9584-c796e5f5c354}</Project>
+      <Name>Naver.Compass.PrismWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\DiagramEditor\Naver.Compass.DiagramEditor.csproj">
+      <Project>{30a4e2ce-ad91-4297-8dde-b23d1fbd8460}</Project>
+      <Name>Naver.Compass.DiagramEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\InteractionPanel\Naver.Compass.InteractionPanel.csproj">
+      <Project>{efacf4cf-083b-4f61-86ac-607a394495ec}</Project>
+      <Name>Naver.Compass.InteractionPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\MainToolBar\Naver.Compass.MainToolBar.csproj">
+      <Project>{38a4107e-2f78-4668-ab0c-7a7a72e67631}</Project>
+      <Name>Naver.Compass.MainToolBar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\MasterPanel\Naver.Compass.MasterPanel.csproj">
+      <Project>{e5cd45a7-7e93-49e0-b10c-e54494979b4a}</Project>
+      <Name>Naver.Compass.MasterPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\Naver.Compass.DockingLayout\Naver.Compass.DockingLayout.csproj">
+      <Project>{c7d7e2ca-6370-442e-a277-0b39a56c4d22}</Project>
+      <Name>Naver.Compass.DockingLayout</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\Naver.Compass.PageListPanel\Naver.Compass.PageListPanel.csproj">
+      <Project>{d4ebf27f-b5f5-4b95-ac3f-2abc194bbeb5}</Project>
+      <Name>Naver.Compass.PageListPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\PagePropertyPanel\Naver.Compass.PagePropertyPanel.csproj">
+      <Project>{bf1b5b30-57a6-4bf1-a096-a89c1d634236}</Project>
+      <Name>Naver.Compass.PagePropertyPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\PreviewModule\Naver.Compass.PreviewModule.csproj">
+      <Project>{18d3181b-fd82-4393-82ef-34ac654f0aa5}</Project>
+      <Name>Naver.Compass.PreviewModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\PublishModule\Naver.Compass.PublishMode.csproj">
+      <Project>{98e11544-e8ff-4979-8506-a97e09b0f4c3}</Project>
+      <Name>Naver.Compass.PublishMode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\WidgetLibrary\Naver.Compass.WidgetGalleryPanel.csproj">
+      <Project>{8a94cfd1-fa58-43ce-9533-b4fe5b0b5db3}</Project>
+      <Name>Naver.Compass.WidgetGalleryPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\WidgetManagerPanel\Naver.Compass.WidgetManagerPanel.csproj">
+      <Project>{99cff9fb-835a-425a-b78d-274f7d5191d0}</Project>
+      <Name>Naver.Compass.WidgetManagerPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Module\WidgetPropertyPanel\Naver.Compass.WidgetPropertyPanel.csproj">
+      <Project>{d29b0d16-c6a3-4110-a0cd-a7c8fbcbdbb8}</Project>
+      <Name>Naver.Compass.WidgetPropertyPanel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\CommonServiceProvider\Naver.Compass.CommonServiceProvider.csproj">
+      <Project>{22b367ab-2a43-40d7-891d-29bc9ebb5a0d}</Project>
+      <Name>Naver.Compass.CommonServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\CustomLibraryServiceProvider\Naver.Compass.CustomLibraryServiceProvider.csproj">
+      <Project>{0c9950e6-346c-4931-8fee-48e8c7740aa2}</Project>
+      <Name>Naver.Compass.CustomLibraryServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\DocumentServiceProvider\Naver.Compass.DocumentServiceProvider\Naver.Compass.DocumentServiceProvider.csproj">
+      <Project>{5460fb5f-fe6a-4970-9ec0-831d0c7ac7b6}</Project>
+      <Name>Naver.Compass.DocumentServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\DomServiceProvider\Naver.Compass.SelectionServiceProvider.csproj">
+      <Project>{25570e46-f889-43e5-874c-c0a579f9cbaf}</Project>
+      <Name>Naver.Compass.SelectionServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\HtmlServiceProvider\Naver.Compass.HtmlServiceProvider\Naver.Compass.HtmlServiceProvider.csproj">
+      <Project>{b1ec6a37-1e7f-4b31-9b19-7d8d63eb550e}</Project>
+      <Name>Naver.Compass.HtmlServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\UpdateServiceProvider\Naver.Compass.UpdateServiceProvider.csproj">
+      <Project>{a5609509-e1a8-4240-b99b-62b5014566d9}</Project>
+      <Name>Naver.Compass.UpdateServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\WebServiceProvider\Naver.Compass.WebServiceProvider.csproj">
+      <Project>{ee7c7c18-4708-4e99-83b9-4f569f893e8a}</Project>
+      <Name>Naver.Compass.WebServiceProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WidgetLibrary\FrameWidgets\Naver.Compass.FrameWidgets.csproj">
+      <Project>{e4c00d75-2795-4e06-8b8e-d939e7803027}</Project>
+      <Name>Naver.Compass.FrameWidgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WidgetLibrary\SystemWidgets\Naver.Compass.SystemWidgets.csproj">
+      <Project>{5a64d51f-822b-4788-b023-cb2010476ede}</Project>
+      <Name>Naver.Compass.SystemWidgets</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Compass.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon-22-welcome-close.png" />
+    <Resource Include="Images\Open_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\splashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pn_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\welcome_btn.png" />
+    <Resource Include="Images\welcome_ico_doc.png" />
+    <Resource Include="Images\welcome_ico_newDoc.png" />
+    <Resource Include="Images\welcome_ico_openDoc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\welcome_alert.png" />
+    <Resource Include="Images\welcome_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\welcome_ico_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\about-blank.png" />
+    <Resource Include="Images\splashScreen-blank.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

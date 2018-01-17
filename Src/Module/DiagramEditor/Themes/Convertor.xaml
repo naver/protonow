@@ -1,0 +1,22 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:Naver.Compass.Module" 
+    xmlns:common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+    xmlns:local ="clr-namespace:Naver.Compass.Module">    
+    <local:LockEnableConverter x:Key="lockEnableConverter"/>
+    <common:Bool2VisibleConverter x:Key="Bool2Visible" />
+    <common:Bool2CollapseConverter x:Key="Bool2Collapse" />
+    <common:MultiBindingConverter x:Key="multiBindingConverter" />
+    <local:ViewRectConverter x:Key="ViewRectConverter" />
+    <local:MarginConverter x:Key="marginConverter" />
+    <local:WidthConverter x:Key="widthConverter" />
+    <local:HeightConverter x:Key="heightConverter" />
+    <local:EditableWidthConverter x:Key="editableWidth" />
+    <local:EditableHeightConverter x:Key="editableHeight" />
+    <local:ImageVisibilityConverter x:Key="imageVisibility" />
+    <local:NameConverter x:Key="nameConverter" />
+    <local:LessGreaterConverter x:Key="LessGreaterConverter"/>
+    <local:IconVisibleConverter x:Key="IconVisibleConverter"/>
+    <local:Number2PercentTextConverter x:Key="ConvertorNumber2Percent"/>    
+</ResourceDictionary>

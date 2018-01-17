@@ -1,0 +1,61 @@
+{
+    "nav": {
+        "qrcode" : "QR코드",
+        "prev": "이전 페이지",
+        "next": "다음 페이지",
+        "nopage" : "페이지 노트가 없습니다."
+    },
+    "common" : {
+        "sitemap" : "사이트 맵",
+        "pagenote" : "페이지 노트",
+        "multiview" : "멀티뷰",
+        "unselect" : "선택 해제",
+        "real_resolution" : "기기 해상도",
+        "resolution" : "해상도",
+        "pixelratio" : "Pixel Ratio",
+        "page_widget_note" : "페이지/오브젝트 노트",
+        "page" : "페이지",
+        "widget_note" : "오브젝트 노트",
+        "interaction_area" : "인터랙션 영역",
+        "url_copy" : "URL 복사",
+        "full_screen" : "전체 화면",
+        "exit_full_screen" : "전체 화면 해제",
+        "download" : "Downloads",
+        "protected_document" : "보호된 문서",
+        "pc_view_ok" : "확인"
+    },
+    "msg" : {
+        "no_widget_notes" : "오브젝트 노트가 없습니다.",
+        "url_copy_msg" : "URL을 복사한 후 원하는 곳에 붙여넣기(Ctrl+V)하세요. ",
+        "protected_document_msg" : "이 문서는 암호로 보호되어 있습니다. 문서를 보려면 암호를 입력해 주세요.",
+        "protected_document_err" : "잘못된 암호입니다. 암호를 다시 입력해 주세요.",
+        "pc_view_404" : "요청하신 페이지를 찾을 수 없습니다. 요청하신 페이지가 제거되었거나, 이름이 변경되었거나, 일시적으로 사용이 중단되었습니다. 입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다."
+    },
+    "widgetType" : {
+        "widget_context" : "",
+        "widget_context_Image" : "이미지",
+        "widget_context_HotSpot" : "링크",
+        "widget_context_Shape" : "도형",
+        "widget_context_Line" : "선",
+        "widget_context_ListBox" : "목록 상자",
+        "widget_context_DropList" : "드롭 목록 상자",
+        "widget_context_Button" : "버튼" ,
+        "widget_context_RadioButton" : "라디오 버튼",
+        "widget_context_Checkbox" : "체크 상자",
+        "widget_context_TextField" : "텍스트 필드",
+        "widget_context_TextArea" : "텍스트 영역",
+        "widget_context_HamburgerMenu" : "드로어 메뉴",
+        "widget_context_Toast" : "알림 메시지",
+        "widget_context_Flicking" : "스와이프 뷰",
+        "widget_context_SVG" : "Icon"
+    },
+    "shapeType" : {
+        "shape_context" : "도형",
+        "shape_context_Paragraph" : "텍스트",
+        "shape_context_Diamond" : "마름모꼴",
+        "shape_context_Triangle" : "삼각형",
+        "shape_context_Ellipse" : "원",
+        "shape_context_Rectangle" : "사각형",
+        "shape_context_RoundedRectangle" : "둥근 사각형"
+    }
+}

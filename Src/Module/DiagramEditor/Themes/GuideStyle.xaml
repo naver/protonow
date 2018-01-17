@@ -1,0 +1,145 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:Naver.Compass.Module" 
+    xmlns:cm="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+    xmlns:local ="clr-namespace:Naver.Compass.Module">
+    <local:LockEnableConverter x:Key="lockEnableConverter"/>
+    
+    
+    <Style TargetType="{x:Type Shape}" x:Key="ThumbCorner">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <!--<Setter Property="Stroke" Value="#FFC8C8C8" />-->
+        <Setter Property="StrokeThickness" Value=".5" />
+        <Setter Property="Width" Value="7" />
+        <Setter Property="Height" Value="7" />
+        <Setter Property="Margin" Value="-2" />
+        <Setter Property="Fill">
+            <Setter.Value>
+                <RadialGradientBrush Center="0.2, 0.2" GradientOrigin="0.2, 0.2" RadiusX="0.8" RadiusY="0.8">
+                    <GradientStop Color="White" Offset="0.0" />
+                    <GradientStop Color="#FF0065E4" Offset="0.8" />
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type s:HGuidelineChrome}">
+        <Setter Property="IsLocked" Value="{Binding DataContext.IsLocked}"/>
+        <Setter Property="LineColor" Value="{Binding DataContext.LineColor}"/>
+        <Setter Property="IsSelected" Value="{Binding DataContext.IsSelected, Mode=TwoWay}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:HGuidelineChrome}">
+                    <Grid Background="AliceBlue">
+                        <s:MoveThumb  x:Name="guidThumb" Cursor="SizeNS" VerticalAlignment="Center" HorizontalAlignment="Stretch" 
+                                      Visibility="{Binding DataContext.IsMoveThumbVisible, Mode=OneWay}">
+                            <s:MoveThumb.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="{DynamicResource Sitemap_Delete}" IsEnabled="{Binding DataContext.IsLocked, Converter={StaticResource lockEnableConverter}}" Command="{Binding DataContext.DeleteCommand}"/>
+                                    <MenuItem Header="{DynamicResource GuideMenu_Lock}" IsCheckable="True" IsChecked="{TemplateBinding IsLocked}" Command="{Binding DataContext.LockCommand}"/>
+                                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid}">
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ShowGrid}" IsEnabled="True" IsCheckable="True" IsChecked="{Binding DataContext.IsShowGridCheck, Mode=OneWay}" InputGestureText="Ctrl+'" Command="cm:GridGuideCommands.ShowGrid" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_SnapToGrid}" IsCheckable="True" IsChecked="{Binding DataContext.IsSnapToGridCheck, Mode=OneWay}" InputGestureText="Ctrl+Shift+'"  Command="cm:GridGuideCommands.SnapToGrid"></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_GridSet}"  Command="cm:GridGuideCommands.GridSetting"  ></MenuItem>
+                                        <Separator Style="{DynamicResource MainSe}"/>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ShowGlobalGuid}" IsChecked="{Binding DataContext.IsShowGlobalGuide,Mode=OneWay}"  InputGestureText="Ctrl+." Command="cm:GridGuideCommands.ShowGlobalGuides" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ShowPageGuide}" IsCheckable="True" IsChecked="{Binding DataContext.IsShowPageGuide, Mode=OneWay}"  InputGestureText="Ctrl+," Command="cm:GridGuideCommands.ShowPageGuides" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_SnapToGuide}" IsCheckable="True" IsChecked="{Binding DataContext.IsSnapToGuide, Mode=OneWay}" InputGestureText="Ctrl+Shift+," Command="cm:GridGuideCommands.SnapToGuides"></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_LockGuide}" InputGestureText="Ctrl+Shift+." Command="cm:GridGuideCommands.LockGuides"></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_CreateGuide}"  Command="cm:GridGuideCommands.CreateGuides" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_DelteAllGuide}" Command="cm:GridGuideCommands.DeleteAllGuides" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_GuideSet}" Command="cm:GridGuideCommands.GuideSetting" ></MenuItem>
+                                        <!--<Separator Style="{DynamicResource MainSe}"/>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_SnapToObject}" Command="cm:GridGuideCommands.SnapToObject"></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ObjectSnapSet}" Command="cm:GridGuideCommands.ObjectSnapSetting" ></MenuItem>-->
+                                    </MenuItem>
+                                </ContextMenu>
+                            </s:MoveThumb.ContextMenu>
+                        </s:MoveThumb>
+                        <Line x:Name="guidline" StrokeThickness="1" Margin="-1,0,0,0" X1="0" Y1="0" X2="10" Y2="0" Stretch="Fill" VerticalAlignment="Center" Stroke="{TemplateBinding LineColor}" IsHitTestVisible="False"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="guidline" Property="Stroke" Value="green"/>
+                        </Trigger>
+                        <Trigger Property="IsLocked" Value="True">
+                            <Setter TargetName="guidThumb" Property="Cursor" Value="{Binding DataContext.LockCursor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+                
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type s:VGuidelineChrome}">
+        <Setter Property="IsLocked" Value="{Binding DataContext.IsLocked}"/>
+        <Setter Property="LineColor" Value="{Binding DataContext.LineColor}"/>
+        <Setter Property="IsSelected" Value="{Binding DataContext.IsSelected, Mode=TwoWay}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:VGuidelineChrome}">
+                    <Grid x:Name="guideGrid">
+                        <s:MoveThumb x:Name="guidThumb" HorizontalAlignment="Stretch"  Background="Transparent" VerticalAlignment="Stretch" Cursor="SizeWE" 
+                                     Visibility="{Binding DataContext.IsMoveThumbVisible, Mode=OneWay}">
+                            <s:MoveThumb.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="{DynamicResource Sitemap_Delete}" IsEnabled="{Binding DataContext.IsLocked, Converter={StaticResource lockEnableConverter}}" Command="{Binding DataContext.DeleteCommand}"/>
+                                    <MenuItem Header="{DynamicResource GuideMenu_Lock}" IsCheckable="True" IsChecked="{TemplateBinding IsLocked}" Command="{Binding DataContext.LockCommand}"/>
+                                    <MenuItem Header="{DynamicResource Menu_Arrange_Grid}">
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ShowGrid}" IsEnabled="True" IsCheckable="True" IsChecked="{Binding DataContext.IsShowGridCheck, Mode=OneWay}" InputGestureText="Ctrl+'" Command="cm:GridGuideCommands.ShowGrid" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_SnapToGrid}" IsCheckable="True" IsChecked="{Binding DataContext.IsSnapToGridCheck, Mode=OneWay}" InputGestureText="Ctrl+Shift+'"  Command="cm:GridGuideCommands.SnapToGrid"></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_GridSet}"  Command="cm:GridGuideCommands.GridSetting"  ></MenuItem>
+                                        <Separator Style="{DynamicResource MainSe}"/>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ShowGlobalGuid}" IsChecked="{Binding DataContext.IsShowGlobalGuide,Mode=OneWay}"  InputGestureText="Ctrl+." Command="cm:GridGuideCommands.ShowGlobalGuides" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_ShowPageGuide}" IsCheckable="True" IsChecked="{Binding DataContext.IsShowPageGuide, Mode=OneWay}"  InputGestureText="Ctrl+," Command="cm:GridGuideCommands.ShowPageGuides" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_SnapToGuide}" IsCheckable="True" IsChecked="{Binding DataContext.IsSnapToGuide, Mode=OneWay}" InputGestureText="Ctrl+Shift+," Command="cm:GridGuideCommands.SnapToGuides"></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_LockGuide}" InputGestureText="Ctrl+Shift+." Command="cm:GridGuideCommands.LockGuides"></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_CreateGuide}"  Command="cm:GridGuideCommands.CreateGuides" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_DelteAllGuide}" Command="cm:GridGuideCommands.DeleteAllGuides" ></MenuItem>
+                                        <MenuItem Header="{DynamicResource Menu_Arrange_Grid_GuideSet}" Command="cm:GridGuideCommands.GuideSetting" ></MenuItem>
+                                        <!--<Separator Style="{DynamicResource MainSe}"/>-->
+                                        <!--<MenuItem Header="{DynamicResource Menu_Arrange_Grid_SnapToObject}" Command="cm:GridGuideCommands.SnapToObject"></MenuItem>-->
+                                        <!--<MenuItem Header="{DynamicResource Menu_Arrange_Grid_ObjectSnapSet}" Command="cm:GridGuideCommands.ObjectSnapSetting" ></MenuItem>-->
+                                    </MenuItem>
+                                </ContextMenu>
+                            </s:MoveThumb.ContextMenu>
+                        </s:MoveThumb>
+                        <Line x:Name="guidline" StrokeThickness="1" Margin="0,-1,0,0" X1="0" Y1="0" X2="0" Y2="10" Stretch="Fill" HorizontalAlignment="Center" Stroke="{TemplateBinding LineColor}" IsHitTestVisible="False"/>
+                      
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="guidline" Property="Stroke" Value="green"/>
+                        </Trigger>
+                        <Trigger Property="IsLocked" Value="True">
+                            <Setter TargetName="guidThumb" Property="Cursor" Value="{Binding DataContext.LockCursor}"/>
+                        </Trigger>   
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type s:MousePositionChrome}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:MousePositionChrome}">
+                    <Grid SnapsToDevicePixels="True">
+                        <Border x:Name="PosBorder" Height="20" Background="LightGray" BorderBrush="Gray" BorderThickness="1"  VerticalAlignment="Bottom" Margin="{Binding InofLocation}" HorizontalAlignment="Left">
+                            <TextBlock Text="{Binding InfoGuide}" VerticalAlignment="Center" Margin="4,0,4,0"></TextBlock>
+                        </Border>                        
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsVline" Value="True">
+                            <Setter TargetName="PosBorder" Property="VerticalAlignment" Value="Top"/>
+                            <Setter TargetName="PosBorder" Property="HorizontalAlignment" Value="Right"/>                            
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="MoveThumbTemplate"  TargetType="{x:Type s:MoveThumb}">
+        <Rectangle Fill="Transparent"/>
+    </ControlTemplate>
+</ResourceDictionary>

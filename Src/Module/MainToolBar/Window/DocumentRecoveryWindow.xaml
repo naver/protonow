@@ -1,0 +1,81 @@
+﻿<ctlBase:BaseWindow x:Class="Naver.Compass.Module.DocumentRecoveryWindow"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+                    Title="{DynamicResource Recovery_Title}"
+                    WindowStartupLocation="CenterOwner"
+                    Style="{StaticResource PopupWindow}"
+                    Height="408"
+                    Width="445">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="12"
+                   Foreground="#ff666666"
+                   Text="{DynamicResource Recovery_SelectVersion}"
+                   Margin="16,18,0,0"
+                   VerticalAlignment="Center" />
+        <ListBox Margin="12,20,16,0"
+                 Height="241"
+                 Grid.Row="2"
+                 ItemsSource="{Binding RecoveryFiles}"
+                 SelectedIndex="{Binding SelectedIndex,Mode=TwoWay}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel Height="79"
+                                    Orientation="Horizontal"
+                                    Background="Transparent">
+                            <Image Width="48"
+                                   Height="48"
+                                   Source="/images/pn_logo.png"
+                                   VerticalAlignment="Center"
+                                   Margin="16,0,0,0" />
+                            <Grid Margin="16,16,0,16">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock FontSize="12"
+                                           Foreground="#ff666666"
+                                           Text="{Binding FullFilename}"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold" />
+                                <TextBlock FontSize="12"
+                                           Grid.Row="1"
+                                           Foreground="#ff666666"
+                                           Text="{Binding VersionLabel}"
+                                           VerticalAlignment="Center" />
+                                <TextBlock FontSize="12"
+                                           Grid.Row="2"
+                                           Foreground="#ff666666"
+                                           Text="{Binding LocalizedTime}"
+                                           VerticalAlignment="Center" />
+                            </Grid>
+                        </StackPanel>
+                        <Grid Height="1" Background="#ffdddddd"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel HorizontalAlignment="Center"
+                    Margin="0,24,0,32"
+                    Grid.Row="3"
+                    Orientation="Horizontal">
+            <Button Content="{DynamicResource Common_OK}"
+                    Width="111"
+                    Command="{Binding RecoveryCommand}"
+                    CommandParameter="1" />
+            <Button Content="{DynamicResource Common_Cancel}"
+                    Width="111"
+                    Margin="8,0,0,0"
+                    Command="{Binding RecoveryCommand}"
+                    CommandParameter="0" />
+        </StackPanel>
+    </Grid>
+</ctlBase:BaseWindow>

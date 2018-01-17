@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{871BE746-53B2-421A-916D-21293736AEA9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestDocument</RootNamespace>
+    <AssemblyName>TestDocument</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\TestCase.cs" />
+    <Compile Include="TestCases\Test_AddCustomObjectToLibrary.cs" />
+    <Compile Include="TestCases\Test_AddCustomObjectToPage.cs" />
+    <Compile Include="TestCases\Test_BreakMaster.cs" />
+    <Compile Include="TestCases\Test_CompressSerializedStream.cs" />
+    <Compile Include="TestCases\Test_CopyMasters.cs" />
+    <Compile Include="TestCases\Test_CopyMasters_AcrossDocument.cs" />
+    <Compile Include="TestCases\Test_CopyObjects_AcrossDocument_MasterIsActionTarget.cs" />
+    <Compile Include="TestCases\Test_CopyPageContainsMasters.cs" />
+    <Compile Include="TestCases\Test_CopyPageContainsMastersZOrder_AcrossDocument.cs" />
+    <Compile Include="TestCases\Test_CopyPageContainsMasters_AcrossDocument.cs" />
+    <Compile Include="TestCases\Test_CopyWidgets.cs" />
+    <Compile Include="TestCases\Test_CreateAllTypeWidgets.cs" />
+    <Compile Include="TestCases\Test_CreateLibraryDocument.cs" />
+    <Compile Include="TestCases\Test_CreateLibraryInPage.cs" />
+    <Compile Include="TestCases\Test_CreateMasterInLibrary.cs" />
+    <Compile Include="TestCases\Test_CreateMasters.cs" />
+    <Compile Include="TestCases\Test_DeleteMasterPage.cs" />
+    <Compile Include="TestCases\Test_LibraryManager_LibraryGuid.cs" />
+    <Compile Include="TestCases\Test_LRU_LibraryAlgorithm.cs" />
+    <Compile Include="TestCases\Test_DuplicatePage.cs" />
+    <Compile Include="TestCases\Test_DuplicatePage_DeletedEmbeddedPage.cs" />
+    <Compile Include="TestCases\Test_DuplicatePage_Stream.cs" />
+    <Compile Include="TestCases\Test_DynamicPanel.cs" />
+    <Compile Include="TestCases\Test_LegacyDocument.cs" />
+    <Compile Include="TestCases\Test_LoadLibrary.cs" />
+    <Compile Include="TestCases\Test_SaveAs.cs" />
+    <Compile Include="TestCases\Test_SaveAs_LibraryDocument.cs" />
+    <Compile Include="TestCases\Test_SetWidgetDefaultStyle.cs" />
+    <Compile Include="TestCases\Test_ZipPages.cs" />
+    <Compile Include="TestCases\Test_ZipPages_EmbeddedPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Naver.Compass.DocumentServiceProvider\Naver.Compass.DocumentServiceProvider.csproj">
+      <Project>{5460fb5f-fe6a-4970-9ec0-831d0c7ac7b6}</Project>
+      <Name>Naver.Compass.DocumentServiceProvider</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

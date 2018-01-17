@@ -1,0 +1,702 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:comm="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+    xmlns:s="clr-namespace:Naver.Compass.WidgetLibrary">
+
+    <!--Some Resources-->
+    <Style TargetType="{x:Type Shape}" x:Key="ThumbCorner1">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <!--<Setter Property="Stroke" Value="#FFC8C8C8" />-->
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Width" Value="7" />
+        <Setter Property="Height" Value="7" />
+        <Setter Property="Margin" Value="-2" />
+        <Setter Property="Fill">
+            <Setter.Value>
+                <RadialGradientBrush Center="0.2, 0.2" GradientOrigin="0.2, 0.2" RadiusX="0.8" RadiusY="0.8">
+                    <GradientStop Color="White" Offset="0.0" />
+                    <GradientStop Color="#FF0065E4" Offset="0.8" />
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type Shape}" x:Key="ThumbCorner">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <!--<Setter Property="Stroke" Value="#FFC8C8C8" />-->
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="Width" Value="7" />
+        <Setter Property="Height" Value="7" />
+        <Setter Property="Margin" Value="-2" />
+        <Setter Property="Fill" Value="#FFFFFFFF"/>
+        <Setter Property="Stroke" Value="#FF4a7eec"/>
+    </Style>
+    <s:DoubleFormatConverter x:Key="doubleFormatConverter"/>
+    <comm:SliderWidthConverter x:Key="ConvertSlider"/>
+    <Style x:Key="DiamondThumbStyle" TargetType="{x:Type Thumb}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">                   
+                    <!--<Path Data="M 0,5 5,0 10,5 5,10 Z" Stretch="None" Fill="Red" Stroke="Red"/>-->
+                    <Ellipse Width="10" Height="20" Fill="Black"></Ellipse>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="tmpThumb" TargetType="{x:Type Thumb}">
+        <!--<Ellipse Name="e" Width="13" MinHeight="20" Fill="Blue"/>-->
+        <Path Data="M 0,5 5,0 10,5 5,10 Z" Name="e" Stretch="None" Fill="Yellow" Stroke="Gray"/>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="e" Property="Fill" Value="Red"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="CornerSliderStyle" TargetType="{x:Type Slider}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Slider}">
+                    <Grid x:Name="GridRoot" Background="Transparent" Margin="-5,-1,-5,-1">
+
+                        <!--<Border Grid.Row="1"
+                                    Margin="0"
+                                    x:Name="Border"
+                                    Height="1"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="2" />-->
+                        <Border BorderBrush="Transparent" Background="Transparent" />
+                        <Track x:Name="PART_Track">
+                            <Track.Thumb>
+                                <Thumb Template="{StaticResource  tmpThumb}" />                               
+                            </Track.Thumb>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <ControlTemplate x:Key="ResizeInforTemplate">
+        <Grid SnapsToDevicePixels="True" Visibility="{Binding DataContext.IsResing}">
+            <Path Stroke="Red"
+                              StrokeThickness="1"
+                              Height="10"
+                              VerticalAlignment="Bottom"
+                              Margin="0,0,0,-15"
+                              Stretch="Fill"
+                              Data="M0,0 0,10 M 0,5 100,5 M 100,0 100,10"/>
+            <TextBlock Text="{Binding Path=ActualWidth, Converter={StaticResource doubleFormatConverter}}"
+                                Background="White"
+                                Padding="3,0,3,0"
+                                Foreground="Red"
+                                Margin="0,0,0,-18"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"/>
+            <Path Stroke="Red"
+                              StrokeThickness="1"
+                              Width="10"
+                              HorizontalAlignment="Right"
+                              Margin="0,0,-15,0"
+                              Stretch="Fill"
+                              Data="M5,0 5,100 M 0,0 10,0 M 0,100 10,100"/>
+            <TextBlock Text="{Binding Path=ActualHeight, Converter={StaticResource doubleFormatConverter}}"
+                                   Background="White"
+                                   Foreground="Red"
+                                   Padding="3,0,3,0"
+                                   Margin="0,0,-18,0"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Center">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="90" CenterX="1" CenterY="0.5"/>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+        </Grid>
+    </ControlTemplate>
+    
+    <!--<Cursor x:Key="rotateCursor">/Naver.Compass.WidgetLibrary.SystemWidgets;component/Resources/rotate.cur</Cursor>-->
+    <!--Chrome Style-->
+    <Style TargetType="{x:Type s:RounedRotatChrome}">
+        <Setter Property="IsLocked" Value="{Binding IsLocked}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:RounedRotatChrome}">
+                    <Grid>
+                        <Grid x:Name="ReszieContainer" Opacity="0" Margin="-1" >
+                            <s:RotateThumb Width="7"
+                             Height="7"
+                             Margin="0,-20,0,0"
+                          
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Center"/>
+
+                            <s:ResizeThumb Height="12" Margin="0,-6,0,0"
+                             Cursor="SizeNS"
+                             VerticalAlignment="Top" 
+                             HorizontalAlignment="Stretch"/>
+                            <s:ResizeThumb Width="12" Margin="-6,0,0,0"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Left"/>
+                            <s:ResizeThumb Width="12" Margin="0,0,-6,0"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Right"/>
+                            <s:ResizeThumb Height="12" Margin="0,0,0,-6"
+                             Cursor="SizeNS"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Stretch"/>
+
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNWSE"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"/>
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNESW"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Right"/>
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNESW"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Left"/>
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNWSE"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid IsHitTestVisible="False" Opacity="1" Margin="-1">
+                            <Rectangle x:Name="line1" SnapsToDevicePixels="True"
+                                       UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                                       StrokeThickness="1"    
+                                       Margin="1"
+                                       Stroke="#FF4a7eec"/>
+                            <!--StrokeDashArray="3 1"-->
+                            <Line x:Name="line2" StrokeThickness="1" X1="0" Y1="0" X2="0" Y2="20"
+                                  SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Top"
+                                  Margin="0,-19,0,0"
+                                  Stroke="#FF4a7eec"/>
+                            <Ellipse  x:Name="ponint1" Style="{StaticResource ThumbCorner}" 
+                                      RenderOptions.EdgeMode="Aliased"
+                                      HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-1,-20,0,0" />
+                            <Ellipse x:Name="ponint2" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <Ellipse x:Name="ponint3" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                            <Ellipse x:Name="ponint4" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                            <Ellipse x:Name="ponint5" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        </Grid>
+                        <s:RoundSlider Style="{StaticResource CornerSliderStyle}" 
+                                       Margin="0,-5,0,0"                                       
+                                       Minimum="0"
+                                       Maximum="{Binding Width, RelativeSource={RelativeSource self}}"
+                                       Value="{Binding DataContext.CornerRadius, Mode=TwoWay}"
+                                       IsSnapToTickEnabled="True"
+                                       LargeChange="1"
+                                       SmallChange="1"                                      
+                                       HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Height="10">
+                            <Slider.Width>
+                                <MultiBinding Converter='{StaticResource ConvertSlider}' >
+                                    <Binding Path="ActualWidth" ElementName="line1" />
+                                    <Binding Path="ActualHeight" ElementName="line1" />
+                                </MultiBinding>
+                            </Slider.Width>
+                        </s:RoundSlider>
+                        <ContentControl Template="{StaticResource ResizeInforTemplate}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsLocked"  Value="True">
+                            <Setter Property="Stroke"  TargetName="ponint1"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint2"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint3"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint4"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint5"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="line2"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="line1"  Value="Red"/>
+                            <Setter Property="IsEnabled"  TargetName="ReszieContainer"  Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>    
+    <Style TargetType="{x:Type s:ResizeRotateChrome}">
+        <Setter Property="IsLocked" Value="{Binding IsLocked}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:ResizeRotateChrome}">
+                    <Grid>
+                        <Grid x:Name="ReszieContainer" Opacity="0" Margin="-1" >
+                            <s:RotateThumb Width="7"
+                             Height="7"
+                             Margin="0,-20,0,0"
+                          
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Center"/>
+                            <s:ResizeThumb Height="12" Margin="0,-6,0,0"
+                             Cursor="SizeNS"
+                             VerticalAlignment="Top" 
+                             HorizontalAlignment="Stretch"/>
+                            <s:ResizeThumb Width="12" Margin="-6,0,0,0"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Left"/>
+                            <s:ResizeThumb Width="12" Margin="0,0,-6,0"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Right"/>
+                            <s:ResizeThumb Height="12" Margin="0,0,0,-6"
+                             Cursor="SizeNS"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Stretch"/>
+                            
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNWSE"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"/>
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNESW"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Right"/>
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNESW"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Left"/>
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNWSE"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid IsHitTestVisible="False" Opacity="1" Margin="-1">
+                            <Rectangle x:Name="line1" SnapsToDevicePixels="True"
+                                       UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                                       StrokeThickness="1"    
+                                       Margin="1"
+                                       Stroke="#FF4a7eec"/>
+                            <!--StrokeDashArray="3 1"-->
+                            <Line x:Name="line2" StrokeThickness="1" X1="0" Y1="0" X2="0" Y2="20"
+                                  SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Top"
+                                  Margin="0,-19,0,0"
+                                  Stroke="#FF4a7eec"/>
+                            <Ellipse  x:Name="ponint1" Style="{StaticResource ThumbCorner}" 
+                                      RenderOptions.EdgeMode="Aliased"
+                                      HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-1,-20,0,0" />
+                            <Ellipse x:Name="ponint2" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <Ellipse x:Name="ponint3" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                            <Ellipse x:Name="ponint4" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                            <Ellipse x:Name="ponint5" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        </Grid>
+                        <ContentControl Template="{StaticResource ResizeInforTemplate}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsLocked"  Value="True">
+                            <Setter Property="Stroke"  TargetName="ponint1"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint2"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint3"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint4"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint5"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="line2"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="line1"  Value="Red"/>
+                            <Setter Property="IsEnabled"  TargetName="ReszieContainer"  Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type s:SizeInfoChrome}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:SizeInfoChrome}">
+                    <Grid SnapsToDevicePixels="True">
+                        <Path Stroke="Red"
+                              StrokeThickness="1"
+                              Height="10"
+                              VerticalAlignment="Bottom"
+                              Margin="0,0,0,-15"
+                              Stretch="Fill"
+                              Data="M0,0 0,10 M 0,5 100,5 M 100,0 100,10"/>
+                        <TextBlock Text="{Binding Path=ActualWidth, Converter={StaticResource doubleFormatConverter}}"
+                                Background="White"
+                                Padding="3,0,3,0"
+                                Foreground="Red"
+                                Margin="0,0,0,-18"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"/>
+                        <Path Stroke="Red"
+                              StrokeThickness="1"
+                              Width="10"
+                              HorizontalAlignment="Right"
+                              Margin="0,0,-15,0"
+                              Stretch="Fill"
+                              Data="M5,0 5,100 M 0,0 10,0 M 0,100 10,100"/>
+                        <TextBlock Text="{Binding Path=ActualHeight, Converter={StaticResource doubleFormatConverter}}"
+                                   Background="White"
+                                   Foreground="Red"
+                                   Padding="3,0,3,0"
+                                   Margin="0,0,-18,0"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Center">
+                            <TextBlock.LayoutTransform>
+                                <RotateTransform Angle="90" CenterX="1" CenterY="0.5"/>
+                            </TextBlock.LayoutTransform>
+                        </TextBlock>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type s:ResizeChrome}">
+        <Setter Property="IsLocked" Value="{Binding IsLocked}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:ResizeChrome}">
+                    <Grid>
+                        <Grid x:Name="ReszieContainer" Opacity="0" Margin="-1">
+                            <!--<s:RotateThumb Width="7"
+                             Height="7"
+                             Margin="0,-20,0,0"
+                             Cursor="Hand"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Center"/>-->
+
+                            <s:ResizeThumb Height="12" Margin="0,-6,0,0"
+                             Cursor="SizeNS"
+                             VerticalAlignment="Top" 
+                             HorizontalAlignment="Stretch"/>
+                            <s:ResizeThumb Width="12" Margin="-6,0,0,0"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Left"/>
+                            <s:ResizeThumb Width="12" Margin="0,0,-6,0"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Right"/>
+                            <s:ResizeThumb Height="12" Margin="0,0,0,-6"
+                             Cursor="SizeNS"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Stretch"/>
+
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNWSE"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left"/>
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNESW"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Right"/>
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNESW"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Left"/>
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNWSE"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid IsHitTestVisible="False" Opacity="1" Margin="-1">
+                            <Rectangle x:Name="ponint1" 
+                                       SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                                       StrokeThickness="1" Margin="1" Stroke="#FF4a7eec"/>
+                            <!--<Line StrokeThickness="1" X1="0" Y1="0" X2="0" Y2="20"
+                                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-19,0,0" Stroke="#FF0065E4"/>-->
+                            <!--<Ellipse Style="{StaticResource ThumbCorner}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-1,-20,0,0"/>-->
+                            <Ellipse x:Name="ponint2" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Top"  />
+                            <Ellipse x:Name="ponint3" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                            <Ellipse x:Name="ponint4" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Bottom"  />
+                            <Ellipse x:Name="ponint5" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+                        </Grid>
+                        <ContentControl Template="{StaticResource ResizeInforTemplate}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsLocked"  Value="True">
+                            <Setter Property="Stroke"  TargetName="ponint1"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint2"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint3"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint4"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint5"  Value="Red"/>
+                            <Setter Property="IsEnabled"  TargetName="ReszieContainer"  Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type s:HLineChrome}">
+        <Setter Property="IsLocked" Value="{Binding IsLocked}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:HLineChrome}">
+                    <Grid>
+                        <Grid x:Name="ReszieContainer" Opacity="0" Margin="-3" >
+                            <!--rotator-->
+                            <s:RotateThumb Width="7"
+                             Height="7"
+                             Margin="0,-10,0,0"
+                             Cursor="Hand"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Center"/>
+
+                            <!--left center-->
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Left"/>
+
+                            <!--right center-->
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid IsHitTestVisible="False" Opacity="1" Margin="-3">
+                            <!--<Rectangle x:Name="line1" SnapsToDevicePixels="True"
+                                       UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                                       StrokeThickness="1"
+                                       Margin="1"
+                                       Stroke="#FF4a7eec"
+                                       StrokeDashArray="3 1"/>-->
+                            <Line x:Name="line2" StrokeThickness="1" X1="0" Y1="0" X2="0" Y2="20"
+                                  SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Top"
+                                  Margin="0,-8,0,0"
+                                  Stroke="#FF4a7eec"
+                                  StrokeDashArray="3 1"/>
+                            <Ellipse  x:Name="ponint1" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-1,-10,0,0" />
+                            <Ellipse x:Name="ponint2" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <Ellipse x:Name="ponint3" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                        </Grid>
+                        <ContentControl Template="{StaticResource ResizeInforTemplate}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsLocked"  Value="True">
+                            <Setter Property="Stroke"  TargetName="ponint1"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint2"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint3"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="line2"  Value="Red"/>
+                            <!--<Setter Property="Stroke"  TargetName="line1"  Value="Red"/>-->
+                            <Setter Property="IsEnabled"  TargetName="ReszieContainer"  Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type s:VLineChrome}">
+        <Setter Property="IsLocked" Value="{Binding IsLocked}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:VLineChrome}">
+                    <Grid>
+                        <Grid x:Name="ReszieContainer" Opacity="0" Margin="-3" >
+                            <!--rotator-->
+                            <s:RotateThumb Width="7"
+                             Height="7"
+                             Margin="0,0,-10,0"
+                             Cursor="Hand"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Right"/>
+
+                            <!--left center-->
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNS"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Stretch"/>
+
+                            <!--right center-->
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeNS"
+                             VerticalAlignment="Bottom"
+                             HorizontalAlignment="Stretch"/>
+                        </Grid>
+                        <Grid IsHitTestVisible="False" Opacity="1" Margin="-3">
+                            <!--<Rectangle x:Name="line1" SnapsToDevicePixels="True"
+                                       UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                                       StrokeThickness="1"
+                                       Margin="1"
+                                       Stroke="#FF4a7eec"
+                                       StrokeDashArray="3 1"/>-->
+                            <Line x:Name="line2" StrokeThickness="1" X1="0" Y1="0" X2="20" Y2="0"
+                                  SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"                                 
+                                  HorizontalAlignment="Right"
+                                  VerticalAlignment="Center"
+                                  Margin="0,0,-8,0"
+                                  Stroke="#FF4a7eec"
+                                  StrokeDashArray="3 1"/>
+                            <Ellipse  x:Name="ponint1" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,-1,-10,0" />
+                            <Ellipse x:Name="ponint2" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                            <Ellipse x:Name="ponint3" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                        </Grid>
+                        <ContentControl Template="{StaticResource ResizeInforTemplate}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsLocked"  Value="True">
+                            <Setter Property="Stroke"  TargetName="ponint1"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint2"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint3"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="line2"  Value="Red"/>
+                            <!--<Setter Property="Stroke"  TargetName="line1"  Value="Red"/>-->
+                            <Setter Property="IsEnabled"  TargetName="ReszieContainer"  Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type s:HorResizeChrome}">
+        <Setter Property="IsLocked" Value="{Binding IsLocked}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:HorResizeChrome}">
+                    <Grid>
+                        <Grid x:Name="ReszieContainer" Opacity="0" Margin="-3" >
+                            <!--left center-->
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Left"/>
+
+                            <!--right center-->
+                            <s:ResizeThumb Width="7"
+                             Height="7"
+                             Margin="-2"
+                             Cursor="SizeWE"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid IsHitTestVisible="False" Opacity="1" Margin="-3">
+                            <Rectangle x:Name="line1" SnapsToDevicePixels="True"
+                                       UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                                       StrokeThickness="1"
+                                       Margin="1"
+                                       Stroke="#FF4a7eec"
+                                       StrokeDashArray="3 1"/>
+                            <Ellipse x:Name="ponint2" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <Ellipse x:Name="ponint3" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                        </Grid>
+                        <ContentControl Template="{StaticResource ResizeInforTemplate}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsLocked"  Value="True">
+                            <Setter Property="Stroke"  TargetName="ponint2"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint3"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="line1"  Value="Red"/>
+                            <Setter Property="IsEnabled"  TargetName="ReszieContainer"  Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type s:MasterChrome}">
+        <Setter Property="IsLocked" Value="{Binding IsLocked}"/>
+        <Setter Property="IsLockedToMasterLocation" Value="{Binding DataContext.IsLocked2MasterLocation }"/>        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:MasterChrome}">
+                    <Grid>                        
+                        <Grid IsHitTestVisible="False" Opacity="1" Margin="-1">
+                            <Rectangle x:Name="ponint1" 
+                                       SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                                       StrokeThickness="1" Margin="1" Stroke="#FFB062E5" Fill="#1A4A7EEC"/>
+                            <Image IsHitTestVisible="False" Stretch="Fill" 
+                                   Source="/Naver.Compass.WidgetLibrary.SystemWidgets;component/Media/ico_master_select.png"
+                                   Margin="0,1,-26,0" Width="25" Height="25" 
+                                   HorizontalAlignment="Right" VerticalAlignment="Top" />
+
+
+                            <!--<Line StrokeThickness="1" X1="0" Y1="0" X2="0" Y2="20"
+                                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-19,0,0" Stroke="#FF0065E4"/>-->
+                            <!--<Ellipse Style="{StaticResource ThumbCorner}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-1,-20,0,0"/>-->
+                            <Ellipse x:Name="ponint2" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Top"  Stroke="#FFB062E5" />
+                            <Ellipse x:Name="ponint3" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Top"  Stroke="#FFB062E5"/>
+                            <Ellipse x:Name="ponint4" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Stroke="#FFB062E5" />
+                            <Ellipse x:Name="ponint5" Style="{StaticResource ThumbCorner}" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Stroke="#FFB062E5"/>
+                        </Grid>
+                        <ContentControl Template="{StaticResource ResizeInforTemplate}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsLocked"  Value="True">
+                            <Setter Property="Stroke"  TargetName="ponint1"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint2"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint3"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint4"  Value="Red"/>
+                            <Setter Property="Stroke"  TargetName="ponint5"  Value="Red"/>                            
+                        </Trigger>
+                        <Trigger Property="IsLockedToMasterLocation"  Value="True">
+                            <Setter Property="Fill"  TargetName="ponint1"  Value="#1AFF0000"/>                         
+                        </Trigger>                        
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--Test Example Style, wating for removing-->
+    <ControlTemplate x:Key="MoveThumbTemplate"  TargetType="{x:Type s:MoveThumb}">
+        <Rectangle Fill="Transparent"/>
+    </ControlTemplate>
+    <Style x:Key="DesignerItemStyle" TargetType="ContentControl">
+        <Setter Property="MinHeight" Value="10"/>
+        <Setter Property="MinWidth" Value="10"/>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                        <s:MoveThumb Cursor="SizeAll" Template="{StaticResource MoveThumbTemplate}" />
+                        <ContentPresenter Content="{TemplateBinding ContentControl.Content}"
+                              Margin="{TemplateBinding Padding}"/>
+                        <s:DesignerItemDecorator x:Name="ItemDecorator"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected" Value="True">
+                            <Setter TargetName="ItemDecorator" Property="ShowDecorator" Value="True"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+

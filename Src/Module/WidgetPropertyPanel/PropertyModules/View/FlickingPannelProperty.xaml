@@ -1,0 +1,219 @@
+﻿<UserControl x:Class="Naver.Compass.Module.Property.FlickingPannelProperty"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:local="clr-namespace:Naver.Compass.Module"
+             mc:Ignorable="d" 
+             UseLayoutRounding="True"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ViewModeConverter x:Key="ViewModeConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Expander Grid.Row="1"  IsExpanded="True"  Style="{DynamicResource WidgetProStyle}">
+            <Expander.Header >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{DynamicResource WidgetProp_SwipeViews_Title}"/>
+                    <TextBlock Text="{Binding HeaderString}"/>
+                </StackPanel>
+
+            </Expander.Header>
+            <Expander.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="Auto"/>
+                      
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="{DynamicResource WidgetProp_Swipe_ViewMode}"/>
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="7"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*" MinWidth="4" MaxWidth="16"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                                <Setter Property="FontSize" Value="11"/>
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="Margin" Value="0,6,0,0"/>
+                            </Style>
+                        </Grid.Resources>
+                        <StackPanel Orientation="Vertical">
+                            <RadioButton GroupName="ViewMode"  Style="{StaticResource imageRadioButton}"  Width="72" Height="44"
+                                         IsChecked="{Binding ViewMode, Converter={StaticResource ViewModeConverter}, ConverterParameter=0}">
+                                <cb:GifImage x:Name="fullMode" Source="/Naver.Compass.Module.WidgetPropertyPanel;component/Images/01_Full.gif"
+                                             IsAnimating="False"  Width="72" Height="44"/>
+
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseEnter">
+                                        <i:InvokeCommandAction Command="{Binding MouseEnterViewModeCommand}"
+                                                           CommandParameter="{Binding ElementName=fullMode}">
+                                        </i:InvokeCommandAction>
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="MouseLeave">
+                                        <i:InvokeCommandAction Command="{Binding MouseLeaveViewModeCommand}"
+                                                           CommandParameter="{Binding ElementName=fullMode}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </RadioButton>
+                            <TextBlock Text="{DynamicResource WidgetProp_Swipe_Full}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Column="2">
+                            <RadioButton GroupName="ViewMode"  Style="{StaticResource imageRadioButton}"  Width="72" Height="44"
+                                     IsChecked="{Binding ViewMode, Converter={StaticResource ViewModeConverter}, ConverterParameter=1}">
+                                <cb:GifImage x:Name="CardMode" Source="/Naver.Compass.Module.WidgetPropertyPanel;component/Images/02_Card.gif"
+                                             IsAnimating="False" Stretch="Uniform" Width="72" Height="44"/>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseEnter">
+                                        <i:InvokeCommandAction Command="{Binding MouseEnterViewModeCommand}"
+                                                           CommandParameter="{Binding ElementName=CardMode}">
+                                        </i:InvokeCommandAction>
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="MouseLeave">
+                                        <i:InvokeCommandAction Command="{Binding MouseLeaveViewModeCommand}"
+                                                           CommandParameter="{Binding ElementName=CardMode}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </RadioButton>
+                            <TextBlock Text="{DynamicResource WidgetProp_Swipe_Card}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" >
+                            <RadioButton GroupName="ViewMode"  Style="{StaticResource imageRadioButton}"  Width="72" Height="44"
+                                     IsChecked="{Binding ViewMode, Converter={StaticResource ViewModeConverter}, ConverterParameter=2}">
+                                <cb:GifImage x:Name="PreviewMode" Source="/Naver.Compass.Module.WidgetPropertyPanel;component/Images/03_Preview.gif"
+                                             IsAnimating="False" Stretch="Uniform" Width="72" Height="44"/>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseEnter">
+                                        <i:InvokeCommandAction Command="{Binding MouseEnterViewModeCommand}"
+                                                           CommandParameter="{Binding ElementName=PreviewMode}">
+                                        </i:InvokeCommandAction>
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="MouseLeave">
+                                        <i:InvokeCommandAction Command="{Binding MouseLeaveViewModeCommand}"
+                                                           CommandParameter="{Binding ElementName=PreviewMode}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </RadioButton>
+                            <TextBlock Text="{DynamicResource WidgetProp_Swipe_Preview}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="2" >
+                            <RadioButton GroupName="ViewMode"  Style="{StaticResource imageRadioButton}"  Width="72" Height="44"
+                                     IsChecked="{Binding ViewMode, Converter={StaticResource ViewModeConverter}, ConverterParameter=3}">
+                                <cb:GifImage x:Name="ScrollMode" Source="/Naver.Compass.Module.WidgetPropertyPanel;component/Images/04_Scroll.gif"
+                                             IsAnimating="False" Stretch="Uniform" Width="72" Height="44"/>
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseEnter">
+                                        <i:InvokeCommandAction Command="{Binding MouseEnterViewModeCommand}"
+                                                           CommandParameter="{Binding ElementName=ScrollMode}">
+                                        </i:InvokeCommandAction>
+                                    </i:EventTrigger>
+                                    <i:EventTrigger EventName="MouseLeave">
+                                        <i:InvokeCommandAction Command="{Binding MouseLeaveViewModeCommand}"
+                                                           CommandParameter="{Binding ElementName=ScrollMode}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </RadioButton>
+                            <TextBlock Text="{DynamicResource WidgetProp_Swipe_Scroll}" />
+                        </StackPanel>
+                    </Grid>
+                    <CheckBox Grid.Row ="5" IsChecked="{Binding IsNavigation,Mode=TwoWay}" 
+                              IsThreeState="True"  HorizontalAlignment="Left" 
+                              IsEnabled="{Binding IsNavigationEnable}"
+                              Content ="{DynamicResource WidgetProp_FlickTitle_Navigation}"/>
+
+                    <CheckBox Grid.Row ="7" Grid.ColumnSpan="3" IsChecked="{Binding IsAutomatic,Mode=TwoWay}" 
+                              IsThreeState="True"  HorizontalAlignment="Left" 
+                              IsEnabled="{Binding IsNavigationEnable}"
+                              Content ="{DynamicResource WidgetProp_FlickTitle_Automatic}"/>
+
+
+                    <StackPanel Grid.Row="9" Orientation="Horizontal">
+                        <TextBlock Text="{DynamicResource WidgetProp_Swipe_ActiveWidth}"/>
+                        <Image x:Name="infoImage" Source="/Naver.Compass.Module.WidgetPropertyPanel;component/Images/05_Info_Icon.png" 
+                               Margin="8,0,0,0" Height="14" Width="14" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseEnter">
+                                    <i:InvokeCommandAction Command="{Binding MouseEnterInfoIconCommand}"
+                                                           CommandParameter="{Binding ElementName=infoPopup}">
+                                        </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="MouseLeave">
+                                    <i:InvokeCommandAction Command="{Binding MouseLeaveInfoIconCommand}"
+                                                           CommandParameter="{Binding ElementName=infoPopup}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Image>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="11" Orientation="Horizontal">
+                        <cb:NumEnterTextbox Width="60" MaxNum="100" MiniNum="0" IsEnabled="{Binding IsViewWidthEditable}"
+                                            Text="{Binding PanelWidth}"/> 
+                        <TextBlock Text="%" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <TextBlock Grid.Row="13" Text="{DynamicResource WidgetProp_Swipe_Spacing}"/>
+                    <StackPanel Grid.Row="15" Orientation="Horizontal">
+                        <cb:NumEnterTextbox Width="60" IsEnabled="{Binding IsViewWidthEditable}" MiniNum="0"
+                                         Text="{Binding LineWidth, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+                        <TextBlock Text="px" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="17"  Text ="{DynamicResource WidgetProp_TooltipTitle}"></TextBlock>
+                    <cb:EnterTextbox Grid.Row ="19" IsEnterKeyMoveFocus="False"  Text="{Binding Tooltip, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"  />
+
+                    <!--<ComboBox Grid.Row="5" Width="95" HorizontalAlignment="Left"  
+                        ItemsSource="{Binding NaviList,Mode=OneTime}" 
+                        SelectedItem="{Binding sNavigation,Mode=TwoWay}" />-->
+
+                    <Popup Name="infoPopup"
+                           AllowsTransparency="True"
+                           PopupAnimation="Fade"
+                           PlacementTarget="{Binding ElementName=infoImage}"
+                           Placement="Bottom" Width="206" Height="68"
+                           VerticalOffset="8"
+                           HorizontalOffset="-182">
+                        <Grid >
+                            <Image Source="/Naver.Compass.Module.WidgetPropertyPanel;component/Images/06_Info_Text_Box.png" 
+                                   Width="206" Height="68"/>
+                            <TextBlock Text="{DynamicResource WidgetProp_Swipe_Alert}" Width="184" Foreground="#666666" 
+                                       FontSize="12" Margin="0,6,0,0"
+                                       FontFamily="{DynamicResource Common_Font}" TextWrapping="Wrap" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Popup>
+                </Grid>
+            </Expander.Content>
+        </Expander>
+    </Grid>
+</UserControl>

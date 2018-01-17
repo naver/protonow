@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WidgetTab xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TabName>UI</TabName>
+  <WidgetExpands>
+    <WidgetExpand>
+      <Header>General UI</Header>
+      <WidgetModels>
+        <WidgetModel>
+          <Id>5697c780-5bfc-4571-b11b-0c8f24c65303</Id>
+          <Name>Image</Name>
+          <LbrType>lbw.image</LbrType>
+          <Type>image</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUtJREFUeNrsmt0NgjAURtE4ACMwAm7gCG6AbIDvJPrAO24AGzCCI8gIjuAGeps0sZGqBCs/ek5CkEpqOPlue0n0PAAAAAAAAACYErO+fihN0+uQD5plWS/POidTbln8alKGqgwSilCEsoZOAVkbQzkVcoR6qJYjljW6JqHdMGV6+nNByXcntI1JcgOEum3LzgjtRt1yjE1JbzqJnHw5DpK6i+WW2LYpIdQuM5dToi8juV4+StW7+ZI+9L3MjSFToTaZij70s97ykZUSLaksDem5sSRsSWhTppJzfHHLzpBZaJmKRMYKhDapDEk2AhF3epLgjXy3Qug9nXtV1h2befPNCaF63dw5mCoYQ0rHkNDc4VwRQtuVelvWCHWLP3TZj0Fo6XAu9TZ1/uvGXpryeAzv4JQ8Qv+D3kt+6H+QkFAAAAAAAAAAgC9yE2AAY8NUZTL6pxUAAAAASUVORK5CYII=</Icon>
+          <LocalizedName>widgets_Image</LocalizedName>
+          <Tags>
+            <string>도형</string>
+            <string>이미지</string>
+            <string>Images</string>
+          </Tags>
+          <NClickCode>ugu.image</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>d53d6aff-188c-47d0-9f4d-986fbc663dbe</Id>
+          <Name>Text</Name>
+          <LbrType>lbw.text</LbrType>
+          <Type>text</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVFJREFUeNrs1/FtgkAUx3ExHYBuQDfQDRjBTiCdoAuQNCb8b50A3EAnaEdwgzKCG7TvknfJizko3D+I+X4Sc4chSn684x2LBQAAAAAAAAAAmF5yDxdRlmUhQ62Hp6qqXuca6PJOrmNr5hsJOCPQ+OpcyZDffP1OoPFseK2OBYHGVWfqlrgefstnp/NUn6sEOpILM9X50TWkjucqgUYsd9fdrybUfI7NaTnhcnfNaKWHjYbpK9X7INC46jz7iQTrKvRqtlApgQ5rRr7ptBqi5Y9t0yLQHkUgPOsw1z1pMlGF/sgwpuGspYovcwj0aYIwcxPmxTwvQ3JTpW9UaDjQ2iz5F6m8tufcLxPqs9kJ8AzVgDIT5qkvzMAWqmDJ9zej438nS+CN3IS9dnu37D/1xvwO/UP5jeRhK9S8Toa2Sl0aHTN9GQAAAAAAAAAA4PH8CTAAIvBWtDyi/EwAAAAASUVORK5CYII=</Icon>
+          <LocalizedName>widgets_Text</LocalizedName>
+          <Tags>
+            <string>텍스트</string>
+          </Tags>
+          <NClickCode>ugu.text</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>a2664c95-3627-4c71-8da4-9f86fe8a58bd</Id>
+          <Name>Link</Name>
+          <LbrType>lbw.link</LbrType>
+          <Type>link</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXlJREFUeNrsl+1NwzAQhgviPxmBETJCmAA6AWWChP+RSqUM0ExAmYAyQcMGWYENOgJndEZWlDY2P/LV55FOrtTXSfvq7nxeLAAAAAAAAAAAAAAAAAAmSJ7nsUQ0xd9+NYBZK1lSibhD+qyrj9ZQS7wXRbG9CEM14z4kkg7pUWIpsfbQnjL2Xow9zt3Qg2NQJVEa8+SPV57a389No0x7kOVO4kFiNbSpNz2WuTXo5VxZNrQ7iS/NbMNG4tXVy7NqNXAve432TVtE1tT2wXVP70l13Xv0uNQpfWP+TrPU/a4V1W58tFM31B4qZYB275Tsp66Rlvg5to42mauhNoOqAPl346CxRB3vGOQwGsTQwIy5bcla32li9obWAX3Nah8dc55sX/XI8ixAO1lDS8ekzFNrRqFM9V49WCeEdUC/vpg5NNFemTp7WmfLsc2hY7wpnWoDS90fe2jnf1P6x13+736uGX3oOOFHcZcHAAAAAAAAAAAAAIAx8CPAANE+jsaQGTx9AAAAAElFTkSuQmCC</Icon>
+          <LocalizedName>widgets_Link</LocalizedName>
+          <Tags>
+            <string>링크</string>
+          </Tags>
+          <NClickCode>ugu.link</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>a0d4c2b1-3602-4bc5-96ee-7eb84b62669a</Id>
+          <Name>Rectangle</Name>
+          <LbrType>lbw.rectangle</LbrType>
+          <Type>rectangle</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGhJREFUeNrs2cERwCAIAEHjpGye9K1FaCCP3QYYb/DFGAAAAABwy9MxNCJWxZzMLH/ftFN3vZ3Dv9qgqh9gQwUVVFAJBBVUUAQVVFAEFVRQBBVUUEER9K9aTyCdpwobCgAAAABwZgswAA8wCqXQ2E39AAAAAElFTkSuQmCC</Icon>
+          <LocalizedName>widgets_Rectangle</LocalizedName>
+          <Tags>
+            <string>도형</string>
+            <string>사각형</string>
+            <string>네모</string>
+            <string>shape</string>
+            <string>square</string>
+          </Tags>
+          <NClickCode>ugu.rectangle</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>5a7a999e-958e-4cf9-acbf-9e334f06ac3a</Id>
+          <Name>Rounded Rectangle</Name>
+          <LbrType>lbw.roundedrectangle</LbrType>
+          <Type>roundedrectangle</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQNJREFUeNrs2c0NgkAQQGH8KYASKAEbIJYgR2/SBwkhoQ/PnrAEQwNQwpZACc6GITGeF8bI+5LJxstueOJljSIAAAAAAAAglJ3VwWVZJrJUMmeZJNC2TuYlUzdN4zYTVGP2MvFCR4wyJ4uoR6MXtNKYg0whDz4E+qJSWe4yqZ5RrP1ge6OgN13zUDE93SvXjxeLB7MKOgdwC+4Zby7oPyIoQQlKUBCUoAQFQQlKUBCUoAQlqAF/oz7f3Af1see4paBPXVu9ZQ8V0+/Vfp2xKqu/QOpoulH3AXoJscQvoLZ4sIPFoV3XjVmWPaLpVn2eEJy+mVerfz0BAAAAAAAA/Ky3AAMAb/Q4dML3nMkAAAAASUVORK5CYII=</Icon>
+          <LocalizedName>widgets_RoundedRectangle</LocalizedName>
+          <Tags>
+            <string>도형</string>
+            <string>둥근사각형</string>
+            <string>사각형</string>
+            <string>shape</string>
+          </Tags>
+          <NClickCode>ugu.roundedrectangle</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>4fd776f4-98b8-4b7d-ad83-2f8c17510e65</Id>
+          <Name>Triangle</Name>
+          <LbrType>lbw.triangle</LbrType>
+          <Type>triangle</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAdpJREFUeNrsmDFuwjAYhZNm6cjYkSOkF0Cw0Q22jnADDsDQSuztDeAG6cqUiImNjO1UunVMb9Bn6aFaCFFCwU7K+yTLDoWAvvz2+9UgEEIIIYQQQgghhBBCiOMZj8exGXX4rWENZDYwrTDM3JlMJnmVf+9VDR56itGk0JSCJfTI6pxiMlu9wMjrIPWqwjJHmAa87GMMKdYITiS0nMwepideDnFuZjw7O5TaZvVWjqiKic4KvMaYQeTj5m+LxeKz1Wq9YXlvKhXrEK9lEro/0U0I3WCYquxvvwcCXyHyA0tTxW2zxmu5tvz+RM95bu4EomeYnnk55RGhCt2R6F2ekX1IW+97P6pyjupsMqS6WM/NkaDG/ifRNyFkmvesxGdXVmt1+9uD+Pdbfleil7xFx+pRE989auhZZsxzs8FEH/4hzN55n5xVXlxUhVJCQgnZsTIZUoXVo8ZWxV/Ulj8o0UtIte8z8NX4R56qs1SiHwpSfm31qLGPHjXyIPMB04iXd5C5POX9jUCI/OID67mWGjmWOdhK9JdzfA8ELq0ete2yRw0dyjxJopf8zoTbvwgc/XM6dCTTbmt8sWbjf9Z2ylXKp55lBuwo0kAIIYQQQgghhBBCCCHESfgWYAA9hMM4yrupIwAAAABJRU5ErkJggg==</Icon>
+          <LocalizedName>widgets_Triangle</LocalizedName>
+          <Tags>
+            <string>도형</string>
+            <string>삼각형</string>
+            <string>세모</string>
+            <string>shape</string>
+          </Tags>
+          <NClickCode>ugu.triangle</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>8e2b907d-c683-401e-bd14-7488f56f9fe0</Id>
+          <Name>Circle</Name>
+          <LbrType>lbw.circle</LbrType>
+          <Type>circle</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAiJJREFUeNrsmk1SwkAQhaNeIEfIDcjSFT8nMJzAuHOn7KkKVrEHTyCewHACAicIN8jWHUew23pTjtFSfpJKdN6rmooE0piPN9M9DZ5HURRFURRFURRFURTlsM7a+E+Nx+NADn0ZHRlh6em1jFxGNp1OdwT6M0iFeCcj2uPlCjOV8SBgCwL9DNKXQyLj3jqtLlyqE61z+roegAcWWIU6J9APmCtrai/2cR3cnGBpeL9OrrlxGmgJpjptKFCyA2Ooq2dtgXre8Af6YsEcHApThak+QIxYAM+avKGLBt2pzrq1YObHxtpsNkW3233F2nopf6/1nDMOtZKQh/UyPzWmxFhg/fWs2M5M+RgZu6g4O4/g+D6SljNAr407qwyKQj/FwysngGK6mxIpreEtljg641ADM69j6ygx09L7OFM27eqOjZ6AU3VoXTJVA4FWvKwULgH1a0x6PtbT/w/U2l6GuPmq1S9Neyccam42qiG2qT8zl4A+1rFFRFaP8fDZJaApSpsATZKqZDpNWRX9gT8DFAW92XbOBGpYgTtjawkZNZVpG8vyaIqYdW51ClTAfDL9gabc2YY6dIgE5QNqdATMiQVTO/aTJm+ojd8pZXBZ9st1EZJaaMF0+zulb5yWlEorhbq1djwKr4NaM7D27SM0mD0C/Vr2JFbp81sDRMuveZt+8NDWX474cKE6sleCuEVZlHkURVEURVEURVEURVEn6k2AAQBmZ72I9ti5xQAAAABJRU5ErkJggg==</Icon>
+          <LocalizedName>widgets_Circle</LocalizedName>
+          <Tags>
+            <string>도형</string>
+            <string>원</string>
+            <string>동그라미</string>
+            <string>shape</string>
+          </Tags>
+          <NClickCode>ugu.circle</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>b944e438-0da1-4df3-ae11-05c740e12392</Id>
+          <Name>Diamond</Name>
+          <LbrType>lbw.diamond</LbrType>
+          <Type>diamond</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVBJREFUeNrs2MFtg0AUhGGec8mRElwCFaCkg7iDtOA7R+4uwWkhFSSiAkqIO6CEPKyNFFmWTQK7O4Pml57A+ID9abEFRaGUUkoppZRSSkXN0D9g0zSVbw4+u7ZtB4HOx/zwKX16n2d0VCPB/AkedcOyMn1GxPNxf78U6LzL/JMF1QgwB6bfVGPBZEE1JkwGVGPDREc1RkxkVGPFREU1ZkxEVGPHREO1NWAiodpaMFFQU956Vr8edPQRv+RXmLFtmGQ9pDpR13V9Xdcn330ZcX1/68feF16dZVidVbjvH1dnv0rQ2KgImMlBY6GiYGYBXRoVCTMb6FKoaJhZQeeiImJmB/0vKiomBOhfUZExYUCnoqJjQoHeQ2XAzPK0aeIfzqtvjuHlm8+eARMW9ArqEJ4DQGPCXfI3Lv9HBkxo0AvUJwZMpZRSSimllFIqQd8CDAD4FFRoMJ4kQgAAAABJRU5ErkJggg==</Icon>
+          <LocalizedName>widgets_Diamond</LocalizedName>
+          <Tags>
+            <string>도형</string>
+            <string>마름모</string>
+            <string>마름모꼴</string>
+            <string>다이아몬드</string>
+            <string>shape</string>
+          </Tags>
+          <NClickCode>ugu.diamond</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>108bb446-d797-4600-a51f-bea7ce0ab6d8</Id>
+          <Name>Horizontal Line</Name>
+          <LbrType>lbw.horizontalline</LbrType>
+          <Type>horizontalline</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAD9JREFUeNrs0sEJACAMBMFo3Xmmb+0iQZxpYDm4CAAAAAAAAACAR6yJaGaejk5Vte/bPgUAAAAAAAAA8KkrwABlXwQEPED/6wAAAABJRU5ErkJggg==</Icon>
+          <LocalizedName>widgets_HorizontalLine</LocalizedName>
+          <Tags>
+            <string>선</string>
+            <string>가로선</string>
+            <string>가로</string>
+          </Tags>
+          <NClickCode>ugu.horizontalline</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>6dba5e17-3016-41f3-8590-d91cf4f3a1f0</Id>
+          <Name>Vertical Line</Name>
+          <LbrType>lbw.verticalline</LbrType>
+          <Type>verticalline</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGVJREFUeNrs0sEJADAMA7GQub17S3bwUwdeQHhH1RYBUKBABRQoUAEFClRAgQJtl+TdgHqogAIFKqBAgQooUKACChQoUAEFClRAgQIVUKBAgUoeClRAgQIVUKBABRQoUKDq9AUYAJ7WBU3zy6qQAAAAAElFTkSuQmCC</Icon>
+          <LocalizedName>widgets_VerticalLine</LocalizedName>
+          <Tags>
+            <string>선</string>
+            <string>세로선</string>
+            <string>세로</string>
+          </Tags>
+          <NClickCode>ugu.verticalline</NClickCode>
+        </WidgetModel>
+      </WidgetModels>
+    </WidgetExpand>
+    <WidgetExpand>
+      <Header>Form UI</Header>
+      <WidgetModels>
+        <WidgetModel>
+          <Id>8b567c48-fa8c-4215-a89b-6aa0ee3991c4</Id>
+          <Name>List Box</Name>
+          <LbrType>lbw.listbox</LbrType>
+          <Type>listbox</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGFJREFUeNrs1jsKwCAQBUAjOfaWe29TBVKmEH/MVGK3y0NfKQAAAADAoq7TBoqI9p4zc/h8Vab6uldL0vf+rxlJlFBvqDcUC7VQC4U9f3k9FABAD9VD9VAAAAAAADjLI8AAam8gGadf74EAAAAASUVORK5CYII=</Icon>
+          <LocalizedName>widgets_Listbox</LocalizedName>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>form</string>
+          </Tags>
+          <NClickCode>ufu.listbox</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>adcff08e-361d-4f6f-91e1-da88d227751a</Id>
+          <Name>Droplist</Name>
+          <LbrType>lbw.droplist</LbrType>
+          <Type>droplist</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJxJREFUeNrs17sRgzAQBUDwuABKsjqgBBeiUIXQqQ0MOQSg47ObMIo0J+6eoGkAAAAAHqytsUnO+XeGYksph9f70lP7et+tQ6KnQYc60M2GZSLSbUe+su84/t34/DjQ/fRG3i1/ve9RHQpcyZSdkflZc38ZCshQGfq4P6UUXGfyqpGhMlSGylBqZFj0WobK0NUMi14DAAAAzP4CDADJ51xMPooOmAAAAABJRU5ErkJggg==</Icon>
+          <LocalizedName>widgets_Droplist</LocalizedName>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>form</string>
+          </Tags>
+          <NClickCode>ufu.droplist</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>a9e364d3-7fb0-44fe-a9f1-f483c8b6198a</Id>
+          <Name>Button</Name>
+          <LbrType>lbw.htmlbutton</LbrType>
+          <Type>htmlbutton</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAalJREFUeNrsmNFNAkEQhg+kADvwSsAGiHagjz4BFQjvJAcJ7+ijT0oFagWeNKAdSAl0oDPJEMYLJJCwcS5+XzLZ3HJzzP47O7t3WQYAAAAAAAAAAABBaaT+g9FoNJamK5YHGO9SbD6dTse1FFTE/JCmHTCRPkXU81oJaplZiK3EhjKAp79WUWLqSTMTOxWbpMjUZsL4u9aGEFOxOIaV+GojaO4GEQYXT5Ka3gqyDHO3aZQy6KX0a+292uGmovRMoHH1WSk3nfCC2tK7qIh8bZtZscOnXP8m93pR18/6M0GbgZaibpATu7xVkbTP+jPL3IZZ6VwLETWPMo4wgooomllndvm+p9vK2sco42hlcXhzIt3te540G8iEDMjQ31zaktcz4vMBfhPbzArzRVCroaXLzPYBfprRfROzjaCbGqpL/ssdiw6djBdq6KYO+uPQ65aXgbJy37a+foQlnzLjvtX+W2zNDGoj6NK9DkbKzp6Pr06Czq2dRRHVfb7z8R0VPjAfmZOUUS8Wi4dOp6OTlgfZgXWZ34uYN1R7AAAAAAAAAAAAAAjFjwADACFKjIGSacppAAAAAElFTkSuQmCC</Icon>
+          <LocalizedName>widgets_Button</LocalizedName>
+          <Tags>
+            <string>버튼</string>
+            <string>form</string>
+          </Tags>
+          <NClickCode>ufu.button</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>11b83db5-d27d-4ff3-8338-9af0ef160398</Id>
+          <Name>Check Box</Name>
+          <LbrType>lbw.checkbox</LbrType>
+          <Type>checkbox</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAR1JREFUeNrs2fEJgkAUx3GLBnCFNnAFR3ADHaH/hfrD/60JdIQ2qBFqg0Zog3oHdyASUtyJ7+j7geNCIevH8/WkJAEAAAAAAABCWS158bquX3O9d9M0i3y3NTUV1kbDhwhZTXNWPRVKoAQKjT3Uo19msu1lVdKHnwTqF2Yq20VWalfOLR8mTONED/UPM7OHzO1+JtDp0MqJ0+0ozJ5f+ekwO9k6u38658LutYWptUJdXyyHocrrwyjMirHpu8fQYlCJJlRz+G7HI+OqNUy1PdQG5m7n0vZN4yar4EnJP1QXZq5lgI9ybLKhHmWZEAvtYUYxh0qIO9m2sj9imJOjGOxjqMyoHz0J9I+omEOX/tuCCgUAAAAAAACA370FGABUslLja+3rZQAAAABJRU5ErkJggg==</Icon>
+          <LocalizedName>widgets_Checkbox</LocalizedName>
+          <Tags>
+            <string>체크박스</string>
+            <string>체크상자</string>
+            <string>form</string>
+          </Tags>
+          <NClickCode>ufu.checkbox</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>56e63178-ba72-4a1f-a270-c8412d9a5950</Id>
+          <Name>Radio Button</Name>
+          <LbrType>lbw.radiobutton</LbrType>
+          <Type>radiobutton</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAiBJREFUeNrsmdttwjAYhUPV92aEdILSDcIE0AlKJiC8I1VIvEMnCBsUJiAbQDfIBqUb9Hd1orqpcxGpZLc+n2RFIbYhh/9mOwgIIYQQQgghhBBCPGbg6g9bLBZDucTSwsqjk7R8tVqdKWg3IVO5zKRFLV130pYi7ImC1lvkiyakssBc2qvW7QZWO9Q+24iocwr6XcypXDLcFrC8bUN/JfqTtKkWBkYuhIGBA2JOYJmlGyddhcHYDHH2JOPuvRYUlnaEIFsRJLkwVBwwh3X3v7L8h64160oumQBJqRybQmD/BMWLT3D70GcuEVWFijLmzmwKem3xux9xVa5eNISEmZbV9+hvirFLJKmpjJvbSlA2XT7WRKqzYBVfU/SNESIO8iw0WGmBbK/P7ZWgpdXlLfHVNC6tGZNX5vYuKQUm14Srxx3CRZV32+9jXdAaop7PKahhA6SJnIL+5KwlH1MY2DSMfa75/E6f2zdB86aMjBWPaT2foO5sqhxyHwXdtxXiWD2p9fkI7bZu0wQbLKoqKGxu6dley79BBFWIb3rME6JmjfrO9deTUrmRse65Bs8gZmFTTOuCwn3LeHi4RFQZk/3WnsB/KZsSlEmfbosjkC5CRtKOwdcmc+LCcYgrO/Yh3La0tAKlUa6LhH4qk481Ic8tmd8/QSuZum4Nb2KHJFS48g5OHiND2HHQcIysLNglIQkhhBBCCCGEEEIIIc7zIcAAYcm+FW/H6+kAAAAASUVORK5CYII=</Icon>
+          <LocalizedName>widgets_Radiobutton</LocalizedName>
+          <Tags>
+            <string>라디오</string>
+            <string>라디오버튼</string>
+            <string>form</string>
+          </Tags>
+          <NClickCode>ufu.radiobutton</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>d1e650e5-eeeb-45a1-8cdb-7cbd4f321fb6</Id>
+          <Name>Text Area</Name>
+          <LbrType>lbw.textarea</LbrType>
+          <Type>textarea</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKJJREFUeNrs2UsKhDAQBUCVOZgHyzL38mgzuhMRCTJJ+6naaDaK8PK0sesAAAAAXqyvfYOU0jgfpuU859xHr2s/7yBToEMrdmjrB9ShEhprTuB3vY7YBRKqQ8tSund9HSqh/+3AEtukHSVUh97cJ7pDa6dKh3KNb9EzXXzLLd/ipaRDHzzLhyf0ymkzy5vlTUo6VEKBwA71Xx4AAAAASv0EGABDEZArW2mQWAAAAABJRU5ErkJggg==</Icon>
+          <LocalizedName>widgets_Textarea</LocalizedName>
+          <Tags>
+            <string>텍스트</string>
+            <string>텍스트영역</string>
+            <string>form</string>
+          </Tags>
+          <NClickCode>ufu.textarea</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>021e8fef-04db-4d6d-a42c-2c67e1509e00</Id>
+          <Name>Text Field</Name>
+          <LbrType>lbw.textfield</LbrType>
+          <Type>textfield</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeZJREFUeNrsmN1Nw0AQhA/EOy7BdJBUQFIBpoKkg8B7pChS3kMqwKkAdxB3EHeASzAVwK40J61OjhUEBseeT1r5J2srN569Pds5QgghhBBCCCGEEEIIGQZXQxjkcrn8tMebzaa1cd90aNBz2cQSpQw4vdSHd92h/zKTWGH7q1hHtunOrgnaCygoBe02rTclaTaRbLThPEhMcDqX2Ml8ltVcEsk1r7hG0Zy15BY1937CfS2am/fZoTrorRHTYf9NBJnU5I+MmEoicZDc2D4kiaO5r414KCWvrlnDcbaz11Eh1zstgnieLYRXSokXhOYXvS55DDLXMoQjc7jONbhp6ktcrnlHXoLj2DhYxRxLbjWkpqSDXuBt5YBoogjmy8yU+sg402Ee7oyYrTsUDemIkj2XUKAP27ACQQvXMdp26NyIqa+Td3hTaerC4TRwG4hdNuT2XlDrzL2IWcK1oyZBg+6fmNfGInDlrGuC/uXHkQUayuKMKUCXVDvZ3hsXZl5U+S33yyTZ1zl5D+fquVQfXF8FTfHBwzst+YazVzXLKM8zmltk1p+2Caa9LHk45TEo0/zEHFqZ39Mgf2o7P/bH/yncKXrxgRnzsju1hBrkB+YfVkLlCCGEEEIIIYQQQgghhJBL5kuAAQBd75tKQcSnBgAAAABJRU5ErkJggg==</Icon>
+          <LocalizedName>widgets_Textfield</LocalizedName>
+          <Tags>
+            <string>텍스트</string>
+            <string>텍스트필드</string>
+            <string>form</string>
+          </Tags>
+          <NClickCode>ufu.textfield</NClickCode>
+        </WidgetModel>
+      </WidgetModels>
+    </WidgetExpand>
+    <WidgetExpand>
+      <Header>Interactive UI</Header>
+      <WidgetModels>
+        <WidgetModel>
+          <Id>22e89fba-26a0-475b-857d-60cf2209f869</Id>
+          <Name>Swipe Views</Name>
+          <LbrType>lbw.swipeviews</LbrType>
+          <Type>swipeviews</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAV1JREFUeNrsmssNwjAQRPkVQAmUEDqIS6CfHFMIHZAOKMEpISWkA1ijBYHEIVixWcMbKbJkAZ48hvUaWC/QrFqDAKAABSgCKEABigAKUIAigKbVJudiTdNcct9g27bLnOutyFTBCc2Zmm98GkgoQAEKUFTgpjTnRpK7LSKh/5xQa2kjob+cUKmHWxlOkjpnpYbK659lOMhzxqISKsYrGYL52liAgp+z+isjoU8wt0ZraKVQnazXm06omNzJ4GNgZlbw59WvXaDyjg+hRsk1Ggc6ai0dzNdQMdnJEDaiwSjM4MupzzI2Ja1Ne7n6iLJRx85N0M1XitqZvA/V1sR9CNPrhuE/nZsol7JlSt7YR5i/tzOV9rEvc+8el9hP8Selo47d080/5t497q+PZeEklOuniZxrcZYHKEABiox+OTJ1wyChCH1D/PsOoAAFKAIoQAGKAApQgCKAJtZVgAEAVv53vdB7BZIAAAAASUVORK5CYII=</Icon>
+          <LocalizedName>widgets_SwipeViews</LocalizedName>
+          <Tags>
+            <string>스와이프뷰</string>
+            <string>스와이프</string>
+            <string>플리킹</string>
+            <string>인터랙션</string>
+            <string>interaction</string>
+          </Tags>
+          <NClickCode>uiu.swipeviews</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>6676a793-339f-4ba1-84d2-87f700aa0f23</Id>
+          <Name>Drawer menu</Name>
+          <LbrType>lbw.hamburgermenu</LbrType>
+          <Type>hamburgermenu</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAn9JREFUeNrsmsttwkAQhg1JAXQQp4I4DfCoIFABuALgjgRI3CEVABXANScQFZgOoAMfc0tmon+T1YaIl2E37Iw0cmyyFv787zx2yQdimVpeEAhQASpAxQSoABWgYgJUgApQMQF6Wbt39Yt1Op2IDmXyAnkJlzfkW/KEfDkYDFLXvnfOMYgMr0VeJw8PGDIhnxLYpQD9DbNKhzEUycbqY1BrKJLPWbUPUG5kgG27oNicIzAZZEOb1n2CMzkgJDSNcTUal3gN1IA5IiDtI8eXoewQKq7YhJq3DLOnwYyPhcmG+PmMsMDhYoZY7BdQKKurwZycei/EzgqmfQjFeqfQIY7zc2AaUGs4reKF+QEUGT1CzIuzui9ip3o5XZ8K+7oqd8xSh2B/HAnRTKx9xOUy3Sukzzc+THk1HadZ3xgA52rq37xCUT9yFk53lTc7FHeKrQHzyYcYqkqaS9aKqhUNb16hWsuY/qHgc2OoVbOh0E1ww2ZDoakx9Z1W3H9QaGpM/UtWEcnNK5QzO8VJhlrgjG9m+oxi6IuW7b1oPVWd2LxAWRZq6p9f+8GsxCv02QucPmbZzdC9Z6hBuQuLvVAoltxUrTjOEGZV64763iyOwGIkKO65hxl1YOrljK7dw1sHigdWC8otLDafA3OBUiyxpU62O5s122q1SorFYg5lTpn+jsjf6Pr7ETBbwc/mHsOs2Nysc2WTrqFNV4bxiqSy2TOmrtWcHJNrtnc+XdpG5mk71ACpwpx9q10rGf/z9QIIZM+F53CuzUOmrgf71zJZvVMkIGd+QeJs34ydy8hQ47dqbWVxMY/qUAEqJkAFqAAVE6ACVIAKUDEBKkC9sE8BBgBlqt6vWPOPjAAAAABJRU5ErkJggg==</Icon>
+          <LocalizedName>widgets_DrawerMenu</LocalizedName>
+          <Tags>
+            <string>드로어</string>
+            <string>드로어 메뉴</string>
+            <string>햄버거 메뉴</string>
+            <string>네비게이션</string>
+            <string>네비게이션 드로어</string>
+            <string>Navigation Drawer</string>
+            <string>인터랙션</string>
+            <string>interaction</string>
+          </Tags>
+          <NClickCode>uiu.drawermenu</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>48273352-a637-45e4-b2d6-eb3b14bb2656</Id>
+          <Name>Toast Notification</Name>
+          <LbrType>lbw.toastnotification</LbrType>
+          <Type>toastnotification</Type>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAFQAAAA0CAYAAAAUnx+bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVRJREFUeNrsmd0RATEURuOnADpQggp2KGE7oAMF7OO+owI6oANmG6ADHr3RATfEMMZgkE2ye85MZtmH5ObbL3fvJkoBAAAAAAAAAACAp1Rsdp4kSVsuM2ktD+Z6kNZN03Rtc5Cq5UlMPBFT0zDxWKVuuf+2uTbFGQdXSspK0WLu7+IJ1qFnXIqZ9/hVBQjqM3XXAUh+6/x5eS9LLaiwCKkUZMmX0KFdBC1QziviS+n4w8Oo+CYoOZQciqClyqEseQRF0Ov2mctKIrfxbedQvTuu9yD3Mql/9x1L/p0/iLZRl43kV/EE7dC+uhw92GDy4LzZGzG3Jh6reFcYf7h8F8b5c3FpLPeG8nugcjo3KpSgRlQt5sr8nUrrPUsDLqiFKGiWZbsoirQZOup2TjQSMceuYwvSoXdOXRlBlyKmF19codeh15deTAUMAAAAAAAAAN9wEmAAwbxQOS3Hf7YAAAAASUVORK5CYII=</Icon>
+          <LocalizedName>widgets_Toast</LocalizedName>
+          <Tags>
+            <string>알림</string>
+            <string>알림메시지</string>
+            <string>토스트</string>
+            <string>인터랙션</string>
+            <string>interaction</string>
+          </Tags>
+          <NClickCode>uiu.toastnotification</NClickCode>
+        </WidgetModel>
+      </WidgetModels>
+    </WidgetExpand>
+    <WidgetExpand>
+      <LibraryGID>be0a8ee7-01cf-404c-a5eb-99fb44db362d</LibraryGID>
+      <Header>List UI</Header>
+      <FileName>List UI.libpn</FileName>
+      <WidgetModels>
+        <WidgetModel>
+          <Id>14b58bf7-a99c-40d1-8e5c-6e3830b5f243</Id>
+          <Name>Text List 01</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkM0NUU2RDMyRjhGMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkM0NUU2RDIyRjhGMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5SNYmFAAABX0lEQVR42uyXu26DQBBFISxQhJYCiRYlRb4kZT7UpX/EKSK2RaKgQziIl5IrVqIx4E2ME2Y1U+7OII7msXds6/RkmWsPltHGeJRNXB59vXysBNjvz4TwbLNHi7jfp4/J4ZbwV/nGxflzPFoA3Hs8OflZZzzG27j30jRNksRINiklFyfjEZbU59GaphmGwXEc3/cfRyOP1/d9URQAm05A+DlaWZZhGAohqOKBLc9z8Mzeghm3URQtEWZZdr+fjuP41t5D3pbYpkzCh+RoUc12NRg+8KRXnFVVacbDc3bM6NfPP2SvbVvN+K7r6BXnetf9znNHeHjfNOP1PXfUe57n1XWtE++67rYPw7ZNO5+9IAg04/U9d1ScGIYQX1eDlUAjqVqguVZUi+o6+PxNjW2/MUBtQXMt5RDnK4qMhqRWhGpjwEuoNgZMHUM2hqkPqcDwts54jLen0SKlNBXvW4ABAIeFj0FUWeg8AAAAAElFTkSuQmCC</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>텍스트</string>
+            <string>텍스트 리스트</string>
+            <string>텍스트 목록</string>
+          </Tags>
+          <NClickCode>ulu.textlist01</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>87db6c15-0263-4165-b210-248fa5dc9ad1</Id>
+          <Name>Text List 02</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjFBQTkwOEUyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkM0NUU2RDYyRjhGMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz623dERAAAAm0lEQVR42uzXMQqAMAyF4VZ6jK5BB0/i6EEdvYgO0qy9h+4OgmjRhj+boOJHXhr0bmmd3Wqc6YJXc4XT9d5vF3f7tauL520fLaHQe2eZnjw+6Eg47/OqAzB7nJysdXjwXp69lJKImLSpKuGEBw8evOL/eznnb784xkj3COfzbNA9ePD+vhgKjTThZDHQPXjw4MEztRhU1SrvEGAAA38gDMHVNXwAAAAASUVORK5CYII=</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>텍스트</string>
+            <string>텍스트 리스트</string>
+            <string>텍스트 목록</string>
+          </Tags>
+          <NClickCode>ulu.textlist02</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>8c42cd6b-8343-43e5-8f0c-cb816ed66ef4</Id>
+          <Name>Text List 03</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjFBQTkwOTIyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjFBQTkwOTEyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5DVhnAAAAAwElEQVR42uyXMQ7CMAxFE9QTZMmSIUsFAydh5KCMXAQGFJYMWbzkCrCiSjCUUhr3eavUVH3yc75szWVr9NbGqC7wWq5u8PzY3z68ba+7tvCs7qul+8VHz/3pm+OH+xE5R+E1B8DscXMS6+CBN/HspZS89yrZRAQ51eRerVUBknPubazHGJtmyzkTDKva90op//3LEALdQ85p3aB74IG3xGCYYaSRk2Cge+DNIOdgX1KF97rnIid4S5BTRLTiPQUYAJohKRTqewY/AAAAAElFTkSuQmCC</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>텍스트</string>
+            <string>텍스트 리스트</string>
+            <string>텍스트 목록</string>
+          </Tags>
+          <NClickCode>ulu.textlist03</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>95498c59-87bf-4274-972d-e8692e008c23</Id>
+          <Name>Text List 04</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjFBQTkwOTYyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjFBQTkwOTUyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4DCHyKAAAA0klEQVR42uyXMQ7DIAxFSZWpIwsLA1PX9DY9Y9XLJGu7MLB44QrtTiokGoxq6/8RBX+96NsW03tdjF6djGoBT7Lm8mBZa59vV+F40gAa8brocj90/XlDOBFOYybdax3hxFoHHvA4eu91fjjnVLIREcKpZu/lnMe4WmuZfIvK5d4LIXCzxRj3h11895XRe8AT+ZxNKR038N63XmnyrddHOLWG84dcdVFHX4yWsf8bowXhxGhBOIH3X7339TE2QEy+c+WpO0x8vug96b1HRFrxPgIMACkbNbeslRQiAAAAAElFTkSuQmCC</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>텍스트</string>
+            <string>텍스트 리스트</string>
+            <string>텍스트 목록</string>
+          </Tags>
+          <NClickCode>ulu.textlist04</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>b2380729-d522-4ec5-930e-a96f7d3b8457</Id>
+          <Name>Image List 01</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzRCNjJGNEYyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzRCNjJGNEUyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6gBoh4AAABXUlEQVR42uyYSYuDQBCFowb15CUBFzx48f//H73kIHEBNwTFDecxgnMI6ExiGLtTBUrb2I0f71lVKnied+I3zjhc1+WSzfd98cR1cI53fpy63W4rCxzHYRuPLYA/4+0V9/v9leWWZZE5yZxvil3cReb8YHN+QFlHb0YtNbXU9O4R3jsLQxRFu+xrGAapR3j/1XM2TZOm6TiOqqper1dJklZuDoLgfQy2be+vXlVVwzBM09R8B2/mFAThZxdRZNucUAlyybIMK84zmqZBPZhTUZRl8gn/HAIvyzLgQTFd12cYUJmmyUPmLMsSbLOGSCc4Q7Q4jsMwbNuWbby6rvM8Xy77voeSSZIgnYANA6CyWhgAA7kec+YyBltRFJfLZX2fpwvDiy/thnrQbVMcyHtYAcXNR9/cAmyHrXsb5kR67LruN2WDycJw/NRPLfXxvtNIPcIjPPZTC8d/qb8EGAA82Kxr/fL4kAAAAABJRU5ErkJggg==</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>이미지</string>
+            <string>이미지 리스트</string>
+            <string>이미지 목록</string>
+          </Tags>
+          <NClickCode>ulu.imagelist01</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>6a779185-2405-4b09-9713-89dfa1e09252</Id>
+          <Name>Image List 02</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzRCNjJGNTMyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzRCNjJGNTIyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7X3bYpAAABfElEQVR42uyYUYuCQBSFU/Sl0gdBepEsMND+/69RAs2KJCgtEk2UPaywGyyb7DaFM9wLgsqo83HunLlXyff9gbih4FgsFkKyBUEgD4QOwiO8XlsL2zgcDs88bpomqUd4L0pOttlF6hEe4XFrLSg9RcabTCZCsiVJQmtPmG39eDwKgGQYxq9Vy2w2e/+EwjBk9V28imrOHsf5fI6iqKqq8Xg8n89VVRXKWtBPlmXZNA04syz7v3qbzeb52ViWxRZPkqTv2SsK38kJlSDXcDjUNK29gyIE6iE5tc/gGy+OY+DJsuw4jq7ruDMajTzPY2AtzPPqr7Hf79s/N9BwvV4vl8u6rltfmU6n4OTYOdM0vV/8RVFAyTzPr9crLlerFTR8bJvMrIW5zoCBXD898+v8drvtdjvbtrmsObfbLQAej8Gu0Dmmp3in06lzDNgulwuX1oKKBMuscxichktrcV2X+j1qZx/3S+9s+V6Od9/nUnISXh/WXpIkouJ9CDAA6xKiWyjsfz8AAAAASUVORK5CYII=</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>이미지</string>
+            <string>이미지 리스트</string>
+            <string>이미지 목록</string>
+          </Tags>
+          <NClickCode>ulu.imagelist02</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>f695ef45-c883-4093-be53-f9db1771a239</Id>
+          <Name>Image List 03</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzRCNjJGNTcyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzRCNjJGNTYyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6Xg9NjAAABaElEQVR42uyXS2qEQBCGx1YRn6AuXHql5AxDLpXHGZLzeAFpUBTd+EKnQAjBMEHHaolatZC2VT7/qt+ilIbX98txg10OHSRvz6FMN16uf93+9rFzeXsTsFAeSjw/rXr884vMSeYUZU48d5E5T2xOmlpI3r8NKYqiIAgOqY1zfqaROssyQRjXdSc727CotZx2KLMsC5zQ932SJHVdC33Rx1irqmcYBmNMURRd10XX4THWYnmqqgJmXFdVBUfIqKDSrWctMydkzvO8pmnSNAVSWZZAHYahbVt0bSgstiiX4H6wB/jENE3Iq+/7sBChDYs1t3qSJAEPqOOpbdsA0zQN1pDRPM8xJyk81tzqOY7z85sG9sgbexqkGVEeImuBvHuXZFnG7ZyIrLmZ6LruXtrAS9/9DSUQWXPlxXG82aiByDrTUBaGoSBMURSTnW1Y9MdA8kgeyRPdOX/3N3GxDesE1eOcH1XeTYABAPiBmaTnh+z+AAAAAElFTkSuQmCC</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>이미지</string>
+            <string>이미지 리스트</string>
+            <string>이미지 목록</string>
+          </Tags>
+          <NClickCode>ulu.imagelist03</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>5bd52c4c-5d1b-4cf3-85e3-ab5ec613098e</Id>
+          <Name>Image List 04</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NENEMzA2NjIyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NENEMzA2NjEyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz45LU2pAAABpUlEQVR42uxY226CQBQUrEhooBGJt/DAC///P/rCAxGQeCEmgnLrBBJjaBrb4rbdI5NA1kVlJzPMnoOwXC57dPGCw7ZtktxWq5XYI42npHc6nRzHiaKIIL0kScIwfKtAIVpucblcNpuNJEmKomB8ewmT3/rr9XrdZmWLxeLx9LbbbVEU5/PZ87zGJcuyuFdvPB77vj8YDHRdFwSBmjnhwMlkEgQB0mU0Gv25ux4fLbIsG4YRVaCmXo3XCt22zoN6qM0o01NVlSS34/HYldT0kpM14jhGeZTneb0J9ft9UurhqciyrCzLuAI1c96We6Io8m1OqAS5UO7BivWMpmlQD+YcDofXSV7p7XY70INi0+m0JgNW8/mcQnKicAW3WkPECc4QDSU7Gi60XXzTQ9ux3++vH9M0hZJolxEn4IYBqPJKD2Qg18fMvIoGbofDgVd60O2uOJCXqYAiU2fe/Q64Md33GCYn4rHxMuqzbYNLer8T/U9fUs9ms67f6/q9/9/vua7L7mamabb5+VfW1rhFZ05K5mzpH6b4wdo6c/JuTsJvqd8FGADwHNde2IBaDgAAAABJRU5ErkJggg==</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>이미지</string>
+            <string>이미지 리스트</string>
+            <string>이미지 목록</string>
+          </Tags>
+          <NClickCode>ulu.imagelist04</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>79b30c7f-972a-4f3a-98f8-88eb1e30d830</Id>
+          <Name>Image List 05</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NENEMzA2NjYyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NENEMzA2NjUyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz55cyjjAAABvklEQVR42uyY3Y6CMBCFgeVHEUHhxngP7/88eE+8UQKEmKyu7AlNyGaXYAlTZJtOoikT7PCdztCpepqmmrxm4hPHsZRsp9PJ0KQ2yfFMEZNmWTbl58fjUa2ewhOUnITZpVZP4anaG23X65V1fEmShGGIwe12gxMDXK7X617Pv1k9sH221rW1IPlqjSH1elRyLgMPOWnbtuM4GDAPMvCjNZarvR5a05E56sSgknOxGwMWUWa87Xb7ltiHwwHf5/NZ0PxVVanaU3gy95zYu4MgMAwD/VdRFM/nUyo813XRdmDgtIYuWfRD8wtKnJxN08ywJkxQXdeZoJSrh0lxcnk8HlCOeeq6RjCmZeeczYYFHY2HTRLiYdI8zxnM/X6/XC7iAKYIOg5vs9mAjYX0fR9UGLAyKMsSnCLwpgg6ovaQ5T/7G9M0cbnf7+G3LGu32wGSnO2XoPhGFASNoghByfAAg9n/lngXA9nieR4t23RBefHw6OztP/w0L+8ZsWVRCMqLt1qtXt6DeNiRqPBIBOXFQ003HIbaoMIjEZT3zSnon6xhQXleHsOCmtpSjURQdSBSeIs+71VV9ZbYM8T9FmAAeDXnMr+1R34AAAAASUVORK5CYII=</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>이미지</string>
+            <string>이미지 리스트</string>
+            <string>이미지 목록</string>
+          </Tags>
+          <NClickCode>ulu.imagelist05</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>a64c57f0-a57b-496c-971f-3f99782ccead</Id>
+          <Name>Image List 06</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RUU4RkJEQTYzMzk0MTFFNUE2MjBDNDZFMEZBNDM1RjgiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDI5ODZFQ0UzMzkwMTFFNUE2MjBDNDZFMEZBNDM1RjgiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpmNmM4NzljZi0xZDMyLTQ1MDEtOTNlOS0yZTllN2Q4M2VjODIiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4w05XaAAABVklEQVR42uyaOYuEQBCFx/tCbRQMDMTE//9/NBEDA8EDBMULpqJhYN3Bcdehp6gHBqI2fr5XbbUopGl6wysZtiRJULJlWSbeUEv+3lvftq3runmeFUVhjMmyfAgvz/MXg8ZxzAkesAGY53nDMDRNEwTBITx+AF4LfAM2QRAsy+r7HsyUJOlD4SzL8sRVYRgePxlgpmnSdX1dV9gVRRFVOF3XbdsWSg7wDMMAG1GFU9M0qLdlWcBDKD/HcX4SXhXOt2J2WhBIgFRVdRxHKD8gxBPOh8A027bBRlThfJZpmvv24u9aoDfDjAfBRckGkw3ycNKK4RfttrAXqaoqcu+C9d7p5/qZjNDUQh8jduX7/vGT67om93hy7yJDyD0KJ4e9C7n3f+5d3a+QexRO2BhjtFqncHI+cxZF8ZexoijiapCdF8PjwLt6viF+BqHa+2YJuH/8uAswAFINeTZZXrkLAAAAAElFTkSuQmCC</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>이미지</string>
+            <string>이미지 리스트</string>
+            <string>이미지 목록</string>
+          </Tags>
+          <NClickCode>ulu.imagelist06</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>8b800082-24e8-4773-984e-a8c040037e0f</Id>
+          <Name>Category List 01</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NENEMzA2NkEyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NENEMzA2NjkyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6AUR+1AAABfElEQVR42uxayYqDQBRUo+ICARVBQdCr/v+35JCTh4BLQHHUiPu8mQEJYaIeDLE7/UBpl4PVVfarEunz+UzhWyxsPM9jia1pGobCujCHxz4cn06nmbtd16VpGmF4nufhzN6GNS+Exdpkook4iThfpy4izg8WJ3EtqC8tiqJgiS2Kok/ynEmSYABJVdWnK6fjOEhj833/gwPRmsqy7Hq9MgxjmqYoirg1hjzPu66DqF+WJSZ9D8D0ff83liQJrNnhcNg5dWvFCSxBDxEEwTAM0CT0SVmWqaVvUJfL5XXPbVnWNuwBb3Ecw/7rt4ZhCIIAXj/Atn97vcAegAFsdV1PjRGAVVX1MzEMo2nazhEuwEvTtCiKeybv18/j8Tijz5X6eefSAvCeXWrb9na7oS1OjuPGcfz3EpyH9oA2PNu2Sd5Dh70HS4obPJIYSGIgiYEkhn0nBjTgTYkBCngDnxmGIcuyuq7P++k9BCLMEwN9/+MHOEwMmgF4/Wn8LcAADdfQ6kIh1bQAAAAASUVORK5CYII=</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>카테고리</string>
+            <string>카테고리 리스트</string>
+            <string>카테고리 목록</string>
+          </Tags>
+          <NClickCode>ulu.categorylist01</NClickCode>
+        </WidgetModel>
+        <WidgetModel>
+          <Id>d8b8b3f5-6b01-4d2a-aab2-1b8d130470ae</Id>
+          <Name>Category List 02</Name>
+          <LbrType>custom</LbrType>
+          <Icon>iVBORw0KGgoAAAANSUhEUgAAAEoAAAAoCAIAAADWjvt3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozZGNkMTk4OS1hYmZiLTQ3ZTgtYmE0Ni05YWE1YWMxOTBhYWUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjYxODlCMTUyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjYxODlCMTQyRjkwMTFFNUE3QjFFQUE1QTg5ODZBOUMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDplZjI0NjA2NS1mOGNiLTRiZTYtYjBkZC1iZTc5OWIwOTQ2OTMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiMGZhOTI0Yy02Njc0LTExNzgtODkwYS1hODkxYTkyNjczNTYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6jm6NxAAABlUlEQVR42uya7YqCQBSG8yNJA0FCSAnyT9fgFXjVXUG3oH/8EZoFRpsW+ZF7doVFtt1h3Uya6RxQdMaBeXxfnXNEznXdAbshwrZYLJhk8zyPHzAdjOOJt02+7xMGWJZFNx5dAK3xuoogCO4ZbpommhPN+aDoxF1ozhc25wss65CbYUqNKTU+e4iHeA/NWg6Hw26343neMAxZlnuY5XK5/MtljuN0oN7xeCyKIsuyNE0ZMSfAlGVZHyuKwnGcIAj9SPdwc4JKURSNRqPpdAqe1DRtPB5DuyRJhFHr9fp/c5rNZoRe27abp6vV6i71QLftdgv7t8+4Xq9hGMLjB2ygId3qAQywXS6X+jSOYwA7n88fN4bnJ5NJ/4Rkudrh7ff7JEmaSjbfn6qqEvxJ9thTvFoA77euPM9PpxPd5hwOh1VV/dgF7bA89DPL2wWtG7z5fI5JGSXmJH9loSK+fUkRCX1YMWDFQB1eXTHUuSgjBRFWDHTifVUMEKAb5JmbzUYURV3Xyfn0MxRE9FUMrYJj+8ePdwEGACra1Bp1S6QSAAAAAElFTkSuQmCC</Icon>
+          <Tags>
+            <string>리스트</string>
+            <string>목록</string>
+            <string>카테고리</string>
+            <string>카테고리 리스트</string>
+            <string>카테고리 목록</string>
+          </Tags>
+          <NClickCode>ulu.categorylist02</NClickCode>
+        </WidgetModel>
+      </WidgetModels>
+    </WidgetExpand>
+  </WidgetExpands>
+</WidgetTab>

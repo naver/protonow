@@ -1,0 +1,544 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:Naver.Compass.WidgetLibrary;assembly=Naver.Compass.WidgetLibrary.SystemWidgets"
+    xmlns:f="clr-namespace:Naver.Compass.WidgetLibrary;assembly=Naver.Compass.WidgetLibrary.FrameWidgets"
+    xmlns:local="clr-namespace:Naver.Compass.Module"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase">
+
+    <common:Bool2CollapseConverter x:Key="Bool2Collapse"/>
+    <common:Bool2VisibleConverter x:Key="Bool2Visible"/>
+    <common:HalfValueConverter x:Key="HalfValue"/>
+
+    <!--<TextBlock x:Key="CursorGrab" Cursor="Resources/Cursors/grab.cur"/>
+    <Cursor x:Key="OpenHandCursor" >../Resource/rotate.cur</Cursor>-->    
+    <!--Target UI widget Data-Template-->
+    <DataTemplate DataType="{x:Type s:ButtonWidgetViewModel}">
+        <s:ButtonWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+        </s:ButtonWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:CircleWidgetViewModel}">
+        <s:CircleWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+        </s:CircleWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:DiamondWidgetViewModel}">
+        <s:DiamondWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" >
+        </s:DiamondWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:ImageWidgetViewModel}">
+        <s:ImageWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}">       
+        </s:ImageWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:SVGWidgetViewModel}">
+        <s:SVGWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}">
+        </s:SVGWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:RectangleWidgetViewModel}">
+        <s:RectangleWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}">
+        </s:RectangleWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:RoundedRecWidgetViewModel}">
+        <s:RoundedRecWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}">
+        </s:RoundedRecWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:HotSpotWidgetViewModel}">
+        <s:HotSpotWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}">
+        </s:HotSpotWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:LabelWidgetViewModel}">
+        <s:LabelWidget ClipToBounds="False"
+            Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}">
+        </s:LabelWidget>
+    </DataTemplate>    
+    <DataTemplate DataType="{x:Type s:HLineWidgetViewModel}">
+        <s:HorizontalLineWidget Width="{Binding ItemWidth}"  Height="20" SnapsToDevicePixels="True">
+        </s:HorizontalLineWidget>
+    </DataTemplate>    
+    <DataTemplate DataType="{x:Type s:VLineWidgetViewModel}">
+        <s:VerticalLineWidget Width="20"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">
+        </s:VerticalLineWidget>
+    </DataTemplate>    
+    <DataTemplate DataType="{x:Type s:TriangleWidgetViewModel}">
+        <s:TriangleWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">
+        </s:TriangleWidget>
+    </DataTemplate>    
+    <DataTemplate DataType="{x:Type s:GroupViewModel}">
+        <Rectangle Width="{Binding ItemWidth}"  IsHitTestVisible="False" Visibility="{Binding ShowGroupBorder}"  MinHeight="1" MinWidth="1"
+                Height="{Binding ItemHeight}" Fill="Transparent" Stroke="DarkGreen"  StrokeThickness="1"  Cursor="Arrow" StrokeDashArray="3 2">
+        </Rectangle>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:ListboxWidgetViewModel}">
+        <s:ListboxWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">
+        </s:ListboxWidget>
+    </DataTemplate>    
+    <DataTemplate DataType="{x:Type s:DroplistWidgetViewModel}">
+        <s:DroplistWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">
+        </s:DroplistWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:CheckBoxWidgetViewModel}">
+        <s:CheckBoxWidget Width="{Binding ItemWidth}" MinWidth="16"
+                          ActualWidgetHeight="{Binding ItemHeight,Mode=OneWayToSource}" SnapsToDevicePixels="True">
+        </s:CheckBoxWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:RadioButtonWidgetViewModel}">
+        <s:RadioButtonWidget Width="{Binding ItemWidth}" MinWidth="16"
+                             ActualWidgetHeight="{Binding ItemHeight,Mode=OneWayToSource}" SnapsToDevicePixels="True">
+        </s:RadioButtonWidget>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type s:TextAreaWidgetViewModel}">
+        <s:TextAreaWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">
+        </s:TextAreaWidget>
+    </DataTemplate>    
+    <DataTemplate DataType="{x:Type s:TextFieldWidgetViewModel}">
+        <s:TextFieldWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">            
+        </s:TextFieldWidget>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type  f:DynamicPanelViewModel}">
+        <f:DynamicPanel Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">
+        </f:DynamicPanel>
+    </DataTemplate>    
+
+    <DataTemplate DataType="{x:Type f:HamburgerMenuViewModel}">
+        <f:HamburgerMenu Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">
+        </f:HamburgerMenu>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type f:ToastViewModel}">
+        <f:Toast Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">
+        </f:Toast>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type f:MasterWidgetViewModel}"> 
+        <f:MasterWidget Width="{Binding ItemWidth}"  Height="{Binding ItemHeight}" SnapsToDevicePixels="True">
+        </f:MasterWidget>
+    </DataTemplate>  
+    
+    <!--Border style for hidden widget in a group(adaptive view)-->
+    <Style x:Key="HiddenWidgetInGroup" TargetType="Rectangle">
+        <Setter Property="Stroke" Value="#FF4a7eec"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+        <Setter Property="StrokeDashArray" Value="4,3"/>
+        <Setter Property="IsHitTestVisible" Value="False"/>
+        <Setter Property="Visibility" Value="{Binding IsHiddenModeInGroup, Converter={StaticResource Bool2Collapse}}"/>
+        <Setter Property="Height" Value="{Binding ItemHeight, Mode=TwoWay}"/>
+        <Setter Property="Width" Value="{Binding ItemWidth, Mode=TwoWay}"/>
+        <Setter Property="RenderTransform" >
+            <Setter.Value>
+                <RotateTransform  Angle="{Binding RotateAngle, Mode=TwoWay}" 
+                                  CenterX="{Binding ItemWidth, Converter={StaticResource HalfValue}}" 
+                                  CenterY="{Binding ItemHeight, Converter={StaticResource HalfValue}}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Move Thumb Style-->
+    <Style x:Key="MoveThumbStyle" TargetType="{x:Type s:MoveThumb}">
+        <Setter Property="Cursor" Value="SizeAll"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:MoveThumb}">
+                    <Rectangle Fill="Transparent"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsStyleBrushModel}" Value="True">
+                <Setter Property="Cursor" Value="{x:Null}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsStyleBrushModel}" Value="False">
+                <Setter Property="Cursor" Value="SizeAll"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsStyleBrushModel}" Value="{x:Null}">
+                <Setter Property="Cursor" Value="{Binding CopyCur}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--BaseWidgetItem Style-->
+    <Style TargetType="{x:Type s:BaseWidgetItem}">
+        <Setter Property="MinHeight" Value="1"/>
+        <Setter Property="MinWidth" Value="1"/>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="IsLocked" Value="{Binding IsLocked}"/>
+        <Setter Property="IsFixed" Value="{Binding IsFixed}"/>
+        <Setter Property="IsTarget" Value="{Binding IsTarget}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:BaseWidgetItem}">
+                    <Grid DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                        <Image x:Name="fixedIcon" Visibility="Collapsed" Source="/Naver.Compass.Module.DiagramEditor;component/Image/03_Fixed_Icon.png"
+                               HorizontalAlignment="Right" VerticalAlignment="Top" Width="15" Height="15" Margin="0,4,-15,0"/>
+                        <s:MoveThumb  x:Name="ItemMovethumb" Style="{StaticResource MoveThumbStyle}" 
+                                      IsCtrlPressed="{Binding DataContext.IsCtrlPressed,Mode=TwoWay}"
+                                      IsShiftPressed="{Binding DataContext.IsShiftPressed,Mode = TwoWay}"/>
+                        <ContentPresenter Content="{TemplateBinding ContentControl.Content}"
+                              Margin="{TemplateBinding Padding}"/>
+                        <s:DesignerItemDecorator x:Name="ItemDecorator"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ItemDecorator" Property="ShowDecorator" Value="True"/>
+                        </Trigger>
+                        <Trigger Property="IsLocked" Value="True">
+                            <Setter TargetName="ItemMovethumb" Property="IsEnabled" Value="False"/>
+                        </Trigger>   
+                        <Trigger Property="IsFixed" Value="True">
+                            <Setter TargetName="fixedIcon" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>    
+    
+    <!--Move Widget-VM Style-->
+    <Style x:Key="EditorItemsStyle" TargetType="{x:Type ItemsControl}">
+        <Setter Property="ItemContainerStyleSelector">
+            <Setter.Value>
+                <local:WidgetItemStyleSelector>
+
+                    <!--Selected NoRotate Item Style-->
+                    <local:WidgetItemStyleSelector.WidgetNoRotateItemStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Setter Property="Canvas.Top"
+                                    Value="{Binding Top, Mode=TwoWay}" />
+                            <Setter Property="Canvas.Left"
+                                    Value="{Binding Left, Mode=TwoWay}" />
+                            <Setter Property="Canvas.ZIndex"
+                                    Value="{Binding ZOrder, Mode=TwoWay}" />
+                            <Setter Property="MinHeight"
+                                    Value="1" />
+                            <Setter Property="MinWidth"
+                                    Value="1" />
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <s:BaseWidgetItem Height="{Binding ItemHeight, Mode=TwoWay}"
+                                                          Width="{Binding ItemWidth, Mode=TwoWay}"
+                                                          IsSelected="{Binding IsSelected, Mode=TwoWay}"
+                                                          IsTarget="{Binding IsTarget,Mode=TwoWay}"
+                                                          IsInEditModel="{Binding CanEdit, Mode=TwoWay}"
+                                                          IsStyleBrushModel="{Binding IsBrushModel, Mode=OneWay}"
+                                                          IsGroup="{Binding IsGroup}"
+                                                          ParentID="{Binding ParentID}"
+                                                          CanRotate="False"
+                                                          Visibility="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"
+                                                          DecoChrome="NoRotateDecorator">
+                                                <ContentPresenter Content="{TemplateBinding Content}" />
+                                                <i:Interaction.Behaviors>
+                                                    <common:EventCommandsBehavior DoubleClickCommand="{Binding Path=DoubleClickCommand}" />
+                                                </i:Interaction.Behaviors>
+                                            </s:BaseWidgetItem>
+                                            <Rectangle Style="{StaticResource HiddenWidgetInGroup}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </Setter.Value>
+
+                            </Setter>
+                        </Style>
+                    </local:WidgetItemStyleSelector.WidgetNoRotateItemStyle>
+
+                    <!--Selected Rotate Item Style-->
+                    <local:WidgetItemStyleSelector.WidgetRotateItemStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Setter Property="Canvas.Top"
+                                    Value="{Binding Top, Mode=TwoWay}" />
+                            <Setter Property="Canvas.Left"
+                                    Value="{Binding Left, Mode=TwoWay}" />
+                            <Setter Property="Canvas.ZIndex"
+                                    Value="{Binding ZOrder, Mode=TwoWay}" />
+                            <Setter Property="MinHeight"
+                                    Value="1" />
+                            <Setter Property="MinWidth"
+                                    Value="1" />
+                            <Setter Property="ClipToBounds"
+                                    Value="False" />
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <s:BaseWidgetItem Height="{Binding ItemHeight, Mode=TwoWay}"
+                                                          Width="{Binding ItemWidth, Mode=TwoWay}"
+                                                          IsSelected="{Binding IsSelected, Mode=TwoWay}"
+                                                          IsInEditModel="{Binding CanEdit, Mode=TwoWay}"
+                                                          IsStyleBrushModel="{Binding IsBrushModel, Mode=OneWay}"
+                                                          IsTarget="{Binding IsTarget,Mode=TwoWay}"
+                                                          IsGroup="{Binding IsGroup}"
+                                                          ParentID="{Binding ParentID}"
+                                                          ClipToBounds="False"
+                                                          CanRotate="True"
+                                                          Visibility="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"
+                                                          DecoChrome="RotateDecorator">
+                                                <s:BaseWidgetItem.RenderTransform>
+                                                    <RotateTransform Angle="{Binding RotateAngle, Mode=TwoWay}"
+                                                                 CenterX="0.5" CenterY="0.5" />
+                                                </s:BaseWidgetItem.RenderTransform>
+                                                <ContentPresenter Content="{TemplateBinding Content}" />
+                                                <i:Interaction.Behaviors>
+                                                    <common:EventCommandsBehavior DoubleClickCommand="{Binding Path=DoubleClickCommand}" />
+                                                </i:Interaction.Behaviors>
+                                            </s:BaseWidgetItem>
+                                            <Rectangle  Style="{StaticResource HiddenWidgetInGroup}"/>
+                                        </Grid>
+
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </local:WidgetItemStyleSelector.WidgetRotateItemStyle>
+                    
+                    <!--Selected Rounded Rotate Item Style-->
+                    <local:WidgetItemStyleSelector.WidgeRounedtRotateItemStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Setter Property="Canvas.Top"
+                                    Value="{Binding Top, Mode=TwoWay}" />
+                            <Setter Property="Canvas.Left"
+                                    Value="{Binding Left, Mode=TwoWay}" />
+                            <Setter Property="Canvas.ZIndex"
+                                    Value="{Binding ZOrder, Mode=TwoWay}" />
+                            <Setter Property="MinHeight"
+                                    Value="1" />
+                            <Setter Property="MinWidth"
+                                    Value="1" />
+                            <Setter Property="ClipToBounds"
+                                    Value="False" />
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <s:BaseWidgetItem Height="{Binding ItemHeight, Mode=TwoWay}"
+                                                          Width="{Binding ItemWidth, Mode=TwoWay}"
+                                                          IsSelected="{Binding IsSelected, Mode=TwoWay}"
+                                                          IsInEditModel="{Binding CanEdit, Mode=TwoWay}"
+                                                          IsStyleBrushModel="{Binding IsBrushModel, Mode=OneWay}"
+                                                          IsTarget="{Binding IsTarget,Mode=TwoWay}"
+                                                          IsGroup="{Binding IsGroup}"
+                                                          ParentID="{Binding ParentID}"
+                                                          ClipToBounds="False"
+                                                          CanRotate="True"
+                                                          Visibility="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"
+                                                          DecoChrome="RounedRotateDecorator">
+                                                <s:BaseWidgetItem.RenderTransform>
+                                                    <RotateTransform Angle="{Binding RotateAngle, Mode=TwoWay}"
+                                                                 CenterX="0.5" CenterY="0.5" />
+                                                </s:BaseWidgetItem.RenderTransform>
+                                                <ContentPresenter Content="{TemplateBinding Content}" />
+                                                <i:Interaction.Behaviors>
+                                                    <common:EventCommandsBehavior DoubleClickCommand="{Binding Path=DoubleClickCommand}" />
+                                                </i:Interaction.Behaviors>
+                                            </s:BaseWidgetItem>
+                                            <Rectangle  Style="{StaticResource HiddenWidgetInGroup}"/>
+                                        </Grid>
+
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </local:WidgetItemStyleSelector.WidgeRounedtRotateItemStyle>                    
+
+                    <!--Selected Group ItemS tyle-->
+                    <local:WidgetItemStyleSelector.GroupItemStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Setter Property="Canvas.Top"
+                                    Value="{Binding Top, Mode=TwoWay}" />
+                            <Setter Property="Canvas.Left"
+                                    Value="{Binding Left, Mode=TwoWay}" />
+                            <Setter Property="Canvas.ZIndex"
+                                    Value="{Binding ZOrder, Mode=TwoWay}" />                            
+                            <Setter Property="MinHeight"
+                                    Value="1" />
+                            <Setter Property="MinWidth"
+                                    Value="1" />
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <s:BaseWidgetItem Height="{Binding ItemHeight, Mode=TwoWay}"
+                                                        Width="{Binding ItemWidth, Mode=TwoWay}"
+                                                        IsSelected="{Binding IsSelected, Mode=TwoWay}"
+                                                        IsTarget="{Binding IsTarget,Mode=TwoWay}"
+                                                        IsGroup="{Binding IsGroup}"
+                                                        ParentID="{Binding ParentID}"
+                                                        CanRotate="True"
+                                                        Visibility="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"
+                                                        DecoChrome="RotateDecorator"
+                                                        IsHitTestVisible="False">
+                                                <ContentPresenter Content="{TemplateBinding Content}"
+                                                            IsHitTestVisible="False" />
+                                            </s:BaseWidgetItem>
+                                        </Grid>
+                                    </DataTemplate>
+                                </Setter.Value>
+
+                            </Setter>
+                        </Style>
+                    </local:WidgetItemStyleSelector.GroupItemStyle>
+
+                    <!--Selected Hline Item Style-->
+                    <local:WidgetItemStyleSelector.HlineItemStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Setter Property="Canvas.Top"
+                                    Value="{Binding Top, Mode=TwoWay}" />
+                            <Setter Property="Canvas.Left"
+                                    Value="{Binding Left, Mode=TwoWay}" />
+                            <Setter Property="Canvas.ZIndex"
+                                    Value="{Binding ZOrder, Mode=TwoWay}" />
+                            <Setter Property="Height"
+                                    Value="20" />
+                            <Setter Property="MinWidth"
+                                    Value="20" />
+                            <Setter Property="ClipToBounds"
+                                    Value="False" />
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <s:BaseWidgetItem   Width="{Binding ItemWidth, Mode=TwoWay}"
+                                                            IsSelected="{Binding IsSelected, Mode=TwoWay}"
+                                                            IsTarget="{Binding IsTarget,Mode=TwoWay}"
+                                                            IsInEditModel="{Binding CanEdit, Mode=TwoWay}"
+                                                            IsStyleBrushModel="{Binding IsBrushModel, Mode=OneWay}"
+                                                            IsGroup="{Binding IsGroup}"
+                                                            ParentID="{Binding ParentID}"
+                                                            ClipToBounds="False"
+                                                            CanRotate="True"
+                                                            Visibility="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"
+                                                            DecoChrome="HlineDecorator">
+                                                <s:BaseWidgetItem.RenderTransform>
+                                                    <RotateTransform Angle="{Binding RotateAngle, Mode=TwoWay}"
+                                                                 CenterX="0.5" CenterY="0.5" />
+                                                </s:BaseWidgetItem.RenderTransform>
+                                                <ContentPresenter Content="{TemplateBinding Content}" />
+                                            </s:BaseWidgetItem>
+                                            <Rectangle Style="{StaticResource HiddenWidgetInGroup}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </local:WidgetItemStyleSelector.HlineItemStyle>
+
+                    <!--Selected Vline Item Style-->
+                    <local:WidgetItemStyleSelector.VlineItemStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Setter Property="Canvas.Top"
+                                    Value="{Binding Top, Mode=TwoWay}" />
+                            <Setter Property="Canvas.Left"
+                                    Value="{Binding Left, Mode=TwoWay}" />
+                            <Setter Property="Canvas.ZIndex"
+                                    Value="{Binding ZOrder, Mode=TwoWay}" />
+                            <Setter Property="MinHeight"
+                                    Value="20" />
+                            <Setter Property="Width"
+                                    Value="20" />
+                            <Setter Property="ClipToBounds"
+                                    Value="False" />
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <s:BaseWidgetItem   Height="{Binding ItemHeight, Mode=TwoWay}"
+                                                            IsSelected="{Binding IsSelected, Mode=TwoWay}"
+                                                            IsInEditModel="{Binding CanEdit, Mode=TwoWay}"
+                                                            IsTarget="{Binding IsTarget,Mode=TwoWay}"
+                                                            IsStyleBrushModel="{Binding IsBrushModel, Mode=OneWay}"
+                                                            IsGroup="{Binding IsGroup}"
+                                                            ParentID="{Binding ParentID}"
+                                                            ClipToBounds="False"
+                                                            CanRotate="True"
+                                                            Visibility="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"
+                                                            DecoChrome="VlineDecorator">
+                                                <s:BaseWidgetItem.RenderTransform>
+                                                    <RotateTransform Angle="{Binding RotateAngle, Mode=TwoWay}"
+                                                                 CenterX="0.5" CenterY="0.5" />
+                                                </s:BaseWidgetItem.RenderTransform>
+                                                <ContentPresenter Content="{TemplateBinding Content}" />
+                                            </s:BaseWidgetItem>
+                                            <Rectangle Style="{StaticResource HiddenWidgetInGroup}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </local:WidgetItemStyleSelector.VlineItemStyle>
+
+                    <!--Selected Hor_Resize Item Style-->
+                    <local:WidgetItemStyleSelector.HorReiszeItemStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Setter Property="Canvas.Top" Value="{Binding Top, Mode=TwoWay}" />
+                            <Setter Property="Canvas.Left" Value="{Binding Left, Mode=TwoWay}" />
+                            <Setter Property="Canvas.ZIndex" Value="{Binding ZOrder, Mode=TwoWay}" />
+                            <!--<Setter Property="ActualHeight" Value="{Binding ItemHeight, Mode= OneWayToSource}" />-->
+                            <Setter Property="MinWidth" Value="16" />
+                            <Setter Property="ClipToBounds" Value="False" />
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <s:BaseWidgetItem Width="{Binding ItemWidth, Mode=TwoWay}"
+                                                          IsSelected="{Binding IsSelected, Mode=TwoWay}"
+                                                          IsInEditModel="{Binding CanEdit, Mode=TwoWay}"
+                                                          IsTarget="{Binding IsTarget,Mode=TwoWay}"
+                                                          IsStyleBrushModel="{Binding IsBrushModel, Mode=OneWay}"
+                                                          IsGroup="{Binding IsGroup}"
+                                                          ParentID="{Binding ParentID}"
+                                                          ClipToBounds="False"
+                                                          CanRotate="False"
+                                                          Visibility="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"
+                                                          DecoChrome="HorRiszeDecorator">
+                                                <ContentPresenter Content="{TemplateBinding Content}" />
+                                            </s:BaseWidgetItem>
+                                            <Rectangle Style="{StaticResource HiddenWidgetInGroup}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </local:WidgetItemStyleSelector.HorReiszeItemStyle>
+
+                    <!--Selected Master Item Style-->
+                    <local:WidgetItemStyleSelector.MasterItemStyle>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Setter Property="Canvas.Top"
+                                    Value="{Binding Top, Mode=TwoWay}" />
+                            <Setter Property="Canvas.Left"
+                                    Value="{Binding Left, Mode=TwoWay}" />
+                            <Setter Property="Canvas.ZIndex"
+                                    Value="{Binding ZOrder, Mode=TwoWay}" />
+                            <Setter Property="ContentTemplate">
+                                <Setter.Value>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <s:BaseWidgetItem Height="{Binding ItemHeight, Mode=TwoWay}"
+                                                          Width="{Binding ItemWidth, Mode=TwoWay}"
+                                                          IsSelected="{Binding IsSelected, Mode=TwoWay}"
+                                                          IsTarget="{Binding IsTarget,Mode=TwoWay}"
+                                                          IsInEditModel="{Binding CanEdit, Mode=TwoWay}"
+                                                          IsStyleBrushModel="{Binding IsBrushModel, Mode=OneWay}"
+                                                          IsGroup="{Binding IsGroup}"
+                                                          ParentID="{Binding ParentID}"
+                                                          CanRotate="False"
+                                                          Visibility="{Binding IsShowInPageView2Adaptive, Converter={StaticResource Bool2Collapse}}"                                                          
+                                                          DecoChrome="MasterDecorator">
+                                                <ContentPresenter Content="{TemplateBinding Content}" />
+                                                <i:Interaction.Behaviors>
+                                                    <common:EventCommandsBehavior DoubleClickCommand="{Binding Path=DoubleClickCommand}" />
+                                                </i:Interaction.Behaviors>
+                                            </s:BaseWidgetItem>
+                                            <Rectangle Style="{StaticResource HiddenWidgetInGroup}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </Setter.Value>
+
+                            </Setter>
+                        </Style>
+                    </local:WidgetItemStyleSelector.MasterItemStyle>
+                </local:WidgetItemStyleSelector>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

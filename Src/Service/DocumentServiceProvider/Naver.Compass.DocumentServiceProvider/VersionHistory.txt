@@ -1,0 +1,181 @@
+﻿/* Document File Version Change History:
+ * 
+ * <Commit Date> <protoNow product version>
+ * <DOM version> - Change descriptions.
+ *                 
+ * 
+ * 1.0.9.0 - First file version, defined infrastructure of DS standard file format(.ds).
+ * 
+ * 1.1.0.0 - (1) Add specific shape type default base style. From this version on, every
+ *               shape type has its own defualt base style.
+ *              
+ *           (2) Add Angle and Frames in StyleColor struct. They are used when it is gradient color.
+ *           
+ * 2014/09/30 protoNow v0.9.0
+ * 1.2.0.0 - (1) Resolution info stored in AdaptiveViewSet is stored to DeviceSet.
+ *           (2) Product name is changed from "Design Studio" to "protoNow", 
+ *               so standard file extension is changed from .ds to .pn. 
+ *          
+ * 2014/10/31 protoNow v0.9.2
+ * 1.4.0.0 - (1) Remove master related objects.
+ *           (2) Remove variable related objects.
+ *           (3) Remove unused widget style properties:
+ *               FontTypeface, OuterShadow, InnerShadow, TextShadow, PaddingLeft, PaddingTop, PaddingRight,
+ *               PaddingBottom, LineSpacing, Image.
+ *           (4) Remove unused page style properties:   
+ *               PageAlign, BackImage, ImageHorzAlign, ImageVertAlign, ImageRepeat, Sketchiness, SketchColor,
+ *               FontFamily, LineWidth.
+ *               
+ *           (5) Refactor style. Base style keep base style set and style get base style via widget/page.
+ *               Remove custom base style related objects "CustomWidgetBaseStlyes", "PageBaseStyles".
+ *               Remove "BaseWidgetStyleGuid" and "DefaultBaseWidgetStyleGuid"
+ *           
+ *           (6) Save group name to "Group".
+ *           
+ *           (7) Save annotation field name in "Annotation".
+ * 
+ * 2014/11/20 protoNow v1.0.1
+ * 1.5.0.0 - (1)Add "PageViews"
+ *           
+ *           (2)Add Adaptive view related data in WidgetStyle: 
+ *              "AdaptiveViewGuid", 
+ *           
+ *           (3)Add following data in WidgetStyle: 
+ *              "IsVisibleProp", "XProp", "YProp, "HeightProp", "WidthProp", "ZProp".
+ *           
+ *           (4)Add widget adaptive view style collection "WidgetStyles".
+ *           
+ * 2014/12/23 protoNow v1.1.0
+ * 2.0.0.0 - (1) UI supports adaptive view.
+ * 
+ *           (2) Add Toast Widget.
+ *           
+ *           (3) Add "IsFixedProp" in widgets style.
+ * 
+ * 2015/01/29 protoNow v1.1.1
+ * 2.0.1.0 - (1) Add ProductVersion in version.xml
+ * 
+ * 2015/03/06 protoNow v1.2.0
+ * 3.0.0.0 - (1) Add Toast properties: "CloseSetting", "DisplayPosition".
+ *           (2) Add DynamicPanel properties: "ViewMode", "PanelWidth", "LineWith".
+ *           
+ * 2015/03/31 protoNow v1.3.0
+ * 4.0.0.0 - (1) Add Svg widget.
+ * 
+ * 2015/04/24 protoNow v1.4.0
+ * 5.0.0.0 - (1) Add RoundedRectangle in ShapeType
+ *           (2) Add SVG in ImageType
+ *           (3) Add "CreatedViewGuid" and "HasBeenPlacedInBaseView" in widget "Properties".
+ * 
+ * 2015/05/26 protoNow v1.4.1    
+ * 5.1.0.0 - (1) Change the type of BulletedList in  IWidgetStyle from boolean to TextMarkerStyle
+ * 
+ * 2015/07/20 protoNow v1.6.0    
+ * 6.0.0.0 - We have some big changes in this version. The file and folder structure in pn file are changed. 
+ *           Major changes:
+ *           (1) New .pn /.libpn file directory structure:
+ *           .pn + [pages] + ["document_page_guid"] + ["embedded_page_guid"] + [images]
+ *				 |						            |                        + Page.xml
+ *				 |						            |	                     + Thumbnail.png
+ *               |                                  |
+ *               |                                  + [images]
+ *				 |						            + Page.xml
+ *				 |						            + Thumbnail.png
+ *				 |						            + Icon.png
+ *               |
+ *               + Document.xml
+ *				 + Version.xml            
+ *               + "document_guid".docguid
+ *
+ *            A. Every page data is saved in Page.xml.
+ *            B. Every stream widget data is saved in ["page_guid"]/[images] directory.
+ *            C. Document.xml only contains document pages guids and name.
+ *            D. Document page Page.xml only contains embedded pages guids and names.
+ *
+ *           (2) Change widgets default style set tag name from "WidgetBaseStyleSet" to "WidgetDefaultStyleSet"
+ *           (3) Change widget default style tage name from "WidgetStyle" to "WidgetDefaultStyle".
+ *           (4) Change widget default style collection tag name from "DefaultWidgetBaseStlyes" to "WidgetDefaultStyles".
+ *           (5) Remove Page style related data.
+ *
+ *           Minor changes:
+ *           (1) Remove "GenerateAllPages", "Pages" in HtmlGeneratorConfiguration.
+ *           (2) Add "ExportType", "StartPage", "CurrentPage" in HtmlGeneratorConfiguration.
+ *			 (3) Remove "AnnotationFieldViews", "AnnotationFieldView" in AnnotationFieldSet.
+ *           (4) Remove "AutoFitWidth", "AutoFitHeight" in Shape.
+ *           (5) Remove "SelectList" in AnnotationField.
+ *           (6) Remove bool Available { get; set; } in IStyleProperty to reduce the serialize stream size.
+ *   
+ * 2015/10/12 protoNow v1.7.1
+ * 7.0.0.0 - protoNow client v1.7.1 will set different ImageType(GIF, BMP, JPG...) in Image. When v1.7.0 open file created in 
+ *           v1.7.1, it still load the stream from the file "Guid.ToString() + @"." + _imageType.ToString().ToLower();", 
+ *           so v1.7.0 will failed to load the stream of image when it open the file created in v1.7.1.
+ *           Update the DOM verion to forbid v1.7.0 client to open files created in v1.7.1.
+ *
+ * 2015/10/26 protoNow v1.8.0    
+ * 8.0.0.0 - We have some big changes in this version. The file and folder structure in pn file are changed.
+ *           Major changes:  
+ *           (1) Remove file "document_guid".docguid file.      
+ *           (2) Add Master related elements.
+ *			 (3) New style hierarchy. Widget style related element is changed. e.g.
+ *           Old widget style property is saved as:
+ *
+ *           <XProp>
+ *               <Value>60</Value>
+ *               <Overridden>True</Overridden>
+ *           </XProp>
+ *
+ *           In version 8.0.0.0, we only save Overridden style property (<Overridden> inner text is True), like this:
+ *
+ *           <XProp>
+ *               <Value>60</Value>
+ *           </XProp>
+ *
+ *           If <Overridden> is false, we don't save this style property. And all style properties are 
+ *           saved in <StyleProperties> element. So new version widget style look like:
+ *
+ * 			 <WidgetStyle>
+ *               <AdaptiveViewGuid>9f8d7068-9a3e-41d0-81aa-8859f1077a69</AdaptiveViewGuid>
+ *               <StyleProperties>
+ *                   <XProp>
+ *                       <Value>60</Value>
+ *                   </XProp>
+ *                   <YProp>
+ *                       <Value>60</Value>
+ *                   </YProp>
+ *                  ...
+ *               <StyleProperties>
+ *           <WidgetStyle>
+ *
+ *			 Minor changes:
+ *           (1) Move widget "Name" from "Properties" to top level.
+ *           (2) Remove Guid attribute from <WidgetStyle> element.    
+ *           (3) Add zoom percent (<Zoom>) in page (<Page>).   
+ *
+ * 2016/02/01 protoNow v1.9.0    
+ * 9.0.0.0 - Image files are managed with hash values, to avoid storing duplicate files.
+ *           Major changes: 
+ *           (1) Delete "images" directory in each page directory, all images files are moved to 
+ *               top level "images" directory.
+ *           (2) Add a "Images.xml" file in top level images directory, which contains the images 
+ *               file consumers data.
+ *           (3) Image file names are changed to the hash value, not the widget guid any more.
+ *           (4) Stream widget contains a new property "Hash" which the file name of its stream data stored.
+ *
+ *           This version .pn /.libpn file directory structure:
+ *           .pn + [pages] + ["document_page_guid"] + ["embedded_page_guid"] + Page.xml
+ *				 |						            |                        + Thumbnail.png
+ *				 |						            |	                     
+ *               |                                  |
+ *				 |						            + Page.xml
+ *				 |						            + Thumbnail.png
+ *				 |						            + Icon.png
+ *               |
+ *               + [images] // All image files used in this document, which name is a hash value.
+ *               |
+ *               + Document.xml
+ *				 + Version.xml            
+ *               + Images.xml         		 
+ *      
+ * 2016/05/12 protoNow v1.9.1    
+ * 9.0.0.1 - Add timestamp when saving for differ function.
+ * */

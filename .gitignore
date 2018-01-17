@@ -1,0 +1,18 @@
+
+# ignore list
+*.suo
+*.opensdf
+*.sdf
+NaverCompass.VC.db
+NaverCompass.VC.VC.opendb
+
+bin/
+obj/
+Debug/
+packages/
+Release/
+
+/Doc/Design/DocumentModel
+/Doc/Design
+/Patch
+/Src/External/Output

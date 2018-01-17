@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Naver.Compass.WidgetLibrary.RoundedRecWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Local="clr-namespace:Naver.Compass.WidgetLibrary"
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             mc:Ignorable="d" 
+             MinHeight="1"
+             MinWidth="1" 
+             d:DesignHeight="100" 
+             d:DesignWidth="200">
+    <UserControl.Resources>
+        <Style x:Key="ContentHiddenStyle" TargetType="Grid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BorderHiddenStyle" TargetType="Border">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Opacity" Value="0.05"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Background" Value="Transparent "/>
+                    <Setter Property="Opacity" Value="1"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border IsHitTestVisible="{Binding CanEdit}" Style="{StaticResource BorderHiddenStyle}">
+        <Grid Style="{StaticResource ContentHiddenStyle}" Opacity="{Binding Opacity}">
+            <Grid.Resources>
+                <Common:ColorDataConverter x:Key="ColorDataCvt"/>
+                <Common:StrokeDashArrayDataConverter  x:Key="StrokeDashArrayDataCvt"/>
+                <Style TargetType="{x:Type Rectangle}">
+                    <Setter Property="Fill" Value ="{Binding vBackgroundColor, Converter={StaticResource ColorDataCvt},Mode=TwoWay}" />
+                    <Setter Property="Stroke" Value ="{Binding vBorderLineColor, Converter={StaticResource ColorDataCvt},Mode=TwoWay}" />
+                    <Setter Property="StrokeDashArray" Value ="{Binding vBorderlineStyle, Converter={StaticResource StrokeDashArrayDataCvt},Mode=TwoWay}" />
+                </Style>
+            </Grid.Resources>
+            <Rectangle StrokeThickness="{Binding vBorderLinethinck,Mode=TwoWay}"
+                       IsHitTestVisible="False" 
+                       RadiusX="{Binding CornerRadius, Mode=OneWay}" 
+                       RadiusY="{Binding CornerRadius, Mode=OneWay}">
+            </Rectangle>
+            <Local:SmallEditText/>
+        </Grid>
+    </Border>
+</UserControl>

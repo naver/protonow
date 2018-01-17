@@ -1,0 +1,191 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Base="clr-namespace:Naver.Compass.Common"
+                    xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Xceed.Wpf.AvalonDock"
+                   xmlns:chrome="clr-namespace:Naver.Compass.Common.Shadow">
+
+    <SolidColorBrush x:Key="ActiveColor" Color="#7a7a7a"/>
+    <SolidColorBrush x:Key="InactiveColor" Color="#9a9a9a"/>
+    <SolidColorBrush x:Key="WindowTitleColor" Color="#FF4a7eec"/>
+    <SolidColorBrush x:Key="WindowBorderColor" Color="#FF3d67bf"/>
+    <Style x:Key="DifferWindow" TargetType="{x:Type Base:MainBase}">
+        <Setter Property="MetroChromeBehavior">
+            <Setter.Value>
+                <chrome:MetroChromeBehavior ActiveBrush="{DynamicResource ActiveColor}"
+											InactiveBrush="{DynamicResource InactiveColor}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key ="CompassWindow"  TargetType="{x:Type Base:MainBase}">
+        <Style.Resources>
+            <Style x:Key="windwoBtn" TargetType="{x:Type Button}">
+                <Setter Property="Width" Value="23"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="shell:WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border  x:Name="Border">
+                                <Image  Source="{Binding Content,RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                        <Condition Binding="{Binding Width, RelativeSource={RelativeSource Self}}" Value="23"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Background" TargetName="Border"  Value="#FF84AFFF"/>
+                                </MultiDataTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+        <Setter Property="shell:WindowChrome.WindowChrome">
+            <Setter.Value>
+                <shell:WindowChrome ResizeBorderThickness="2"
+                                    CaptionHeight="32"
+                                    CornerRadius="0"
+                                    GlassFrameThickness="0" >
+                </shell:WindowChrome>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinWidth" Value="256"/>
+        <Setter Property="MinHeight" Value="127"/>
+        <Setter Property="MetroChromeBehavior">
+            <Setter.Value>
+                <chrome:MetroChromeBehavior ActiveBrush="{DynamicResource ActiveColor}"
+											InactiveBrush="{DynamicResource InactiveColor}" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Base:MainBase}">
+                    <Grid x:Name="MainGrid" Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="32"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border  Background="{DynamicResource WindowTitleColor}" BorderBrush="{DynamicResource WindowBorderColor}" BorderThickness="1,1,1,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Button Margin="8,0,0,0" UseLayoutRounding="True"  Command="shell:SystemCommands.ShowSystemMenuCommand"  Content="../Images/icon-16-window-icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="16" Height="16" Style="{StaticResource windwoBtn}"/>
+                                <TextBlock Margin="5,0,0,0" Grid.Column="1"  Text="{TemplateBinding Title}" Foreground="#FFF5F5F5" FontSize="12" VerticalAlignment="Center"  HorizontalAlignment ="Left"/>
+                                <StackPanel Grid.Column="2" Margin="0,0,10,0" UseLayoutRounding="True"  Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button Margin="0,5,2,5" Command="shell:SystemCommands.MinimizeWindowCommand"   Content="../Images/mmc-min.png" Style="{StaticResource windwoBtn}"/>
+                                    <Button Margin="2,5,2,5" Command="shell:SystemCommands.MaximizeWindowCommand" Content="../Images/mmc-max.png"   x:Name="Max" Style="{StaticResource windwoBtn}"/>
+                                    <Button Margin="2,5,2,5" Command="shell:SystemCommands.RestoreWindowCommand" Content="../Images/mmc-restore.png" Visibility="Collapsed" x:Name="Nor" Style="{StaticResource windwoBtn}"/>
+                                    <Button Margin="2,5,0,5" Command="shell:SystemCommands.CloseWindowCommand" Content="../Images/mmc-close.png"  Style="{StaticResource windwoBtn}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="1" BorderBrush="#FFa7a7a7" BorderThickness="1,0,1,1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="2"/>
+                                </Grid.RowDefinitions>
+
+                                <ContentPresenter Grid.Column="1" Width="Auto" Height="Auto"  SnapsToDevicePixels="True" 
+                                Content="{TemplateBinding ContentControl.Content}"/>
+                                <Border Grid.Column="1" BorderBrush="#FFcacaca" BorderThickness="1,0,1,1">
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter Property="Visibility" TargetName="Max" Value="Collapsed"/>
+                            <Setter Property="Visibility" TargetName="Nor" Value="Visible"/>
+                            <Setter Property="Margin" TargetName="MainGrid" Value="8"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key ="PopupWindow"  TargetType="{x:Type Base:BaseWindow}">
+        <Style.Resources>
+            <Style x:Key="windwoBtn" TargetType="{x:Type Button}">
+                <Setter Property="Width" Value="23"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="shell:WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border  x:Name="Border">
+                                <Image  Source="{Binding Content,RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                        <Condition Binding="{Binding Width, RelativeSource={RelativeSource Self}}" Value="23"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Background" TargetName="Border"  Value="#FF84AFFF"/>
+                                </MultiDataTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+        <Setter Property="shell:WindowChrome.WindowChrome">
+            <Setter.Value>
+                <shell:WindowChrome ResizeBorderThickness="0"
+                                    CaptionHeight="32"
+                                    CornerRadius="0"
+                                    GlassFrameThickness="0" >
+                </shell:WindowChrome>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ShowInTaskbar" Value="False" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="MetroChromeBehavior">
+            <Setter.Value>
+                <chrome:MetroChromeBehavior ActiveBrush="{DynamicResource ActiveColor}"
+											InactiveBrush="{DynamicResource InactiveColor}" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Base:BaseWindow}">
+                    <Border x:Name="MainWindow" Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="32"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border  Background="#FF4a7eec" BorderBrush="#FF3d67bf" BorderThickness="1,1,1,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Margin="16,0,0,0" Grid.Column="0"  Text="{TemplateBinding Title}" Foreground="#FFF5F5F5" FontSize="12" VerticalAlignment="Center"  HorizontalAlignment ="Left"/>
+                                    <StackPanel Grid.Column="1" UseLayoutRounding="True"  Margin="0,0,10,0" Orientation="Horizontal" VerticalAlignment="Center">
+                                        <Button Margin="2,5,0,5" Command="shell:SystemCommands.CloseWindowCommand" Content="../Images/mmc-close.png"  Style="{StaticResource windwoBtn}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            <Border Grid.Row="1" BorderBrush="#FFa7a7a7" BorderThickness="1,0,1,1">
+                                <ContentPresenter  Width="Auto" Height="Auto" SnapsToDevicePixels="True" Content="{TemplateBinding ContentControl.Content}"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5460FB5F-FE6A-4970-9EC0-831D0C7AC7B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Naver.Compass.Service.Document</RootNamespace>
+    <AssemblyName>Naver.Compass.Service.DocumentServiceProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\External\SharpZipLib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Prism.UnityExtensions.4.1.0.0\lib\NET40\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Prism.4.1.0.0\lib\NET40\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdaptiveViews\AdaptiveView.cs" />
+    <Compile Include="AdaptiveViews\AdaptiveViews.cs" />
+    <Compile Include="AdaptiveViews\AdaptiveViewSet.cs" />
+    <Compile Include="AdaptiveViews\IAdaptiveView.cs" />
+    <Compile Include="AdaptiveViews\IAdaptiveViews.cs" />
+    <Compile Include="AdaptiveViews\IAdaptiveViewSet.cs" />
+    <Compile Include="Annotations\IAnnotatedObject.cs" />
+    <Compile Include="Base\IHashStreamConsumer.cs" />
+    <Compile Include="Base\IHashStreamConsumerManager.cs" />
+    <Compile Include="Base\IHostService.cs" />
+    <Compile Include="Base\INamedObject.cs" />
+    <Compile Include="Base\IHashStreamManager.cs" />
+    <Compile Include="Base\StreamFileObject.cs" />
+    <Compile Include="Base\HashStreamManager.cs" />
+    <Compile Include="Document\ImagesData.cs" />
+    <Compile Include="Exceptions\CannotAddMasterException.cs" />
+    <Compile Include="Exceptions\CannotFindMasterPageException.cs" />
+    <Compile Include="Interactions\IInteractionCase.cs" />
+    <Compile Include="Interactions\IInteractionCases.cs" />
+    <Compile Include="Interactions\IInteractionCondition.cs" />
+    <Compile Include="Interactions\IInteractionConditions.cs" />
+    <Compile Include="Interactions\InteractionCase.cs" />
+    <Compile Include="Interactions\InteractionCases.cs" />
+    <Compile Include="Pages\IMasterPage.cs" />
+    <Compile Include="Pages\IMasterPages.cs" />
+    <Compile Include="Pages\MasterPage.cs" />
+    <Compile Include="Pages\MasterPages.cs" />
+    <Compile Include="Regions\IMaster.cs" />
+    <Compile Include="Regions\IMasters.cs" />
+    <Compile Include="Regions\Master.cs" />
+    <Compile Include="Regions\Masters.cs" />
+    <Compile Include="Regions\Region.cs" />
+    <Compile Include="Regions\Regions.cs" />
+    <Compile Include="Serialize\Serializer.cs" />
+    <Compile Include="Styles\DefaultStyleNames.cs" />
+    <Compile Include="Styles\GroupStyle.cs" />
+    <Compile Include="Styles\IMasterStyle.cs" />
+    <Compile Include="Styles\IMasterStyles.cs" />
+    <Compile Include="Styles\MasterStyle.cs" />
+    <Compile Include="Styles\MasterStyles.cs" />
+    <Compile Include="Styles\PageViewStyle.cs" />
+    <Compile Include="Styles\RegionStyle.cs" />
+    <Compile Include="Styles\Style.cs" />
+    <Compile Include="Styles\StyleBooleanProperty.cs" />
+    <Compile Include="Styles\StyleColor.cs" />
+    <Compile Include="Styles\StyleColorProperty.cs" />
+    <Compile Include="Styles\StyleDoubleProperty.cs" />
+    <Compile Include="Styles\StyleEnumProperty.cs" />
+    <Compile Include="Styles\StyleIntegerProperty.cs" />
+    <Compile Include="Styles\StylePropertyNames.cs" />
+    <Compile Include="Xml\XmlDocumentObject.cs" />
+    <Compile Include="Devices\Device.cs" />
+    <Compile Include="Devices\Devices.cs" />
+    <Compile Include="Devices\DeviceSet.cs" />
+    <Compile Include="Devices\IDevice.cs" />
+    <Compile Include="Devices\IDevices.cs" />
+    <Compile Include="Devices\IDeviceSet.cs" />
+    <Compile Include="Document\Document.cs" />
+    <Compile Include="Document\DocumentData.cs" />
+    <Compile Include="Document\IDocumentService.cs" />
+    <Compile Include="Document\ILibrary.cs" />
+    <Compile Include="Document\ILibraryManager.cs" />
+    <Compile Include="Document\LibraryManager.cs" />
+    <Compile Include="Exceptions\CannotLoadLibraryException.cs" />
+    <Compile Include="Pages\DocumentPage.cs" />
+    <Compile Include="Pages\IDocumentPage.cs" />
+    <Compile Include="Regions\IRegion.cs" />
+    <Compile Include="Regions\IRegions.cs" />
+    <Compile Include="Serialize\ISerializableObject.cs" />
+    <Compile Include="Serialize\IObjectContainer.cs" />
+    <Compile Include="Serialize\ISerializeReader.cs" />
+    <Compile Include="Serialize\ISerializeWriter.cs" />
+    <Compile Include="Document\LegacyDocumentManager.cs" />
+    <Compile Include="Document\VersionData.cs" />
+    <Compile Include="Exceptions\CannotAddPageException.cs" />
+    <Compile Include="Exceptions\CannotAddWidgetException.cs" />
+    <Compile Include="Exceptions\CannotDeletePageException.cs" />
+    <Compile Include="Exceptions\CannotOpenPageException.cs" />
+    <Compile Include="Exceptions\DocumentIsClosedException.cs" />
+    <Compile Include="Exceptions\HigherDocumentVersionException.cs" />
+    <Compile Include="Exceptions\PageIsClosedException.cs" />
+    <Compile Include="Interactions\IInteractionMoveAction.cs" />
+    <Compile Include="Interactions\IInteractionShowHideAction.cs" />
+    <Compile Include="Interactions\IInteractiveObject.cs" />
+    <Compile Include="Interactions\InteractionAction.cs" />
+    <Compile Include="Interactions\InteractionActionFactory.cs" />
+    <Compile Include="Interactions\InteractionActions.cs" />
+    <Compile Include="Interactions\InteractionCloseAction.cs" />
+    <Compile Include="Interactions\InteractionEvent.cs" />
+    <Compile Include="Interactions\InteractionEvents.cs" />
+    <Compile Include="Interactions\IInteractionCloseAction.cs" />
+    <Compile Include="Interactions\IInteractionOpenAction.cs" />
+    <Compile Include="Document\DocumentService.cs" />
+    <Compile Include="Interactions\IInteractionAction.cs" />
+    <Compile Include="Interactions\IInteractionActions.cs" />
+    <Compile Include="Annotations\IAnnotation.cs" />
+    <Compile Include="Annotations\IAnnotationField.cs" />
+    <Compile Include="Annotations\IAnnotationFields.cs" />
+    <Compile Include="Annotations\IAnnotationFieldSet.cs" />
+    <Compile Include="Interactions\InteractionMoveAction.cs" />
+    <Compile Include="Interactions\InteractionOpenAction.cs" />
+    <Compile Include="Interactions\InteractionShowHideAction.cs" />
+    <Compile Include="Pages\CustomObjectPage.cs" />
+    <Compile Include="Pages\CustomObjectPageData.cs" />
+    <Compile Include="Pages\EmbeddedPage.cs" />
+    <Compile Include="Pages\StandardPage.cs" />
+    <Compile Include="Pages\StandardPageData.cs" />
+    <Compile Include="Pages\HamburgerMenuPage.cs" />
+    <Compile Include="Pages\ICustomObject.cs" />
+    <Compile Include="Pages\ICustomObjectPage.cs" />
+    <Compile Include="Pages\IEmbeddedPage.cs" />
+    <Compile Include="Pages\IStandardPage.cs" />
+    <Compile Include="Pages\IHamburgerMenuPage.cs" />
+    <Compile Include="Pages\IPage.cs" />
+    <Compile Include="Pages\IPages.cs" />
+    <Compile Include="Regions\IPageView.cs" />
+    <Compile Include="Regions\IPageViews.cs" />
+    <Compile Include="Pages\IPanelStatePage.cs" />
+    <Compile Include="Pages\IToastPage.cs" />
+    <Compile Include="Pages\Page.cs" />
+    <Compile Include="Pages\PageData.cs" />
+    <Compile Include="Pages\Pages.cs" />
+    <Compile Include="Regions\PageView.cs" />
+    <Compile Include="Regions\PageViews.cs" />
+    <Compile Include="Pages\PanelStatePage.cs" />
+    <Compile Include="Pages\ToastPage.cs" />
+    <Compile Include="Styles\IRegionStyle.cs" />
+    <Compile Include="Styles\IViewStyle.cs" />
+    <Compile Include="Styles\IWidgetStyles.cs" />
+    <Compile Include="Styles\WidgetDefaultStyle.cs" />
+    <Compile Include="Styles\WidgetStyles.cs" />
+    <Compile Include="Misc\Guide.cs" />
+    <Compile Include="Widgets\HamburgerMenu.cs" />
+    <Compile Include="Widgets\HamburgerMenuButton.cs" />
+    <Compile Include="Widgets\IButton.cs" />
+    <Compile Include="Widgets\ICheckbox.cs" />
+    <Compile Include="Document\IDocument.cs" />
+    <Compile Include="Settings\IDocumentSettings.cs" />
+    <Compile Include="Widgets\IDroplist.cs" />
+    <Compile Include="Widgets\IDynamicPanel.cs" />
+    <Compile Include="Interactions\IInteractionEvent.cs" />
+    <Compile Include="Interactions\IInteractionEvents.cs" />
+    <Compile Include="Widgets\IFlowShape.cs" />
+    <Compile Include="Generators\IGeneratorConfigurationSet.cs" />
+    <Compile Include="Generators\IGeneratorConfiguration.cs" />
+    <Compile Include="Generators\IGeneratorConfigurations.cs" />
+    <Compile Include="Regions\IGroup.cs" />
+    <Compile Include="Regions\IGroups.cs" />
+    <Compile Include="Misc\IGuide.cs" />
+    <Compile Include="Misc\IGuides.cs" />
+    <Compile Include="Generators\IHtmlGeneratorConfiguration.cs" />
+    <Compile Include="Widgets\IHamburgerMenu.cs" />
+    <Compile Include="Widgets\IHamburgerMenuButton.cs" />
+    <Compile Include="Widgets\IHotSpot.cs" />
+    <Compile Include="Widgets\IImage.cs" />
+    <Compile Include="Settings\ILayoutSetting.cs" />
+    <Compile Include="Widgets\ILine.cs" />
+    <Compile Include="Widgets\IListBase.cs" />
+    <Compile Include="Widgets\IListBox.cs" />
+    <Compile Include="Widgets\IPageEmbeddedWidget.cs" />
+    <Compile Include="Widgets\IRadioButton.cs" />
+    <Compile Include="Widgets\ISelectionButton.cs" />
+    <Compile Include="Widgets\IShape.cs" />
+    <Compile Include="Styles\IStyle.cs" />
+    <Compile Include="Styles\IStyleProperty.cs" />
+    <Compile Include="Widgets\IStreamWidget.cs" />
+    <Compile Include="Widgets\ISvg.cs" />
+    <Compile Include="Widgets\ITextArea.cs" />
+    <Compile Include="Widgets\ITextBase.cs" />
+    <Compile Include="Widgets\ITextField.cs" />
+    <Compile Include="Widgets\IToast.cs" />
+    <Compile Include="Widgets\ITreeNode.cs" />
+    <Compile Include="Base\IUniqueObject.cs" />
+    <Compile Include="Widgets\IWidget.cs" />
+    <Compile Include="Styles\IWidgetDefaultStyle.cs" />
+    <Compile Include="Widgets\IWidgets.cs" />
+    <Compile Include="Styles\IWidgetStyle.cs" />
+    <Compile Include="Styles\IWidgetDefaultStyles.cs" />
+    <Compile Include="Styles\IWidgetDefaultStyleSet.cs" />
+    <Compile Include="Annotations\Annotation.cs" />
+    <Compile Include="Annotations\AnnotationField.cs" />
+    <Compile Include="Annotations\AnnotationFields.cs" />
+    <Compile Include="Annotations\AnnotationFieldSet.cs" />
+    <Compile Include="Widgets\Button.cs" />
+    <Compile Include="Widgets\Checkbox.cs" />
+    <Compile Include="Settings\DocumentSettings.cs" />
+    <Compile Include="Widgets\Droplist.cs" />
+    <Compile Include="Widgets\DynamicPanel.cs" />
+    <Compile Include="Widgets\FlowShape.cs" />
+    <Compile Include="Generators\GeneratorConfiguration.cs" />
+    <Compile Include="Generators\GeneratorConfigurations.cs" />
+    <Compile Include="Generators\GeneratorConfigurationSet.cs" />
+    <Compile Include="Regions\Group.cs" />
+    <Compile Include="Regions\Groups.cs" />
+    <Compile Include="Misc\Guides.cs" />
+    <Compile Include="Generators\HtmlGeneratorConfiguration.cs" />
+    <Compile Include="Widgets\Image.cs" />
+    <Compile Include="Widgets\HotSpot.cs" />
+    <Compile Include="Settings\LayoutSetting.cs" />
+    <Compile Include="Widgets\Line.cs" />
+    <Compile Include="Widgets\ListBase.cs" />
+    <Compile Include="Widgets\ListBox.cs" />
+    <Compile Include="Widgets\PageEmbeddedWidget.cs" />
+    <Compile Include="Widgets\RadioButton.cs" />
+    <Compile Include="Widgets\SelectionButton.cs" />
+    <Compile Include="Widgets\Shape.cs" />
+    <Compile Include="Styles\StyleProperty.cs" />
+    <Compile Include="Widgets\StreamWidget.cs" />
+    <Compile Include="Widgets\Svg.cs" />
+    <Compile Include="Widgets\TextArea.cs" />
+    <Compile Include="Widgets\TextBase.cs" />
+    <Compile Include="Widgets\TextField.cs" />
+    <Compile Include="Widgets\Toast.cs" />
+    <Compile Include="Widgets\TreeNode.cs" />
+    <Compile Include="Widgets\Widget.cs" />
+    <Compile Include="Widgets\Widgets.cs" />
+    <Compile Include="Styles\WidgetStyle.cs" />
+    <Compile Include="Styles\WidgetDefaultStyles.cs" />
+    <Compile Include="Styles\WidgetDefaultStyleSet.cs" />
+    <Compile Include="Base\Win32Wrapper.cs" />
+    <Compile Include="Xml\XmlElementDictionary.cs" />
+    <Compile Include="Xml\XmlElementList.cs" />
+    <Compile Include="Xml\XmlElementObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Widgets\WidgetFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VersionHistory.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

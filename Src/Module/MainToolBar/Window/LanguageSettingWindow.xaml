@@ -1,0 +1,29 @@
+﻿<ctlBase:BaseWindow  x:Class="Naver.Compass.Module.LanguageSettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+        Title="{DynamicResource Toolbar_lanDlgTitle}" 
+        Height="188" Width="256"
+        WindowStartupLocation="CenterOwner"
+        Style="{StaticResource PopupWindow}"
+        >
+    <Grid Margin="16,18,16,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{DynamicResource Toolbar_lanDlgText}" VerticalAlignment="Center" />
+        <ComboBox x:Name="comLanguage" Grid.Row="1" Width="auto" Height="21" Margin="0,15,0,24" SelectedIndex="{Binding LanguageIndex}">
+            <ComboBoxItem Content="한국어"/>
+            <ComboBoxItem Content="English"/>
+            <ComboBoxItem Content="中文"/>
+            <ComboBoxItem Content="日本語"/>
+            <!--<ComboBoxItem Content="{DynamicResource Toolbar_lanKOR}"/>
+            <ComboBoxItem Content="{DynamicResource Toolbar_lanENG}"/>
+            <ComboBoxItem Content="{DynamicResource Toolbar_lanCHS}"/>-->
+        </ComboBox>
+        <Button Content="{DynamicResource Toolbar_lanDlgOK}" Width="170" Height="25" Grid.Row="2" Command="{Binding ChangeLanCommand}" CommandParameter="{Binding Path=SelectedIndex,ElementName=comLanguage}"/>
+
+    </Grid>
+</ctlBase:BaseWindow> 

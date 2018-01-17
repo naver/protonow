@@ -1,0 +1,34 @@
+﻿<ctlBase:BaseWindow x:Class="Naver.Compass.WidgetLibrary.AddManyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        Title="{DynamicResource EditList_AddMany}" Height="375" Width="265"
+        xmlns:ctlBase="clr-namespace:Naver.Compass.Common;assembly=Naver.Compass.Common.ControlBase"
+        WindowStartupLocation="CenterOwner"
+        Style="{StaticResource PopupWindow}"
+        x:Name="AddMany">
+    <i:Interaction.Triggers>
+        <i:EventTrigger  EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=addBox}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Margin="16,12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="26"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{DynamicResource EditList_EnterValue}" TextWrapping="Wrap" />
+
+        <TextBox x:Name="addBox" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="1" Margin="0,10"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" >
+            <Button Content="{DynamicResource Common_OK}" Width="90" 
+                    Command="{Binding OKCommand}" 
+                    CommandParameter="{Binding ElementName=AddMany}"/>
+            <Button Content="{DynamicResource Common_Cancel}" Width="90" Margin="8,0,0,0"
+                    Command="{Binding CancelCommand}" 
+                    CommandParameter="{Binding ElementName=AddMany}"/>
+        </StackPanel>
+    </Grid>
+</ctlBase:BaseWindow>

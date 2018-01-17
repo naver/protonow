@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="Naver.Compass.WidgetLibrary.ListboxWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Common="clr-namespace:Naver.Compass.Common.CommonBase;assembly=Naver.Compass.Common.CommonBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200" MinHeight="1" MinWidth="1">
+    <UserControl.Resources>
+        <Common:DisableAttributeConverter x:Key="Disable2Enable"/>
+        <Common:BoldDataConverter x:Key="BoldCvt"/>
+        <Common:ItalicDataConverter x:Key="ItalicCvt"/>
+        <Common:ColorDataConverter x:Key="ColorDataCvt"/>
+        <Common:DecorationsDataConverter x:Key="DecorationCvt"/>
+        <Style x:Key="ContentHiddenStyle" TargetType="ListBox"  BasedOn="{StaticResource {x:Type ListBox}}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="BorderHiddenStyle" TargetType="Border">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Opacity" Value="0.05"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsHidden}" Value="False">
+                    <Setter Property="Background" Value="Transparent "/>
+                    <Setter Property="Opacity" Value="1"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <!---->
+    <Border IsHitTestVisible="False" Style="{StaticResource BorderHiddenStyle}" >
+        <ListBox x:Name="list" Style="{StaticResource ContentHiddenStyle}" SelectionMode="Multiple" ItemsSource="{Binding ItemsList}"
+                    IsEnabled="{Binding IsDisabled, Mode=OneWay,Converter={StaticResource Disable2Enable}}"
+                    Opacity="{Binding Opacity}" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    FontSize="{Binding vFontSize, Mode=OneWay}"
+                    Foreground="{Binding  vFontColor, Converter={StaticResource ColorDataCvt},Mode=OneWay}"
+                    FontStyle="{Binding vFontItalic, Converter={StaticResource ItalicCvt},Mode=OneWay}"
+                    FontWeight="{Binding vFontBold, Converter={StaticResource BoldCvt},Mode=OneWay}"
+                    Background="{Binding vBackgroundColor, Converter={StaticResource ColorDataCvt},Mode=OneWay}"
+                    >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name, Mode=OneWay}" FontFamily="{Binding DataContext.vFontFamily, ElementName=list, Mode=OneWay}"
+                                TextDecorations="{Binding  ElementName=list, Mode=OneWay, Path=DataContext.FontDecoration, Converter={StaticResource DecorationCvt}}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}"  BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                    <Setter Property="IsSelected"  Value="{Binding IsChecked, Mode=TwoWay}" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+    </Border>
+</UserControl>

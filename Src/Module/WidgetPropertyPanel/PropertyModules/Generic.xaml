@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:l="clr-namespace:Naver.Compass.Module.Property">
+    <!--Target UI widget Data-Template-->
+    <DataTemplate DataType="{x:Type l:ImagePropertyViewModel}">
+        <l:ImagePropertyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type l:ShapePropertyViewModel}">
+        <l:ShapePropertyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type l:TextPropertyViewModel}">
+        <l:TextPropertyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type l:LinkPropertyViewModel}">
+        <l:LinkPropertyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type l:GroupPropertyViewModel}">
+        <l:GroupPropertyView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type l:ListBoxPropertyViewModel}">
+        <l:ListPropertyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type l:DropListPropertyViewModel}">
+        <l:ListPropertyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type l:CheckBoxPropertyViewModel}">
+        <l:CheckBoxPropertyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type l:RadioButtonPropertyViewModel}">
+        <l:RadioButtonPropertyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type l:TextAreaPropertyViewModel}">
+        <l:TextAreaPropertyView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type l:TextFieldPropertyViewModel}">
+        <l:TextFieldPropertyView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type l:ButtonPropertyViewModel}">
+        <l:ButtonPropertyView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type l:HamburgerPropertyViewModel}">
+        <l:HamburgerProperty />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type l:FlickPannelPropertyViewModel}">
+        <l:FlickingPannelProperty />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type l:ToastPropertyViewModel}">
+        <l:ToastPropertyView/>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type l:SVGPropertyViewModel}">
+        <l:SVGPropertyView/>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type l:MasterPropertyViewModel}">
+        <l:MasterPropertyView/>
+    </DataTemplate>
+</ResourceDictionary>
